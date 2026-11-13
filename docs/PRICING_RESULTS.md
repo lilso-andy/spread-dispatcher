@@ -94,3 +94,65 @@ Cả 13 tuần đều đủ điều kiện và không có action refusal. Trên 
 **Đề xuất:** ưu tiên balanced nếu mục tiêu là tối đa hóa margin với ngưỡng 90%. Giữ cấu hình tăng phí để tham chiếu nếu đội ưu tiên biên dự phòng 95%. Kết quả hiện có chưa đủ để đổi mặc định. Các giả thuyết thay đổi giá, sàn margin, công suất và lead time chưa được chạy; thử riêng nếu cần cải thiện biên dự phòng mà giữ volume.
 
 Để tái lập hai seed mới, dùng balanced và cấu hình tăng phí với `--seeds pricing-baotran1604-check-1,pricing-baotran1604-check-2`. Bảng trên lấy điểm cuối tuần từ API practice.
+
+## Tối ưu hóa sau vòng thử nghiệm đầu
+
+Bảng level 8 vòng Saturday 00:00 hiển thị Team co Tai với 0/5 lượt kết thúc. Đội dẫn đầu Juhus có €80.030,02 và 97,48% đúng hạn trên năm lượt, tương đương €16.006/tuần và 373 đơn/tuần. Bob the builders đạt €73.387,76 và 98,00%, khoảng €14.678/tuần và 301 đơn/tuần. Nguồn: [Bảng level 8](https://spread.bahnexpress.com/v1/leaderboards/practice?level=8). Đây là mốc tham chiếu từ các tuần ranking; seed practice của nhóm khác với seed ranking.
+
+Trong ba lượt balanced, phí tài xế chiếm €42.423,06 trên €52.289,00 doanh thu (81,1%). Khoảng 210–220 yêu cầu mỗi tuần bị loại với lý do `unrecognized note`, trong đó có nhiều ghi chú chỉ dặn mang lốp dự phòng. `study-2` là seed gây áp lực về giao đúng hạn và hoàn tiền.
+
+### Practice level 8
+
+Các lượt mới chạy trên `b7425dd`. Các lượt balanced ban đầu dùng cùng code dispatcher ở `5f33186`. Dưới đây là điểm cuối tuần.
+
+| Cấu hình | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| Balanced | spread-1 | `wcb83012d522b6b64f80d` | 318867 | 147 | 96.60% | 0.68% | Có | 0 |
+| Balanced | study-2 | `w0c75eac21c444ba383f6` | 255843 | 157 | 93.63% | 0.00% | Có | 0 |
+| Balanced | holdout-3 | `w120238a5694ac9e57508` | 290003 | 85 | 98.82% | 0.00% | Có | 0 |
+| Throughput | spread-1 | `w0e962fb90b296286c5fe` | 396212 | 210 | 98.10% | 0.00% | Có | 0 |
+| Throughput | study-2 | `wc4a8d613db42a410819b` | 73427 | 210 | 91.43% | 0.00% | Có | 0 |
+| Throughput | holdout-3 | `wce3f59135821f2b04fbf` | 264727 | 119 | 95.80% | 0.00% | Có | 0 |
+| Cost | spread-1 | `w768a2359de7a673150d6` | 466421 | 173 | 97.69% | 0.00% | Có | 0 |
+| Cost | study-2 | `w0774e938a788a4644b82` | 245691 | 182 | 91.21% | 0.00% | Có | 0 |
+| Cost | holdout-3 | `w45fa25366fa317fb7eb3` | 337406 | 103 | 96.12% | 0.00% | Có | 0 |
+| Moderate | spread-1 | `wa06771f4e78b284368de` | 304899 | 140 | 96.43% | 0.00% | Có | 0 |
+| Moderate | study-2 | `w519baf4dfe665028480b` | 191197 | 159 | 91.82% | 0.00% | Có | 0 |
+| Moderate | holdout-3 | `w9fda5e6d91402907763f` | 315466 | 93 | 98.92% | 0.00% | Có | 0 |
+| Note exposure | spread-1 | `w0cf2940eaa5daebb3ffa` | 557389 | 220 | 96.82% | 0.00% | Có | 0 |
+| Note exposure | study-2 | `w54e5fcc7d572b2cc12b6` | 216733 | 191 | 90.05% | 0.00% | Có | 0 |
+| Note exposure | holdout-3 | `wa75d4d2a3eac9454f1c7` | 285214 | 131 | 93.13% | 0.00% | Có | 0 |
+| Balanced · mới | pricing-optimization-a | `w224aef167c74220b97ca` | 158710 | 93 | 92.47% | 0.00% | Có | 0 |
+| Balanced · mới | pricing-optimization-b | `w8b3374c5c8fe0edd72f8` | 344780 | 104 | 100.00% | 0.00% | Có | 0 |
+| Cost · mới | pricing-optimization-a | `w137406f7e3cbbd13bac0` | 253502 | 126 | 91.27% | 0.00% | Có | 0 |
+| Cost · mới | pricing-optimization-b | `w7b2a4d2da7acfd1b11d2` | 446800 | 133 | 98.50% | 0.00% | Có | 0 |
+
+| Cấu hình | Đủ điều kiện | Tổng margin (cent) | Đúng hạn thấp nhất |
+| --- | ---: | ---: | ---: |
+| Balanced | 3/3 | 864713 | 93.63% |
+| Throughput | 3/3 | 734366 | 91.43% |
+| Cost | 3/3 | 1049518 | 91.21% |
+| Moderate | 3/3 | 811562 | 91.82% |
+| Note exposure | 3/3 | 1059336 | 90.05% |
+| Balanced · mới | 2/2 | 503490 | 92.47% |
+| Cost · mới | 2/2 | 700302 | 91.27% |
+
+### Cấu hình đầy đủ
+
+- Balanced · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.2, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- Throughput · `{"quoteMultiplier": 1.34, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.12, "minMarginCents": 1200, "capacityFraction": 0.32, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- Cost · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- Moderate · `{"quoteMultiplier": 1.37, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.24, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- Note exposure · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": false, "offers": true}`
+- Balanced · mới · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.2, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- Cost · mới · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+
+### Quyết định
+
+- **Cost là ứng viên practice có tín hiệu tăng margin nhất quán giữa hai tập seed.** Giảm `feeMultiplier` xuống 1,08 đồng thời mở `capacityFraction` lên 0,28. So với balanced, tổng margin tăng 21,4% trên ba seed ban đầu và 39,1% trên hai seed mới. Cả năm tuần đều vượt 90%, nhưng mức thấp nhất giảm từ 92,47% xuống 91,21% và còn xa mục tiêu 98%. Hai tham số thay đổi đồng thời, nên chưa biết đóng góp riêng của từng tham số.
+- **Throughput và Moderate:** tổng margin thấp hơn balanced trên ba seed ban đầu. Trên study-2, Throughput tăng số đơn từ 157 lên 210, nhưng tiền hoàn do trễ tăng từ €614,35 lên €1.457,90 và margin giảm còn €734,27. Moderate cũng giảm cả margin và tỷ lệ đúng hạn trên seed này.
+- **Note exposure:** nới toàn bộ ghi chú giúp tăng tổng margin trên tập ban đầu nhưng study-2 chỉ đạt 90,05%. Chỉ dùng cấu hình này cho practice. Trong hai reveal đầu, 36 đơn có ghi chú liên quan đến lốp mà parser chưa hiểu không có ràng buộc bổ sung so với request; 12/58 đơn còn lại có ít nhất một ràng buộc bổ sung. Nhóm phụ trách parser có thể bắt đầu với các câu độc lập chỉ dặn mang lốp dự phòng, rồi đối chiếu giờ, yêu cầu xe và trạng thái lốp trên seed mới.
+- **Định giá tuyến khó:** với balanced trên study-2, bảy đơn có điểm đến đầu tiên là Rovaniemi thu €2.372,00, trả €2.946,44 phí tài xế và €336,00 hoàn tiền. Cùng điểm đến trên holdout-3 có lãi €301,81. Nên thử tăng giá sàn theo chi phí đặt xe, số tài xế phù hợp quanh cả hai đầu tuyến và biên thời gian còn lại. Dùng tín hiệu quan sát được trong tuần và kiểm chứng riêng các tuyến dài, thay vì chặn cố định theo tên thành phố.
+- **Ghép chuyến:** để nâng margin trên mỗi đơn, ưu tiên thử ghép chuyến khứ hồi hoặc cùng bãi, dựa trên khoảng chạy rỗng và chi phí hai gig riêng. Chỉ so các route có cửa sổ pickup/delivery khả thi, tối đa 720 phút chạy đường cho nhiều xe và giữ đúng thứ tự handover của trade-in. Đây là đề xuất cho module điều phối và chưa được benchmark.
+
+Tất cả 16 tuần practice mới đều đủ điều kiện. Giữ balanced làm cấu hình tham chiếu cho đến khi ứng viên đạt biên đúng hạn tốt hơn trên seed mới. Mức €16.006/tuần của đội dẫn đầu vẫn ngoài phạm vi số liệu đã đạt.

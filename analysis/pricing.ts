@@ -40,6 +40,8 @@ for (const prefix of prefixes) {
   const bookingDelays: number[] = []
   const bookingSlack: number[] = []
   const ledger: Record<string, { count: number; cents: number }> = {}
+  const ledgerByDestination = new Map<string, Partial<Record<string, number>>>()
+  const destinationByOrder = new Map<string, string>()
   for (const entry of entries) {
     if (entry.type === "decision") decisions.set(entry.requestId, entry.accepted)
     if (entry.type === "action" && entry.result.ok) {
@@ -50,6 +52,9 @@ for (const prefix of prefixes) {
     if (entry.type !== "event" || seen.has(entry.event.seq)) continue
     const { event } = entry
     seen.add(event.seq)
+    if (event.kind === "order_won") {
+      destinationByOrder.set(event.order.id, event.order.legs[0]!.delivery.placeId)
+    }
     if (event.kind === "order_won" || event.kind === "order_changed") lastPickup.set(event.order.id, event.order.lastPickupAt)
     if (event.kind === "deadline_close") lastPickup.set(event.orderId, event.lastPickupAt)
     if (event.kind === "gig_booked") {
@@ -65,6 +70,12 @@ for (const prefix of prefixes) {
       const total = ledger[line.kind] ??= { count: 0, cents: 0 }
       total.count++
       total.cents += line.cents
+      const gigOrders = line.gigId ? gigs.get(line.gigId)?.orderIds : undefined
+      const orderId = line.orderId ?? (gigOrders?.length === 1 ? gigOrders[0] : undefined)
+      const destination = (orderId ? destinationByOrder.get(orderId) : undefined) ?? "unattributed"
+      const destinationLedger = ledgerByDestination.get(destination) ?? {}
+      destinationLedger[line.kind] = (destinationLedger[line.kind] ?? 0) + line.cents
+      ledgerByDestination.set(destination, destinationLedger)
       const dealer = line.orderId ? dealerByOrder.get(line.orderId) : undefined
       if (dealer) {
         const count = trust.get(dealer) ?? 0
@@ -121,6 +132,7 @@ for (const prefix of prefixes) {
     bookingDelayMinutes: summarize(bookingDelays),
     bookingSlackMinutes: summarize(bookingSlack),
     ledger,
+    ledgerByDestination: Object.fromEntries(ledgerByDestination),
     ledgerMatchesScore: Object.values(ledger).reduce((sum, line) => sum + line.cents, 0) === result.score.marginCents,
   }))
 }
