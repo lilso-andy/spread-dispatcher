@@ -156,3 +156,54 @@ Các lượt mới chạy trên `b7425dd`. Các lượt balanced ban đầu dùn
 - **Ghép chuyến:** để nâng margin trên mỗi đơn, ưu tiên thử ghép chuyến khứ hồi hoặc cùng bãi, dựa trên khoảng chạy rỗng và chi phí hai gig riêng. Chỉ so các route có cửa sổ pickup/delivery khả thi, tối đa 720 phút chạy đường cho nhiều xe và giữ đúng thứ tự handover của trade-in. Đây là đề xuất cho module điều phối và chưa được benchmark.
 
 Tất cả 16 tuần practice mới đều đủ điều kiện. Giữ balanced làm cấu hình tham chiếu cho đến khi ứng viên đạt biên đúng hạn tốt hơn trên seed mới. Mức €16.006/tuần của đội dẫn đầu vẫn ngoài phạm vi số liệu đã đạt.
+
+## Ranking vòng Saturday 00:00
+
+Level 8, season 4, Team co Tai. Mọi lượt dùng `pricing-baotran1604-cost.json` ở revision `d6099b4`; cột Chính sách chỉ ra lượt có điều chỉnh giá sàn. Mọi số liệu lấy sau khi world kết thúc.
+
+| Lượt | World ID | Chính sách | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| 1 | `wc0b1604d38967965565e` | Cost | 597703 | 175 | 97.71% | 0.00% | Có | 0 |
+| 2 | `w99bc7e3ba7ce81c7b7a0` | Cost + giá sàn tuyến dài | 558520 | 155 | 98.71% | 0.00% | Có | 0 |
+| 3 | `w8c387aa4f63c1911b6c4` | Cost + giá sàn tuyến dài | 538505 | 153 | 95.42% | 0.00% | Có | 0 |
+| 4 | `w5a751b82e5efa7ef8fc5` | Cost + giá sàn tuyến dài | 718936 | 174 | 99.43% | 0.00% | Có | 0 |
+| 5 | `w5bcfa80fef6b9ac79276` | Cost + giá sàn tuyến dài | 741233 | 207 | 96.62% | 0.00% | Có | 0 |
+
+### Thử nghiệm quyết định chính sách
+
+Đã chạy ở hai bản sao độc lập của `d6099b4`, cùng cấu hình Cost và cùng level 8. Lượt ranking thứ nhất dùng Cost. Sau khi thử nghiệm đạt ngưỡng giao hàng trên các seed đối chứng, các lượt sau dùng Cost với giá sàn theo tuyến dài.
+
+- **Giá sàn tuyến dài.** Với route có ít nhất 360 phút lái và dưới 12 tài xế đủ điều kiện có nhà cách điểm giao cuối không quá 45 phút lái, cộng 0,35 lần reference fee vào chi phí ước tính dùng để đặt giá sàn. Phí gig tiếp tục dùng cấu hình Cost. Ước tính này dùng roster và bản đồ công khai trong world.
+- **Ghi chú lốp dự phòng.** Cho qua các câu độc lập đã biết về việc mang theo bộ lốp phụ, giữ cách xử lý cũ cho các ghi chú khác. Thử nghiệm bị loại sau khi study-2 chỉ đạt 89,60% đúng hạn. Tăng thêm số đơn an toàn về mặt ghi chú vẫn có thể làm giảm công suất còn lại cho các đơn khác.
+
+| Chính sách | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| Giá sàn tuyến dài | study-2 | `w66d5568e9585597083e2` | 406921 | 191 | 92.15% | 0.00% | Có | 0 |
+| Giá sàn tuyến dài | pricing-optimization-a | `wa2053933d714a126ef63` | 471540 | 145 | 95.17% | 0.00% | Có | 0 |
+| Giá sàn tuyến dài | holdout-3 | `wbf60caee7b9789af1c68` | 311195 | 98 | 95.92% | 0.00% | Có | 0 |
+| Giá sàn tuyến dài | pricing-optimization-b | `w6cff398f9752bc4d864d` | 418796 | 131 | 96.95% | 0.00% | Có | 0 |
+| Giá sàn tuyến dài | spread-1 | `wa9a4dfa3da24128fc010` | 461870 | 171 | 98.25% | 0.00% | Có | 0 |
+| Ghi chú lốp dự phòng | study-2 | `w018130c1853f51032ec1` | 206763 | 202 | 89.60% | 0.00% | **Không** | 0 |
+| Ghi chú lốp dự phòng | pricing-optimization-a | `w1d01f9f9e1c252244973` | 182140 | 96 | 91.67% | 0.00% | Có | 0 |
+| Ghi chú lốp dự phòng | holdout-3 | `wbe31ae3469fd25bd1456` | 413192 | 108 | 98.15% | 0.00% | Có | 0 |
+
+Trên study-2, pricing-optimization-a và holdout-3, tổng margin của giá sàn tuyến dài tăng từ €8.365,99 lên €11.896,56 và đúng hạn thấp nhất tăng từ 91,21% lên 92,15%. Các seed khác nhau giữa những lượt ranking, vì vậy dùng đối chứng practice để đánh giá thay đổi chính sách.
+
+Phần thử nghiệm code nằm trong bản sao riêng. Diff để người phụ trách ghép sau khi review nằm ở cuối báo cáo.
+
+```diff
+--- a/desk.ts
++++ b/desk.ts
+@@ -257 +257,7 @@
+-      const fee = request.referenceFeeCents * (this.feeMultiplier(place) + scarcity)
++      const longHaul = this.level === 8 && route.driveMinutes >= 360
++      const deliveryPlace = order.legs.at(-1)!.delivery.placeId
++      const homewardDrivers = longHaul ? this.roster.filter((driver) =>
++        eligible(driver, route.experienced, route.manual)
++        && this.network.road(driver.homePlaceId, deliveryPlace).minutes <= 45).length : Infinity
++      const riskReserve = longHaul && homewardDrivers < 12 ? 0.35 : 0
++      const fee = request.referenceFeeCents * (this.feeMultiplier(place) + scarcity + riskReserve)
+
+```
+
+Bảng xếp hạng xác nhận **hạng 25**, tổng margin **€31.548,97**, **97,57% đúng hạn** và **864 đơn**. Đội dẫn đầu Juhus đạt €80.030,02 và 97,48% trên 1.866 đơn. Margin trung bình là €36,52/đơn cho Team co Tai và €42,89/đơn cho Juhus. Chênh lệch số đơn là điểm cần ưu tiên, với ngưỡng giao đúng hạn theo từng tuần. Vòng này đã hết năm lượt.
