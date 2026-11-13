@@ -2,14 +2,14 @@
 
 ## Objective
 
-Build a level-8 dispatcher that meets the 90% on-time minimum and maximizes gross margin. Collaborate through private GitHub repo lilso-andy/spread-dispatcher, individual branches and PRs.
+Build a level-8 dispatcher that meets the 90% on-time minimum and maximizes gross margin. Collaborate through GitHub repo lilso-andy/spread-dispatcher, individual branches and PRs. The owner has made the repository public; credentials and raw practice logs remain ignored.
 
 ## Implemented
 
 - Official TypeScript client and server docs downloaded.
 - Dispatcher, route/notes modules, resumable practice/final runner, multi-seed evaluator, policy configs and offline behavior tests.
 - Local credential file is ignored; every teammate supplies their own local `.env` using the same team key.
-- baotran1604 and thanhdatLUT invited to the GitHub repo; both invitations were pending when created.
+- baotran1604 and thanhdatLUT have accepted their invitations and appear as collaborators (Write access on this personal repository). A teammate's Codex Cloud connection can still lack permission independently of their collaborator role. Unpublished commit 7f43c1a is not present in this clone: recover it from the original task before replacing that workspace.
 
 ## Evidence so far
 
@@ -27,3 +27,11 @@ The initial code and recovery fixes are pushed to main. Reusable teammate prompt
 4. Exercise final stream reconnection in the announced test final; only one team machine runs it.
 
 See TEAM.md for proposed module ownership. Record any new benchmark with seed + level + complete config in docs/BENCHMARKS.md.
+
+## Dispatcher profit branch, 2026-11-14
+
+`work/dispatcher-profit` contains the trade-in handover correction at `19ba376`, with 19 offline tests passed. Main remains `5f33186`; this branch does not include the independent reprice-deduplication PR #2. Seven complete, paired level-8 server weeks with balanced configuration all qualified and had zero refused actions. Combined gross margin increased €319.17 (+1.20%), worst candidate service was 95.30%, and the one undelivered baseline order was recovered. However, the two fresh holdouts lost €223.26 (-2.58%). This is not evidence of consistent unseen profit growth. See docs/TRADE_IN_RESULTS.md and its two JSON reports for every pair.
+
+Selected production source `8430f689ea41ff4a6777439d97fccdd00b7d41d6` offers independently feasible delivery options in one quote, reserving only one order's capacity. Faster options need twice the ordinary booking lead. It retains balanced pricing and conservative notes. Five paired complete server weeks increased margin from €17,150.57 to €22,307.24 (+30.07%), increasing on every seed. Both versions qualified in 5/5 weeks; no failed final 90% thresholds. Candidate worst on-time share is 92.86% (main 93.63%), with zero undelivered orders and zero refused actions. Two new-seed totals rose 32.86%; these are practice results, not an unseen-final guarantee. See docs/QUOTE_RESULTS.md and the machine-readable reports.
+
+The earlier unrestricted alternatives at `ae11f0c` earned less overall (€21,798.05) and were closer to disqualification (study-2 at 90.28%). Its full results remain recorded. Final offline suite: 26 passed, including existing diagnostic utility tests reused from PR #2. No ranking run or live final has been started. Do not assume a combination with the teammate's pricing candidate or PR #2's production change is validated.

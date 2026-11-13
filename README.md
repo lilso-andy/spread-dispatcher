@@ -39,7 +39,7 @@ node --env-file=.env dispatch.ts --final
 
 ## Policy
 
-- Offer one feasible delivery option, with a driver-fee estimate, margin floor, lead-time buffer and capacity reserve for simultaneous pending quotes. Learn small pricing adjustments from observed wins/losses and dealer trust.
+- Offer each feasible delivery option, with extra booking slack for faster alternatives, a driver-fee estimate, margin floor and capacity reserve for simultaneous pending quotes. A request reserves capacity once across its alternative options. Learn small pricing adjustments from observed wins/losses and dealer trust.
 - Check actual road times, opening hours, private slots, charging, plates and experienced/manual audiences before posting. Keep trade-in handover stops adjacent; split multi-car work over 12 road hours.
 - Parse supported Finnish, Swedish and English note constraints. Unknown/ambiguous notes and summer-tyre exposure are declined by default. This sacrifices volume for reliability; the parser is a heuristic, not full language understanding.
 - Start at a stable driver fee. Plan one rescue raise before last pickup, then escalate and target direct offers while recovery is still possible. Track local driver observations and bookings without pretending to know hidden availability or costs.
@@ -60,5 +60,7 @@ node --env-file=.env dispatch.ts --final
 | `docs/` | Downloaded challenge references and benchmark evidence |
 
 See [TEAM.md](TEAM.md) for the Vietnamese multi-machine workflow and proposed ownership. See [STATUS.md](STATUS.md) before taking over work.
+
+On the profit branch, the measured policy uses `--config configs/balanced.json`: five paired level-8 practice weeks increased total gross margin 30.07%, with all five qualifying and a worst on-time share of 92.86%. See [docs/QUOTE_RESULTS.md](docs/QUOTE_RESULTS.md) for per-seed results and limitations. This does not change the conservative default configuration.
 
 Limitations: the capacity model estimates hidden driver participation; no policy can promise 90% on unseen weeks. There is no cross-machine lock on final ownership, no calibrated probabilistic cost model, and no cross-order gig bundling yet. Use multi-seed evidence before selecting the final policy.
