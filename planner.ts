@@ -57,7 +57,10 @@ export function routeFor(order: Order, legs: number[], facts: NoteFacts, network
     const duration = Math.ceil(road.minutes * (late ? 1 : 1.18)) + extras + 15
     driveMinutes += between + road.minutes
     const picks = intervals(leg.pickup, time + between, deadline, facts.pickupHours, Math.max(facts.pickupFrom ?? 0, leg.pickup.window.from), late ? undefined : facts.pickupTo)
-    const deliveries = intervals(leg.delivery, time, deadline, facts.deliveryHours, facts.deliveryFrom, late ? undefined : facts.deliveryTo)
+    // Only private pickups have a hard slot. A missed private delivery must still move,
+    // and the rules explicitly allow its posted window to extend beyond the booked hour.
+    const deliveryPlace = late && leg.delivery.privateAddress ? { ...leg.delivery, privateAddress: false, hours: null } : leg.delivery
+    const deliveries = intervals(deliveryPlace, time, deadline, facts.deliveryHours, facts.deliveryFrom, late ? undefined : facts.deliveryTo)
     let found: { p: TimeWindow; d: TimeWindow; start: number; end: number } | undefined
     for (const p of picks) {
       for (const d of deliveries) {

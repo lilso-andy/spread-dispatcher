@@ -53,6 +53,14 @@ test("multi-car routes enforce 12-hour cap including empty repositioning",()=>{
   const long={...map,roads:map.roads.map(r=>({...r,minutes:r.from===r.to?0:300}))}
   assert.equal(routeFor(asOrder(r,r.options[1]!),[0,1],noNote,new Network(long),480,14280),null)
 })
+test("missed private deliveries remain recoverable, private pickup slots stay hard",()=>{
+  const r=request();r.legs[0]!.delivery={...r.legs[0]!.delivery,privateAddress:true,hours:null,window:{from:600,to:660}}
+  const o=asOrder(r,r.options[0]!)
+  assert.equal(routeFor(o,[0],noNote,new Network(map),800,14280),null)
+  assert.ok(routeFor(o,[0],noNote,new Network(map),800,14280,true))
+  r.legs[0]!.pickup={...r.legs[0]!.pickup,privateAddress:true,hours:null,window:{from:600,to:660}}
+  assert.equal(routeFor(asOrder(r,r.options[0]!),[0],noNote,new Network(map),800,14280,true),null)
+})
 test("pending quotes reserve capacity in a simultaneous batch",()=>{
   const desk=new Desk({...defaults,maxApproachMinutes:100,capacityFraction:0.2},8,map,roster)
   desk.now=480

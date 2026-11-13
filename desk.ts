@@ -194,7 +194,11 @@ export class Desk {
 
   localDrivers(order: Order, route: Route): DriverProfile[] {
     const first = order.legs[route.stops[0]!.leg]!.pickup.placeId
-    return this.roster.filter((d) => eligible(d, route.experienced, route.manual) && !this.busyDriver(d.id) && this.network.road(this.positions.get(d.id)?.place ?? d.homePlaceId, first).minutes <= this.config.maxApproachMinutes)
+    return this.roster.filter((d) => {
+      const known = this.positions.get(d.id)
+      const place = known && Math.floor(known.at / DAY) === Math.floor(this.now / DAY) ? known.place : d.homePlaceId
+      return eligible(d, route.experienced, route.manual) && !this.busyDriver(d.id) && this.network.road(place, first).minutes <= this.config.maxApproachMinutes
+    })
   }
 
   capacity(order: Order, route: Route): boolean {
@@ -238,10 +242,11 @@ export class Desk {
     if (facts.uncertain && this.config.strictNotes) return refuse(facts.reasons.join("; "))
     if (facts.summerTyres) return refuse("summer tyres: weather exposure")
     const completed = [...this.orders.values()].filter((o) => o.status === "delivered")
-    const lateCount = completed.filter((o) => o.deliveredAt.some((at) => at !== null && at > Math.min(o.deadline, this.facts(o.id).deliveryTo ?? Infinity))).length
+    const lateCount = completed.filter((o) => o.deliveredAt.some((at, i) => at !== null && at > Math.min(o.deadline, this.facts(o.id).deliveryTo ?? Infinity, o.legs[i]!.delivery.privateAddress ? o.legs[i]!.delivery.window.to + 30 : Infinity))).length
     if (completed.length >= 10 && lateCount / completed.length > 0.045) return refuse("service recovery: pause new exposure")
     // Give explicit private appointments their actual deadline, not just the option's 20:00.
-    for (const option of [...request.options].sort((a, b) => b.deadline - a.deadline)) {
+    const options = this.level <= 3 ? request.options.slice(0,1) : [...request.options].sort((a, b) => b.deadline - a.deadline)
+    for (const option of options) {
       const order = asOrder(request, option)
       const route = routeFor(order, order.legs.map((_, i) => i), facts, this.network, this.now + this.config.minLeadMinutes, this.endsAt)
       if (!route || route.latestStart < this.now + this.config.minLeadMinutes) continue
@@ -254,7 +259,8 @@ export class Desk {
       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
       const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + this.config.minMarginCents)
-      const price = Math.ceil(Math.max(minimum, option.listPriceCents * (base + adjustment) * (1 + trust)) / 100) * 100
+      if (this.level <= 3 && minimum > option.listPriceCents) continue
+      const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (base + adjustment) * (1 + trust)) / 100) * 100
       // Do not devote capacity to a near-impossible bid. Explicitly declining is free.
       if (price > option.listPriceCents * (this.level >= 7 ? 2.25 : 1.70)) continue
       this.decisions.set(request.id, { accepted: true, price, reference: request.referenceFeeCents, route, expires: request.respondBy, reason: "feasible with capacity and margin reserve" })
