@@ -85,14 +85,21 @@ for (const prefix of prefixes) {
     }
   }
 
-  const offers = reveal.requests.flatMap(({ request, quote, outcome }) => {
+  // Measure one outcome per request. For a win use the purchased option.
+  // For a loss use the slowest quoted option as the price reference.
+  const offers = reveal.requests.flatMap(({ request, quote, outcome, option: purchased }) => {
     if (!decisions.get(request.id) || !quote || outcome === "unquoted") return []
-    const option = request.options.find(option => quote[option.kind] !== undefined)
+    const quotedOptions = request.options.filter(option => quote[option.kind] !== undefined)
+    const option = outcome === "won"
+      ? quotedOptions.find(option => option.kind === purchased)
+      : quotedOptions.reduce<(typeof quotedOptions)[number] | undefined>(
+        (slowest, option) => !slowest || option.deadline > slowest.deadline ? option : slowest, undefined)
     if (!option) return []
     const first = request.legs[0]!
     return [{
       lane: `${first.pickup.placeId} → ${first.delivery.placeId}`,
       won: outcome === "won",
+      quoteOptions: quotedOptions.length,
       referenceFeeCents: request.referenceFeeCents,
       quoteToList: quote[option.kind]! / option.listPriceCents,
       trust: trustAtQuote.get(request.id) ?? null,
@@ -126,6 +133,7 @@ for (const prefix of prefixes) {
     lost: quoteSummary(false),
     declined: [...decisions.values()].filter(accepted => !accepted).length,
     unquoted: reveal.requests.filter(request => request.outcome === "unquoted").length,
+    multiOptionQuotes: offers.filter(offer => offer.quoteOptions > 1).length,
     lanes: Object.fromEntries(lanes),
     trustBands: Object.fromEntries(trustBands),
     bookingsWithin180MinutesOfLastPickup: bookingSlack.filter(minutes => minutes <= 180).length,
