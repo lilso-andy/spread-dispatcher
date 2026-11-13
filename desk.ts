@@ -252,6 +252,9 @@ export class Desk {
       const order = asOrder(request, option)
       const route = routeFor(order, order.legs.map((_, i) => i), facts, this.network, this.now + this.config.minLeadMinutes, this.endsAt)
       if (!route || route.latestStart < this.now + this.config.minLeadMinutes) continue
+      // Additional, faster options need extra booking slack. Keep the original
+      // slowest feasible offer, but do not sell a rush alternative near cutoff.
+      if (reservation && route.latestStart < this.now + 2 * this.config.minLeadMinutes) continue
       if (!this.capacity(order, route)) continue
       const place = request.legs[0]!.pickup.placeId
       const local = this.localDrivers(order, route).length

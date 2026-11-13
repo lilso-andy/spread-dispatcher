@@ -35,6 +35,15 @@ test("an infeasible early alternative is omitted even when the later option fits
   if (action.type === "quote") assert.deepEqual(Object.keys(action.prices), ["next_day"])
 })
 
+test("a faster alternative needs twice the ordinary booking lead", () => {
+  const d = desk(), r = request()
+  d.now = 650
+  r.arrivedAt = 650; r.respondBy = 665
+  const action = d.quote(r)!
+  assert.ok(action.type === "quote")
+  if (action.type === "quote") assert.deepEqual(Object.keys(action.prices), ["next_day"])
+})
+
 test("a refused multi-option quote releases its single capacity reservation", () => {
   const d = desk(), r = request(), action = d.quote(r)!
   d.results([action], [{ ok: false, error: "rejected" }])
