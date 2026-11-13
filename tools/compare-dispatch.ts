@@ -4,7 +4,7 @@ import { join } from "node:path"
 import type { RunResult } from "../runner.ts"
 import { ActionBucketReplay } from "./rate-replay.ts"
 
-const { values } = parseArgs({options:{baseline:{type:"string"},candidate:{type:"string"},out:{type:"string"}}})
+const { values } = parseArgs({options:{baseline:{type:"string"},candidate:{type:"string"},out:{type:"string"},"allow-config-change":{type:"boolean"}}})
 if (!values.baseline || !values.candidate) throw new Error("Usage: node tools/compare-dispatch.ts --baseline DIR --candidate DIR [--out FILE]")
 
 async function load(folder: string) {
@@ -34,7 +34,8 @@ const baseline=await load(values.baseline), candidate=await load(values.candidat
 if (!baseline.size || baseline.size!==candidate.size || [...baseline.keys()].some(seed=>!candidate.has(seed))) throw new Error("Both folders must contain exactly the same completed seeds")
 const pairs=[...baseline.keys()].sort().map(seed=>{
   const a=baseline.get(seed)!, b=candidate.get(seed)!
-  if (a.run.options.level!==b.run.options.level || JSON.stringify(a.run.config)!==JSON.stringify(b.run.config)) throw new Error(`Config/level mismatch for ${seed}`)
+  if (a.run.options.level!==b.run.options.level) throw new Error(`Level mismatch for ${seed}`)
+  if (!values["allow-config-change"] && JSON.stringify(a.run.config)!==JSON.stringify(b.run.config)) throw new Error(`Config mismatch for ${seed}; use --allow-config-change only for an intentional configuration experiment`)
   return {seed,baseline:{worldId:a.run.worldId,score:a.run.score,actions:a.actions,offerAnswers:a.offers,rateReplay:a.rateReplay,actionRefusals:a.run.actionRefusals,elapsedSeconds:a.run.elapsedSeconds},candidate:{worldId:b.run.worldId,score:b.run.score,actions:b.actions,offerAnswers:b.offers,rateReplay:b.rateReplay,actionRefusals:b.run.actionRefusals,elapsedSeconds:b.run.elapsedSeconds},marginDeltaCents:b.run.score.marginCents-a.run.score.marginCents,onTimeDelta:b.run.score.onTimeShare-a.run.score.onTimeShare}
 })
 function summarize(side:"baseline"|"candidate") {
@@ -54,7 +55,10 @@ function summarize(side:"baseline"|"candidate") {
     offlineLateQuotes:pairs.reduce((n,p)=>n+p[side].rateReplay.lateQuotes,0),
   }
 }
-const report={level:pairs.length?baseline.values().next().value!.run.options.level:8,config:baseline.values().next().value!.run.config,seeds:pairs.map(p=>p.seed),baseline:summarize("baseline"),candidate:summarize("candidate"),pairs}
+const baselineConfig=baseline.values().next().value!.run.config, candidateConfig=candidate.values().next().value!.run.config
+if ([...baseline.values()].some(v=>JSON.stringify(v.run.config)!==JSON.stringify(baselineConfig)) || [...candidate.values()].some(v=>JSON.stringify(v.run.config)!==JSON.stringify(candidateConfig))) throw new Error("A comparison folder must contain one consistent configuration")
+const configurationChanged=JSON.stringify(baselineConfig)!==JSON.stringify(candidateConfig)
+const report={level:pairs.length?baseline.values().next().value!.run.options.level:8,config:configurationChanged?undefined:baselineConfig,baselineConfig,candidateConfig,configurationChanged,seeds:pairs.map(p=>p.seed),baseline:summarize("baseline"),candidate:summarize("candidate"),pairs}
 if(values.out) await writeFile(values.out,JSON.stringify(report,null,2)+"\n")
 console.table(pairs.map(p=>({seed:p.seed,baselineMargin:p.baseline.score.marginCents/100,candidateMargin:p.candidate.score.marginCents/100,baselineOnTime:(100*p.baseline.score.onTimeShare).toFixed(2)+"%",candidateOnTime:(100*p.candidate.score.onTimeShare).toFixed(2)+"%",baselineRanked:p.baseline.score.ranked,candidateRanked:p.candidate.score.ranked})))
 console.log(JSON.stringify({baseline:report.baseline,candidate:report.candidate},null,2))

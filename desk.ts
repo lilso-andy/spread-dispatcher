@@ -224,6 +224,9 @@ export class Desk {
   }
 
   feeMultiplier(place: string): number {
+    // In fixed-price training worlds, a quick booking at our own posted fee is
+    // an upper bound on cost, not evidence that the next gig needs a raise.
+    if (this.level <= 3) return 1.05
     const samples = [...(this.observedBookings.get(place) ?? [])].sort((a, b) => a - b)
     const learned = samples.length >= 5 ? samples[Math.floor(samples.length * 0.7)]! * 1.03 : 0
     return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(1.9, learned))
@@ -259,11 +262,15 @@ export class Desk {
       const place = request.legs[0]!.pickup.placeId
       const local = this.localDrivers(order, route).length
       const scarcity = local < 15 ? 0.15 : local < 30 ? 0.07 : 0
-      const fee = request.referenceFeeCents * (this.feeMultiplier(place) + scarcity)
+      const fixedPrice = this.level <= 3
+      // Long one-way work needed rescue fees above the fixed dealer price in
+      // the training baseline. Price that exposure into acceptance, not a
+      // promise to the dealer that cannot cover its likely recovery cost.
+      const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity, fixedPrice && route.driveMinutes > 300 ? 1.85 : 0)
       const base = this.level <= 6 ? 1.20 : this.config.quoteMultiplier
       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
-      const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + this.config.minMarginCents)
+      const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + (fixedPrice ? Math.min(500, this.config.minMarginCents) : this.config.minMarginCents))
       if (this.level <= 3 && minimum > option.listPriceCents) continue
       const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (base + adjustment) * (1 + trust)) / 100) * 100
       // Do not devote capacity to a near-impossible bid. Explicitly declining is free.
