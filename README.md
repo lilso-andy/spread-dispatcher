@@ -4,13 +4,21 @@ TypeScript dispatcher for Bahn's simulated Finnish car-transport market. Runs wi
 
 ## Run
 
-Copy `.env.example` to `.env` and set your team key locally:
+Create a local `.env` from the tracked `.env.example`, then set your team key privately. `.env` is intentionally ignored by Git and is not shared between workspaces:
 
 ```powershell
-Copy-Item .env.example .env
-node --test test/*.test.ts
-node --env-file=.env dispatch.ts --level 8 --seed spread-1 --reveal
+node setup-env.ts
 ```
+
+After filling in `SPREAD_KEY` locally:
+
+```powershell
+node setup-env.ts --check
+node --test test/*.test.ts
+node --env-file-if-exists=.env dispatch.ts --level 8 --seed spread-1 --reveal
+```
+
+If your task environment already supplies `SPREAD_KEY` and `SPREAD_URL`, a `.env` file is optional. Use `--env-file-if-exists=.env` in the commands below in that case. `--check` checks configuration presence without displaying credentials; it does not call the server. Never commit the real `.env` or paste its contents into a shared prompt.
 
 The default policy is conservative. Practice logs, action results, scores and optional reveals go into ignored `runs/`. The world ID is printed and saved before the first clock advance. Interrupted worlds are preserved; resume with:
 
