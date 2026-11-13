@@ -241,3 +241,33 @@ Giảm riêng `capacityFraction` từ 0,28 xuống 0,24 trên bản tích hợp 
 | integration-20261114-a | `wfeeb2bb56ff6696ffe4b` | 396507 | 132 | 94.70% | 0.00% | Có | 0 |
 
 Cả ba tuần đạt ngưỡng 90%. Tổng margin giảm từ €18.784,22 xuống €18.421,37, mức đúng hạn thấp nhất giảm từ 92,03% xuống 90,96%. Giữ 0,28 cho ứng viên hiện tại. Local main đã đồng bộ `9dccfdb`; các file dispatcher và test offline của main giữ nguyên so với `5f33186`.
+
+## Pricing practice level 1–7
+
+Bản chạy dùng `3cb7ba4` từ nhánh dispatcher-integration (gồm thay đổi fixed-price của nhóm) cộng diff parser và test notes từ `5f33186..2678287`. Cả hai cấu hình dùng cùng source và Node 24.22.3. Bộ test tích hợp đạt 61/61. Chỉ tạo practice thường, tối đa hai world của phiên này chạy đồng thời. Các world đang dở của đồng đội được giữ nguyên.
+
+Level 1–3 dùng giá danh sách cố định. Ứng viên thử sàn đóng góp thấp hơn, thời gian tìm tài xế dài hơn và phí cứu đơn thấp hơn. Level 4–7 thử mở công suất và giảm sàn margin. Trên level 4–6, dispatcher dùng hệ số giá cơ sở 1,20 và sàn phí tài xế 1,05; hai hệ số cấu hình tương ứng chỉ có tác dụng ở level 7 trong nhóm này.
+
+| Level | Cấu hình | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| 1 | baseline | multilevel-verify-a | `wfeac127c2fea99e4f9ca` | 194218 | 176 | 99.43% | 0.00% | Có | 0 |
+| 1 | candidate | multilevel-verify-a | `w448154165056fe1341fd` | 254406 | 231 | 99.57% | 0.00% | Có | 0 |
+| 1 | baseline | spread-1 | `waf056c70795294114e9e` | 218244 | 196 | 99.49% | 0.00% | Có | 0 |
+| 1 | candidate | spread-1 | `wd6fa064dfc4d6d1e7f0e` | 292595 | 269 | 99.63% | 0.00% | Có | 0 |
+| 2 | baseline | multilevel-verify-a | `wc17a377a5e6586ed5dcc` | 191191 | 175 | 99.43% | 0.00% | Có | 0 |
+| 2 | candidate | multilevel-verify-a | `w53389aa0a56fdc01c1d7` | 259157 | 231 | 99.57% | 0.00% | Có | 0 |
+| 2 | baseline | spread-1 | `w9849dcd05e70323de31c` | 227432 | 197 | 99.49% | 0.00% | Có | 0 |
+| 2 | candidate | spread-1 | `w7a3ab178497abf69dfaf` | 303009 | 270 | 99.63% | 0.00% | Có | 0 |
+| 3 | baseline | spread-1 | `w49b612bc85deb0aa606d` | 230153 | 197 | 99.49% | 0.00% | Có | 0 |
+
+### So sánh theo level
+
+| Level | Số seed ghép cặp | Balanced (cent) | Ứng viên (cent) | Đúng hạn thấp nhất Balanced | Đúng hạn thấp nhất ứng viên | Quyết định trên tập đã đo |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| 1 | 2 | 412462 | 547001 | 99.43% | 99.57% | Ứng viên |
+| 2 | 2 | 418623 | 562166 | 99.43% | 99.57% | Ứng viên |
+
+### Cấu hình đầy đủ
+
+- baseline, level 1, 2, 3 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.2, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- candidate, level 1, 2 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
