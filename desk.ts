@@ -246,10 +246,15 @@ export class Desk {
     if (completed.length >= 10 && lateCount / completed.length > 0.045) return refuse("service recovery: pause new exposure")
     // Give explicit private appointments their actual deadline, not just the option's 20:00.
     const options = this.level <= 3 ? request.options.slice(0,1) : [...request.options].sort((a, b) => b.deadline - a.deadline)
+    const prices: Extract<Action, { type: "quote" }>["prices"] = {}
+    let reservation: Decision | undefined
     for (const option of options) {
       const order = asOrder(request, option)
       const route = routeFor(order, order.legs.map((_, i) => i), facts, this.network, this.now + this.config.minLeadMinutes, this.endsAt)
       if (!route || route.latestStart < this.now + this.config.minLeadMinutes) continue
+      // Additional, faster options need extra booking slack. Keep the original
+      // slowest feasible offer, but do not sell a rush alternative near cutoff.
+      if (reservation && route.latestStart < this.now + 2 * this.config.minLeadMinutes) continue
       if (!this.capacity(order, route)) continue
       const place = request.legs[0]!.pickup.placeId
       const local = this.localDrivers(order, route).length
@@ -263,9 +268,15 @@ export class Desk {
       const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (base + adjustment) * (1 + trust)) / 100) * 100
       // Do not devote capacity to a near-impossible bid. Explicitly declining is free.
       if (price > option.listPriceCents * (this.level >= 7 ? 2.25 : 1.70)) continue
-      this.decisions.set(request.id, { accepted: true, price, reference: request.referenceFeeCents, route, expires: request.respondBy, reason: "feasible with capacity and margin reserve" })
+      prices[option.kind] = price
+      reservation ??= { accepted: true, price, reference: request.referenceFeeCents, route, expires: request.respondBy, reason: "feasible with capacity and margin reserve" }
       this.log({ type: "decision", at: this.now, requestId: request.id, accepted: true, option: option.kind, priceCents: price, expectedFeeCents: Math.round(fee), localDrivers: local, route })
-      return { type: "quote", requestId: request.id, prices: { [option.kind]: price } }
+    }
+    // Options are alternatives for one order: reserve capacity once, after testing
+    // every offered deadline independently. The dealer can buy only one option.
+    if (reservation) {
+      this.decisions.set(request.id, reservation)
+      return { type: "quote", requestId: request.id, prices }
     }
     return refuse("insufficient safe capacity, time or margin")
   }
