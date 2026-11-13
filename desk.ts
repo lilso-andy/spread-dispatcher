@@ -291,7 +291,7 @@ export class Desk {
       const first = gig.stops.find((s) => s.kind === "pickup")!
       const order = this.orders.get(first.orderId)
       if (!order || order.status === "cancelled") continue
-      const urgency = this.bookingCutoff(gig, order) - this.now
+      const urgency = this.rescueCutoff(gig, order) - this.now
       if (urgency <= 240 && (this.lastReprice.get(gig.id) ?? -Infinity) + 60 <= this.now) {
         const base = this.baseFee(order, gig.stops.filter((s) => s.kind === "pickup").length)
         const multiplier = urgency <= 90 ? this.config.emergencyMultiplier : urgency <= 180 ? 1.95 : 1.65
@@ -312,6 +312,13 @@ export class Desk {
     return Math.min(order.lastPickupAt, first?.window?.to ?? Infinity)
   }
 
+  /** An early daily window may expire safely when the order still has later days.
+   * Pay rescue rates against a narrower window on the final pickup day only. */
+  rescueCutoff(gig: Pick<Gig, "stops">, order: Order): number {
+    const cutoff = this.bookingCutoff(gig, order)
+    return Math.floor(cutoff / DAY) === Math.floor(order.lastPickupAt / DAY) ? cutoff : order.lastPickupAt
+  }
+
   makePost(order: Order, legs: number[]): PostAction | null {
     const facts = this.facts(order.id)
     for (const leg of legs) {
@@ -323,7 +330,7 @@ export class Desk {
     if (!route && !late) route = routeFor(order, legs, facts, this.network, this.now + 20, this.endsAt, true)
     if (!route) return null // private pickups must await the next booked slot
     const base = this.baseFee(order, legs.length)
-    const cutoff = this.bookingCutoff(route, order)
+    const cutoff = this.rescueCutoff(route, order)
     const urgent = cutoff - this.now <= 240
     const multiple = Math.max(this.feeMultiplier(order.legs[legs[0]!]!.pickup.placeId), urgent ? 1.85 : 0)
     const feeCents = Math.max(1, Math.round(base * multiple))

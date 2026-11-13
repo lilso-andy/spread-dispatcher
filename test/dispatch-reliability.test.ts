@@ -20,14 +20,15 @@ function gig(from=600,to=900): Gig {
 
 test("rescue schedule uses the posted pickup window, including note hours",()=>{
   const {desk,order}=setup()
+  order.lastPickupAt=1100
   desk.requests.get(order.id)!.note={text:"Pickup weekdays 8-14",language:"en"}
   const post=desk.makePost(order,[0])!
   const cutoff=post.stops[0]!.window!.to
   assert.ok(cutoff<order.lastPickupAt)
   assert.equal(post.schedule[1]!.at,cutoff-210)
 })
-test("an open gig is rescued before its own window closes even with a later order deadline",()=>{
-  const {desk}=setup();desk.gigs.set("g",gig());desk.now=700
+test("an open gig is rescued before its own window closes on the final pickup day",()=>{
+  const {desk,order}=setup();order.lastPickupAt=1100;desk.gigs.set("g",gig());desk.now=700
   assert.ok(desk.actions().some(a=>a.type==="reprice"&&a.gigId==="g"))
 })
 test("theoretical order deadline remains a bound when the posted window is later",()=>{
@@ -36,10 +37,17 @@ test("theoretical order deadline remains a bound when the posted window is later
   assert.equal(desk.bookingCutoff({stops:[{orderId:"r",leg:0,kind:"pickup"}]},order),2500)
 })
 test("equal-fee reprices do not continually replace an unchanged schedule",()=>{
-  const {desk}=setup();desk.gigs.set("g",gig());desk.now=720
+  const {desk,order}=setup();order.lastPickupAt=1100;desk.gigs.set("g",gig());desk.now=720
   const actions=desk.actions();desk.results(actions,actions.map(()=>({ok:true,id:"g"})))
   desk.now=781
   assert.equal(desk.actions().filter(a=>a.type==="reprice").length,0)
+})
+test("optional early-day windows do not trigger emergency fees several days early",()=>{
+  const {desk,order}=setup();desk.gigs.set("g",gig());desk.now=700
+  assert.equal(desk.rescueCutoff(gig(),order),order.lastPickupAt)
+  assert.equal(desk.actions().filter(a=>a.type==="reprice").length,0)
+  const post=desk.makePost(order,[0])!
+  assert.equal(post.schedule[1]!.at,order.lastPickupAt-210)
 })
 test("future pickups do not consume today's direct-offer quota",()=>{
   const {desk,order}=setup()
