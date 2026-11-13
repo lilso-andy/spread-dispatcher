@@ -44,3 +44,9 @@ Two earlier rescue/offer experiments earned less and were reverted from the prod
 ## Integration loop, 2026-11-14
 
 `work/dispatcher-integration` merges the profit branch, pricing branch `0a07bfc` and reliability branch `f997df7`. Both earlier status sections above are historical evidence for their separate branches. The integrated policy is not validated by those individual results. Practice-only comparisons of balanced and the teammate's cost configuration are next. Do not run ranking or the live final during this loop.
+
+Latest pricing analysis `e45f85d` and main's environment setup PR #4 are now integrated. Level-8 development runs on `de28d13` completed: balanced €11,009.28, cost €13,965.12 (+26.85%) across spread-1/study-2/holdout-3, each 3/3 eligible, no refused actions. Cost minimum service is only 90.86%, versus balanced 92.86%; holdouts are not yet complete, so this is not a final policy selection.
+
+Multi-level baseline source `1ac2844`: on spread-1, both balanced and cost configurations **failed level 1 and level 2**, each €179.44 and 88.89% on time (18 orders). Level 3 passed at €350.79 and 94.44%. Matrix raw logs and durable partial summaries are in ignored runs/levels-balanced-a and runs/levels-cost-a. These completed failures must remain in the report. Further levels are still running.
+
+Candidate production `4766c82` changes only levels 1–3: a 500-cent absolute contribution floor alongside the existing percentage reserve, a higher estimated recovery cost for trips over 300 mapped road minutes, and a stable 1.05 fee estimate instead of upward feedback from our own accepted prices. Levels 4–8 retain their existing behavior. A test-only assertion was corrected for the existing 1.9 cap; all 32 tests now pass. Server validation of this candidate is pending; do not claim the lower-level failure is fixed yet.
