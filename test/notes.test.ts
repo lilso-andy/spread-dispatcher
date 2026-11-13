@@ -1,0 +1,63 @@
+import test from "node:test"
+import assert from "node:assert/strict"
+import { readNote, DAY } from "../notes.ts"
+
+const parse = (text: string, arrived = 480) => readNote({ text, language: "en" }, arrived)
+
+// Expected semantics follow RULES.md; unsupported associations must decline.
+for (const text of [
+  "Manual; pickup after lunch",
+  "Pickup after 12:00 provided payment clears",
+  "Manual; delivery when the office reopens",
+  "Pickup after 10 and before 16",
+  "Pickup not after 15:00",
+  "Delivery inte före lunch; manual",
+  "Nouto ei ennen lounasta; manuaali",
+  "Pickup after 10:00, actually after 14:00; manual",
+  "Manual pickup after 10:00 correction: after 14:00",
+  "Nouto klo 10 jälkeen, korjaus: klo 14 jälkeen",
+  "Hämtning efter 10, rättelse: efter 14",
+  "Pickup after 10 today and after 14 tomorrow",
+  "Pickup after 10; delivery by closing time",
+  "Manual; call phone 0401234567 after arrival",
+  "Manual; key code 13.30",
+  "Pickup ready 14:00, car has 150 hp",
+  "Delivery open tomorrow 9-17",
+  "Pickup weekdays 9-17, Saturday 10-12",
+]) test(`unsafe associations decline: ${text}`, () => {
+  assert.equal(parse(text).uncertain, true)
+})
+
+for (const [text, key, expected] of [
+  ["Pickup after half three", "pickupFrom", 870],
+  ["Deliver before five", "deliveryTo", 1020],
+  ["Pickup after puoli kolme", "pickupFrom", 870],
+  ["Hämtning tidigast halv tre", "pickupFrom", 870],
+  ["Pickup after tomorrow 12am", "pickupFrom", DAY],
+  ["Delivery before the day after tomorrow 12pm", "deliveryTo", 2 * DAY + 720],
+  ["Pickup ready Thurs at 10:00", "pickupFrom", 3 * DAY + 600],
+] as const) test(`grounded time: ${text}`, () => {
+  const f = parse(text)
+  assert.equal(f[key], expected)
+  assert.equal(f.uncertain, false)
+})
+
+test("equipment and independent stop facts survive", () => {
+  const f = parse("manual; without plates; summer tyres; Pickup after 11:00; delivery before 16:30")
+  assert.equal(f.manual, true)
+  assert.equal(f.plates, true)
+  assert.equal(f.summerTyres, true)
+  assert.equal(f.pickupFrom, 660)
+  assert.equal(f.deliveryTo, 990)
+  assert.equal(f.uncertain, false)
+})
+test("contradictory bounds decline", () => {
+  assert.equal(parse("Pickup after 16:00; pickup before 10:00").uncertain, true)
+})
+test("recurring hours remain clock minutes", () => {
+  assert.deepEqual(parse("Pickup open daily 9-17").pickupHours, { opens: 540, closes: 1020 })
+  assert.equal(parse("Pickup open daily 9-17").uncertain, false)
+})
+test("greetings and empty notes are harmless", () => {
+  for (const text of ["", "thanks", "kiitos", "tack"]) assert.equal(parse(text).uncertain, false)
+})

@@ -20,7 +20,7 @@ const PICKUP = /nout|haett|luovut|pick.?up|collect|handover|hämt|avhämt|utläm
 const AFTER = /jälkeen|alkaen|aikaisintaan|after|from\b|earliest|not before|ei ennen|valmi|ready|efter|tidigast|inte före|klar|vasta\b/
 const BEFORE = /ennen|mennessä|viimeist|before|\bby\b|latest|före|senast|asti|until|till\b/
 const week = [ /maanantai|\bma\.?\b|måndag|\bmån\b|monday|\bmon\b/, /tiistai|\bti\.?\b|tisdag|\btis\b|tuesday|\btue(?:s)?\b/, /keskiviik|\bke\.?\b|onsdag|\bons\b|wednesday|\bwed\b/, /torstai|\bto\.\s|torsdag|\btors?\b|thursday|\bthu(?:rs)?\b/, /perjantai|\bpe\.?\b|fredag|\bfre\b|friday|\bfri\b/, /lauantai|\bla\.?\b|lördag|saturday|\bsat\b/, /sunnuntai|\bsu\.?\b|söndag|sunday|\bsun\b/ ]
-const words: Record<string, number> = { yksi:13, yhden:13, kaksi:14, kahden:14, kolme:15, kolmen:15, neljä:16, neljän:16, viisi:17, viiden:17, yhdeksän:9, yhdeksältä:9, kymmenen:10, kymmeneltä:10, yksitoista:11, kaksitoista:12, ett:13, en:13, två:14, tre:15, fyra:16, fem:17, nio:9, tio:10, elva:11, tolv:12 }
+const words: Record<string, number> = { one:13, two:14, three:15, four:16, five:17, nine:9, ten:10, eleven:11, twelve:12, yksi:13, yhden:13, kaksi:14, kahden:14, kolme:15, kolmen:15, neljä:16, neljän:16, viisi:17, viiden:17, yhdeksän:9, yhdeksältä:9, kymmenen:10, kymmeneltä:10, yksitoista:11, kaksitoista:12, ett:13, en:13, två:14, tre:15, fyra:16, fem:17, nio:9, tio:10, elva:11, tolv:12 }
 
 function dayFor(text: string, arrived: number): number {
   const today = Math.floor(arrived / DAY)
@@ -39,7 +39,9 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   if (!note?.text.trim()) return facts
   let text = note.text.normalize("NFKC").toLowerCase()
   // Corrections replace the earlier clause; retain unrelated earlier facts.
-  text = text.replace(/([^;.!?]*?)(?:\bcorrection:|\bactually\b|\bkorjaus:|\bsiis\b|\brättelse:)([^;!?]*)/g, "$2")
+  // A correction may replace a time while leaving equipment facts in force.
+  // Until its scope is resolved, retain the text and decline the note.
+  if (/\b(?:correction|actually|korjaus|siis|rättelse)\b/.test(text)) facts.reasons.push("correction scope requires review")
   facts.manual = /manuaali|manual(?:\s+(?:gear|transmission|licen))?|manuell|käsivaihte/.test(text)
   facts.plates = /(?:no|without|missing)\s+(?:registration\s+)?plates|ei\s+(?:ole\s+)?(?:rekisteri)?kilpi|ilman\s+kilpi|kilvetön|saknar\s+(?:reg(?:istrerings)?[ -]?)?skylt|utan\s+skylt/.test(text)
   facts.summerTyres = /kesären|summer\s+t[yi]re|sommardäck/.test(text)
@@ -47,6 +49,17 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   // Split clauses without splitting 13.30 or kl. 13. Requirements alone need no time.
   const clauses = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/)
   for (let clause of clauses) {
+    if (!clause.trim()) continue
+    const equipmentOnly = /^(?:manuaali[a-zåäö]*|manual(?:\s+(?:gearbox|transmission|licence))?|manuell[a-zåäö]*|käsivaihte[a-zåäö]*|(?:auto\s+)?ilman\s+kilpi[a-zåäö]*|(?:no|without|missing)\s+(?:registration\s+)?plates|saknar\s+skylt[a-zåäö]*|kesären[a-zåäö]*|summer\s+t[yi]res|sommardäck)[.! ]*$/.test(clause.trim())
+    const harmless = /^(?:kiitos|tack|thank you|thanks|ok)[.! ]*$/.test(clause.trim())
+    if (equipmentOnly || harmless) continue
+    let clauseRecognized = false
+    if (/provided|unless|if\b|when\b|jos\b|kun\b|om\b|när\b/.test(clause)) facts.reasons.push("conditional constraint requires review")
+    if ([...clause.matchAll(/\b\d{1,2}(?:[.:]\d{2})?\s*[-–]\s*\d{1,2}(?:[.:]\d{2})?\b/g)].length > 1) facts.reasons.push("multiple opening ranges cannot be represented")
+    // Clause-wide direction/date matching cannot safely associate competing facts.
+    const directionText = clause.replace(/(?:the )?day after tomorrow/g, "tomorrow")
+    if (AFTER.test(directionText) && BEFORE.test(directionText) && !/not before|ei ennen|inte före/.test(clause)) facts.reasons.push("multiple time directions in one clause")
+    if (/(?:\bnot\b|\bei\b|\binte\b)/.test(clause) && !/not before|ei ennen|inte före/.test(clause)) facts.reasons.push("negated constraint requires review")
     const delivery = DELIVERY.test(clause)
     const pickup = PICKUP.test(clause) || !delivery
     if (delivery && PICKUP.test(clause)) {
@@ -61,6 +74,7 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
       if (opens < closes && closes < DAY && Number(match[2] ?? 0) < 60 && Number(match[4] ?? 0) < 60) {
         facts[`${side}Hours`] = { opens, closes }
         recognized = true
+        clauseRecognized = true
       } else facts.reasons.push("invalid opening-hours range")
     }
     clause = clause.replace(range, " ")
@@ -75,19 +89,29 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
       if (!m[2] && !m[3] && !/klo|kl\.?|ennen|jälkeen|before|after|\bby\b|senast|tidigast|före|efter|valmi|klar|ready/.test(clause)) continue
       candidates.push({ index: m.index!, length: m[0].length, minute: hour * 60 + minute })
     }
-    const wordPattern = new RegExp(`\\b(?:(puoli|halv)\\s+)?(${Object.keys(words).sort((a,b) => b.length-a.length).join("|")})\\b`, "g")
+    const wordPattern = new RegExp(`\\b(?:(puoli|halv|half)\\s+)?(${Object.keys(words).sort((a,b) => b.length-a.length).join("|")})\\b`, "g")
     for (const m of clause.matchAll(wordPattern)) candidates.push({ index: m.index!, length: m[0].length, minute: words[m[2]!]! * 60 - (m[1] ? 30 : 0) })
     for (const candidate of candidates) {
       const before = clause.slice(0, candidate.index)
       if (/(?:\bnot|\bei|\binte)\s*$/.test(before)) continue
-      const direction = AFTER.test(clause) ? "From" : BEFORE.test(clause) ? "To" : undefined
+      const direction = AFTER.test(directionText) ? "From" : BEFORE.test(directionText) ? "To" : undefined
       if (!direction) { facts.reasons.push("time without a clear before/after constraint"); continue }
       const key = `${side}${direction}` as "pickupFrom" | "pickupTo" | "deliveryFrom" | "deliveryTo"
       const at = dayFor(clause, arrived) * DAY + candidate.minute
       facts[key] = direction === "From" ? Math.max(facts[key] ?? 0, at) : Math.min(facts[key] ?? Infinity, at)
       recognized = true
+      clauseRecognized = true
     }
     if (/huomen|morgon|tomorrow|tmrw|valmi|ready|klar/.test(clause) && !candidates.length && (pickup || delivery)) facts.reasons.push("date/readiness without a supported clock time")
+    if (!clauseRecognized) facts.reasons.push("unrecognized clause")
+    // Do not treat a recognized number as proof that all surrounding prose is understood.
+    if (candidates.length > 1 || /\b(?:phone|tel|code|pin|km|hp|litres)\b/.test(clause)) facts.reasons.push("multiple clocks or non-time numbers require review")
+    if (/every|daily|weekdays|arkisin|joka|varje|vardagar/.test(clause) && !facts[`${side}Hours`]) facts.reasons.push("unsupported recurring hours")
+    if (facts[`${side}Hours`] && /tomorrow|huomen|morgon|monday|tuesday|wednesday|thursday|friday|saturday|sunday/.test(clause)) facts.reasons.push("dated hours cannot be represented as recurring hours")
+  }
+  for (const side of ["pickup", "delivery"] as const) {
+    const from = facts[`${side}From`], to = facts[`${side}To`]
+    if (from !== undefined && to !== undefined && from > to) facts.reasons.push("contradictory time bounds")
   }
   // Unknown prose is treated as unknown, even when it could be harmless.
   if (!recognized && !/^(?:kiitos|tack|thank you|thanks|ok)[.! ]*$/.test(text)) facts.reasons.push("unrecognized note")
