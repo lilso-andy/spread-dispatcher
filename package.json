@@ -1,0 +1,11 @@
+{
+  "name": "spread-dispatcher",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env dispatch.ts",
+    "test": "node --test test/*.test.ts",
+    "evaluate": "node --env-file-if-exists=.env evaluate.ts"
+  }
+}
