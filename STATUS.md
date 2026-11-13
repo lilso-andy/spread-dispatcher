@@ -13,7 +13,11 @@ Build a level-8 dispatcher that meets the 90% on-time minimum and maximizes gros
 
 ## Evidence so far
 
-Conservative policy on level 8 seed `spread-1`: 20 orders, 100% on time, €977.20 gross margin, ranked; full week completed. More seeds and balanced policy are being evaluated. This one result does not establish general reliability.
+Current code `2a37b7f` with `configs/balanced.json`: 3/3 completed level-8 practice seeds ranked, 389 orders total, €8,647.13 total gross margin, worst on-time share 93.63%. One order remained undelivered on spread-1. No refused actions. See docs/BENCHMARKS.md and docs/benchmark-results.json for per-seed evidence and full config.
+
+13 offline tests passed. An authenticated WebSocket replay smoke test passed against a disposable practice world. Live final timing and final rate buckets still need the announced test final. Default config remains conservative; select balanced explicitly for its measured results.
+
+The initial code and recovery fixes are pushed to main. Reusable teammate prompts are in prompts/pricing.md and prompts/notes-tests.md. The proposed ownership in TEAM.md is for coordination; each teammate should confirm their assignment before overlapping edits.
 
 ## Next useful work
 

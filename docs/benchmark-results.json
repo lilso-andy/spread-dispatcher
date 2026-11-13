@@ -1,0 +1,67 @@
+{
+  "sourceCommit": "2a37b7f63a4e3a5d04de415a1d965b6b73b8d784",
+  "kind": "practice",
+  "level": 8,
+  "config": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.2,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "rankedRuns": 3,
+  "totalMarginCents": 864713,
+  "minOnTimeShare": 0.9363057324840764,
+  "results": [
+    {
+      "worldId": "w53374534f1f116765a02",
+      "seed": "holdout-3",
+      "score": {
+        "marginCents": 290003,
+        "revenueCents": 1396300,
+        "marginShare": 0.20769390532120605,
+        "wonOrders": 85,
+        "onTimeShare": 0.9882352941176471,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "elapsedSeconds": 71.309,
+      "actionRefusals": 0
+    },
+    {
+      "worldId": "we4091eac911a0d013388",
+      "seed": "spread-1",
+      "score": {
+        "marginCents": 318867,
+        "revenueCents": 1557000,
+        "marginShare": 0.20479576107899808,
+        "wonOrders": 147,
+        "onTimeShare": 0.9659863945578231,
+        "undeliveredShare": 0.006802721088435374,
+        "ranked": true
+      },
+      "elapsedSeconds": 90.525,
+      "actionRefusals": 0
+    },
+    {
+      "worldId": "w211b0d23cc7455521a37",
+      "seed": "study-2",
+      "score": {
+        "marginCents": 255843,
+        "revenueCents": 2275600,
+        "marginShare": 0.11242880998417999,
+        "wonOrders": 157,
+        "onTimeShare": 0.9363057324840764,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "elapsedSeconds": 139.3,
+      "actionRefusals": 0
+    }
+  ]
+}

@@ -16,6 +16,8 @@ Copy-Item .env.example .env
 
 Mở thư mục repo bằng Codex. Bảo Codex: “Đọc AGENTS.md, README.md, STATUS.md và TEAM.md. Làm phần việc của tôi trên branch riêng; chạy test trước khi push.”
 
+Prompt chi tiết để copy vào Codex: [pricing](prompts/pricing.md) cho baotran1604, [notes và tests](prompts/notes-tests.md) cho thanhdatLUT. Hai prompt chia file sở hữu để hạn chế xung đột.
+
 ## Chia việc đề xuất cho ba người
 
 | Người | Branch | Phần việc |
