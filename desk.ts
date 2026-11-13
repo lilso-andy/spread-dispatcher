@@ -291,12 +291,12 @@ export class Desk {
       const first = gig.stops.find((s) => s.kind === "pickup")!
       const order = this.orders.get(first.orderId)
       if (!order || order.status === "cancelled") continue
-      const urgency = order.lastPickupAt - this.now
+      const urgency = this.bookingCutoff(gig, order) - this.now
       if (urgency <= 240 && (this.lastReprice.get(gig.id) ?? -Infinity) + 60 <= this.now) {
         const base = this.baseFee(order, gig.stops.filter((s) => s.kind === "pickup").length)
         const multiplier = urgency <= 90 ? this.config.emergencyMultiplier : urgency <= 180 ? 1.95 : 1.65
         const feeCents = Math.max(this.currentFee(gig), Math.round(base * Math.max(multiplier, this.feeMultiplier(order.legs[first.leg]!.pickup.placeId))))
-        actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
+        if (feeCents > this.currentFee(gig)) actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
       }
       if (this.config.offers && this.level >= 3 && (urgency <= 300 || this.now - gig.postedAt >= 90)) actions.push(...this.offersFor(gig, order))
     }
@@ -305,6 +305,12 @@ export class Desk {
 
   baseFee(order: Order, cars: number): number { return (this.requests.get(order.id)?.referenceFeeCents ?? order.priceCents * 0.75) * cars / order.legs.length }
   currentFee(gig: Gig): number { return gig.schedule.filter((s) => s.at <= this.now).at(-1)?.feeCents ?? gig.schedule[0]!.feeCents }
+
+  /** Own windows can close before the order's theoretical last on-time pickup. */
+  bookingCutoff(gig: Pick<Gig, "stops">, order: Order): number {
+    const first = gig.stops.find((s) => s.kind === "pickup")
+    return Math.min(order.lastPickupAt, first?.window?.to ?? Infinity)
+  }
 
   makePost(order: Order, legs: number[]): PostAction | null {
     const facts = this.facts(order.id)
@@ -317,12 +323,13 @@ export class Desk {
     if (!route && !late) route = routeFor(order, legs, facts, this.network, this.now + 20, this.endsAt, true)
     if (!route) return null // private pickups must await the next booked slot
     const base = this.baseFee(order, legs.length)
-    const urgent = order.lastPickupAt - this.now <= 240
+    const cutoff = this.bookingCutoff(route, order)
+    const urgent = cutoff - this.now <= 240
     const multiple = Math.max(this.feeMultiplier(order.legs[legs[0]!]!.pickup.placeId), urgent ? 1.85 : 0)
     const feeCents = Math.max(1, Math.round(base * multiple))
     const schedule = [{ at: this.now, feeCents }]
     // A single planned rescue raise, well before last pickup, avoids hourly fee conditioning.
-    const rescueAt = order.lastPickupAt - 210
+    const rescueAt = cutoff - 210
     if (this.level >= 2 && rescueAt > this.now) schedule.push({ at: rescueAt, feeCents: Math.max(feeCents, Math.round(base * 1.85)) })
     return { type: "post", stops: route.stops, audience: { experienced: route.experienced, manualLicence: route.manual }, schedule }
   }
@@ -330,6 +337,12 @@ export class Desk {
   offersFor(gig: Gig, order: Order): Action[] {
     const day = Math.floor(this.now / DAY)
     if (this.now % DAY < 420 || this.now % DAY >= 1380) return []
+    const first = gig.stops.find((s) => s.kind === "pickup")
+    if (!first) return []
+    const ready = first.window?.from ?? order.legs[first.leg]!.pickup.window.from
+    // A driver's three daily offers are scarce. Reserve them for work close enough
+    // to pickup to fit today's day, rather than exhausting them on tomorrow's gigs.
+    if (ready > this.now + 180 || this.bookingCutoff(gig, order) <= this.now) return []
     const open = [...this.offerUntil].filter(([key, until]) => key.startsWith(`${gig.id}:`) && until >= this.now).length
     if (open >= 3) return []
     const leg = order.legs[gig.stops[0]!.leg]!
