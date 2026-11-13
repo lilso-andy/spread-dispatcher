@@ -229,3 +229,15 @@ Tổng action refusals: 0. Tổng số lượt có đơn chưa giao: 0.
 Ứng viên đạt €33.519,31 trên năm seed, cao hơn 6,86% so với €31.366,63 của bản tích hợp đối chứng. Mức đúng hạn thấp nhất là 92,03% so với 90,86%; trên riêng hai seed mới, mức thấp nhất giảm từ 92,81% xuống 92,03%. Kết quả tốt nhất là €11.377,32 với 270 đơn và 99,26% đúng hạn. Seed mới còn lại giảm €165,80, vì vậy giá sàn theo tuyến là ứng viên tốt hơn về tổng margin nhưng cần tiếp tục kiểm chứng độ ổn định.
 
 Để tái lập, xuất source ở `5e5e4ad` vào thư mục riêng, áp dụng diff `git diff 5f33186 f997df7 -- desk.ts test/dispatch-reliability.test.ts` cho cả hai bản, rồi áp dụng diff giá sàn trong mục trước vào bản ứng viên với `git apply --unidiff-zero`. Chạy `evaluate.ts` ở level 8 với cấu hình Cost và cùng seed từ bảng trên. Sau khi fetch lại, nhánh `work/env-setup` ở `81f4040` chỉ thêm thiết lập môi trường và tài liệu, nên không đổi bản dispatcher đã kiểm chứng.
+
+### Kiểm tra lại sau khi push và fetch
+
+Giảm riêng `capacityFraction` từ 0,28 xuống 0,24 trên bản tích hợp có giá sàn. Mọi trường cấu hình khác giữ theo Cost.
+
+| Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| integration-20261114-b | `w77fc70fc4b2249799e0a` | 1091261 | 264 | 99.62% | 0.00% | Có | 0 |
+| study-2 | `w793063eae5fdab1c77c0` | 354369 | 166 | 90.96% | 0.00% | Có | 0 |
+| integration-20261114-a | `wfeeb2bb56ff6696ffe4b` | 396507 | 132 | 94.70% | 0.00% | Có | 0 |
+
+Cả ba tuần đạt ngưỡng 90%. Tổng margin giảm từ €18.784,22 xuống €18.421,37, mức đúng hạn thấp nhất giảm từ 92,03% xuống 90,96%. Giữ 0,28 cho ứng viên hiện tại. Local main đã đồng bộ `9dccfdb`; các file dispatcher và test offline của main giữ nguyên so với `5f33186`.
