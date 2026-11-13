@@ -9,10 +9,12 @@ Chấp nhận lời mời GitHub trước, sau đó:
 ```powershell
 git clone https://github.com/lilso-andy/spread-dispatcher.git
 cd spread-dispatcher
-Copy-Item .env.example .env
+node setup-env.ts
 ```
 
 Điền team key vào `.env` trên chính máy mình. Không đưa key vào Git hay prompt chia sẻ. Cài Node >= 22.18 (khuyên dùng Node 24). Không cần cài package.
+
+`.env` không nằm trên GitHub là đúng thiết kế; repo có `.env.example`. Mỗi máy hoặc workspace mới tự chạy `node setup-env.ts`, điền key riêng rồi chạy `node setup-env.ts --check`. Lệnh setup không ghi đè file đã có; lệnh check không in key. Nếu task đã được cấp `SPREAD_KEY` qua biến môi trường thì không bắt buộc có file `.env`; chạy bằng `node --env-file-if-exists=.env dispatch.ts ...`. Key phải được chuyển qua kênh riêng và không được commit.
 
 Mở thư mục repo bằng Codex. Bảo Codex: “Đọc AGENTS.md, README.md, STATUS.md và TEAM.md. Làm phần việc của tôi trên branch riêng; chạy test trước khi push.”
 
