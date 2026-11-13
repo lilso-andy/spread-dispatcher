@@ -207,3 +207,25 @@ Phần thử nghiệm code nằm trong bản sao riêng. Diff để người ph�
 ```
 
 Bảng xếp hạng xác nhận **hạng 25**, tổng margin **€31.548,97**, **97,57% đúng hạn** và **864 đơn**. Đội dẫn đầu Juhus đạt €80.030,02 và 97,48% trên 1.866 đơn. Margin trung bình là €36,52/đơn cho Team co Tai và €42,89/đơn cho Juhus. Chênh lệch số đơn là điểm cần ưu tiên, với ngưỡng giao đúng hạn theo từng tuần. Vòng này đã hết năm lượt.
+
+## Practice trên bản tích hợp của nhóm
+
+Bản thử nghiệm lấy từ `origin/work/dispatcher-profit` tại `5e5e4ad`, áp dụng diff production và test bỏ reprice trùng của `origin/work/dispatcher-reliability` tại `f997df7`. Hai nhánh chưa vào `origin/main` (`5f33186`). Không có nhánh notes riêng trong refs đã fetch. Cả hai bản đối chứng dùng cấu hình Cost đầy đủ ở trên và đạt 29/29 test offline trên Node 24.22.3. Ứng viên thêm đúng diff giá sàn tuyến dài trong mục ranking. Các thay đổi dispatcher chỉ nằm trong bản sao kiểm chứng.
+
+| Seed | World tích hợp | Margin | Đúng hạn | Đơn thắng | World có giá sàn | Margin | Đúng hạn | Đơn thắng |
+| --- | --- | ---: | ---: | ---: | --- | ---: | ---: | ---: |
+| study-2 | `w2eba8c27802efaf01b50` | €3,020.26 | 90.86% | 175 | `w48451f2940ca4be00241` | €4,041.52 | 92.82% | 195 |
+| quote-unseen-01 | `we0ad91803149eb9f83d5` | €8,328.47 | 96.77% | 217 | `w65500fa10a8a72a67e40` | €8,021.14 | 97.16% | 211 |
+| quote-unseen-02 | `w7e49127e5226b7493fda` | €6,120.56 | 99.43% | 176 | `wf1614442459f8ebcfa2e` | €6,713.95 | 100.00% | 178 |
+| integration-20261114-a | `wc1ab24ef956902c6e00b` | €3,531.18 | 92.81% | 139 | `w4093e0df37c211ab2764` | €3,365.38 | 92.03% | 138 |
+| integration-20261114-b | `w7dc9d051e12e8e62b8d1` | €10,366.16 | 98.88% | 268 | `wf16a27ac1b6fb674dcd3` | €11,377.32 | 99.26% | 270 |
+
+- Ba seed đã biết: €17,469.29 → €18,776.61 (+7.48%).
+- Hai seed mới: €13,897.34 → €14,742.70 (+6.08%).
+
+Lượt dưới 90% hoặc không đủ điều kiện: không có.
+Tổng action refusals: 0. Tổng số lượt có đơn chưa giao: 0.
+
+Ứng viên đạt €33.519,31 trên năm seed, cao hơn 6,86% so với €31.366,63 của bản tích hợp đối chứng. Mức đúng hạn thấp nhất là 92,03% so với 90,86%; trên riêng hai seed mới, mức thấp nhất giảm từ 92,81% xuống 92,03%. Kết quả tốt nhất là €11.377,32 với 270 đơn và 99,26% đúng hạn. Seed mới còn lại giảm €165,80, vì vậy giá sàn theo tuyến là ứng viên tốt hơn về tổng margin nhưng cần tiếp tục kiểm chứng độ ổn định.
+
+Để tái lập, xuất source ở `5e5e4ad` vào thư mục riêng, áp dụng diff `git diff 5f33186 f997df7 -- desk.ts test/dispatch-reliability.test.ts` cho cả hai bản, rồi áp dụng diff giá sàn trong mục trước vào bản ứng viên với `git apply --unidiff-zero`. Chạy `evaluate.ts` ở level 8 với cấu hình Cost và cùng seed từ bảng trên. Sau khi fetch lại, nhánh `work/env-setup` ở `81f4040` chỉ thêm thiết lập môi trường và tài liệu, nên không đổi bản dispatcher đã kiểm chứng.
