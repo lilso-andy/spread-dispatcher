@@ -2,25 +2,31 @@ import { parseArgs } from "node:util"
 import { readdir, readFile, writeFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { RunResult } from "../runner.ts"
+import { ActionBucketReplay } from "./rate-replay.ts"
 
 const { values } = parseArgs({options:{baseline:{type:"string"},candidate:{type:"string"},out:{type:"string"}}})
 if (!values.baseline || !values.candidate) throw new Error("Usage: node tools/compare-dispatch.ts --baseline DIR --candidate DIR [--out FILE]")
 
 async function load(folder: string) {
-  const result = new Map<string, {run:RunResult; actions:Record<string,number>; offers:Record<string,number>}>()
+  const result = new Map<string, {run:RunResult; actions:Record<string,number>; offers:Record<string,number>; rateReplay:{maxLagSeconds:number;lateQuotes:number}}>()
   for (const file of (await readdir(folder)).filter(f=>f.endsWith(".result.json"))) {
     const run = JSON.parse(await readFile(join(folder,file),"utf8")) as RunResult
     if (!run.score || !run.options.seed) throw new Error(`Incomplete/unseeded run in ${file}`)
     if (result.has(run.options.seed)) throw new Error(`Duplicate seed ${run.options.seed} in ${folder}`)
     const actions: Record<string,number> = {}, offers: Record<string,number> = {}
+    const requests=new Map<string,number>(), bucket=new ActionBucketReplay()
     const journal = await readFile(join(folder,`${run.worldId}.jsonl`),"utf8")
     for (const line of journal.split("\n")) {
       if (!line) continue
       const row=JSON.parse(line)
-      if (row.type==="action") actions[row.action.type]=(actions[row.action.type]??0)+1
+      if(row.type==="event"&&row.event.kind==="price_request")requests.set(row.event.request.id,row.event.request.respondBy)
+      if (row.type==="action") {
+        actions[row.action.type]=(actions[row.action.type]??0)+1
+        bucket.take(row.at,row.action.type==="quote"?requests.get(row.action.requestId):undefined)
+      }
       if (row.type==="event"&&row.event.kind==="offer_answered") offers[row.event.answer]=(offers[row.event.answer]??0)+1
     }
-    result.set(run.options.seed,{run,actions,offers})
+    result.set(run.options.seed,{run,actions,offers,rateReplay:{maxLagSeconds:bucket.maxLagSeconds,lateQuotes:bucket.lateQuotes}})
   }
   return result
 }
@@ -29,7 +35,7 @@ if (!baseline.size || baseline.size!==candidate.size || [...baseline.keys()].som
 const pairs=[...baseline.keys()].sort().map(seed=>{
   const a=baseline.get(seed)!, b=candidate.get(seed)!
   if (a.run.options.level!==b.run.options.level || JSON.stringify(a.run.config)!==JSON.stringify(b.run.config)) throw new Error(`Config/level mismatch for ${seed}`)
-  return {seed,baseline:{worldId:a.run.worldId,score:a.run.score,actions:a.actions,offerAnswers:a.offers,actionRefusals:a.run.actionRefusals,elapsedSeconds:a.run.elapsedSeconds},candidate:{worldId:b.run.worldId,score:b.run.score,actions:b.actions,offerAnswers:b.offers,actionRefusals:b.run.actionRefusals,elapsedSeconds:b.run.elapsedSeconds},marginDeltaCents:b.run.score.marginCents-a.run.score.marginCents,onTimeDelta:b.run.score.onTimeShare-a.run.score.onTimeShare}
+  return {seed,baseline:{worldId:a.run.worldId,score:a.run.score,actions:a.actions,offerAnswers:a.offers,rateReplay:a.rateReplay,actionRefusals:a.run.actionRefusals,elapsedSeconds:a.run.elapsedSeconds},candidate:{worldId:b.run.worldId,score:b.run.score,actions:b.actions,offerAnswers:b.offers,rateReplay:b.rateReplay,actionRefusals:b.run.actionRefusals,elapsedSeconds:b.run.elapsedSeconds},marginDeltaCents:b.run.score.marginCents-a.run.score.marginCents,onTimeDelta:b.run.score.onTimeShare-a.run.score.onTimeShare}
 })
 function summarize(side:"baseline"|"candidate") {
   const orders=pairs.reduce((n,p)=>n+p[side].score.wonOrders,0)
@@ -44,6 +50,8 @@ function summarize(side:"baseline"|"candidate") {
     offers:pairs.reduce((n,p)=>n+(p[side].actions.offer??0),0),
     reprices:pairs.reduce((n,p)=>n+(p[side].actions.reprice??0),0),
     refusedActions:pairs.reduce((n,p)=>n+p[side].actionRefusals,0),
+    offlineMaxActionLagSeconds:Math.max(...pairs.map(p=>p[side].rateReplay.maxLagSeconds)),
+    offlineLateQuotes:pairs.reduce((n,p)=>n+p[side].rateReplay.lateQuotes,0),
   }
 }
 const report={level:pairs.length?baseline.values().next().value!.run.options.level:8,config:baseline.values().next().value!.run.config,seeds:pairs.map(p=>p.seed),baseline:summarize("baseline"),candidate:summarize("candidate"),pairs}
