@@ -4,6 +4,7 @@
   "type": "module",
   "engines": { "node": ">=22.18" },
   "scripts": {
+    "setup": "node setup-env.ts",
     "start": "node --env-file-if-exists=.env dispatch.ts",
     "test": "node --test test/*.test.ts",
     "evaluate": "node --env-file-if-exists=.env evaluate.ts"
