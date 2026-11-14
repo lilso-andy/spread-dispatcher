@@ -2,6 +2,8 @@
 
 ## Full season 7 ranking request
 
+Sequential controller `64768` now continues incomplete levels across a round change if needed, after finishing any existing world. It records each world's season and completes a five-week set at one level before descending. Level 8 is complete in season 7 and will not be repeated by this controller. Level 7 run 3 completed at €7,687.86, 97.93% on time, all delivered, six refused direct-offer actions. Run 4 is active. The recovery experiment's level 7 baseline on `spread-1` matched the selected source's €5,012.15 exactly and the candidate arm has begun.
+
 Level 8 is COMPLETE and officially ranked in season 7. Five of five weeks qualified, total margin €46,727.06, weighted on-time share 96.96%, rank 48 at verification. All orders delivered in every week, zero refused actions at level 8. The serial controller has advanced to level 7 run 3. Baseline practice `w0185db3150ff65a64ecb` also began for the isolated recovery experiment after the slot became free. The live board and full results are recorded in `docs/ranking-s7-full.json`.
 
 The user changed scheduling to one level at a time, descending from 8. The six-worker allocation process was stopped with its exit confirmed. Serial session `71491` now owns `runs/rank7-full/manifest.json`. It resumes level 8 run 3 and completes that level before proceeding to 7, 6, 5, 4, 3, 2 and 1. Existing unfinished worlds at other levels are parked for that controller. They retain their original source, configs and output folders. At this checkpoint levels 7 and 8 have two qualified final weeks each. Level 8 run 2 earned €11,088.08 at 99.25% on time. Prospective improvements are evaluated separately before use.

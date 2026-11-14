@@ -3,7 +3,7 @@
   "name": "Saturday 15:00",
   "team": "team-co-tai",
   "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
-  "verifiedAt": "2026-11-14T15:33:53.660Z",
+  "verifiedAt": "2026-11-14T15:40:46.298Z",
   "complete": false,
   "levels": [
     {
@@ -174,7 +174,7 @@
     {
       "level": 7,
       "rank": null,
-      "played": 2,
+      "played": 3,
       "qualified": false,
       "marginCents": null,
       "onTimeShare": null,
@@ -250,12 +250,48 @@
             "release_fee": -6067,
             "failed_visit": -23980
           }
+        },
+        {
+          "worldId": "w138acc119272347afa1a",
+          "run": 3,
+          "score": {
+            "marginCents": 768786,
+            "revenueCents": 2932400,
+            "marginShare": 0.2621695539489838,
+            "wonOrders": 242,
+            "onTimeShare": 0.9793388429752066,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "leaderboardVerified": true,
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.02,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 6,
+          "journalLedgerGapCents": 0,
+          "ledgerCents": {
+            "revenue": 2932400,
+            "driver_fee": -2121131,
+            "release_fee": -19443,
+            "late_refund": -23040
+          }
         }
       ]
     },
     {
       "level": 8,
-      "rank": 48,
+      "rank": 51,
       "played": 5,
       "qualified": true,
       "marginCents": 4672706,
