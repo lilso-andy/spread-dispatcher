@@ -521,13 +521,115 @@
       "marginPerWonOrderEUR": 10.388976982097187,
       "negativeContributionCount": 80,
       "negativeContributionCents": -233823
+    },
+    {
+      "side": "baseline",
+      "level": 2,
+      "seed": "pricing80-service-holdout-m",
+      "worldId": "wa3c1316a73629ee82e83",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": null,
+      "deskSha256": "757636d15ce56ead10cbe2911426cea201d31c2d7b4ec0bc419affb712e19416",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-2/pricing80-service-holdout-m/baseline",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-ab4f5b1",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 2,
+      "score": {
+        "marginCents": 889093,
+        "revenueCents": 4600700,
+        "marginShare": 0.19325167909231203,
+        "wonOrders": 724,
+        "onTimeShare": 0.9751381215469613,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 201.957,
+      "ledgerCents": {
+        "revenue": 4600700,
+        "driver_fee": -3670146,
+        "release_fee": -2711,
+        "late_refund": -38750
+      },
+      "declines": {
+        "insufficient safe capacity, time or margin": 273
+      },
+      "marginPerWonOrderEUR": 12.280290055248619,
+      "negativeContributionCount": 43,
+      "negativeContributionCents": -74011
+    },
+    {
+      "side": "candidate",
+      "level": 2,
+      "seed": "pricing80-service-holdout-m",
+      "worldId": "w0851f7cef7dc45b85cce",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": "analysis/training-service-budget.patch",
+      "deskSha256": "fb893f968ddd87ac2bdfc0fe07246b3f717532c17cdc57581e78da6452aa328a",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-2/pricing80-service-holdout-m/candidate",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-service08",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 3,
+      "score": {
+        "marginCents": 889093,
+        "revenueCents": 4600700,
+        "marginShare": 0.19325167909231203,
+        "wonOrders": 724,
+        "onTimeShare": 0.9751381215469613,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 202.923,
+      "ledgerCents": {
+        "revenue": 4600700,
+        "driver_fee": -3670146,
+        "release_fee": -2711,
+        "late_refund": -38750
+      },
+      "declines": {
+        "insufficient safe capacity, time or margin": 273
+      },
+      "marginPerWonOrderEUR": 12.280290055248619,
+      "negativeContributionCount": 43,
+      "negativeContributionCents": -74011
     }
   ],
   "controller": {
-    "pid": 18067,
+    "pid": 18169,
     "level": 2,
-    "seed": "full-check-b",
-    "started": "2026-11-14T11:20:49.789Z",
+    "seed": "pricing80-service-holdout-m",
+    "started": "2026-11-14T11:22:58.577Z",
     "state": "stopped"
   }
 }
