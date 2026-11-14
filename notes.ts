@@ -45,6 +45,9 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   const facts: NoteFacts = { manual: false, plates: false, summerTyres: false, uncertain: false, reasons: [] }
   if (!note?.text.trim()) return facts
   let text = note.text.normalize("NFKC").toLowerCase()
+  // Explicit negative stop statements preserve their side and reverse the bound.
+  text = text.replace(/\bno\s+(pickup|pick up|collection|handover|delivery)\s+(before|until|after)\b/g,
+    (_match, side: string, direction: string) => `${side} ${direction === "after" ? "before" : "not before"}`)
   // Observed in completed practice R00629: the duplicated vowel still means tomorrow.
   text = text.replace(/(?<![\p{L}\p{N}_])huuomenna(?![\p{L}\p{N}_])/gu, "huomenna")
   const pieces = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/)
@@ -83,7 +86,7 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
     const harmless = /^(?:kiitos|tack|thank you|thanks|ok)[.! ]*$/.test(clause.trim())
     if (equipmentOnly || harmless) { recognized = true; continue }
     let clauseRecognized = false
-    if (/\b(?:provided|unless|if|when|jos|kun|om|när)\b/.test(clause)) facts.reasons.push("conditional constraint requires review")
+    if (/\b(?:provided|unless|if|when|jos|kun|om|när|except|paitsi|utom|förutom)\b/.test(clause)) facts.reasons.push("conditional constraint requires review")
     if ([...clause.matchAll(/\b\d{1,2}(?:[.:]\d{2})?\s*[-–]\s*\d{1,2}(?:[.:]\d{2})?\b/g)].length > 1) facts.reasons.push("multiple opening ranges cannot be represented")
     // Clause-wide direction/date matching cannot safely associate competing facts.
     const directionText = clause.replace(/(?:the )?day after tomorrow/g, "tomorrow")

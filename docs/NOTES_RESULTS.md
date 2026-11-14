@@ -362,7 +362,7 @@ Full configurations:
 
 ### Updated teammate policy comparison
 
-Status 8/16 matched pairs; in progress. Two seeds allocated to every level1–8. Source 78b0670e0844b9fa66fcee7991ab28cc3563ff35 ; teammate config revision 62a128663666537889fcef8f2d09be44018739d1. Configuration-only comparison on the same inflection-fixed parser; levels2/3/5 use the newly published files and level8 compares Balanced with existing Cost.
+Status 16/16 matched pairs; complete. Two seeds allocated to every level1–8. Source 78b0670e0844b9fa66fcee7991ab28cc3563ff35 ; teammate config revision 62a128663666537889fcef8f2d09be44018739d1. Configuration-only comparison on the same inflection-fixed parser; levels2/3/5 use the newly published files and level8 compares Balanced with existing Cost.
 
 Full configurations:
 
@@ -577,10 +577,18 @@ Full configurations:
 | 6 | notes-policy-12 | wba31c9c5dc8c304baa68 | we78d746b3142927fedf5 | 2394.64 | 2394.64 | 0.00 | 100.00% | 100.00% | true | 0/0 |
 | 7 | notes-policy-12 | wc1a1b863a11ce5c85115 | w62da7514abe345a13728 | 4748.80 | 4748.80 | 0.00 | 97.24% | 97.24% | true | 0/0 |
 | 8 | notes-policy-12 | wb0b714dfdda86a309463 | wb298abe8ebe409cd485b | 6589.59 | 9295.26 | 2705.67 | 99.12% | 98.08% | true | 0/0 |
+| 1 | notes-policy-13 | w8bbc283b128db6b72ec1 | w904b0f3e7a85f80ac00a | 2366.90 | 2366.90 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 2 | notes-policy-13 | w64f355bcef24307fd878 | wa98548c8cfb2cb841918 | 2479.21 | 2882.94 | 403.73 | 100.00% | 100.00% | true | 0/0 |
+| 3 | notes-policy-13 | w5e3d31d80bded35fdd94 | web898fc43dd0314e844e | 2494.04 | 2651.93 | 157.89 | 100.00% | 100.00% | true | 0/0 |
+| 4 | notes-policy-13 | w3398b71060509715fe9b | w3b1a42395c06a0ba84cb | 1772.67 | 1772.67 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 5 | notes-policy-13 | w23ea9901117ef77be3e8 | wca856f284bca77e1058f | 1198.65 | 1017.37 | -181.28 | 97.56% | 97.50% | true | 0/0 |
+| 6 | notes-policy-13 | wdeae915b61b6a765dc6e | w925db5fc2c26f173c600 | 1226.65 | 1226.65 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 7 | notes-policy-13 | wb33ae38a41c18ca5967b | w5b357eb38741af641e65 | 2529.47 | 2529.47 | 0.00 | 97.75% | 97.75% | true | 0/0 |
+| 8 | notes-policy-13 | wd90a9c3ab200215935f8 | w14daf65fb97a57cf952f | 1887.81 | 3360.90 | 1473.09 | 93.51% | 96.04% | true | 0/0 |
 
 ### Finnish destination-side correction
 
-Status 7/16 matched pairs; in progress. Two seeds allocated to every level1–8. Source 78b0670e0844b9fa66fcee7991ab28cc3563ff35 -> a9d06c8872c203096398c392f7b354e727b7b744; teammate config revision 62a128663666537889fcef8f2d09be44018739d1. Code-only comparison, same per-level configuration on both sides; kohde destination hours must never overwrite pickup hours.
+Status 15/16 matched pairs; in progress. Two seeds allocated to every level1–8. Source 78b0670e0844b9fa66fcee7991ab28cc3563ff35 -> a9d06c8872c203096398c392f7b354e727b7b744; teammate config revision 62a128663666537889fcef8f2d09be44018739d1. Code-only comparison, same per-level configuration on both sides; kohde destination hours must never overwrite pickup hours.
 
 Full configurations:
 
@@ -694,6 +702,14 @@ Full configurations:
 | 5 | notes-side-14 | wec7a4f8f38ac0cf6cdd2 | w7812d39f6172225c6beb | 575.47 | 575.47 | 0.00 | 100.00% | 100.00% | true | 0/0 |
 | 6 | notes-side-14 | w50897b8eedb708f2b32e | we57e4181615e3d6550e0 | 543.30 | 543.30 | 0.00 | 100.00% | 100.00% | true | 0/0 |
 | 7 | notes-side-14 | w317cc7ab56ca499d25df | w24f75a4b7e7ee7911cb8 | 1749.63 | 1749.63 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 8 | notes-side-14 | w67116e3fc73e1c08589b | wd4c2dce4189b5e06f6ff | 2596.76 | 2596.76 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 1 | notes-side-15 | w77fb9297b5eb65e2837c | wf7f6e69eb04f67171b4b | 2758.92 | 2758.92 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 2 | notes-side-15 | w04c323cafd89b47ca32a | w3ca23ed7478a1e6c720a | 3283.36 | 3283.36 | 0.00 | 99.71% | 99.71% | true | 0/0 |
+| 3 | notes-side-15 | w9f6763959a0299e54b97 | wf26b3f9c0109c4aa4b34 | 2943.73 | 2943.73 | 0.00 | 99.34% | 99.34% | true | 0/0 |
+| 4 | notes-side-15 | wd53504fe2db78956e762 | w6e131cd01057c84c31f3 | 2116.49 | 2116.49 | 0.00 | 98.97% | 98.97% | true | 0/0 |
+| 5 | notes-side-15 | w54f948cabe58fce36c5b | w22a767123d518091960b | 1784.80 | 1784.80 | 0.00 | 98.86% | 98.86% | true | 0/0 |
+| 6 | notes-side-15 | w549f48bfd5edf0e89b20 | wa8179f1789a14e4658b3 | 2153.91 | 2153.91 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 7 | notes-side-15 | w7706d3196a2c54b7f7b0 | w0ec96c931d9aa6433875 | 4376.20 | 4376.20 | 0.00 | 98.42% | 98.42% | true | 0/0 |
 
 ### Selection after completed contact and inflection comparisons
 
@@ -748,3 +764,13 @@ Concrete acceptance cases for the planner owner:
 Observed completed-world diagnostic: notes-contact-08 level8 R00880 says “Liike kiinni klo 16.30, haettava ennen sitä”. Stated pickup is 09:00–18:00; reveal actual weekday close is 16:30. Current parser emits absolute pickupTo6750 and no recurring hours. Its original-day restriction is conservative, but this does not prove later recovery visits respect real recurring hours. This is a handoff example, not a claim that the new fields are implemented. Keep this note uncertain if its side/recurrence cannot be grounded under the agreed grammar.
 
 No automatic merge. Other agents keep ownership of dispatcher/planner/pricing files. Explicit recurring closing-only forms remain uncertain when the present interface cannot express them; the implicit closing example above still needs coordinator review. No raw logs or credentials are included.
+
+## Immediate GitHub checkpoint requested by user
+
+Current checkpoint includes negative-bound candidate 60e940b: explicit No pickup before/until creates a lower bound, No pickup after creates an upper bound, and except/paitsi/utom/förutom clauses remain uncertain. New tests failed before the fix and pass afterward. Current personal-branch tests: 53/53; integrated candidate: 72/72. Its server comparison is queued, not yet a profit-qualified release. Existing server jobs use isolated frozen worktrees and are not changed by this checkpoint.
+
+Latest completed policy batch: 16/16 pairs, EUR43,304.07 -> EUR48,413.23 (+EUR5,109.16), all qualified. Cost at level8 increased both fresh seeds: +EUR2,705.67 and +EUR1,473.09, total +EUR4,178.76; worst candidate service96.04%. The new level5 lower-margin-floor configuration lost EUR95.23 overall across its two seeds, so the next batch keeps the earlier competitive level5 config. This is per-level configuration selection evidence, not a global optimum guarantee.
+
+Destination-side batch is still finishing its last pair; completed pairs so far are ties. The queued negative-bound batch waits for both policy and side batches, chooses only configurations eligible on both prior seeds with zero refusals, then validates on fresh notes-negation-16/17, two pairs per every level1–8. Do not relabel old results as this new source.
+
+Practice only. No ranking/final and no merge. Team requested planner contract handoff only; planner.ts remains untouched. All source changes remain notes.ts, test/notes.test.ts and this report. Credentials/raw logs remain ignored.
