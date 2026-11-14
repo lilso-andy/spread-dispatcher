@@ -2,6 +2,10 @@
 
 ## Ranking recovery after round change
 
+Recovery is complete. All six previously interrupted season 6 worlds ended and were independently checked against the public board. Final margins were €8,882.90 at level 1, €8,406.18 at level 2, €8,984.92 at level 3, €2,721.85 at level 6, €8,142.44 at level 7 and €10,046.25 at level 8. Every week qualified, all orders delivered, zero refused actions. This is a partial season because the round changed before the remaining runs were created.
+
+The subsequent explicitly requested season 7 trial is complete. Level 7 run 1 earned €647.83 with 95.24% on time. Level 8 run 1 earned €9,153.87 with 94.31% on time. Both fully delivered, zero refused actions. Exact configs and server/board verified results are in `docs/ranking-s7-trial.json`. Neither reached €16,000. All recovery and trial controllers have stopped. No owned unfinished worlds remain from these controllers.
+
 Live rules, API and leaderboard code checked on 14 November still expose eight levels. Season 7 Saturday 15:00 is current. Season 6 has closed for new runs. Six season 6 controllers were found stopped and their exact worlds were resumed only after checking the original processes had ended. The resumed level 7 run 2 finished at €8,142.44 with 97.78% on time. Level 8 run 2 finished at €10,046.25 with 95.29% on time. Both delivered every order. Level 1, 2, 3 and 6 runs are still being monitored. `docs/ranking-s6-sweep.json` contains server and leaderboard verified completed results. Resume ownership is recorded in `prompts/resume-16000.md`.
 
 ## Objective

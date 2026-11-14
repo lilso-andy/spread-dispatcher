@@ -1,7 +1,7 @@
 {
   "season": 6,
   "team": "team-co-tai",
-  "verifiedAt": "2026-11-14T14:35:12.223Z",
+  "verifiedAt": "2026-11-14T14:50:12.355Z",
   "sweepSource": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
   "levels": [
     {
@@ -135,7 +135,7 @@
     {
       "level": 3,
       "rank": null,
-      "played": 2,
+      "played": 3,
       "qualified": false,
       "officialMarginCents": null,
       "officialOnTimeShare": null,
@@ -165,6 +165,34 @@
             "undeliveredShare": 0,
             "ranked": true
           }
+        },
+        {
+          "run": 3,
+          "worldId": "wadb4ac4593e2e0274f57",
+          "score": {
+            "marginCents": 898492,
+            "revenueCents": 5009700,
+            "marginShare": 0.17935046010739167,
+            "wonOrders": 765,
+            "onTimeShare": 0.9712418300653595,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.6,
+            "feeMultiplier": 0.86,
+            "emergencyMultiplier": 1.65,
+            "marginReserve": 0.02,
+            "minMarginCents": 200,
+            "capacityFraction": 0.5,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": true,
+            "offers": true
+          },
+          "actionRefusals": 0
         }
       ]
     },
