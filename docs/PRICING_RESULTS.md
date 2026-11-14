@@ -250,32 +250,44 @@ Level 1–3 dùng giá danh sách cố định. Ứng viên thử sàn đóng g�
 
 | Level | Cấu hình | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| 1 | holdout-baseline | multilevel-holdout-b | `w9cfd6273bcf3a1ea0431` | 213383 | 185 | 98.92% | 0.00% | Có | 0 |
 | 1 | followup | multilevel-holdout-b | `w83d280b4898a76723fd7` | 272199 | 270 | 99.63% | 0.00% | Có | 0 |
 | 1 | baseline | multilevel-verify-a | `wfeac127c2fea99e4f9ca` | 194218 | 176 | 99.43% | 0.00% | Có | 0 |
 | 1 | candidate | multilevel-verify-a | `w448154165056fe1341fd` | 254406 | 231 | 99.57% | 0.00% | Có | 0 |
 | 1 | baseline | spread-1 | `waf056c70795294114e9e` | 218244 | 196 | 99.49% | 0.00% | Có | 0 |
 | 1 | candidate | spread-1 | `wd6fa064dfc4d6d1e7f0e` | 292595 | 269 | 99.63% | 0.00% | Có | 0 |
+| 2 | holdout-baseline | multilevel-holdout-b | `w81695e9ae45c00bc9731` | 215498 | 185 | 98.92% | 0.00% | Có | 0 |
 | 2 | followup | multilevel-holdout-b | `wb81d0e13cf95713f8981` | 281042 | 271 | 98.89% | 0.00% | Có | 0 |
 | 2 | baseline | multilevel-verify-a | `wc17a377a5e6586ed5dcc` | 191191 | 175 | 99.43% | 0.00% | Có | 0 |
 | 2 | candidate | multilevel-verify-a | `w53389aa0a56fdc01c1d7` | 259157 | 231 | 99.57% | 0.00% | Có | 0 |
 | 2 | baseline | spread-1 | `w9849dcd05e70323de31c` | 227432 | 197 | 99.49% | 0.00% | Có | 0 |
 | 2 | candidate | spread-1 | `w7a3ab178497abf69dfaf` | 303009 | 270 | 99.63% | 0.00% | Có | 0 |
+| 3 | holdout-baseline | multilevel-holdout-b | `w4b9123400b63adbdec9e` | 224179 | 185 | 98.92% | 0.00% | Có | 0 |
+| 3 | followup | multilevel-holdout-b | `we30d5a158a285b9c8ab6` | 287528 | 271 | 98.89% | 0.00% | Có | 0 |
 | 3 | baseline | multilevel-verify-a | `wc0e7142bc502ebdc547d` | 188207 | 175 | 99.43% | 0.00% | Có | 0 |
 | 3 | candidate | multilevel-verify-a | `w260aec1d326caa4821e2` | 262295 | 232 | 99.57% | 0.00% | Có | 0 |
 | 3 | baseline | spread-1 | `w49b612bc85deb0aa606d` | 230153 | 197 | 99.49% | 0.00% | Có | 0 |
 | 3 | candidate | spread-1 | `w9f0b4dd6ec0dce417bb8` | 308464 | 270 | 99.63% | 0.00% | Có | 0 |
+| 4 | holdout-baseline | multilevel-holdout-b | `w540b786681f328a67dfe` | 135595 | 49 | 100.00% | 0.00% | Có | 0 |
+| 4 | followup | multilevel-holdout-b | `wce8e32a8914b2aaa273e` | 153907 | 62 | 100.00% | 0.00% | Có | 0 |
 | 4 | baseline | multilevel-verify-a | `w3f7de264b7e359165aaa` | 265454 | 84 | 100.00% | 0.00% | Có | 0 |
 | 4 | candidate | multilevel-verify-a | `wef46085217d778faacac` | 282401 | 106 | 100.00% | 0.00% | Có | 0 |
 | 4 | baseline | spread-1 | `wd0a335200ca918d84f6e` | 177888 | 76 | 100.00% | 0.00% | Có | 0 |
 | 4 | candidate | spread-1 | `w2d86d6ea734dff1a4af4` | 210654 | 108 | 99.07% | 0.00% | Có | 0 |
+| 5 | holdout-baseline | multilevel-holdout-b | `w375826ea418c07e1e849` | 93205 | 31 | 100.00% | 0.00% | Có | 0 |
+| 5 | followup | multilevel-holdout-b | `w2a8f2eef4297af0200b9` | 100551 | 38 | 100.00% | 0.00% | Có | 0 |
 | 5 | baseline | multilevel-verify-a | `wd3e47d4a3ab2d68030ce` | 186047 | 57 | 100.00% | 0.00% | Có | 0 |
 | 5 | candidate | multilevel-verify-a | `w2b88f6818edb85c8509a` | 202286 | 76 | 98.68% | 0.00% | Có | 0 |
 | 5 | baseline | spread-1 | `w0629b64ed4461ce072b8` | 120436 | 54 | 100.00% | 0.00% | Có | 0 |
 | 5 | candidate | spread-1 | `wc47bea40bedce8e4b879` | 137788 | 71 | 100.00% | 0.00% | Có | 0 |
+| 6 | holdout-baseline | multilevel-holdout-b | `w777c73fa75030070ba96` | 95293 | 32 | 100.00% | 0.00% | Có | 0 |
+| 6 | followup | multilevel-holdout-b | `w176f258d8eab8e574d3b` | 102560 | 39 | 100.00% | 0.00% | Có | 0 |
 | 6 | baseline | multilevel-verify-a | `w945466937096bc81cf0e` | 239020 | 75 | 100.00% | 0.00% | Có | 0 |
 | 6 | candidate | multilevel-verify-a | `w199e75a19fa75c5d70dc` | 251664 | 95 | 100.00% | 0.00% | Có | 0 |
 | 6 | baseline | spread-1 | `w29dee8770332484811e3` | 131043 | 58 | 100.00% | 0.00% | Có | 0 |
 | 6 | candidate | spread-1 | `wec1ef904ca510bfd711b` | 148050 | 73 | 100.00% | 0.00% | Có | 0 |
+| 7 | holdout-baseline | multilevel-holdout-b | `wa44c7c76428399984de5` | 203704 | 70 | 100.00% | 0.00% | Có | 0 |
+| 7 | followup | multilevel-holdout-b | `w2e41710d6fd324ffa538` | 369062 | 129 | 100.00% | 0.00% | Có | 0 |
 | 7 | baseline | multilevel-verify-a | `w9a7cbd90baab93d78056` | 435946 | 154 | 98.70% | 0.00% | Có | 0 |
 | 7 | candidate | multilevel-verify-a | `w9cf916439c76596720dd` | 523589 | 207 | 99.03% | 0.00% | Có | 0 |
 | 7 | baseline | spread-1 | `wf22488974534b7bae079` | 257866 | 101 | 100.00% | 0.00% | Có | 0 |
@@ -295,7 +307,23 @@ Level 1–3 dùng giá danh sách cố định. Ứng viên thử sàn đóng g�
 
 ### Cấu hình đầy đủ
 
-- followup, level 1, 2 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- holdout-baseline, level 1, 2, 3, 4, 5, 6, 7 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.2, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- followup, level 1, 2, 3 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
 - baseline, level 1, 2, 3, 4, 5, 6, 7 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.2, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
 - candidate, level 1, 2, 3 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- followup, level 4, 5, 6, 7 · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
 - candidate, level 4, 5, 6, 7 · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+
+### Đối chứng seed mới multilevel-holdout-b
+
+| Level | Balanced (cent) | Ứng viên (cent) | Chênh lệch | Đúng hạn Balanced | Đúng hạn ứng viên |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 1 | 213383 | 272199 | +27.56% | 98.92% | 99.63% |
+| 2 | 215498 | 281042 | +30.42% | 98.92% | 98.89% |
+| 3 | 224179 | 287528 | +28.26% | 98.92% | 98.89% |
+| 4 | 135595 | 153907 | +13.50% | 100.00% | 100.00% |
+| 5 | 93205 | 100551 | +7.88% | 100.00% | 100.00% |
+| 6 | 95293 | 102560 | +7.63% | 100.00% | 100.00% |
+| 7 | 203704 | 369062 | +81.18% | 100.00% | 100.00% |
+
+Ứng viên tăng margin ở 7/7 level trên seed mới. Tỷ lệ đủ điều kiện ở cả hai cấu hình: 7/7 và 7/7. Mỗi level chỉ được đo trên ba seed, nên kết quả xác định cấu hình tốt nhất trong các phương án đã thử.
