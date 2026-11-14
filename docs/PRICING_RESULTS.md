@@ -418,3 +418,124 @@ Cấu hình đầy đủ cho từng lượt.
 - 03-marginReserve · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.1, "minMarginCents": 1100, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
 - 04-minLeadMinutes · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1100, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 240, "strictNotes": true, "offers": true}`
 - 05-emergencyMultiplier · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.1, "marginReserve": 0.13, "minMarginCents": 1100, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+
+### Level 7
+
+| Lượt | So với | Thay đổi | Margin (cent) | Thấp nhất | Đủ điều kiện |
+| --- | --- | --- | ---: | ---: | ---: |
+| baseline | — | Cấu hình đã công bố | 871126 | 98.98% | 2/2 |
+| 01-quoteMultiplier | baseline | `quoteMultiplier=1.31` | 851358 | 98.78% | 2/2 |
+| 02-feeMultiplier | baseline | `feeMultiplier=1.03` | 853986 | 97.77% | 2/2 |
+| 03-capacityFraction | baseline | `capacityFraction=0.34` | 863072 | 98.98% | 2/2 |
+| 04-minLeadMinutes | baseline | `minLeadMinutes=240` | 845587 | 98.92% | 2/2 |
+| 05-marginReserve | baseline | `marginReserve=0.1` | 863704 | 98.99% | 2/2 |
+
+Đang dẫn đầu: `baseline`.
+
+| Lượt | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| baseline | spread-1 | `wc844a3666116a78ee8c3` | 445413 | 197 | 98.98% | 0.00% | Có | 0 |
+| baseline | multilevel-holdout-b | `w7c856839b9b853fb1291` | 425713 | 149 | 100.00% | 0.00% | Có | 0 |
+| 01-quoteMultiplier | spread-1 | `w9c5dcd245077372780f0` | 470327 | 215 | 99.07% | 0.00% | Có | 0 |
+| 01-quoteMultiplier | multilevel-holdout-b | `wffaacbdd2edd2dc58f5a` | 381031 | 164 | 98.78% | 0.00% | Có | 0 |
+| 02-feeMultiplier | spread-1 | `w1eacd8f3c8084489a859` | 422812 | 179 | 97.77% | 0.00% | Có | 0 |
+| 02-feeMultiplier | multilevel-holdout-b | `wf6bd37298087f83514c3` | 431174 | 154 | 99.35% | 0.00% | Có | 0 |
+| 03-capacityFraction | spread-1 | `wd27ad5c8d5fdc1923402` | 445413 | 197 | 98.98% | 0.00% | Có | 0 |
+| 03-capacityFraction | multilevel-holdout-b | `wdec330412cbd2d52e599` | 417659 | 151 | 99.34% | 0.00% | Có | 0 |
+| 04-minLeadMinutes | spread-1 | `w8a84694ce9f5904021a1` | 444136 | 185 | 98.92% | 0.00% | Có | 0 |
+| 04-minLeadMinutes | multilevel-holdout-b | `w018d3c01a999ed9cfe5a` | 401451 | 142 | 99.30% | 0.00% | Có | 0 |
+| 05-marginReserve | spread-1 | `w2552617defb1e6b20eb7` | 463848 | 198 | 98.99% | 0.00% | Có | 0 |
+| 05-marginReserve | multilevel-holdout-b | `w4a7663b8880cfddcfb7b` | 399856 | 147 | 99.32% | 0.00% | Có | 0 |
+
+Cấu hình đầy đủ cho từng lượt.
+
+- baseline · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- 01-quoteMultiplier · `{"quoteMultiplier": 1.31, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- 02-feeMultiplier · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.03, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- 03-capacityFraction · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.34, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- 04-minLeadMinutes · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 240, "strictNotes": true, "offers": true}`
+- 05-marginReserve · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.1, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+
+### Level 1
+
+| Lượt | So với | Thay đổi | Margin (cent) | Thấp nhất | Đủ điều kiện |
+| --- | --- | --- | ---: | ---: | ---: |
+| baseline | — | Cấu hình đã công bố | 564794 | 99.63% | 2/2 |
+| 01-capacityFraction | baseline | `capacityFraction=0.32` | 567968 | 99.63% | 2/2 |
+
+Đang dẫn đầu: `01-capacityFraction`.
+
+| Lượt | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| baseline | spread-1 | `w95a850edb742aa20c43e` | 292595 | 269 | 99.63% | 0.00% | Có | 0 |
+| baseline | multilevel-holdout-b | `w60a05bdee913a1ff82f4` | 272199 | 270 | 99.63% | 0.00% | Có | 0 |
+| 01-capacityFraction | spread-1 | `w409ab1fd84da627f3e63` | 293634 | 270 | 99.63% | 0.00% | Có | 0 |
+| 01-capacityFraction | multilevel-holdout-b | `w1e306156f22d4c3a2708` | 274334 | 272 | 99.63% | 0.00% | Có | 0 |
+
+Cấu hình đầy đủ cho từng lượt.
+
+- baseline · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- 01-capacityFraction · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.32, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+
+### Level 3
+
+| Lượt | So với | Thay đổi | Margin (cent) | Thấp nhất | Đủ điều kiện |
+| --- | --- | --- | ---: | ---: | ---: |
+| baseline | — | Cấu hình đã công bố | 595992 | 98.89% | 2/2 |
+| 01-marginReserve | baseline | `marginReserve=0.07` | 650482 | 99.33% | 2/2 |
+
+Đang dẫn đầu: `01-marginReserve`.
+
+| Lượt | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| baseline | spread-1 | `wec58f3d8ce711d9e1596` | 308464 | 270 | 99.63% | 0.00% | Có | 0 |
+| baseline | multilevel-holdout-b | `w59eb5183e7838f8e6f24` | 287528 | 271 | 98.89% | 0.00% | Có | 0 |
+| 01-marginReserve | spread-1 | `w2a4f0673b33ae06a7f71` | 339857 | 316 | 99.68% | 0.00% | Có | 0 |
+| 01-marginReserve | multilevel-holdout-b | `w572858ff79803dd08531` | 310625 | 300 | 99.33% | 0.00% | Có | 0 |
+
+Cấu hình đầy đủ cho từng lượt.
+
+- baseline · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- 01-marginReserve · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.07, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+
+### Level 4
+
+| Lượt | So với | Thay đổi | Margin (cent) | Thấp nhất | Đủ điều kiện |
+| --- | --- | --- | ---: | ---: | ---: |
+| baseline | — | Cấu hình đã công bố | 364561 | 99.07% | 2/2 |
+| 01-capacityFraction | baseline | `capacityFraction=0.34` | 364561 | 99.07% | 2/2 |
+
+Đang dẫn đầu: `baseline`.
+
+| Lượt | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| baseline | spread-1 | `wd9f192c8e12a532a8598` | 210654 | 108 | 99.07% | 0.00% | Có | 0 |
+| baseline | multilevel-holdout-b | `w1bc66137469de3503384` | 153907 | 62 | 100.00% | 0.00% | Có | 0 |
+| 01-capacityFraction | spread-1 | `w1453434867b70690d114` | 210654 | 108 | 99.07% | 0.00% | Có | 0 |
+| 01-capacityFraction | multilevel-holdout-b | `w111051faa5fd50d69c0e` | 153907 | 62 | 100.00% | 0.00% | Có | 0 |
+
+Cấu hình đầy đủ cho từng lượt.
+
+- baseline · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- 01-capacityFraction · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.34, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+
+### Level 5
+
+| Lượt | So với | Thay đổi | Margin (cent) | Thấp nhất | Đủ điều kiện |
+| --- | --- | --- | ---: | ---: | ---: |
+| baseline | — | Cấu hình đã công bố | 248711 | 98.80% | 2/2 |
+| 01-minMarginCents | baseline | `minMarginCents=1100` | 289000 | 99.07% | 2/2 |
+
+Đang dẫn đầu: `01-minMarginCents`.
+
+| Lượt | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| baseline | spread-1 | `wafb118bdf04c9d5073e6` | 145929 | 83 | 98.80% | 0.00% | Có | 0 |
+| baseline | multilevel-holdout-b | `w5a65816848e0b03648ad` | 102782 | 40 | 100.00% | 0.00% | Có | 0 |
+| 01-minMarginCents | spread-1 | `w1d83631fef21ad5ffd62` | 165420 | 107 | 99.07% | 0.00% | Có | 0 |
+| 01-minMarginCents | multilevel-holdout-b | `w8324010121ad43a7ee08` | 123580 | 59 | 100.00% | 0.00% | Có | 0 |
+
+Cấu hình đầy đủ cho từng lượt.
+
+- baseline · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- 01-minMarginCents · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1100, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
