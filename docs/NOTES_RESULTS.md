@@ -213,7 +213,7 @@ Both completed pairs preserve margin and on-time share exactly. The fix is adopt
 
 ### Equal-allocation levels 1–4 configuration comparison
 
-Status: 12/20 pairs completed; in progress. Both sides use source 085b3cc57e405d13ec12fe5b0f322786a90072a2; configurations taken unchanged from teammate pricing revision 766fdab7db20569377731bee14b4842ea9dac20f. This is configuration evidence, not a parser-code effect. Level 1–3 candidate uses training; level 4 candidate uses competitive.
+Status: 20/20 pairs completed; complete. Both sides use source 085b3cc57e405d13ec12fe5b0f322786a90072a2; configurations taken unchanged from teammate pricing revision 766fdab7db20569377731bee14b4842ea9dac20f. This is configuration evidence, not a parser-code effect. Level 1–3 candidate uses training; level 4 candidate uses competitive.
 
 Full configurations:
 
@@ -272,14 +272,28 @@ Full configurations:
 | 2 | notes-cycle-05 | w580fdf07d25d7b31b312 | w50d4eebdc22d0e8c5cf9 | 1996.40 | 2562.78 | 566.38 | 98.77% | 98.68% | true | 0/0 |
 | 3 | notes-cycle-05 | wbaf73064f8d10fc10dcd | w38ce6b159ab881878404 | 1996.40 | 2562.78 | 566.38 | 98.77% | 98.68% | true | 0/0 |
 | 4 | notes-cycle-05 | wd9f316b85ae5895201c9 | w2fa73504019ab5e35fbb | 957.06 | 1122.91 | 165.85 | 100.00% | 100.00% | true | 0/0 |
+| 1 | notes-cycle-06 | w1af8cd7df31746f96a2b | wd46df06be5c008016afe | 2183.88 | 2637.56 | 453.68 | 100.00% | 99.60% | true | 0/0 |
+| 2 | notes-cycle-06 | w827ac4be7128c6ed7ac6 | w5dfcf9376be56dc8ce0d | 2066.95 | 2841.46 | 774.51 | 99.42% | 99.61% | true | 0/0 |
+| 3 | notes-cycle-06 | w9626e719e583ad53d6c1 | wffa1ae49c3b256022103 | 2094.57 | 2859.42 | 764.85 | 99.42% | 99.61% | true | 0/0 |
+| 4 | notes-cycle-06 | w95b1132bbb5416b0b754 | w848adcb734459b866935 | 842.41 | 957.64 | 115.23 | 100.00% | 100.00% | true | 0/0 |
+| 1 | notes-cycle-07 | w7aca259f2895c23dc758 | wbd58319b442318ae5fa7 | 2316.18 | 2966.20 | 650.02 | 100.00% | 99.64% | true | 0/0 |
+| 2 | notes-cycle-07 | w90b7da539ea0a93623d1 | w9299ac16b59cc265afe9 | 2290.87 | 3013.78 | 722.91 | 100.00% | 99.64% | true | 0/0 |
+| 3 | notes-cycle-07 | w8a1f783765eeffedfb11 | w1f0c2c6d95139ce9841f | 2274.30 | 3013.78 | 739.48 | 100.00% | 99.64% | true | 0/0 |
+| 4 | notes-cycle-07 | wb4c9e600817958f9b8bd | wa92c705e775c15d195b9 | 1420.88 | 1669.55 | 248.67 | 100.00% | 100.00% | true | 0/0 |
 
 ### Inflected-clock regression follow-up
 
 Completed-pair loss analysis found R00725 on notes-cycle-07 level 8: “Valmiina puoli neljästä alkaen.” The complete Unicode boundary rejected neljästä because only neljä/neljän were listed; the old parser happened to match a prefix. Baseline won this request, candidate declined it, with downstream quote differences. Snapshot 78b0670 adds explicit complete Finnish inflected hour forms. Its extraction is 5250 for request arrival 5072, exactly matching baseline reveal readyAt 5250. The malformed near-word neljästää remains uncertain. Tests: 50 main-based / 69 integrated pass. This semantic regression fix is included in the review branch; its separate paired server validation is queued behind the lower-level job, so no recovered-money claim is made yet. Ongoing contact comparisons retain their older frozen baseline/candidate, which both share the missing inflection.
 
+Inflection validation status: in progress. Source fb35ea8 -> 78b0670; same Balanced config.
+
+| Seed | Version | World | Margin EUR | On time | Eligible | Refusals |
+| --- | --- | --- | ---: | ---: | --- | ---: |
+| notes-cycle-07 | before | wb098007321dd451d386a | 5443.27 | 97.42% | true | 0 |
+
 ### Contact-notice candidate: next evenly allocated batch
 
-Status 2/16 matched pairs; in progress. Two pairs allocated to every level 1–8. Baseline fb35ea89587f655cd3f95c442eb572eb9c937e8d, candidate a3a468e93f2100341d8d549f734f2ffeff184db3; pricing configuration snapshot 62a128663666537889fcef8f2d09be44018739d1. Both sides use the same selected configuration at each level: training 1–3, competitive 4–7, Balanced 8. This comparison tests only parser changes, not configuration selection. Candidate recognizes only complete relative contact notices and declines unsupported contact clauses. Tests: 69 integrated before server validation. No adoption solely from offline tests.
+Status 12/16 matched pairs; in progress. Two pairs allocated to every level 1–8. Baseline fb35ea89587f655cd3f95c442eb572eb9c937e8d, candidate a3a468e93f2100341d8d549f734f2ffeff184db3; pricing configuration snapshot 62a128663666537889fcef8f2d09be44018739d1. Both sides use the same selected configuration at each level: training 1–3, competitive 4–7, Balanced 8. This comparison tests only parser changes, not configuration selection. Candidate recognizes only complete relative contact notices and declines unsupported contact clauses. Tests: 69 integrated before server validation. No adoption solely from offline tests.
 
 Full configurations:
 
@@ -328,6 +342,18 @@ Full configurations:
 | ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
 | 1 | notes-contact-08 | w6b7cca713fa536c6d913 | w736b645ea8916f78ff46 | 3057.38 | 3057.38 | 0.00 | 99.00% | 99.00% | true | 0/0 |
 | 2 | notes-contact-08 | w50153cab6a20bfbea1bb | w781bf7bc9878ec263684 | 3055.38 | 3055.38 | 0.00 | 99.00% | 99.00% | true | 0/0 |
+| 3 | notes-contact-08 | wfd431f20895b9f2b8cf6 | w3bc15aeae1ddae534d5d | 3097.44 | 3097.44 | 0.00 | 99.00% | 99.00% | true | 0/0 |
+| 4 | notes-contact-08 | wdd3f3961f52e0bade964 | w7e8428903b3a0308e8ea | 754.58 | 754.58 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 5 | notes-contact-08 | w5eb871a49649020d7066 | wf9a6626b26ebd8919cfb | 591.19 | 616.47 | 25.28 | 100.00% | 100.00% | true | 0/0 |
+| 6 | notes-contact-08 | wae9838fc7645bb00a746 | w4cd402cc2d0946d26c0d | 686.41 | 708.69 | 22.28 | 100.00% | 100.00% | true | 0/0 |
+| 7 | notes-contact-08 | wad80f95619affeee22d6 | w2653d756f0677f203700 | 2489.29 | 2489.29 | 0.00 | 97.39% | 97.39% | true | 0/0 |
+| 8 | notes-contact-08 | w048a88a3f18eab964760 | w2adcfbcd9d99ec43e2e3 | 3388.99 | 3242.17 | -146.82 | 95.12% | 95.20% | true | 0/0 |
+| 1 | notes-contact-09 | wf43f8f2a52aa3d1f2193 | w033c72899e2fbb7d6183 | 3100.83 | 3100.83 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 2 | notes-contact-09 | wd67afe6cc76a57f1c4ef | w72f230f571e1177047d3 | 3066.09 | 3066.09 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 3 | notes-contact-09 | w13d927209d8cadd4e934 | wb4f0796cb4c610d60200 | 3066.09 | 3066.09 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 4 | notes-contact-09 | w2380563bd4fd60014e53 | w013fa9b109264ddaa0b4 | 1217.97 | 1217.97 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+
+Contact-source partial audit at its latest checkpoint: 1752 note-bearing occurrences, 652 passing uncertainty/summer filters, 48 won requests with truth. Equipment/readiness/release/note-deadline mismatches: 0. Potential opening-hours differences requiring semantic/recovery review: 1. An absolute bound can explain some of these differences; they are diagnostics, not proven failures or a full false-safe count. The R00880 case is discussed in the planner handoff.
 
 ### Allocation scoreboard
 
@@ -335,10 +361,10 @@ Code-only parser comparisons at 5–8 and configuration comparisons at 1–4 are
 
 | Level | Completed/planned pairs | Baseline EUR | Candidate EUR | Delta EUR | Delta % | Worst candidate on time | Failed baseline/candidate weeks |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| 1 | 3/5 | 6438.34 | 8158.56 | 1720.22 | 26.72 | 99.23% | 0/0 |
-| 2 | 3/5 | 6402.97 | 8317.62 | 1914.65 | 29.90 | 98.68% | 0/0 |
-| 3 | 3/5 | 6460.89 | 8369.52 | 1908.63 | 29.54 | 98.68% | 0/0 |
-| 4 | 3/5 | 9144.41 | 9649.20 | 504.79 | 5.52 | 99.22% | 0/0 |
+| 1 | 5/5 | 10938.40 | 13762.32 | 2823.92 | 25.82 | 99.23% | 0/0 |
+| 2 | 5/5 | 10760.79 | 14172.86 | 3412.07 | 31.71 | 98.68% | 0/0 |
+| 3 | 5/5 | 10829.76 | 14242.72 | 3412.96 | 31.51 | 98.68% | 0/0 |
+| 4 | 5/5 | 11407.70 | 12276.39 | 868.69 | 7.61 | 99.22% | 0/0 |
 | 5 | 5/5 | 8306.70 | 8351.28 | 44.58 | 0.54 | 98.81% | 0/0 |
 | 6 | 5/5 | 10679.40 | 10679.40 | 0.00 | 0.00 | 99.33% | 0/0 |
 | 7 | 5/5 | 11555.79 | 11555.79 | 0.00 | 0.00 | 94.44% | 0/0 |
@@ -348,4 +374,27 @@ Code-only parser comparisons at 5–8 and configuration comparisons at 1–4 are
 
 Twenty pairs completed: EUR 55046.45 -> EUR 55086.91. Two gains, seventeen ties, one loss; the loss at level 8 / notes-cycle-07 is EUR 36.17. Per-level net effects: level 5 +EUR 44.58, level 6 unchanged, level 7 unchanged, level 8 -EUR 4.12. This does not establish consistent profit improvement across levels. The scoped corrections/Unicode changes are retained for their tested semantics and no failed delivery thresholds, not promoted as a final profit-optimal policy. Prioritize level 8 in the next balanced batch while retaining equal seed allocation. The current PR also includes the separately validated readiness typo fix; its two-pair result is listed separately above.
 
-No automatic merge. Other agents keep ownership of dispatcher/planner/pricing files. Closing-only recurring hours cannot safely be expressed with the current full-hours override type: setting an invented opening hour would replace the site opening rather than intersect it. Such notes remain uncertain pending an interface change coordinated through review. No raw logs or credentials are included.
+### Planner handoff requested by the team
+
+The user chose to keep this agent within notes/tests/report and have the planner owner integrate the interface change. No planner.ts edit is proposed in this PR.
+
+Current limitation: NoteFacts pickupHours/deliveryHours require both opens and closes, and planner intervals replaces the stated pair. A note specifying only a recurring closing time cannot safely invent an opening time. Proposed additive fields (names for coordinator review): pickupDailyCloses?: number and deliveryDailyCloses?: number, each integer minutes since midnight, emitted only for an unambiguous recurring-hours clause with a grounded pickup/delivery side. Preserve pickupTo/deliveryTo as absolute timestamps for ordinary one-day before/by constraints. Unclear scope remains uncertain.
+
+Planner integration: on each permitted day, keep the stated opening and use min(stated daily closing, note daily closing); retain the original weekday/Saturday schedule and private booked slot. Intersect with the order window. If full note-hours overrides are also present, intersect the closing restriction with that existing range. Do not let a recovery gig that relaxes an order deadline erase a real recurring site-closing restriction. Do not extend Saturday hours or create Sunday opening.
+
+Concrete acceptance cases for the planner owner:
+
+| Case | Input | Expected interval/result |
+| --- | --- | --- |
+| Closing-only pickup | Stated weekday 09:00–18:00; note “Nouto arkisin ennen klo 14” | On each weekday use 09:00–14:00; no invented 00:00 opening |
+| Delivery hours | Stated weekday 08:00–18:00; explicit recurring receiving close 16:30 | Delivery ends at 16:30 on each weekday; opening stays 08:00 |
+| Short Saturday | Stated Saturday 09:00–14:00; recurring close 16:30 | Saturday remains 09:00–14:00 |
+| Sunday | Site closed Sunday | No Sunday interval |
+| Late recovery | Order deadline expired but site really closes 16:30 | Relaxing the order deadline must still respect site close on every later visit day |
+| Private slot | Private pickup booked 15:00–16:00; note close 14:00 | No feasible pickup, never expand or move the slot |
+| One-day time | “Pickup before 16:30” with no recurring-hours statement | Existing absolute pickupTo, not a daily closing field |
+| Ambiguous side | A closing statement with no grounded pickup/delivery referent | Parser remains uncertain; no side guessed solely to increase volume |
+
+Observed completed-world diagnostic: notes-contact-08 level8 R00880 says “Liike kiinni klo 16.30, haettava ennen sitä”. Stated pickup is 09:00–18:00; reveal actual weekday close is 16:30. Current parser emits absolute pickupTo6750 and no recurring hours. Its original-day restriction is conservative, but this does not prove later recovery visits respect real recurring hours. This is a handoff example, not a claim that the new fields are implemented. Keep this note uncertain if its side/recurrence cannot be grounded under the agreed grammar.
+
+No automatic merge. Other agents keep ownership of dispatcher/planner/pricing files. Explicit recurring closing-only forms remain uncertain when the present interface cannot express them; the implicit closing example above still needs coordinator review. No raw logs or credentials are included.
