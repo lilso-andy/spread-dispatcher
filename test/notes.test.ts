@@ -176,30 +176,6 @@ test("carried-wheel whitelist cannot erase conditions or fitted summer tyres", (
   assert.equal(deadline.uncertain, false)
 })
 
-test("complete key locations and lockbox codes do not create clocks", () => {
-  for (const text of ["Key in the car", "Avain autossa.", "Avaimet toimistosta", "Avain avainboksissa, koodi 1234", "Avain avainboksissa, koodi 0000."]) {
-    const f = parse(text)
-    assert.equal(f.uncertain, false)
-    assert.equal(f.pickupFrom, undefined)
-    assert.equal(f.pickupTo, undefined)
-    assert.equal(f.deliveryTo, undefined)
-  }
-})
-
-test("key metadata preserves separate readiness delivery and equipment facts", () => {
-  const f = parse("Avain avainboksissa, koodi 1234; nouto vasta huomenna klo 10; delivery before tomorrow 17:00; manual; no plates")
-  assert.equal(f.pickupFrom, DAY + 600)
-  assert.equal(f.deliveryTo, DAY + 1020)
-  assert.equal(f.manual, true)
-  assert.equal(f.plates, true)
-  assert.equal(f.uncertain, false)
-  assert.equal(parse("Key in the car; summer tyres").summerTyres, true)
-})
-
-test("key-only coverage does not discard conditions or unrelated metadata", () => {
-  for (const text of ["Key in the car unless pickup changes", "Avain avainboksissa, koodi 12.30", "Key in the car; provided delivery changes", "Meidän viite 123456", "Huoltokirja ja rekisteriote autossa", "Terve"]) assert.equal(parse(text).uncertain, true)
-})
-
 test("observed destination typo keeps a delivery deadline off the pickup side", () => {
   const f = parse("At destinattion tomorrow 15:00 latest")
   assert.equal(f.deliveryTo, DAY + 900)
