@@ -623,13 +623,91 @@
       "marginPerWonOrderEUR": 12.280290055248619,
       "negativeContributionCount": 43,
       "negativeContributionCents": -74011
+    },
+    {
+      "side": "baseline",
+      "level": 3,
+      "seed": "full-check-a",
+      "worldId": "w41b6c2bc9538deed456b",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": null,
+      "deskSha256": "757636d15ce56ead10cbe2911426cea201d31c2d7b4ec0bc419affb712e19416",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-3/full-check-a/baseline",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-ab4f5b1",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 2,
+      "score": {
+        "marginCents": 922635,
+        "revenueCents": 5161200,
+        "marginShare": 0.17876365961404325,
+        "wonOrders": 760,
+        "onTimeShare": 0.975,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 553.255
+    },
+    {
+      "side": "candidate",
+      "level": 3,
+      "seed": "full-check-a",
+      "worldId": "w645b7baa8b7677b69259",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": "analysis/training-service-budget.patch",
+      "deskSha256": "fb893f968ddd87ac2bdfc0fe07246b3f717532c17cdc57581e78da6452aa328a",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-3/full-check-a/candidate",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-service08",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 3,
+      "score": {
+        "marginCents": 922635,
+        "revenueCents": 5161200,
+        "marginShare": 0.17876365961404325,
+        "wonOrders": 760,
+        "onTimeShare": 0.975,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 449.83
     }
   ],
   "controller": {
-    "pid": 18169,
-    "level": 2,
-    "seed": "pricing80-service-holdout-m",
-    "started": "2026-11-14T11:22:58.577Z",
+    "pid": 18253,
+    "level": 3,
+    "seed": "full-check-a",
+    "started": "2026-11-14T11:26:43.236Z",
     "state": "stopped"
   }
 }
