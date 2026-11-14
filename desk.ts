@@ -232,7 +232,7 @@ export class Desk {
     if (this.level >= 4 && this.level <= 6 && this.config.feeMultiplier < 1.05) return this.config.feeMultiplier
     const samples = [...(this.observedBookings.get(place) ?? [])].sort((a, b) => a - b)
     const learned = samples.length >= 5 ? samples[Math.floor(samples.length * 0.7)]! * 1.03 : 0
-    return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(1.9, learned))
+    return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(this.level >= 7 ? this.config.feeMultiplier + 0.08 : 1.9, learned))
   }
 
   quote(request: PriceRequest): Action | null {

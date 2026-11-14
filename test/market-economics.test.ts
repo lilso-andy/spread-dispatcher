@@ -26,9 +26,9 @@ test("explicit lower list-price factor changes only market-level opt-in quotes",
   for (const level of [4, 5, 6]) { assert.equal(bid(desk(level)), 21000); assert.equal(bid(desk(level, false)), 24000) }
   assert.equal(bid(desk(8, false)), 27000)
 })
-test("training floors and shortage fee learning retain their existing behavior", () => {
+test("training floors remain unchanged and shortage feedback is capped", () => {
   assert.equal(desk(3).feeMultiplier("a"), 1.05)
-  for (const level of [7, 8]) { const d = desk(level); d.observedBookings.set("a", [1.7, 1.7, 1.7, 1.7, 1.7]); assert.equal(d.feeMultiplier("a"), 1.751) }
+  for (const level of [7, 8]) { const d = desk(level); d.observedBookings.set("a", [1.7, 1.7, 1.7, 1.7, 1.7]); assert.equal(d.feeMultiplier("a"), d.config.feeMultiplier + 0.08) }
 })
 test("lower bids still include the absolute contribution floor and whole cents", () => {
   const q = request(); q.options[0]!.listPriceCents = 8000
