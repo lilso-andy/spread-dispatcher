@@ -27,3 +27,9 @@ The initial code and recovery fixes are pushed to main. Reusable teammate prompt
 4. Exercise final stream reconnection in the announced test final; only one team machine runs it.
 
 See TEAM.md for proposed module ownership. Record any new benchmark with seed + level + complete config in docs/BENCHMARKS.md.
+
+## Dispatcher follow-up on work/dispatcher-reliability
+
+The review branch removes redundant equal-fee reprices and adds paired-run/action-rate diagnostics. On five matched level-8 seeds with balanced config, both baseline and candidate ranked 5/5, with the same on-time shares (worst 93.63%), 680 orders and one undelivered order. Reprices drop 385 -> 96. Candidate total margin is €17,943.31 versus €17,947.12 baseline: €3.81 lower. Four seeds match to the cent. 19 offline tests pass.
+
+Two earlier rescue/offer experiments earned less and were reverted from the production diff; all their results are retained. See docs/DISPATCHER_RELIABILITY.md and its three JSON reports for the exact revisions and evidence. Main policy defaults remain unchanged; the branch is for review, not automatically merged. No ranking or final was run. Next dispatcher target is late bundled-trade-in recovery, coordinated with pricing and notes owners.

@@ -296,7 +296,7 @@ export class Desk {
         const base = this.baseFee(order, gig.stops.filter((s) => s.kind === "pickup").length)
         const multiplier = urgency <= 90 ? this.config.emergencyMultiplier : urgency <= 180 ? 1.95 : 1.65
         const feeCents = Math.max(this.currentFee(gig), Math.round(base * Math.max(multiplier, this.feeMultiplier(order.legs[first.leg]!.pickup.placeId))))
-        actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
+        if (feeCents > this.currentFee(gig)) actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
       }
       if (this.config.offers && this.level >= 3 && (urgency <= 300 || this.now - gig.postedAt >= 90)) actions.push(...this.offersFor(gig, order))
     }
