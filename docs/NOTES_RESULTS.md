@@ -1171,7 +1171,7 @@ Completed-world field/ledger audit: {"checkedAt":"2026-11-14T04:27:19.769Z","met
 
 Controller {"pid":31444,"round":2,"startedAt":"2026-11-14T04:24:18.546Z","state":"stopped","command":"work/notes94-worker.mjs 2","endedAt":"2026-11-14T04:27:27.956Z"}. Next: Final code/report checkpoint publication; all16 owned practice worlds ended and controller tool handles exited. Next experiment must fetch/rebaseline and reserve a new decision seed; no background loop is left running.. Integration dependencies: competitive1600 fee/margin floor, minLead180, capacity0.28, strictNotes=true, existing pickup-window/quote/offer algorithms and exact core commits above. No claim transfers to a different planner/config or level8 without Dispatcher paired integration validation at>=94%. No ranking/test-final/live-final/merge/force-push.
 
-Final checkpoint: Decision: KEEP the four complete carried-wheel statements. 
+Final checkpoint: Decision: KEEP the four complete carried-wheel statements.
 
 | Level | Baseline EUR | Candidate EUR | Delta EUR | Worst candidate on time | Decision |
 | ---: | ---: | ---: | ---: | ---: | --- |
