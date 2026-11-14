@@ -730,3 +730,20 @@ Source tích hợp `2213766b83900ad7aa289437d37dd055a938dbc4`. Driver fees avera
 Trên hai seed baseline mỗi level, phí tài xế chiếm khoảng 86–88% doanh thu. Nếu giữ nguyên doanh thu, sản lượng và các chi phí khác, để tăng gấp đôi margin cần giảm phí tài xế khoảng 13–15%. Riêng level 1, tổng đóng góp âm của 43 đơn là €1.349,31 trên hai seed. Ngay cả giả định loại hết chúng mà không ảnh hưởng đơn khác cũng chỉ tăng khoảng 20% margin. Thử sàn cao hơn thực tế giảm margin.
 
 Đề xuất cho Dispatcher: cho phép kiểm chứng mức phí mở đầu và phí cứu đơn riêng theo level/tuyến, vì feeMultiplier hiện cố định 1,05 ở level 1–3. Sau đó đo ghép cặp các đơn đã thắng ở level hỗ trợ nhiều xe với cửa sổ khả thi, giữ giới hạn 720 phút và các ràng buộc stop. Ưu tiên theo euro tiết kiệm trên mỗi giờ tài xế và loại mọi cấu hình có tuần dưới ngưỡng. Chưa đo được hiệu quả của các thay đổi dispatcher này.
+
+## Level 1 · phí mở và cứu đơn riêng
+
+Source tích hợp 2213766. 73/73 test offline. Bản vá opt-in ở `analysis/level1-economics.patch` cho người phụ trách dispatcher review. Cấu hình yêu cầu bản vá; giữ hành vi mặc định khi chưa bật. Giảm phí mở và phí cứu đơn, giảm dự phòng tuyến dài, và mở công suất. Chưa tách được đóng góp của từng thay đổi trong gói.
+
+| Bản | Seed | World | Margin (cent) | Đơn | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| Baseline | economics-holdout-j | `w11f4781f7c8b831f55b1` | 317130 | 420 | 100.00% | 0.00% | Có | 0 |
+| Phí 0,86 | full-check-a | `wad3158265235f9a8e625` | 803874 | 761 | 96.85% | 0.00% | Có | 0 |
+| Phí 0,86 | full-check-b | `w57da2ab33ba74f6da8a2` | 490784 | 601 | 93.51% | 0.00% | Có | 0 |
+| Phí 0,86 | economics-holdout-j | `w63bd12360dc8f927bb29` | 939164 | 764 | 99.08% | 0.00% | Có | 0 |
+| Phí 0,78 | full-check-a | `w5b4551475a95a0462405` | 892601 | 787 | 95.30% | 0.00% | Có | 0 |
+| Phí 0,78 | full-check-b | `wc67c57da3fd9af99f0e9` | 319620 | 485 | 89.07% | 0.00% | **Không** | 0 |
+| Phí 0,83 / công suất 0,44 | full-check-b | `w305257a07a520a5d0407` | 440648 | 497 | 92.76% | 0.00% | Có | 0 |
+| Phí 0,83 / công suất 0,44 | economics-holdout-j | `w331ae897b500cf5b1b4e` | 983371 | 776 | 98.71% | 0.00% | Có | 0 |
+
+Chọn bản phí 0,86 để tích hợp thử. Trên full-check-a/b, baseline €6.849,25, ứng viên €12.946,58. Seed mới €3.171,30 → €9.391,64. Loại bản 0,78 vì 89,07% trên full-check-b. Bản trung gian thắng một seed và thua một seed so với 0,86. Mục tiêu €60.000 qua năm tuần chưa đạt. Không dùng ranking.
