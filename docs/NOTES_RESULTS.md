@@ -1481,6 +1481,49 @@ Actual ledger EUR, seq-deduplicated and reconciled to final score:
 
 Derived completed-world field audit/whole-cohort attribution: {"checkedAt":"2026-11-14T09:35:31.608Z","method":"Completed-world reveal only; deduplicated seq ledger reconciled to final margin. Won-order truth checked for manual/plates/tyres/deadline/release and note hours against public hours; unrevealed lost/unquoted requests have no order truth.","pairs":[{"seed":"top6-economics-a","phase":"development","baseline":{"ledger":{"revenue":664500,"driver_fee":-531302,"release_fee":-7122},"totalCents":126076,"declines":234,"noteCount":410,"safeCount":221,"checkedWonNotes":16,"misses":[{"requestId":"R00608","leg":0,"fields":["deadline"]}]},"candidate":{"ledger":{"revenue":1272900,"driver_fee":-1004055,"release_fee":-7764},"totalCents":261081,"declines":230,"noteCount":410,"safeCount":221,"checkedWonNotes":31,"misses":[{"requestId":"R00608","leg":0,"fields":["deadline"]}]},"newlySafeCount":0,"newlyQuotedCount":0,"newlyWonCount":0,"introducedCriticalMisses":[]}],"wholeCohortEffects":[{"commonLedgerDeltaCents":{"revenue":-63300,"driver_fee":60525,"release_fee":1989},"newOrderLedgerCents":{"revenue":691300,"driver_fee":-549792,"release_fee":-2631},"seed":"top6-economics-a","phase":"development","deltaCents":135005,"newlyQuoted":12,"removedQuotes":8,"newWonOrderCount":66,"lostWonOrderCount":1,"newOrderMarginCents":138877,"displacedBaselineMarginEffectCents":-3086,"commonOrderInteractionCents":-786,"newOrderMargins":[{"orderId":"R00014","marginCents":1623},{"orderId":"R00023","marginCents":1696},{"orderId":"R00049","marginCents":2784},{"orderId":"R00065","marginCents":2765},{"orderId":"R00089","marginCents":2338},{"orderId":"R00124","marginCents":701},{"orderId":"R00139","marginCents":2481},{"orderId":"R00155","marginCents":1604},{"orderId":"R00157","marginCents":1970},{"orderId":"R00172","marginCents":1645},{"orderId":"R00198","marginCents":2089},{"orderId":"R00241","marginCents":-2631},{"orderId":"R00242","marginCents":1635},{"orderId":"R00246","marginCents":1699},{"orderId":"R00256","marginCents":1642},{"orderId":"R00261","marginCents":1805},{"orderId":"R00268","marginCents":1616},{"orderId":"R00280","marginCents":1631},{"orderId":"R00289","marginCents":1650},{"orderId":"R00325","marginCents":2731},{"orderId":"R00331","marginCents":1695},{"orderId":"R00332","marginCents":1601},{"orderId":"R00335","marginCents":1642},{"orderId":"R00345","marginCents":2982},{"orderId":"R00348","marginCents":2102},{"orderId":"R00351","marginCents":1605},{"orderId":"R00381","marginCents":1635},{"orderId":"R00390","marginCents":1851},{"orderId":"R00409","marginCents":909},{"orderId":"R00417","marginCents":3263},{"orderId":"R00418","marginCents":5787},{"orderId":"R00424","marginCents":2989},{"orderId":"R00426","marginCents":1637},{"orderId":"R00442","marginCents":4068},{"orderId":"R00457","marginCents":4635},{"orderId":"R00482","marginCents":3036},{"orderId":"R00483","marginCents":1686},{"orderId":"R00490","marginCents":3032},{"orderId":"R00493","marginCents":-3665},{"orderId":"R00547","marginCents":1858},{"orderId":"R00550","marginCents":1663},{"orderId":"R00565","marginCents":1878},{"orderId":"R00587","marginCents":2819},{"orderId":"R00635","marginCents":1624},{"orderId":"R00636","marginCents":1683},{"orderId":"R00654","marginCents":3524},{"orderId":"R00661","marginCents":2397},{"orderId":"R00697","marginCents":1605},{"orderId":"R00710","marginCents":1609},{"orderId":"R00793","marginCents":1662},{"orderId":"R00806","marginCents":2505},{"orderId":"R00836","marginCents":1633},{"orderId":"R00850","marginCents":2533},{"orderId":"R00856","marginCents":2487},{"orderId":"R00857","marginCents":9215},{"orderId":"R00880","marginCents":2438},{"orderId":"R00883","marginCents":4614},{"orderId":"R00885","marginCents":1883},{"orderId":"R00888","marginCents":1633},{"orderId":"R00906","marginCents":2003},{"orderId":"R00908","marginCents":1941},{"orderId":"R00936","marginCents":1652},{"orderId":"R00946","marginCents":-379},{"orderId":"R00972","marginCents":2724},{"orderId":"R00992","marginCents":2033},{"orderId":"R01007","marginCents":1676}],"commonOrdersChanged":54,"baseline":{"plannedDrivingHours":193.81666666666666,"marginPerOrderEUR":23.787924528301886,"marginPerPlannedHourEUR":6.504910138446986},"candidate":{"plannedDrivingHours":412.1333333333333,"marginPerOrderEUR":22.314615384615383,"marginPerPlannedHourEUR":6.334867356842445},"driverHourLimit":"Logged winning-quote driving proxy excludes approach, waiting and operational constraints; not measured driver labor."}]}
 
-Controller {"pid":8592,"round":1,"startedAt":"2026-11-14T09:33:15.851Z","state":"running","command":"work/economics-worker.mjs 1"}. Next Push first pair then stop idle owned controller; fix parser and rebuild BOTH baseline/candidate, no baseline cache reuse after source change. Shared slots checked; own worlds run serially, never more than2 active. Only own IDs can be resumed after the old controller stops. Frozen source finishes its worlds despite later teammate updates; fetch/rebaseline/test before a new round. Dependency: exact per-level parser, core, both full configs and unchanged route/capacity/rescue algorithms. Quotes and opening fees are a joint policy, so mechanism is established through ledger and ablations, not inferred from one scalar. No declined list revenue counts as a loss. Planned-driving-hour ratios are logged-route proxies excluding approach/waiting.
+### Economics round2, level6
+
+Before-edit registration 2026-11-14T09:40:39.695Z. Hypothesis: Opt-in lower bid/fee economics at4?6: fixed0.95 opening multiplier instead of own-fee upward feedback and1.05 list-price base. Current selected cohorts win5?16% of quotes. Static screen exposes452?530 lost bids/week lowered at least5 EUR; this is not predicted profit. Sensitivity:5% lower actual fee spend115?588 EUR/week;50 additional NET20-EUR orders would add1000 EUR/week if deliverable. Evidenced lower bound0. Keep1600 floor,13% reserve,0.28 capacity,180 lead and existing rescue schedule. Joint hypothesis needs ablation if it loses. Common parser repair on BOTH sides: canonical destination typo and decline unsupported I mean corrections. Two red regression tests reproduced the old false-side/false-confident behavior; all baseline80 and candidate87 tests pass. Old worlds are historical diagnostic evidence only; fresh baselines required because source changed.. Baselineb8e2eb604bda730074c651281ce53425fc9a8971; candidate6c7f02bd2b98bb06955dfb6573581a9428450920. Controlled diff fingerprintsha256:21c61fb35b1d86d295c08ed68b245af5b7bf74c3e7a76bcc7b66e053c96c8838. Offline Common parser tests reproduced2 failures before fix; repaired baseline80/80, economic candidate87/87 full suites passed. Development seeds top6-economics-a, top6-economics-b; reserved untouched decision seedtop6-economics-decision-6-v1. Decision Pending corrected-source validation; old diagnostic pair cannot be reused.
+
+Baseline config:
+
+```json
+{
+  "quoteMultiplier": 1.35,
+  "feeMultiplier": 1.08,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+Candidate config:
+
+```json
+{
+  "quoteMultiplier": 1.05,
+  "feeMultiplier": 0.95,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+Gate: pooled development margin gain, every candidate final week>=93%, no undelivered/refused actions or critical missed note facts; then positive fresh-decision delta. Under1% gains prefer greater worst service, ties retain baseline. Negative/unranked weeks and losing candidates remain in the report. World creation/output/source/config checkpoint is saved before first advance, final week immediately saved, each complete pair pushed before continuation.
+
+| Phase | Seed | Side | World | Margin EUR | Won | EUR/order | On time | Undelivered | Refusals | Output |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+
+Controller {"pid":8592,"round":1,"startedAt":"2026-11-14T09:33:15.851Z","state":"stopped","command":"work/economics-worker.mjs 1","endedAt":"2026-11-14T09:39:29.580Z","stopEvidence":"Unified exec session54974 exited1 after Ctrl-C while idle at already completed/pushed pair; both owned worlds ended. No active world interrupted."}. Next Corrected baseline/candidate pinned; publish source-repair checkpoint, then two fresh paired development weeks. Shared slots checked; own worlds run serially, never more than2 active. Only own IDs can be resumed after the old controller stops. Frozen source finishes its worlds despite later teammate updates; fetch/rebaseline/test before a new round. Dependency: exact per-level parser, core, both full configs and unchanged route/capacity/rescue algorithms. Quotes and opening fees are a joint policy, so mechanism is established through ledger and ablations, not inferred from one scalar. No declined list revenue counts as a loss. Planned-driving-hour ratios are logged-route proxies excluding approach/waiting.
 
 Scope: notes.ts/parser tests/report plus explicitly approved desk.ts and test/market-economics.test.ts. No shared config, planner/runner or teammate-branch edits, PR merge, force-push, ranking/test-final/live-final. Raw logs/reveals/keys stay local.
