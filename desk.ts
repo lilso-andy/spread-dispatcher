@@ -342,7 +342,10 @@ export class Desk {
     const base = this.baseFee(order, legs.length)
     const urgent = order.lastPickupAt - this.now <= 240
     const multiple = Math.max(this.feeMultiplier(order.legs[legs[0]!]!.pickup.placeId), urgent ? (this.level <= 3 && this.config.trainingEconomy ? 1.25 : 1.85) : 0)
-    const feeCents = Math.max(1, Math.round(base * multiple))
+    const leg = order.legs[legs[0]!]!
+    const advancePublicJob = this.level === 8 && order.legs.length === 1 && !urgent
+      && !leg.pickup.privateAddress && !leg.delivery.privateAddress && leg.pickup.window.from >= this.now + 720
+    const feeCents = Math.max(1, Math.round(base * multiple * (advancePublicJob ? 0.92 : 1)))
     const schedule = [{ at: this.now, feeCents }]
     // A single planned rescue raise, well before last pickup, avoids hourly fee conditioning.
     const rescueAt = order.lastPickupAt - 210
