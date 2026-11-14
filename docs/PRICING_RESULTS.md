@@ -789,5 +789,9 @@ Full config/source/output/ledger in the checkpoint JSON. Completed-week scores o
 | 1 | full-check-b | candidate | `waaf11745d7c6b42ae561` | 5589.12 | 781 | 92.70% | 0.13% | 0 |
 | 1 | pricing80-service-holdout-m | baseline | `w42d2adf0e9c7d8aca7ed` | 8138.28 | 723 | 97.23% | 0.00% | 0 |
 | 1 | pricing80-service-holdout-m | candidate | `w5efd684221a3bb36a2d5` | 8138.28 | 723 | 97.23% | 0.00% | 0 |
+| 2 | full-check-a | baseline | `w2ed8f8c06ed4cb4732eb` | 8971.74 | 761 | 97.37% | 0.00% | 0 |
+| 2 | full-check-a | candidate | `wfde5d0db07ce216325a0` | 8971.74 | 761 | 97.37% | 0.00% | 0 |
 
 Level 1: 3 complete pairs, baseline €21,084.86, candidate €21,766.14, delta €+681.28; candidate minimum on-time 92.70%. Selection pending development/holdout gate.
+
+Level 2: 1 complete pairs, baseline €8,971.74, candidate €8,971.74, delta €+0.00; candidate minimum on-time 97.37%. Selection pending development/holdout gate.
