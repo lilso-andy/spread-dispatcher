@@ -1,13 +1,13 @@
 {
   "season": 6,
   "team": "team-co-tai",
-  "verifiedAt": "2026-11-14T14:29:34.720Z",
+  "verifiedAt": "2026-11-14T14:35:12.223Z",
   "sweepSource": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
   "levels": [
     {
       "level": 1,
       "rank": null,
-      "played": 2,
+      "played": 3,
       "qualified": false,
       "officialMarginCents": null,
       "officialOnTimeShare": null,
@@ -37,13 +37,41 @@
             "undeliveredShare": 0,
             "ranked": true
           }
+        },
+        {
+          "run": 3,
+          "worldId": "w115d39caed2033251de4",
+          "score": {
+            "marginCents": 888290,
+            "revenueCents": 4838500,
+            "marginShare": 0.18358788880851504,
+            "wonOrders": 760,
+            "onTimeShare": 0.9789473684210527,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.6,
+            "feeMultiplier": 0.86,
+            "emergencyMultiplier": 1.65,
+            "marginReserve": 0.02,
+            "minMarginCents": 200,
+            "capacityFraction": 0.5,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": true,
+            "offers": true
+          },
+          "actionRefusals": 0
         }
       ]
     },
     {
       "level": 2,
       "rank": null,
-      "played": 2,
+      "played": 3,
       "qualified": false,
       "officialMarginCents": null,
       "officialOnTimeShare": null,
@@ -73,6 +101,34 @@
             "undeliveredShare": 0,
             "ranked": true
           }
+        },
+        {
+          "run": 3,
+          "worldId": "wabcb6ddd45b156979536",
+          "score": {
+            "marginCents": 840618,
+            "revenueCents": 4845400,
+            "marginShare": 0.1734878441408346,
+            "wonOrders": 767,
+            "onTimeShare": 0.9882659713168188,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.6,
+            "feeMultiplier": 0.86,
+            "emergencyMultiplier": 1.65,
+            "marginReserve": 0.02,
+            "minMarginCents": 200,
+            "capacityFraction": 0.5,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": true,
+            "offers": true
+          },
+          "actionRefusals": 0
         }
       ]
     },
@@ -187,7 +243,7 @@
     {
       "level": 6,
       "rank": null,
-      "played": 2,
+      "played": 3,
       "qualified": false,
       "officialMarginCents": null,
       "officialOnTimeShare": null,
@@ -217,6 +273,34 @@
             "undeliveredShare": 0,
             "ranked": true
           }
+        },
+        {
+          "run": 3,
+          "worldId": "we1d7a7acd320fc0931ac",
+          "score": {
+            "marginCents": 272185,
+            "revenueCents": 1700700,
+            "marginShare": 0.16004292350208738,
+            "wonOrders": 164,
+            "onTimeShare": 0.9878048780487805,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.05,
+            "feeMultiplier": 0.95,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.13,
+            "minMarginCents": 900,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 0
         }
       ]
     },
