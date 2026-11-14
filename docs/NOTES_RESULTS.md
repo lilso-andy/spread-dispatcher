@@ -2061,7 +2061,7 @@ User requests at least15 server practice weeks; plan16 new weeks (8 paired compa
 
 Safety reference: conditional route guard6ae5f07 completed third paired seed final8-risk-route-holdout-v1, baseline and candidate6330.10EUR/99.40%, worlds w5f590093e8765bc4ccb8 and wcfbad43b2100d3154424. Three-seed pooled reference20865.83EUR vs guarded20682.28EUR (-0.88%), worst guarded95.18%. Accepted as explicitly documented safety fallback, NOT a margin gain.
 
-Latest team source 9918fffcb26bab444d6ba88bf182531c307bf634; actual frozen runtime ccc42f7c820fc51e7b9a87563d3907b223f53ce1 adds verified route guard,92 full tests pass. Branch work/notes-thanhdatLUT. Controller 25436 running; next Push pair reserve12 batch02-l8-a-v1 before next world. Local checkpoint work/level8-batch02-results/checkpoint.json. Full raw outputs remain local. Baseline config is the previously validated emergency2.0 profile; candidate source is recorded per world.
+Latest team source 9918fffcb26bab444d6ba88bf182531c307bf634; actual frozen runtime ccc42f7c820fc51e7b9a87563d3907b223f53ce1 adds verified route guard,92 full tests pass. Branch work/notes-thanhdatLUT. Controller 25436 running; next Push pair reserve12 batch02-l8-b-v1 before next world. Local checkpoint work/level8-batch02-results/checkpoint.json. Full raw outputs remain local. Baseline config is the previously validated emergency2.0 profile; candidate source is recorded per world.
 
 Hypothesisoffer_home: Algorithm: rank direct-offer candidates by approach plus full mapped return-home time instead of25% return time, level8 only. Prior study2 had6266 expired/942 declined/18 accepted offers. If5 extra profitable deliveries net26EUR each, opportunity130EUR/week, sensitivity only. Actual earned margin, ontime and accepted offers decide; no hidden driver preferences assumed.93 tests pass.; candidate source c1941adca925fadf1b0633f1096658ea2655f4b7; overrides {}; reserved holdout batch02-offer-home-proof-v1.
 
@@ -2087,6 +2087,8 @@ Hypothesisreserve12: Config: reduce percentage contribution reserve15% to12%, re
 |emergency18|batch02-l8-b-v1|candidate|w77471dfb2f465cb464b6|5679.17|180|94.444|0|0|
 |reserve12|batch02-l8-a-v1|baseline|wdd119060932b0d7f85d5|5901.68|176|98.295|0|0|
 |reserve12|batch02-l8-a-v1|candidate|w09fcf29c81857322cd64|5491.02|170|98.235|0|0|
+|reserve12|batch02-l8-b-v1|baseline|w2c026470f9c2ef1f4960|5484.73|180|94.444|0|0|
+|reserve12|batch02-l8-b-v1|candidate|w499b8bb9d3faccc2ee12|5086.01|181|92.265|0|0|
 
 w2448f64a96a454a7b7f4: branch work/notes-thanhdatLUT; commit ccc42f7c820fc51e7b9a87563d3907b223f53ce1; level8 seed batch02-l8-a-v1; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch02-results\offer_home\batch02-l8-a-v1\baseline; next final week saved, evaluate complete pair.
 
@@ -2116,8 +2118,14 @@ wdd119060932b0d7f85d5: branch work/notes-thanhdatLUT; commit ccc42f7c820fc51e7b9
 
 w09fcf29c81857322cd64: branch work/notes-thanhdatLUT; commit ccc42f7c820fc51e7b9a87563d3907b223f53ce1; level8 seed batch02-l8-a-v1; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.12,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch02-results\reserve12\batch02-l8-a-v1\candidate; next final week saved, evaluate complete pair.
 
+w2c026470f9c2ef1f4960: branch work/notes-thanhdatLUT; commit ccc42f7c820fc51e7b9a87563d3907b223f53ce1; level8 seed batch02-l8-b-v1; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch02-results\reserve12\batch02-l8-b-v1\baseline; next final week saved, evaluate complete pair.
+
+w499b8bb9d3faccc2ee12: branch work/notes-thanhdatLUT; commit ccc42f7c820fc51e7b9a87563d3907b223f53ce1; level8 seed batch02-l8-b-v1; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.12,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch02-results\reserve12\batch02-l8-b-v1\candidate; next final week saved, evaluate complete pair.
+
 Trialoffer_home development decision: REJECT; deltaEUR-220.80, minimum candidate ontime93.529%.
 
 Trialnotes_thursday development decision: REJECT; deltaEUR0.00, minimum candidate ontime94.444%.
 
 Trialemergency18 development decision: NEEDS FRESH HOLDOUT; deltaEUR228.94, minimum candidate ontime94.444%.
+
+Trialreserve12 development decision: REJECT; deltaEUR-809.38, minimum candidate ontime92.265%.
