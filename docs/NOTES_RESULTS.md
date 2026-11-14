@@ -145,7 +145,7 @@ Next: review this PR, integrate it with the dispatcher owner, then compare on ad
 
 ## Continuous practice batch 01 — scoped corrections and Unicode clocks
 
-Status: in progress, 18/20 completed pairs (37 completed weeks). Underlying dispatcher is frozen at 3cb7ba4. Baseline parser snapshot 085b3cc57e405d13ec12fe5b0f322786a90072a2; candidate snapshot bf1b9d49a6ac97bd74dc03ab209b09ba5b051e0e. Candidate adds bounded bare-clock corrections and complete Unicode word boundaries, retaining ambiguity declines. No ranking/final calls; one world of this chat is controlled at a time. Fetches do not change source within an active comparison.
+Status: complete, 20/20 completed pairs (40 completed weeks). Underlying dispatcher is frozen at 3cb7ba4. Baseline parser snapshot 085b3cc57e405d13ec12fe5b0f322786a90072a2; candidate snapshot bf1b9d49a6ac97bd74dc03ab209b09ba5b051e0e. Candidate adds bounded bare-clock corrections and complete Unicode word boundaries, retaining ambiguity declines. No ranking/final calls; one world of this chat is controlled at a time. Fetches do not change source within an active comparison.
 
 Full configuration for both sides:
 
@@ -184,8 +184,10 @@ Full configuration for both sides:
 | 16 | 8 | notes-cycle-06 | w5f7e472918f00c6f4d6c | w3538e1d4a2162c968e70 | 4029.35 | 4029.35 | 0.00 | 97.86% | 97.86% | true | 0/0 |
 | 17 | 5 | notes-cycle-07 | waaa42ac2a049fccf86c0 | wa48b7b37c41bd2a010b6 | 1014.92 | 1014.92 | 0.00 | 100.00% | 100.00% | true | 0/0 |
 | 18 | 6 | notes-cycle-07 | wf9d2ddb5bbb8dbd02f13 | w28c2d93afe28eb113f21 | 1589.27 | 1589.27 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 19 | 7 | notes-cycle-07 | wca2addda169e568bd4aa | w08ce6e1c871c645c01f2 | 3461.15 | 3461.15 | 0.00 | 99.17% | 99.17% | true | 0/0 |
+| 20 | 8 | notes-cycle-07 | wa19f205f99137caf2256 | w384a337ad188eaf24021 | 5479.44 | 5443.27 | -36.17 | 97.45% | 97.42% | true | 0/0 |
 
-Completed-pair totals: EUR 46105.86 -> EUR 46182.49; delta EUR 76.63. Final 90% threshold failures: []. All reductions are retained in the table. Partial truth audit: 332 won note-bearing requests checked; 1 mismatches for equipment, readiness/release and note deadline fields. Hours/unknown prose and lost-order truth remain unverified. Server request occurrences: 7911, passing parser uncertainty/summer filters: 3325. These counts are not a calibrated full false-safe/false-uncertain estimate.
+Completed-pair totals: EUR 55046.45 -> EUR 55086.91; delta EUR 40.46. Final 90% threshold failures: []. All reductions are retained in the table. Partial truth audit: 391 won note-bearing requests checked; 1 mismatches for equipment, readiness/release and note deadline fields. Hours/unknown prose and lost-order truth remain unverified. Server request occurrences: 8747, passing parser uncertainty/summer filters: 3667. These counts are not a calibrated full false-safe/false-uncertain estimate.
 
 Tests: 48 main-based / 67 integrated-source tests passed before server comparison. Snapshot source is reconstructible from dispatcher 3cb7ba4 plus the candidate notes.ts and test/notes.test.ts proposed by this branch. Complex corrections remain uncertain. No automatic merge or final policy selection. Local scratch loop writes a checkpoint after every run and reuses completed results; interrupted worlds are resumed only from this chat’s own metadata. Next batch must use new output folders and freeze both source revisions/config before running.
 
@@ -211,7 +213,7 @@ Both completed pairs preserve margin and on-time share exactly. The fix is adopt
 
 ### Equal-allocation levels 1–4 configuration comparison
 
-Status: 8/20 pairs completed; in progress. Both sides use source 085b3cc57e405d13ec12fe5b0f322786a90072a2; configurations taken unchanged from teammate pricing revision 766fdab7db20569377731bee14b4842ea9dac20f. This is configuration evidence, not a parser-code effect. Level 1–3 candidate uses training; level 4 candidate uses competitive.
+Status: 9/20 pairs completed; in progress. Both sides use source 085b3cc57e405d13ec12fe5b0f322786a90072a2; configurations taken unchanged from teammate pricing revision 766fdab7db20569377731bee14b4842ea9dac20f. This is configuration evidence, not a parser-code effect. Level 1–3 candidate uses training; level 4 candidate uses competitive.
 
 Full configurations:
 
@@ -266,6 +268,57 @@ Full configurations:
 | 2 | notes-cycle-04 | w6829f537005b09558b69 | w97b20c29577bd9e90892 | 2093.03 | 2834.78 | 741.75 | 98.34% | 99.23% | true | 0/0 |
 | 3 | notes-cycle-04 | w02475e23d7754b031637 | w1a3334f6f0eaeced983e | 2120.08 | 2886.68 | 766.60 | 97.24% | 99.23% | true | 0/0 |
 | 4 | notes-cycle-04 | w01d0b11f26e5221c7a5e | w7f4549f664b6e64f2616 | 4933.45 | 5157.59 | 224.14 | 100.00% | 100.00% | true | 0/0 |
+| 1 | notes-cycle-05 | web4d8c2ba326a2202ef0 | w39a33c23dae1c8a62f75 | 2010.71 | 2623.00 | 612.29 | 98.77% | 99.56% | true | 0/0 |
+
+### Contact-notice candidate: next evenly allocated batch
+
+Status 0/16 matched pairs; in progress. Two pairs allocated to every level 1–8. Baseline fb35ea89587f655cd3f95c442eb572eb9c937e8d, candidate a3a468e93f2100341d8d549f734f2ffeff184db3; pricing configuration snapshot 62a128663666537889fcef8f2d09be44018739d1. Both sides use the same selected configuration at each level: training 1–3, competitive 4–7, Balanced 8. This comparison tests only parser changes, not configuration selection. Candidate recognizes only complete relative contact notices and declines unsupported contact clauses. Tests: 69 integrated before server validation. No adoption solely from offline tests.
+
+Full configurations:
+
+```json
+{
+  "balanced": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.2,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "training": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.1,
+    "marginReserve": 0.1,
+    "minMarginCents": 500,
+    "capacityFraction": 0.26,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 210,
+    "strictNotes": true,
+    "offers": true
+  },
+  "competitive": {
+    "quoteMultiplier": 1.35,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.13,
+    "minMarginCents": 1600,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  }
+}
+```
+
+| Level | Seed | Baseline world | Candidate world | Base EUR | Candidate EUR | Delta EUR | Base on time | Candidate on time | Both eligible | Refusals base/candidate |
+| ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
 
 ### Allocation scoreboard
 
@@ -273,13 +326,17 @@ Code-only parser comparisons at 5–8 and configuration comparisons at 1–4 are
 
 | Level | Completed/planned pairs | Baseline EUR | Candidate EUR | Delta EUR | Delta % | Worst candidate on time | Failed baseline/candidate weeks |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| 1 | 2/5 | 4427.63 | 5535.56 | 1107.93 | 25.02 | 99.23% | 0/0 |
+| 1 | 3/5 | 6438.34 | 8158.56 | 1720.22 | 26.72 | 99.23% | 0/0 |
 | 2 | 2/5 | 4406.57 | 5754.84 | 1348.27 | 30.60 | 99.23% | 0/0 |
 | 3 | 2/5 | 4464.49 | 5806.74 | 1342.25 | 30.07 | 99.23% | 0/0 |
 | 4 | 2/5 | 8187.35 | 8526.29 | 338.94 | 4.14 | 99.22% | 0/0 |
 | 5 | 5/5 | 8306.70 | 8351.28 | 44.58 | 0.54 | 98.81% | 0/0 |
 | 6 | 5/5 | 10679.40 | 10679.40 | 0.00 | 0.00 | 99.33% | 0/0 |
-| 7 | 4/5 | 8094.64 | 8094.64 | 0.00 | 0.00 | 94.44% | 0/0 |
-| 8 | 4/5 | 19025.12 | 19057.17 | 32.05 | 0.17 | 96.27% | 0/0 |
+| 7 | 5/5 | 11555.79 | 11555.79 | 0.00 | 0.00 | 94.44% | 0/0 |
+| 8 | 5/5 | 24504.56 | 24500.44 | -4.12 | -0.02 | 96.27% | 0/0 |
+
+### Completed parser-batch interpretation
+
+Twenty pairs completed: EUR 55046.45 -> EUR 55086.91. Two gains, seventeen ties, one loss; the loss at level 8 / notes-cycle-07 is EUR 36.17. Per-level net effects: level 5 +EUR 44.58, level 6 unchanged, level 7 unchanged, level 8 -EUR 4.12. This does not establish consistent profit improvement across levels. The scoped corrections/Unicode changes are retained for their tested semantics and no failed delivery thresholds, not promoted as a final profit-optimal policy. Prioritize level 8 in the next balanced batch while retaining equal seed allocation. The current PR also includes the separately validated readiness typo fix; its two-pair result is listed separately above.
 
 No automatic merge. Other agents keep ownership of dispatcher/planner/pricing files. Closing-only recurring hours cannot safely be expressed with the current full-hours override type: setting an invented opening hour would replace the site opening rather than intersect it. Such notes remain uncertain pending an interface change coordinated through review. No raw logs or credentials are included.
