@@ -2,6 +2,8 @@
 
 ## Full season 7 ranking request
 
+The user changed scheduling to one level at a time, descending from 8. The six-worker allocation process was stopped with its exit confirmed. Serial session `71491` now owns `runs/rank7-full/manifest.json`. It resumes level 8 run 3 and completes that level before proceeding to 7, 6, 5, 4, 3, 2 and 1. Existing unfinished worlds at other levels are parked for that controller. They retain their original source, configs and output folders. At this checkpoint levels 7 and 8 have two qualified final weeks each. Level 8 run 2 earned €11,088.08 at 99.25% on time. Prospective improvements are evaluated separately before use.
+
 The user authorized completing all five official ranking weeks at every level. Session `79989` owns `runs/rank7-full/manifest.json`, frozen source `9e47485` and the selected ranking presets. At start, levels 7 and 8 each had one qualified completed week and levels 1–6 had none. The full sweep runs up to six owned worlds concurrently, checks shared slots and prioritizes completing levels 7–8. Results are recorded in `docs/ranking-s7-full.json`. Read `prompts/resume-16000.md` before resuming anything. This section records an active run, not evidence of a completed five-week rank.
 
 ## Ranking recovery after round change
