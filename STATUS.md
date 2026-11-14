@@ -55,3 +55,4 @@ User requested an immediate GitHub checkpoint before running out of context. See
 
 Dispatch lead: round 1 completed on frozen integration 3cb7ba4. Cost passed the fresh level 7 and 8 holdout; see docs/DISPATCH_78.md and docs/dispatch-78-practice.json for all paired weeks. Both prior matrices ended; full results, including the four failures, are in docs/dispatch-prior-matrices.json.
 Level 8: lower emergency fee passed a new holdout at identical service (+126.65 euros). Selected preset and every paired result in docs/DISPATCH_78.md.
+Dispatcher integration: three rounds finished. On 3cb7ba4 use docs/dispatch-presets/level-7.json or level-8.json explicitly. New level 7 holdout +803.12 euros, weakest development week 90.18%; cost is the safer measured fallback. All 20 new plain-practice weeks qualified, zero undelivered/refusals. See docs/DISPATCH_78.md for losses, earlier failures and limits. No active worlds from this benchmark.

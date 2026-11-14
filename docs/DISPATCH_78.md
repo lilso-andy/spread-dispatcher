@@ -13,3 +13,32 @@ Round 2, specified before execution: on the two level-8 cost development weeks, 
 Round 2 decision: level 8 uses [cost with a 2.20 emergency rate](dispatch-presets/level-8.json). Development margin was 995,777 → 1,019,749 cents; spread-1 lost 3,775 cents, study-2 gained 27,747. On study-2, driver fees fell by 78,472 cents but refunds increased by 9,925 cents. The new holdout gained 12,665 cents, both at 251/257 orders on time. All paired weeks qualified with zero undelivered and zero refusals. Use the preset as the CLI --config; it is stored with the evidence to avoid touching the pricing owner's configs. Do not extrapolate it to other levels.
 
 Round 3, specified before execution: level 7 cost paid 2,755,918 cents in driver fees across the two development weeks. 141/334 nonurgent opening fees were at the 1.08 floor. Test feeMultiplier 1.02 only; this changes opening price and quote cost estimate, not rescue rates. Baseline remains cost (2.40 emergency). Same development seeds, same 1% margin/service tie-break, reject any sub-90% candidate week or additional undelivered orders. If accepted on development, require a positive gain on fresh dispatch-proof-opening-03 under the same criteria.
+
+## Paired end scores
+
+Source for every row: 3cb7ba4. Full IDs, parameters, won and undelivered counts, refusals and reconciled ledger totals are in [the JSON report](dispatch-78-practice.json). Amounts below are game euros. b = balanced, c = cost, c22 = cost with emergencyMultiplier 2.20, cFee = cost with feeMultiplier 1.02.
+
+| Round | Level | Seed | Presets | Baseline margin | Candidate margin | Baseline on time | Candidate on time |
+|---:|---:|---|---|---:|---:|---:|---:|
+| 1 | 7 | spread-1 | b → c | 2,989.01 | 4,111.43 | 99.17% | 98.69% |
+| 1 | 7 | study-2 | b → c | 1,283.19 | 1,765.90 | 94.93% | 91.45% |
+| 1 | 7 | dispatch-proof-78-01 | b → c | 2,152.83 | 2,979.46 | 100.00% | 100.00% |
+| 1 | 8 | spread-1 | b → c | 5,064.23 | 6,937.51 | 98.98% | 99.13% |
+| 1 | 8 | study-2 | b → c | 2,578.76 | 3,020.26 | 92.86% | 90.86% |
+| 1 | 8 | dispatch-proof-78-01 | b → c | 4,244.97 | 6,451.40 | 100.00% | 99.43% |
+| 2 | 8 | spread-1 | c → c22 | 6,937.51 | 6,899.76 | 99.13% | 99.12% |
+| 2 | 8 | study-2 | c → c22 | 3,020.26 | 3,297.73 | 90.86% | 91.86% |
+| 2 | 8 | dispatch-proof-rescue-02 | c → c22 | 9,424.69 | 9,551.34 | 97.67% | 97.67% |
+| 3 | 7 | spread-1 | c → cFee | 4,111.43 | 4,676.44 | 98.69% | 99.39% |
+| 3 | 7 | study-2 | c → cFee | 1,765.90 | 1,745.44 | 91.45% | 90.18% |
+| 3 | 7 | dispatch-proof-opening-03 | c → cFee | 1,912.03 | 2,715.15 | 98.73% | 98.84% |
+
+Round 3 decision: select [level 7 cost with a 1.02 opening floor](dispatch-presets/level-7.json) for measured margin. The fresh holdout gained €803.12 and service improved slightly. However, study-2 lost €20.46 and service fell from 91.45% to 90.18% (147/163): one more late order would have disqualified that week. At level 7 the original cost preset is the measured alternative for extra service buffer. Across their three matched seeds the new level 7 preset gained €1,347.67, and the new level 8 preset gained €366.37. These are different seed panels; do not sum the two levels or project the gains to a ranking round.
+
+Verified all 20 new results against the server's ended, non-ranking practice list and score endpoint. All passed, with no undelivered orders or refused actions. Ledger amounts reconciled to each recorded margin. The previous 14 matrix scores were also checked against the server; their four level 1/2 failures remain in the linked historical file. Other levels were outside this assignment. The three rounds used the exact same dispatcher commit, using a detached checkout after documentation-only pushes. Pricing branch updates during the run did not change the pinned source. No ranking or final was accessed; no PR was merged. Raw journals stayed local.
+
+Use the validated preset explicitly, e.g.:
+```powershell
+node --env-file-if-exists=.env dispatch.ts --level 7 --seed YOUR_PRACTICE_SEED --config docs/dispatch-presets/level-7.json
+node --env-file-if-exists=.env dispatch.ts --level 8 --seed YOUR_PRACTICE_SEED --config docs/dispatch-presets/level-8.json
+```
