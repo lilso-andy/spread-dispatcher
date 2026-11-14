@@ -85,3 +85,30 @@ test("completed-world cargo and reference clauses do not imply fitted summer tyr
   assert.equal(timed.deliveryTo, 960)
   assert.equal(timed.uncertain, false)
 })
+
+test("a bare clock correction replaces only the immediately preceding single clock", () => {
+  for (const [text, key, at] of [
+    ["Manual; Pickup ready tomorrow at 14:00. Correction: 15:30.", "pickupFrom", DAY + 930],
+    ["Hämtning tidigast imorgon kl 14. Rättelse: kl 15.", "pickupFrom", DAY + 900],
+    ["Nouto huomenna klo 14 jälkeen. Korjaus: klo 15.", "pickupFrom", DAY + 900],
+    ["Deliver before tomorrow 17:00. Correction: 16:00.", "deliveryTo", DAY + 960],
+  ] as const) {
+    const f = parse(text)
+    assert.equal(f[key], at)
+    assert.equal(f.uncertain, false)
+    if (text.startsWith("Manual")) assert.equal(f.manual, true)
+  }
+  for (const text of [
+    "Pickup after 10 and before 16. Correction: 14.",
+    "Pickup after 10; manual. Correction: 14.",
+    "Pickup after 10. Correction: tomorrow 14.",
+    "Pickup not after 10. Correction: 14.",
+  ]) assert.equal(parse(text).uncertain, true)
+})
+
+test("Unicode word clocks match complete Finnish and Swedish words", () => {
+  assert.equal(parse("Hämtning tidigast två").pickupFrom, 840)
+  assert.equal(parse("Nouto jälkeen neljä").pickupFrom, 960)
+  assert.equal(parse("Nouto jälkeen yhdeksän").pickupFrom, 540)
+  assert.equal(parse("Hämtning tidigast halvtvå").uncertain, true)
+})

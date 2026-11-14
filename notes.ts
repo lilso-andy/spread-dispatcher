@@ -42,6 +42,23 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   const facts: NoteFacts = { manual: false, plates: false, summerTyres: false, uncertain: false, reasons: [] }
   if (!note?.text.trim()) return facts
   let text = note.text.normalize("NFKC").toLowerCase()
+  const pieces = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/)
+  for (let i = 1; i < pieces.length; i++) {
+    const correction = /^\s*(?:correction|korjaus|rättelse):\s*(?:(?:klo|kl\.?|at)\s*)?(\d{1,2}(?:[.:]\d{2})?(?:\s*(?:am|pm))?)[.! ]*$/.exec(pieces[i]!)
+    if (!correction) continue
+    const previous = pieces[i - 1]!
+    if (/correction|korjaus|rättelse|actually|siis/.test(previous)) continue
+    const clocks = [...previous.matchAll(/(?<![\p{L}\p{N}_])\d{1,2}(?:[.:]\d{2})?(?:\s*(?:am|pm))?(?![\p{L}\p{N}_])/gu)]
+    if (clocks.length !== 1) continue
+    // Ask the ordinary parser to establish a single, fully understood time scope.
+    const old = readNote({ ...note, text: previous }, arrived)
+    const bounds = [old.pickupFrom, old.pickupTo, old.deliveryFrom, old.deliveryTo].filter(v => v !== undefined)
+    if (old.uncertain || bounds.length !== 1 || old.pickupHours || old.deliveryHours) continue
+    const clock = clocks[0]!
+    pieces[i - 1] = previous.slice(0, clock.index) + correction[1] + previous.slice(clock.index! + clock[0].length)
+    pieces[i] = "thanks"
+  }
+  text = pieces.join("; ")
   // Cargo tyres are not tyres fitted to the car. Mask only fully matched benign clauses.
   text = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/).map(c => BENIGN.test(c.trim()) || BENIGN_EXTRA.test(c.trim()) ? "thanks" : c).join("; ")
   // A correction may replace a time while leaving equipment facts in force.
@@ -90,13 +107,14 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
     for (const m of clocks) {
       let hour = Number(m[1])
       const minute = Number(m[2] ?? 0)
+      if (m[3] && (hour < 1 || hour > 12)) { facts.reasons.push("invalid AM/PM hour"); continue }
       if (m[3]) hour = hour % 12 + (m[3] === "pm" ? 12 : 0)
       if (hour > 23 || minute > 59) continue
       // A bare number must have a time/constraint context; avoid registration and phone numbers.
       if (!m[2] && !m[3] && !/klo|kl\.?|ennen|jälkeen|before|after|\bby\b|senast|tidigast|före|efter|valmi|klar|ready/.test(clause)) continue
       candidates.push({ index: m.index!, length: m[0].length, minute: hour * 60 + minute })
     }
-    const wordPattern = new RegExp(`\\b(?:(puoli|halv|half)\\s+)?(${Object.keys(words).sort((a,b) => b.length-a.length).join("|")})\\b`, "g")
+    const wordPattern = new RegExp(`(?<![\\p{L}\\p{N}_])(?:(puoli|halv|half)\\s+)?(${Object.keys(words).sort((a,b) => b.length-a.length).join("|")})(?![\\p{L}\\p{N}_])`, "gu")
     for (const m of clause.matchAll(wordPattern)) candidates.push({ index: m.index!, length: m[0].length, minute: words[m[2]!]! * 60 - (m[1] ? 30 : 0) })
     for (const candidate of candidates) {
       const before = clause.slice(0, candidate.index)
