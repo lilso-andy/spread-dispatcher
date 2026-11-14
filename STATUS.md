@@ -1,5 +1,11 @@
 # Shared status
 
+## Level 7 practice handoff
+
+Batch 02 finished 18 worlds. Bounded recovery gained EUR447 across development and tied the fresh proof at EUR7692.11 and 98.17%. All 18 qualified. The short and combined profiles each left one order undelivered on dev-b. Retain the original level 7 preset. Every world, ledger, commit and config appears in docs/LEVEL7_BATCH02_RESULTS.json.
+
+Batch 03 uses the team integration at aeaa6de (8a96038 plus teammate 8543c3f); the teammate guard is restricted to level 8. The second parent introduced no level 7 difference. The additional teammate checkpoint dd066b8 changes the report only. Read runs/level7-batch03/state.json for the current ownership, worlds and selection. Controller PID 21240, matrix.mjs. If still running, observe it. If stopped, resume this exact matrix and output after confirming ownership. Sources aeaa6de and 550d890 passed 92 and 93 tests. Four fixed seeds and four profiles, then fresh proof for the best eligible profile. Level 8 remains under its owner's evaluation. Ranking worlds remain parked.
+
 ## Level 8 teammate review and level 7 controller recovery
 
 Fetched teammate checkpoint `798682f`. The remote change consists of `docs/NOTES_RESULTS.md` only. Independently verified the three completed plain-practice level 8 scores on the server. Baseline `wf200ca2aa5409d457424` earned €6,757.13 at 92.08%. Conditional long-route candidate `wa9deb41cdf6625c88333` earned €6,573.58 at 95.18%, losing €183.55 (2.72%). Its fee1.02 combination `wce7c3531320acf874c2c` earned €5,257.09 at 93.19%, losing €1,500.04 against the common baseline. All fully delivered. Teammate now explicitly tests a safety fallback with all candidate weeks>=93% and pooled development margin>=98% of the original. A per-holdout margin bound remains to be specified. Source `6ae5f07` is unavailable from this clone or an explicit origin SHA fetch, so code and the reported92 tests require the teammate to push the candidate source/test commit for independent review. The challenge minimum remains90%.
