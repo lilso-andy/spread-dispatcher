@@ -926,5 +926,83 @@
       "release_fee": -2172,
       "late_refund": -39785
     }
+  },
+  {
+    "source": "baab6f09b4ac8c0d7e4b674310cf5df7b549e723",
+    "level": 7,
+    "seed": "study-2",
+    "arm": "baseline",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.02,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "worldId": "w1dabf795232709971a0a",
+    "phase": "r4",
+    "score": {
+      "marginCents": 312950,
+      "revenueCents": 2209800,
+      "marginShare": 0.14161915105439407,
+      "wonOrders": 165,
+      "onTimeShare": 0.9151515151515152,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2209800,
+      "driver_fee": -1767920,
+      "release_fee": -12950,
+      "late_refund": -113480,
+      "failed_visit": -2500
+    }
+  },
+  {
+    "source": "baab6f09b4ac8c0d7e4b674310cf5df7b549e723",
+    "level": 7,
+    "seed": "study-2",
+    "arm": "candidate",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 0.86,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "worldId": "we45194e80623b6d9300d",
+    "phase": "r4",
+    "score": {
+      "marginCents": -27316,
+      "revenueCents": 1303500,
+      "marginShare": -0.02095588799386268,
+      "wonOrders": 103,
+      "onTimeShare": 0.8155339805825242,
+      "undeliveredShare": 0,
+      "ranked": false
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 1303500,
+      "driver_fee": -1209830,
+      "release_fee": -7611,
+      "late_refund": -110875,
+      "failed_visit": -2500
+    }
   }
 ]

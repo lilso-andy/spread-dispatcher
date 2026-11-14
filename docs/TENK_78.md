@@ -1,5 +1,7 @@
 # Level 7 and 8 practice target of €16,000 per week
 
+Ranking was explicitly requested before this target was achieved. Round 4 level 7 rejects the 0.86 fee multiplier. On `study-2` it lost €273.16 and delivered 81.55% on time against €3,129.50 and 91.52% for the baseline. The level 7 and 8 ranking presets retain their validated fees of 1.02 and 1.08.
+
 Each level must earn at least 1,600,000 cents with at least 90% of won orders delivered on time in each of three completed practice weeks, including an independent holdout. Report to the team before switching models for ranking. The earlier targets below are historical.
 Round1 registered before mutation: last ranking driver fees were 2,266,074 / 2,583,070 cents. Successful posted prices are upper bounds on driver cost, not a measured minimum. Learned fee feedback can ratchet opening prices and quote estimates upward. At shortage levels only cap the learned uplift to 0.08 above the configured floor; preserve rescue steps, safety/capacity gates, notes and other levels. Compare baseline and candidate on spread-1 and study-2, both levels, fixed ranking presets. Require pooled margin gain, all candidate weeks >=90%, no additional undelivered/refusals; <1% benefit prefers service. Independent holdout required for selection. EUR10,000 trigger requires two development weeks and fresh week at the level each >=1,000,000 cents, qualified and fully delivered. Ranking authorization is conditional on that gate: at most one further run per qualifying level, no final.
 
