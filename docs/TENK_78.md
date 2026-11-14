@@ -1,5 +1,9 @@
 # Level 7 and 8 practice target of €16,000 per week
 
+## Recovery guard experiment registered during sequential ranking
+
+Baseline `9e47485` and isolated candidate `cbd9800` use identical selected level presets. The sole policy change raises the completed-order late fraction that pauses shortage quoting from 0.045 to 0.075, only at levels 7–8. Season 7 level 7 run 1 recorded 500 service-recovery declines after an early late order, providing the measurable hypothesis that the guard can prevent profitable recovery. Offline baseline passed 91 tests and candidate passed 94. Development seeds remain `spread-1` and `study-2` at both levels. Retain only a positive paired total with every candidate week at least 90% on time and no extra undelivered orders or action refusals. A fresh seed `recovery-proof-05` must repeat the gain before promotion. Record all losses and failures. These thresholds do not guarantee service in a new week. Practice runs are serial and wait for a free slot while preserving two slots for teammates. Ranking continues with its previously selected source during the experiment.
+
 Ranking was explicitly requested before this target was achieved. Round 4 level 7 rejects the 0.86 fee multiplier. On `study-2` it lost €273.16 and delivered 81.55% on time against €3,129.50 and 91.52% for the baseline. The level 7 and 8 ranking presets retain their validated fees of 1.02 and 1.08.
 
 Each level must earn at least 1,600,000 cents with at least 90% of won orders delivered on time in each of three completed practice weeks, including an independent holdout. Report to the team before switching models for ranking. The earlier targets below are historical.
