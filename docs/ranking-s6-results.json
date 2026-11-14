@@ -79,9 +79,20 @@
         "trainingEconomy": true,
         "offers": true
       },
-      "status": "running",
+      "status": "ended",
       "worldId": "wa9909fa6c0db7cc2a6dd",
-      "boardRun": null
+      "boardRun": 1,
+      "score": {
+        "marginCents": 311177,
+        "revenueCents": 1835500,
+        "marginShare": 0.16953255243802778,
+        "wonOrders": 271,
+        "onTimeShare": 0.9372693726937269,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "undeliveredOrders": 0,
+      "actionRefusals": 0
     },
     {
       "level": 4,
@@ -98,8 +109,57 @@
         "trainingEconomy": false,
         "offers": true
       },
-      "status": "running",
+      "status": "ended",
       "worldId": "wac32d11db9339ac39cdd",
+      "boardRun": 1,
+      "score": {
+        "marginCents": 230793,
+        "revenueCents": 1235000,
+        "marginShare": 0.18687692307692308,
+        "wonOrders": 85,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "undeliveredOrders": 0,
+      "actionRefusals": 0
+    },
+    {
+      "level": 5,
+      "config": {
+        "quoteMultiplier": 1.35,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2.4,
+        "marginReserve": 0.13,
+        "minMarginCents": 1600,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "status": "running",
+      "worldId": "w459ef7f4709060efad12",
+      "boardRun": null
+    },
+    {
+      "level": 6,
+      "config": {
+        "quoteMultiplier": 1.05,
+        "feeMultiplier": 0.95,
+        "emergencyMultiplier": 2.4,
+        "marginReserve": 0.13,
+        "minMarginCents": 1600,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "status": "running",
+      "worldId": "we4df81484ba0cb962c7c",
       "boardRun": null
     }
   ]
