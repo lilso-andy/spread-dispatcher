@@ -1722,3 +1722,25 @@ Controller {"pid":5608,"round":5,"startedAt":"2026-11-14T10:51:22.523Z","state":
 Exact integrated file artifact: https://github.com/lilso-andy/spread-dispatcher/commit/2fd2bf3e36e4a39b588214884ff976a7354e7897. To reproduce tested level6 source f734896, start from core2213766 and restore ONLY desk.ts, test/market-economics.test.ts, notes.ts and test/notes.test.ts from that artifact. Other files in the main-based review commit are not the executed dispatcher. Branch HEAD retains a minimal compatible Desk diff and cargo-default Notes. For level5 use cargo Notes from HEAD, not the level6 key variant. Newer integration must merge the scoped diff and rebaseline; never overwrite newer teammate code with the archived file.
 
 Scope: notes.ts/parser tests/report plus explicitly approved desk.ts and test/market-economics.test.ts. No shared config, planner/runner or teammate-branch edits, PR merge, force-push, ranking/test-final/live-final. Raw logs/reveals/keys stay local.
+
+## Authorized ranking levels4–6: season6 run2
+
+User explicitly authorized ranking levels4–6 in this chat. Limited to one additional run per level, expected run2/5 in season6. No seeds, reveal, fork, final, merge or other levels. Source frozen at ab4f5b139176de9c12687a7b73685d8d19403af3 (C:\Users\thanh\Documents\Codex\2026-11-14\t\work\ranking-456-latest); main differs: main is 9dccfdb6238abe56e61938ecb48fd64b371651b2. All 87 offline tests passed. Team integration presets are used without experimental floor900/fee086. Earlier practice controller stopped at a completed pair; its remaining experiment is deferred.
+
+Checkpoint: All three requested additional ranking weeks completed; no further ranking/final authorized by this batch. Controller: stopped. Local manifest: work/ranking-456/manifest.json. Raw journals remain local.
+
+| Level | Status | World | Margin EUR | Won | On time | Undelivered | Refusals |
+|---:|---|---|---:|---:|---:|---:|---:|
+| 4 | completed | w845f4eb79dc38f00ce0d | 4683.50 | 185 | 99.46% | 0 | 0 |
+| 5 | completed | wbfba98afd3b4f682a471 | 488.98 | 23 | 100.00% | 0 | 0 |
+| 6 | completed | w6edcaf9d8becb966d95a | 1648.69 | 96 | 98.96% | 0 | 0 |
+
+Level 4: source ab4f5b139176de9c12687a7b73685d8d19403af3; season6 expected run2; full config `{"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\ranking-456\level-4; world w845f4eb79dc38f00ce0d; next publish final week, then proceed to next requested level.
+
+Level 5: source ab4f5b139176de9c12687a7b73685d8d19403af3; season6 expected run2; full config `{"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\ranking-456\level-5; world wbfba98afd3b4f682a471; next publish final week, then proceed to next requested level.
+
+Level 6: source ab4f5b139176de9c12687a7b73685d8d19403af3; season6 expected run2; full config `{"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\ranking-456\level-6; world w6edcaf9d8becb966d95a; next publish final week, then proceed to next requested level.
+
+These are ranking observations, not paired causal uplift evidence. Retain every completed result, including any week below93%. Two of five weeks per level cannot establish a final top-six position.
+
+Independent final verification: all three owned worlds ended, practice ranking season6/run2; score endpoint matches saved results and public board run2 margin. Each level now has2/5 completed weeks. All three pass93%; zero undelivered orders and zero refused actions. Controller25191 exited0 after BATCH_COMPLETE. No more worlds will be created by this batch.
