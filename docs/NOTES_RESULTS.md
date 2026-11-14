@@ -1744,3 +1744,92 @@ Level 6: source ab4f5b139176de9c12687a7b73685d8d19403af3; season6 expected run2;
 These are ranking observations, not paired causal uplift evidence. Retain every completed result, including any week below93%. Two of five weeks per level cannot establish a final top-six position.
 
 Independent final verification: all three owned worlds ended, practice ranking season6/run2; score endpoint matches saved results and public board run2 margin. Each level now has2/5 completed weeks. All three pass93%; zero undelivered orders and zero refused actions. Controller25191 exited0 after BATCH_COMPLETE. No more worlds will be created by this batch.
+
+## Astra practice continuation: volume economics
+
+Source b68850e5f24d0d8869d40484bc89edc55283cc39. All88 offline tests pass. Branch work/notes-thanhdatLUT. Ordinary practice only. Threshold93%; development seeds astra-dev-a-v1 and astra-dev-b-v1; reserved decision astra-decision-new-456-v1. No ranking/final. Current controller 22436 stopped. Analyze all completed weeks and reveals before selecting code/config.
+
+Hypothesis: Competitive quote/fee economics expands profitable volume: level4/5 q1.05 fee0.95 versus published q1.35 fee1.08; level6 floor900 versus1600. Previous guarded level6 evidence +2577.48 EUR across3seeds; floor900 single pair+259.84 EUR. Transfer is unproven. Reject if any week<93% or pooled margin fails to improve; untouched decision seed required.
+
+|Level|Seed|Side|World|Margin EUR|Won|On time|Undelivered share|Refusals|
+|---:|---|---|---|---:|---:|---:|---:|---:|
+|4|astra-dev-a-v1|baseline|w9c2b23f39f6029d3c741|2341.23|87|100.00|0|0|
+|4|astra-dev-a-v1|candidate|weba55fe84cdc96257cb3|5109.66|221|100.00|0|0|
+|4|astra-dev-b-v1|baseline|w7f31d8d7c61d0a1068ad|860.18|32|100.00|0|0|
+|4|astra-dev-b-v1|candidate|wbc224756936c216a4a2f|1952.58|96|100.00|0|0|
+|4|astra-decision-new-456-v1|baseline|w8f03d4f53ecfb80213bd|1168.46|50|98.00|0|0|
+|4|astra-decision-new-456-v1|candidate|w3b413bda9751c285b5ed|3071.96|150|99.33|0|0|
+|5|astra-dev-a-v1|baseline|w4ca49d994e2b77ff4d4e|1691.49|63|100.00|0|0|
+|5|astra-dev-a-v1|candidate|w34a18bab600cae2132d1|3902.14|161|99.38|0|0|
+|5|astra-dev-b-v1|baseline|wfc032d6ab997fc58c819|676.72|25|100.00|0|0|
+|5|astra-dev-b-v1|candidate|w3ce2fb85dc4267be35a4|1061.27|66|98.48|0|0|
+|5|astra-decision-new-456-v1|baseline|wa28d77d383eb868aef13|1091.48|36|100.00|0|0|
+|5|astra-decision-new-456-v1|candidate|wab5335372135d8d175cf|2496.17|111|99.10|0|0|
+|6|astra-dev-a-v1|baseline|w31f4fecd210d4ee24ccb|4195.24|171|100.00|0|0|
+|6|astra-dev-a-v1|candidate|w6ba50bca7706a2ee031f|4149.48|215|99.53|0|0|
+|6|astra-dev-b-v1|baseline|w960931828fcb0efebe05|2089.28|99|100.00|0|0|
+|6|astra-dev-b-v1|candidate|wbd307deb28b3e00cca6c|2328.09|136|100.00|0|0|
+|6|astra-decision-new-456-v1|baseline|wf742aaa896a02d8a2d03|2133.01|114|99.12|0|0|
+|6|astra-decision-new-456-v1|candidate|w882b594df95bf757ad90|2581.42|140|99.29|0|0|
+
+Level4: baseline config {"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; candidate config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}. Completed totals: baseline EUR4369.87, candidate EUR10134.20. All three pairs completed; selection requires reveal audit and holdout gain.
+
+Level5: baseline config {"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; candidate config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}. Completed totals: baseline EUR3459.69, candidate EUR7459.58. All three pairs completed; selection requires reveal audit and holdout gain.
+
+Level6: baseline config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; candidate config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":900,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}. Completed totals: baseline EUR8417.53, candidate EUR9058.99. All three pairs completed; selection requires reveal audit and holdout gain.
+
+Audit: deduplicated ledger reconciles to final scores; completed-world reveal checks manual/plates/deadline/ready for won safe notes. This check is partial, not proof of full note coverage.
+
+w9c2b23f39f6029d3c741: ledger cents {"revenue":1172600,"driver_fee":-938477}; potential parser misses [].
+
+weba55fe84cdc96257cb3: ledger cents {"revenue":2457800,"driver_fee":-1944206,"release_fee":-2628}; potential parser misses [].
+
+w7f31d8d7c61d0a1068ad: ledger cents {"revenue":392600,"driver_fee":-306582}; potential parser misses [].
+
+wbc224756936c216a4a2f: ledger cents {"revenue":1044800,"driver_fee":-849542}; potential parser misses [].
+
+w8f03d4f53ecfb80213bd: ledger cents {"revenue":730000,"driver_fee":-591978,"release_fee":-7726,"late_refund":-13450}; potential parser misses [].
+
+w3b413bda9751c285b5ed: ledger cents {"revenue":1777700,"driver_fee":-1451714,"release_fee":-6990,"late_refund":-11800}; potential parser misses [].
+
+w4ca49d994e2b77ff4d4e: ledger cents {"revenue":844300,"driver_fee":-675151}; potential parser misses [].
+
+w34a18bab600cae2132d1: ledger cents {"revenue":1772400,"driver_fee":-1373333,"release_fee":-2628,"late_refund":-6225}; potential parser misses [].
+
+wfc032d6ab997fc58c819: ledger cents {"revenue":314000,"driver_fee":-246328}; potential parser misses [].
+
+w3ce2fb85dc4267be35a4: ledger cents {"revenue":758200,"driver_fee":-649023,"late_refund":-3050}; potential parser misses [].
+
+wa28d77d383eb868aef13: ledger cents {"revenue":555700,"driver_fee":-438826,"release_fee":-7726}; potential parser misses [].
+
+wab5335372135d8d175cf: ledger cents {"revenue":1326200,"driver_fee":-1063693,"release_fee":-6990,"late_refund":-5900}; potential parser misses [].
+
+w31f4fecd210d4ee24ccb: ledger cents {"revenue":1851100,"driver_fee":-1431576}; potential parser misses [].
+
+w6ba50bca7706a2ee031f: ledger cents {"revenue":1992200,"driver_fee":-1574832,"late_refund":-2420}; potential parser misses [].
+
+w960931828fcb0efebe05: ledger cents {"revenue":1004300,"driver_fee":-793312,"release_fee":-2060}; potential parser misses [].
+
+wbd307deb28b3e00cca6c: ledger cents {"revenue":1157900,"driver_fee":-923031,"release_fee":-2060}; potential parser misses [].
+
+wf742aaa896a02d8a2d03: ledger cents {"revenue":1354800,"driver_fee":-1119993,"release_fee":-9848,"failed_visit":-5758,"late_refund":-5900}; potential parser misses [{"request":"R00399","fields":["ready"]}].
+
+w882b594df95bf757ad90: ledger cents {"revenue":1465200,"driver_fee":-1188431,"release_fee":-9848,"failed_visit":-2879,"late_refund":-5900}; potential parser misses [{"request":"R00399","fields":["ready"]}].
+
+All outputs stay under work/astra-results/levelN/seed/side; full manifest checkpoint.json includes exact source/config/world/output and next step. Config proposals go to Pricing for shared config adoption. The target five-week margins have NOT been achieved by this three-seed evaluation. No extrapolated target claims.
+
+## Astra follow-up live checkpoints
+
+Targets remain unmet. Latest fetched integration9c0abb2 differs from frozen548315a only in documentation. Candidate41c78e4 fixes Finnish Thursday abbreviation; baseline91 tests and candidate93 tests pass. Personal main-based fix68 tests pass. Two serial controllers below, at most two owned active worlds. No ranking/final. Do not take over until these PIDs are verified stopped.
+
+astra-parser-results: controller PID35532, running. Hypothesis: Fix confirmed Finnish Thursday readiness error. Same published level6 config both sides; baseline core548315a (91 tests), candidate41c78e4 (93 tests). Observed baseline week had57.58 EUR failed visits and59 EUR refunds; exact attribution requires pairing. No pricing change.. Reserved holdout astra-parser-holdout-v1. Next Run owned w25fe94ad777418655c12.
+
+World w6a22e58aa2a9c70500e8: level6, seed astra-decision-new-456-v1, baseline; source 548315a; config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\astra-parser-results\level6\astra-decision-new-456-v1\baseline; FINAL {"score":{"marginCents":213301,"revenueCents":1354800,"marginShare":0.15744095069382935,"wonOrders":114,"onTimeShare":0.9912280701754386,"undeliveredShare":0,"ranked":true},"refusals":0}.
+
+World w70011b7f91ec08c8b228: level6, seed astra-decision-new-456-v1, candidate; source 41c78e44a6068f297435607d0bae8073bfb2969e; config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\astra-parser-results\level6\astra-decision-new-456-v1\candidate; FINAL {"score":{"marginCents":212894,"revenueCents":1352400,"marginShare":0.15741940254362616,"wonOrders":114,"onTimeShare":0.9912280701754386,"undeliveredShare":0,"ranked":true},"refusals":0}.
+
+World w25fe94ad777418655c12: level6, seed astra-parser-dev-b-v1, baseline; source 548315a; config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\astra-parser-results\level6\astra-parser-dev-b-v1\baseline; RUNNING; resume this ID only after controller stops.
+
+astra-price-results: controller PID37728, running. Hypothesis: Lower base quote multiplier1.05 to0.95 only, keep fee0.95 reserve0.13 floor1600 capacity0.28 lead180. Both use core548315a plus Thursday fix41c78e4,93 tests. Observed level4 first candidate won221 orders with5109.66 EUR; winning100 additional orders at20 EUR net would offer2000 EUR/week, an assumption not lost margin. Main risk is reduced existing-order revenue; reject pooled decline or any week below93%, then untouched holdout. Parser change remains provisional pending separate test.. Reserved holdout astra-price-holdout-v1. Next Run owned wdc5caf5f59d7b66248b0.
+
+World wdc5caf5f59d7b66248b0: level4, seed astra-price-dev-a-v1, baseline; source 41c78e44a6068f297435607d0bae8073bfb2969e; config {"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\astra-price-results\level4\astra-price-dev-a-v1\baseline; RUNNING; resume this ID only after controller stops.
