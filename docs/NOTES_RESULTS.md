@@ -774,3 +774,84 @@ Latest completed policy batch: 16/16 pairs, EUR43,304.07 -> EUR48,413.23 (+EUR5,
 Destination-side batch is still finishing its last pair; completed pairs so far are ties. The queued negative-bound batch waits for both policy and side batches, chooses only configurations eligible on both prior seeds with zero refusals, then validates on fresh notes-negation-16/17, two pairs per every level1–8. Do not relabel old results as this new source.
 
 Practice only. No ranking/final and no merge. Team requested planner contract handoff only; planner.ts remains untouched. All source changes remain notes.ts, test/notes.test.ts and this report. Credentials/raw logs remain ignored.
+
+
+## Bounded level 4–6 session — latest user instruction
+
+Status: in progress. Assigned branch work/notes-thanhdatLUT. Exactly3 planned bounded rounds in order4,5,6; level4 is a compatibility control and levels5/6 test note-coverage hypotheses. Historical controls are background evidence only because the latest integrated commit advanced. No replacement worlds are created because the chat changed. The earlier unlimited loops are stopped: their controller handles exited0 and no Node controllers remained.
+
+Runtime core: e2258522db411d7d0ed2542cc184307a8388baa9; main 9dccfdb6238abe56e61938ecb48fd64b371651b2 is different and is NOT the executed dispatcher. Baseline snapshot e1d59e4c7d3c75987263f2a840e4c452f312a592 contains the integrated core plus the personal parser overlay; git verification found only notes.ts and test/notes.test.ts different from that core. Every candidate retains the same dispatcher/client/config source; only owned parser/test diffs vary. The integration status validates level4–6 behavior; pending fixed-price changes are confined to1–3.
+
+Full fixed configuration for this bounded session (unchanged in all comparisons):
+
+```json
+{
+  "quoteMultiplier": 1.35,
+  "feeMultiplier": 1.08,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+Baseline reuse is accepted only after checking the actual snapshot, full config, level, seed and server ended/practice/non-board state. Cached level4 pairs predate this bounded request and are compatibility evidence only, not newly preregistered optimization wins. No new level4 money gain is claimed.
+
+| Control level | Seed | Baseline snapshot | Candidate snapshot | Baseline world | Candidate world | Base EUR | Candidate EUR | Won base/candidate | On time base/candidate | Undelivered base/candidate | Refusals base/candidate |
+| ---: | --- | --- | --- | --- | --- | ---: | ---: | --- | --- | --- | --- |
+| 4 | notes-clock-18 | 60e940b77b25ec68179516e3e8b69a6191eae3ab | d9d9daecade99c9804e50e771e81ab0a189eac7e | wefc4554c35ef93a7d632 | wf8d2e0b0777c771355cd | 885.41 | 885.41 | 41/41 | 100.00%/100.00% | 0/0 | 0/0 |
+| 4 | notes-clock-19 | 60e940b77b25ec68179516e3e8b69a6191eae3ab | d9d9daecade99c9804e50e771e81ab0a189eac7e | w66252120e5522099553c | w41e851c6e0397d6628ca | 1167.02 | 1167.02 | 45/45 | 100.00%/100.00% | 0/0 | 0/0 |
+
+Historical level4 evidence: both old controls have zero note-bearing requests and tied final scores; no e225 baseline reuse is claimed. Output folders remain the recorded local clock-batch seed/level4/baseline and candidate folders; no controller takeover is needed because worlds ended and old processes stopped.
+
+### Ledger evidence used before choosing hypotheses
+
+Historical ledger totals below deduplicate event seq and match final scores from the earlier60e940b overlay on3cb; they motivate hypotheses, not cached baselines for the new core. Raw journals/reveals remain local.
+
+| Level | Seed | Final margin cents | Revenue cents | Driver fee cents | Late refund cents | Declined requests | Note-bearing requests |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 5 | notes-clock-18 | 60761 | 290400 | -227639 | -2000 | 317 | 416 |
+| 5 | notes-clock-19 | 52555 | 348300 | -295745 | 0 | 316 | 441 |
+| 6 | notes-clock-18 | 69467 | 319300 | -247833 | -2000 | 317 | 416 |
+| 6 | notes-clock-19 | 63172 | 388900 | -325728 | 0 | 316 | 441 |
+
+Predeclared selection rule: All measured candidate weeks>=90%, zero refusals, positive development sum then positive fresh holdout delta. If gain<1%, prefer higher worst on-time share; tied buffer retains baseline.
+
+### New round 1: level 4 — Compatibility control for scoped deadline preprocessing
+
+Registered before editing/creating worlds: 2026-11-14 05:31:29 Europe/Kiev. Hypothesis: Level4 baseline controls contain zero notes; a parser-only preprocessing change must not change final margin, service or ledger. This is a compatibility check, not a claimed money optimization.
+
+Behavior diff: Same scoped perillä viim. canonicalization later assessed at level5; the null-note path must remain identical.. Desired metric: Exact paired final margin and service equality; keep baseline on ties.. Reject condition: Any candidate week below90%/unranked, any refused action, or missed critical note constraint. Positive development sum requires positive fresh holdout. Below1% gain, prefer higher worst on-time share; tied buffer keeps baseline.. Baseline e1d59e4c7d3c75987263f2a840e4c452f312a592; candidate c647f22f556afd4e99a2190f235df4cf13445fd5. Core e2258522db411d7d0ed2542cc184307a8388baa9 on both sides. Offline checks: Baseline72/72 and candidate73/73 full integrated tests passed, diff check passed. Candidate diff fingerprint: sha256:cbe215bec1576720095dcdfaef7a1c99435af87f9423baf2c41ae9ac7989a7fb.
+
+Development seeds: thanhdat-bounded4-a, thanhdat-bounded4-b. Untouched planned holdout: not applicable for a tied compatibility control. Holdout is scheduled only if development passes the gate. Config is the full fixed JSON above. Decision: not selected / pending. Next: Execute two fresh level4 control pairs on latest core; push each before continuing.
+
+| Phase | Seed | Side | Snapshot | World ID | Margin EUR | Won | On time | Undelivered count/share | Refusals | Eligible | Output folder |
+| --- | --- | --- | --- | --- | ---: | ---: | ---: | --- | ---: | --- | --- |
+
+### New round 2: level 5 — Scoped Finnish delivery-deadline abbreviation
+
+Registered before editing/creating worlds: 2026-11-14 05:31:29 Europe/Kiev. Hypothesis: Completed level5 reveals show repeatedly declined perillä viim. deadlines; ledger shows 317/316 declined requests and 416/441 note-bearing requests on the chosen baseline seeds. Canonicalizing only this grounded delivery-deadline phrase should recover feasible orders without dropping constraints.
+
+Behavior diff: Replace perillä/perilla + viim. with perillä/perilla + viimeistään before clause splitting; do not generalize standalone viim. or equipment/contact text.. Desired metric: Increase paired final gross margin while every candidate week remains at least90% on time; keep all refusals at zero and confirm newly accepted deadline facts after world end.. Reject condition: Any week below90%/unranked, any refused action or missed critical note constraint; non-positive development delta; or benefit not repeated on fresh holdout. For gains below1%, prefer the higher worst on-time share; equal buffer keeps baseline.. Baseline e1d59e4c7d3c75987263f2a840e4c452f312a592; candidate c647f22f556afd4e99a2190f235df4cf13445fd5. Core e2258522db411d7d0ed2542cc184307a8388baa9 on both sides. Offline checks: Baseline72/72 and candidate73/73 full integrated tests passed, diff check passed. Candidate diff fingerprint: sha256:cbe215bec1576720095dcdfaef7a1c99435af87f9423baf2c41ae9ac7989a7fb.
+
+Development seeds: notes-clock-18, notes-clock-19. Untouched planned holdout: thanhdat-bounded5-holdout-20261114. Holdout is scheduled only if development passes the gate. Config is the full fixed JSON above. Decision: not selected / pending. Next: After level4 control, fetch source and re-establish baseline if changed; run two level5 seeds.
+
+| Phase | Seed | Side | Snapshot | World ID | Margin EUR | Won | On time | Undelivered count/share | Refusals | Eligible | Output folder |
+| --- | --- | --- | --- | --- | ---: | ---: | ---: | --- | ---: | --- | --- |
+
+### New round 3: level 6 — Finnish weekday abbreviations retain their attached clock
+
+Registered before editing/creating worlds: 2026-11-14 05:31:29 Europe/Kiev. Hypothesis: Closed level6 notes contain to. kello13 valmis and ma. kello20 perillä; clause splitting at the weekday dot loses the day/time relationship. Grounded canonical weekday/clock markers should recover feasible work.
+
+Behavior diff: Expand standalone dotted Finnish weekday abbreviations to full weekday names before splitting; canonicalize kello only before a complete numeric clock. Do not treat English to without dot as a weekday.. Desired metric: Increase paired final gross margin while every measured week stays>=90%; validate day/time against post-week reveal on newly accepted cases.. Reject condition: Any candidate week below90%/unranked, any refused action, or missed critical note constraint. Positive development sum requires positive fresh holdout. Below1% gain, prefer higher worst on-time share; tied buffer keeps baseline.. Baseline e1d59e4c7d3c75987263f2a840e4c452f312a592; candidate not built yet. Core e2258522db411d7d0ed2542cc184307a8388baa9 on both sides. Offline checks: pending. Candidate diff fingerprint: pending.
+
+Development seeds: thanhdat-bounded6-a, thanhdat-bounded6-b. Untouched planned holdout: thanhdat-bounded6-holdout-20261114. Holdout is scheduled only if development passes the gate. Config is the full fixed JSON above. Decision: not selected / pending. Next: Use selected level5 baseline only after its development/holdout gate; then build/test candidate.
+
+| Phase | Seed | Side | Snapshot | World ID | Margin EUR | Won | On time | Undelivered count/share | Refusals | Eligible | Output folder |
+| --- | --- | --- | --- | --- | ---: | ---: | ---: | --- | ---: | --- | --- |
+
+Checkpoint owner: this Codex desktop host; active controller: none. Next action: Ready for level4 control on pinned e225, no cached baseline reuse. Only ordinary practice; no ranking/test-final/live-final, no merge/force-push, no teammate branch edits. Source changes trigger a new baseline before any next round. Planner interface changes remain a proposal for its owner. Displayed percentages are rounded; eligibility gates use exact final scores.
