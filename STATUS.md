@@ -1,5 +1,9 @@
 # Shared status
 
+## Ranking recovery after round change
+
+Live rules, API and leaderboard code checked on 14 November still expose eight levels. Season 7 Saturday 15:00 is current. Season 6 has closed for new runs. Six season 6 controllers were found stopped and their exact worlds were resumed only after checking the original processes had ended. The resumed level 7 run 2 finished at €8,142.44 with 97.78% on time. Level 8 run 2 finished at €10,046.25 with 95.29% on time. Both delivered every order. Level 1, 2, 3 and 6 runs are still being monitored. `docs/ranking-s6-sweep.json` contains server and leaderboard verified completed results. Resume ownership is recorded in `prompts/resume-16000.md`.
+
 ## Objective
 
 Build a level-8 dispatcher that meets the 90% on-time minimum and maximizes gross margin. Collaborate through GitHub repo lilso-andy/spread-dispatcher, individual branches and PRs. The owner has made the repository public; credentials and raw practice logs remain ignored.
