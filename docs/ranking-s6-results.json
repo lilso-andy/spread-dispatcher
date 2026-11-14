@@ -1,0 +1,106 @@
+{
+  "source": "a112534a20e1b6e7e7ea04eba4123914f488b94c",
+  "season": 6,
+  "authorized": "one ranking run each level 1-8",
+  "complete": false,
+  "runs": [
+    {
+      "level": 2,
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "status": "ended",
+      "worldId": "w4814e11999baf852ab53",
+      "boardRun": 1,
+      "score": {
+        "marginCents": 906372,
+        "revenueCents": 4846500,
+        "marginShare": 0.18701578458681523,
+        "wonOrders": 770,
+        "onTimeShare": 0.9792207792207792,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "undeliveredOrders": 0,
+      "actionRefusals": 0
+    },
+    {
+      "level": 1,
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "status": "ended",
+      "worldId": "w3174e78d789eec375fd4",
+      "boardRun": 1,
+      "score": {
+        "marginCents": 991577,
+        "revenueCents": 4915400,
+        "marginShare": 0.20172864873662366,
+        "wonOrders": 767,
+        "onTimeShare": 0.984354628422425,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "undeliveredOrders": 0,
+      "actionRefusals": 0
+    },
+    {
+      "level": 3,
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "status": "running",
+      "worldId": "wa9909fa6c0db7cc2a6dd",
+      "boardRun": null
+    },
+    {
+      "level": 4,
+      "config": {
+        "quoteMultiplier": 1.35,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2.4,
+        "marginReserve": 0.13,
+        "minMarginCents": 1600,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "status": "running",
+      "worldId": "wac32d11db9339ac39cdd",
+      "boardRun": null
+    }
+  ]
+}
