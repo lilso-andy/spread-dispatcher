@@ -1004,5 +1004,80 @@
       "late_refund": -110875,
       "failed_visit": -2500
     }
+  },
+  {
+    "source": "baab6f09b4ac8c0d7e4b674310cf5df7b549e723",
+    "level": 8,
+    "seed": "spread-1",
+    "arm": "baseline",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "worldId": "w5cec90612dfc351d4cff",
+    "phase": "r4",
+    "score": {
+      "marginCents": 767706,
+      "revenueCents": 2450400,
+      "marginShare": 0.31329823702252696,
+      "wonOrders": 257,
+      "onTimeShare": 0.9844357976653697,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2450400,
+      "driver_fee": -1662440,
+      "late_refund": -16050,
+      "release_fee": -4204
+    }
+  },
+  {
+    "source": "baab6f09b4ac8c0d7e4b674310cf5df7b549e723",
+    "level": 8,
+    "seed": "spread-1",
+    "arm": "candidate",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 0.86,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "worldId": "w28cf49ab76f84fbb9b1b",
+    "phase": "r4",
+    "score": {
+      "marginCents": 822280,
+      "revenueCents": 2460000,
+      "marginShare": 0.334260162601626,
+      "wonOrders": 260,
+      "onTimeShare": 0.9461538461538461,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2460000,
+      "driver_fee": -1567675,
+      "late_refund": -70045
+    }
   }
 ]
