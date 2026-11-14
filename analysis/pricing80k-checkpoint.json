@@ -110,13 +110,117 @@
       "marginPerWonOrderEUR": 10.563390275952694,
       "negativeContributionCount": 85,
       "negativeContributionCents": -214253
+    },
+    {
+      "side": "baseline",
+      "level": 1,
+      "seed": "full-check-b",
+      "worldId": "w8e1c3628d374835ef743",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": null,
+      "deskSha256": "757636d15ce56ead10cbe2911426cea201d31c2d7b4ec0bc419affb712e19416",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-1/full-check-b/baseline",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-ab4f5b1",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 1,
+      "score": {
+        "marginCents": 490784,
+        "revenueCents": 4251800,
+        "marginShare": 0.11542970036219954,
+        "wonOrders": 601,
+        "onTimeShare": 0.9351081530782029,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 75.357,
+      "ledgerCents": {
+        "revenue": 4251800,
+        "driver_fee": -3595384,
+        "release_fee": -8627,
+        "late_refund": -157005
+      },
+      "declines": {
+        "insufficient safe capacity, time or margin": 148,
+        "service recovery: pause new exposure": 245
+      },
+      "marginPerWonOrderEUR": 8.1661231281198,
+      "negativeContributionCount": 81,
+      "negativeContributionCents": -298732
+    },
+    {
+      "side": "candidate",
+      "level": 1,
+      "seed": "full-check-b",
+      "worldId": "waaf11745d7c6b42ae561",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": "analysis/training-service-budget.patch",
+      "deskSha256": "fb893f968ddd87ac2bdfc0fe07246b3f717532c17cdc57581e78da6452aa328a",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-1/full-check-b/candidate",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-service08",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 2,
+      "score": {
+        "marginCents": 558912,
+        "revenueCents": 5338500,
+        "marginShare": 0.10469457712840685,
+        "wonOrders": 781,
+        "onTimeShare": 0.9270166453265045,
+        "undeliveredShare": 0.0012804097311139564,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 83.479,
+      "ledgerCents": {
+        "revenue": 5338500,
+        "driver_fee": -4547231,
+        "release_fee": -8627,
+        "late_refund": -200330,
+        "undelivered_penalty": -23400
+      },
+      "declines": {
+        "insufficient safe capacity, time or margin": 212
+      },
+      "marginPerWonOrderEUR": 7.156363636363636,
+      "negativeContributionCount": 114,
+      "negativeContributionCents": -418022
     }
   ],
   "controller": {
-    "pid": 17699,
+    "pid": 17803,
     "level": 1,
-    "seed": "full-check-a",
-    "started": "2026-11-14T11:10:09.665Z",
+    "seed": "full-check-b",
+    "started": "2026-11-14T11:12:42.894Z",
     "state": "stopped"
   }
 }
