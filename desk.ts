@@ -261,6 +261,7 @@ export class Desk {
       // Additional, faster options need extra booking slack. Keep the original
       // slowest feasible offer, but do not sell a rush alternative near cutoff.
       if (reservation && route.latestStart < this.now + 2 * this.config.minLeadMinutes) continue
+      if (this.level === 8 && completed.length >= 10 && lateCount / completed.length > 0.02 && route.driveMinutes > 300) continue
       if (!this.capacity(order, route)) continue
       const place = request.legs[0]!.pickup.placeId
       const local = this.localDrivers(order, route).length
