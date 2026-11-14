@@ -209,7 +209,7 @@ Validation status: complete. Before source bf1b9d4, after source fb35ea8; same B
 | notes-typo-holdout-08 | before | wdc4524f7d34dd1b35722 | 3351.92 | 99.04% | true | 0 |
 | notes-typo-holdout-08 | after | waee6e703cc2693ca3b4c | 3351.92 | 99.04% | true | 0 |
 
-Both completed pairs preserve margin and on-time share exactly. The fix is adopted for semantic correctness, not claimed profit gain. Final parser tests: 49 main-based / 68 integrated tests. Existing twenty-pair processes retain their frozen older candidate source; their results must not be relabelled as the typo-fixed code.
+Both completed pairs preserve margin and on-time share exactly. The fix is adopted for semantic correctness, not claimed profit gain. At that fix checkpoint: 49 main-based / 68 integrated tests. Existing twenty-pair processes retain their frozen older candidate source; their results must not be relabelled as the typo-fixed code.
 
 ### Equal-allocation levels 1–4 configuration comparison
 
@@ -283,17 +283,20 @@ Full configurations:
 
 ### Inflected-clock regression follow-up
 
-Completed-pair loss analysis found R00725 on notes-cycle-07 level 8: “Valmiina puoli neljästä alkaen.” The complete Unicode boundary rejected neljästä because only neljä/neljän were listed; the old parser happened to match a prefix. Baseline won this request, candidate declined it, with downstream quote differences. Snapshot 78b0670 adds explicit complete Finnish inflected hour forms. Its extraction is 5250 for request arrival 5072, exactly matching baseline reveal readyAt 5250. The malformed near-word neljästää remains uncertain. Tests: 50 main-based / 69 integrated pass. This semantic regression fix is included in the review branch; its separate paired server validation is queued behind the lower-level job, so no recovered-money claim is made yet. Ongoing contact comparisons retain their older frozen baseline/candidate, which both share the missing inflection.
+Completed-pair loss analysis found R00725 on notes-cycle-07 level 8: “Valmiina puoli neljästä alkaen.” The complete Unicode boundary rejected neljästä because only neljä/neljän were listed; the old parser happened to match a prefix. Baseline won this request, candidate declined it, with downstream quote differences. Snapshot 78b0670 adds explicit complete Finnish inflected hour forms. Its extraction is 5250 for request arrival 5072, exactly matching baseline reveal readyAt 5250. The malformed near-word neljästää remains uncertain. Tests: 50 main-based / 69 integrated pass. This semantic regression fix is included in the review branch; its separate paired server results are listed below, including the losing fresh holdout. Recovering one earlier week does not establish an overall profit gain. Ongoing contact comparisons retain their older frozen baseline/candidate, which both share the missing inflection.
 
-Inflection validation status: in progress. Source fb35ea8 -> 78b0670; same Balanced config.
+Inflection validation status: complete. Source fb35ea8 -> 78b0670; same Balanced config.
 
 | Seed | Version | World | Margin EUR | On time | Eligible | Refusals |
 | --- | --- | --- | ---: | ---: | --- | ---: |
 | notes-cycle-07 | before | wb098007321dd451d386a | 5443.27 | 97.42% | true | 0 |
+| notes-cycle-07 | after | w5bcd36303c0d804203d8 | 5479.44 | 97.45% | true | 0 |
+| notes-inflection-holdout-10 | before | w7e039bb83198b2140771 | 6447.11 | 98.21% | true | 0 |
+| notes-inflection-holdout-10 | after | w2a30e5ff70160e08127a | 6284.17 | 98.21% | true | 0 |
 
 ### Contact-notice candidate: next evenly allocated batch
 
-Status 12/16 matched pairs; in progress. Two pairs allocated to every level 1–8. Baseline fb35ea89587f655cd3f95c442eb572eb9c937e8d, candidate a3a468e93f2100341d8d549f734f2ffeff184db3; pricing configuration snapshot 62a128663666537889fcef8f2d09be44018739d1. Both sides use the same selected configuration at each level: training 1–3, competitive 4–7, Balanced 8. This comparison tests only parser changes, not configuration selection. Candidate recognizes only complete relative contact notices and declines unsupported contact clauses. Tests: 69 integrated before server validation. No adoption solely from offline tests.
+Status 16/16 matched pairs; complete. Two pairs allocated to every level 1–8. Baseline fb35ea89587f655cd3f95c442eb572eb9c937e8d, candidate a3a468e93f2100341d8d549f734f2ffeff184db3; pricing configuration snapshot 62a128663666537889fcef8f2d09be44018739d1. Both sides use the same selected configuration at each level: training 1–3, competitive 4–7, Balanced 8. This comparison tests only parser changes, not configuration selection. Candidate recognizes only complete relative contact notices and declines unsupported contact clauses. Tests: 69 integrated before server validation. No adoption solely from offline tests.
 
 Full configurations:
 
@@ -352,8 +355,355 @@ Full configurations:
 | 2 | notes-contact-09 | wd67afe6cc76a57f1c4ef | w72f230f571e1177047d3 | 3066.09 | 3066.09 | 0.00 | 100.00% | 100.00% | true | 0/0 |
 | 3 | notes-contact-09 | w13d927209d8cadd4e934 | wb4f0796cb4c610d60200 | 3066.09 | 3066.09 | 0.00 | 100.00% | 100.00% | true | 0/0 |
 | 4 | notes-contact-09 | w2380563bd4fd60014e53 | w013fa9b109264ddaa0b4 | 1217.97 | 1217.97 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 5 | notes-contact-09 | we64c2f21f5ba7912424e | wb9e463aeeca12f5e5e89 | 1014.77 | 1040.91 | 26.14 | 100.00% | 100.00% | true | 0/0 |
+| 6 | notes-contact-09 | wd589fba25e630f7b4cb8 | w1047404dcfd4bf5cd39c | 1051.43 | 1077.57 | 26.14 | 100.00% | 100.00% | true | 0/0 |
+| 7 | notes-contact-09 | wbe0deea74ce222c3a8cf | w2c4313d377e259813dc2 | 3426.92 | 3564.34 | 137.42 | 100.00% | 100.00% | true | 0/0 |
+| 8 | notes-contact-09 | wf971c14448170c238e62 | w2d1c41cea01e2157b244 | 5462.28 | 5121.68 | -340.60 | 100.00% | 98.75% | true | 0/0 |
 
-Contact-source partial audit at its latest checkpoint: 1752 note-bearing occurrences, 652 passing uncertainty/summer filters, 48 won requests with truth. Equipment/readiness/release/note-deadline mismatches: 0. Potential opening-hours differences requiring semantic/recovery review: 1. An absolute bound can explain some of these differences; they are diagnostics, not proven failures or a full false-safe count. The R00880 case is discussed in the planner handoff.
+### Updated teammate policy comparison
+
+Status 8/16 matched pairs; in progress. Two seeds allocated to every level1–8. Source 78b0670e0844b9fa66fcee7991ab28cc3563ff35 ; teammate config revision 62a128663666537889fcef8f2d09be44018739d1. Configuration-only comparison on the same inflection-fixed parser; levels2/3/5 use the newly published files and level8 compares Balanced with existing Cost.
+
+Full configurations:
+
+```json
+{
+  "baseline": {
+    "1": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 2.1,
+      "marginReserve": 0.1,
+      "minMarginCents": 500,
+      "capacityFraction": 0.26,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 210,
+      "strictNotes": true,
+      "offers": true
+    },
+    "2": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 2.1,
+      "marginReserve": 0.1,
+      "minMarginCents": 500,
+      "capacityFraction": 0.26,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 210,
+      "strictNotes": true,
+      "offers": true
+    },
+    "3": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 2.1,
+      "marginReserve": 0.1,
+      "minMarginCents": 500,
+      "capacityFraction": 0.26,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 210,
+      "strictNotes": true,
+      "offers": true
+    },
+    "4": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1600,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "5": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1600,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "6": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1600,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "7": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1600,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "8": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.2,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    }
+  },
+  "candidate": {
+    "1": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 2.1,
+      "marginReserve": 0.1,
+      "minMarginCents": 500,
+      "capacityFraction": 0.26,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 210,
+      "strictNotes": true,
+      "offers": true
+    },
+    "2": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 1.9,
+      "marginReserve": 0.07,
+      "minMarginCents": 250,
+      "capacityFraction": 0.32,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 210,
+      "strictNotes": true,
+      "offers": true
+    },
+    "3": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 2.1,
+      "marginReserve": 0.07,
+      "minMarginCents": 500,
+      "capacityFraction": 0.26,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 210,
+      "strictNotes": true,
+      "offers": true
+    },
+    "4": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1600,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "5": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1100,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "6": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1600,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "7": {
+      "quoteMultiplier": 1.35,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.13,
+      "minMarginCents": 1600,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "8": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    }
+  }
+}
+```
+
+| Level | Seed | Baseline world | Candidate world | Base EUR | Candidate EUR | Delta EUR | Base on time | Candidate on time | Both eligible | Refusals base/candidate |
+| ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| 1 | notes-policy-12 | w82ae39a7967aeeaf00dc | w9ddaafefb6bbcbd5f888 | 3069.74 | 3069.74 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 2 | notes-policy-12 | waa77c2c35dcd6fcd209d | wa0400ca222a8e607f15d | 3093.41 | 3383.43 | 290.02 | 100.00% | 99.74% | true | 0/0 |
+| 3 | notes-policy-12 | wff2e888ce7a9b68dd896 | wfc77cbbd298442a843ee | 3051.02 | 3225.01 | 173.99 | 99.66% | 100.00% | true | 0/0 |
+| 4 | notes-policy-12 | w166c65bc9a3f4b7229c1 | w40f2d9099b9a87b34d29 | 2520.66 | 2520.66 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 5 | notes-policy-12 | w390692283a0787c825d6 | w301d43e6eae64b270f3d | 1880.81 | 1966.86 | 86.05 | 100.00% | 100.00% | true | 0/0 |
+| 6 | notes-policy-12 | wba31c9c5dc8c304baa68 | we78d746b3142927fedf5 | 2394.64 | 2394.64 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 7 | notes-policy-12 | wc1a1b863a11ce5c85115 | w62da7514abe345a13728 | 4748.80 | 4748.80 | 0.00 | 97.24% | 97.24% | true | 0/0 |
+| 8 | notes-policy-12 | wb0b714dfdda86a309463 | wb298abe8ebe409cd485b | 6589.59 | 9295.26 | 2705.67 | 99.12% | 98.08% | true | 0/0 |
+
+### Finnish destination-side correction
+
+Status 7/16 matched pairs; in progress. Two seeds allocated to every level1–8. Source 78b0670e0844b9fa66fcee7991ab28cc3563ff35 -> a9d06c8872c203096398c392f7b354e727b7b744; teammate config revision 62a128663666537889fcef8f2d09be44018739d1. Code-only comparison, same per-level configuration on both sides; kohde destination hours must never overwrite pickup hours.
+
+Full configurations:
+
+```json
+{
+  "1": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.1,
+    "marginReserve": 0.1,
+    "minMarginCents": 500,
+    "capacityFraction": 0.26,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 210,
+    "strictNotes": true,
+    "offers": true
+  },
+  "2": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 1.9,
+    "marginReserve": 0.07,
+    "minMarginCents": 250,
+    "capacityFraction": 0.32,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 210,
+    "strictNotes": true,
+    "offers": true
+  },
+  "3": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.1,
+    "marginReserve": 0.07,
+    "minMarginCents": 500,
+    "capacityFraction": 0.26,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 210,
+    "strictNotes": true,
+    "offers": true
+  },
+  "4": {
+    "quoteMultiplier": 1.35,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.13,
+    "minMarginCents": 1600,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "5": {
+    "quoteMultiplier": 1.35,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.13,
+    "minMarginCents": 1100,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "6": {
+    "quoteMultiplier": 1.35,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.13,
+    "minMarginCents": 1600,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "7": {
+    "quoteMultiplier": 1.35,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.13,
+    "minMarginCents": 1600,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "8": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.2,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  }
+}
+```
+
+| Level | Seed | Baseline world | Candidate world | Base EUR | Candidate EUR | Delta EUR | Base on time | Candidate on time | Both eligible | Refusals base/candidate |
+| ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| 1 | notes-side-14 | wbf7d7b6f2a5b9d02eb2a | w1adffc8cc0898e523597 | 2586.86 | 2586.86 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 2 | notes-side-14 | w1a1494671ae8b860d135 | w8b8fea6dfd5399089c68 | 3184.53 | 3184.53 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 3 | notes-side-14 | w6b26ea65d5fbc74cc41c | w3180ada33e6351105710 | 3054.48 | 3054.48 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 4 | notes-side-14 | w66d0c811c482a51a1182 | wcf40bdebf58ffafa8fc0 | 623.88 | 623.88 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 5 | notes-side-14 | wec7a4f8f38ac0cf6cdd2 | w7812d39f6172225c6beb | 575.47 | 575.47 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 6 | notes-side-14 | w50897b8eedb708f2b32e | we57e4181615e3d6550e0 | 543.30 | 543.30 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+| 7 | notes-side-14 | w317cc7ab56ca499d25df | w24f75a4b7e7ee7911cb8 | 1749.63 | 1749.63 | 0.00 | 100.00% | 100.00% | true | 0/0 |
+
+### Selection after completed contact and inflection comparisons
+
+Contact candidate a3a468e completed16 pairs: EUR38,527.04 -> EUR38,276.88 (-EUR250.16), five gains/nine ties/two losses. Both level8 pairs lost (-EUR146.82 and -EUR340.60); all weeks stayed eligible. It is NOT adopted or pushed as parser code. The queued combined-contact validation was stopped by its negative-profit gate before creating any world. Combined source604b276 has70 offline tests only; no server qualification claim. The new experiment is the independent kohde side fix, not a retry labelled as combined contact.
+
+Inflection fix78b0670 completed two pairs: original regression seed +EUR36.17, fresh holdout -EUR162.94, net -EUR126.77. Same on-time share on fresh holdout, and no threshold failures. Reveal confirms new accepted R00249 “Voi noutaa tänään puoli yhdestä alkaen” was parsed correctly at2190; downstream quote/order mix changed. This supports semantic correctness, not a money-improvement claim. Keep this tradeoff explicit while pricing is calibrated.
+
+New current parser candidate a9d06c8 fixes kohde destination hours. Completed contact-world R00472 truth has pickup08:00–18:00 and delivery09:00–20:00. New parsing preserves pickupHours undefined and sets only deliveryHours09:00–20:00, with correct readiness4860. Main-based51/integrated70 tests pass; fresh paired server validation is in progress, so no profit gain is claimed for it yet.
+
+Contact-source partial audit at its latest checkpoint: 3518 note-bearing occurrences, 1410 passing uncertainty/summer filters, 130 won requests with truth. Equipment/readiness/release/note-deadline mismatches: 0. Potential opening-hours differences requiring semantic/recovery review: 2. An absolute bound can explain some of these differences; they are diagnostics, not proven failures or a full false-safe count. The R00880 case is discussed in the planner handoff.
 
 ### Allocation scoreboard
 

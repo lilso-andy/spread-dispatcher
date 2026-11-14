@@ -125,3 +125,11 @@ test("Finnish inflected clocks retain their whole-word meaning", () => {
   assert.equal(parse("Nouto kolmesta alkaen").pickupFrom, 900)
   assert.equal(parse("Valmiina puoli neljästää alkaen").uncertain, true)
 })
+test("Finnish destination hours never replace pickup hours", () => {
+  const f = parse("auto valims vasta huomenna klo 9. kohde auki arkisin 9 - 20.")
+  assert.equal(f.pickupFrom, DAY + 540)
+  assert.equal(f.pickupHours, undefined)
+  assert.deepEqual(f.deliveryHours, { opens: 540, closes: 1200 })
+  assert.equal(f.uncertain, false)
+  assert.equal(parse("Nouto kohteeseen ennen 16:00").uncertain, true)
+})

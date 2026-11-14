@@ -15,7 +15,7 @@ export type NoteFacts = {
   reasons: string[]
 }
 
-const DELIVERY = /toimit|perill|perille|vastaanot|kohtee|deliver|arriv|destination|receiv|leveran|framme|mottag/
+const DELIVERY = /toimit|perill|perille|vastaanot|kohde|kohtee|deliver|arriv|destination|receiv|leveran|framme|mottag/
 const PICKUP = /nout|haett|luovut|pick.?up|collect|handover|hämt|avhämt|utlämn|ready|valmi|klar|maksu|payment|betala/
 const AFTER = /jälkeen|alkaen|aikaisintaan|after|from\b|earliest|not before|ei ennen|valmi|ready|efter|tidigast|inte före|klar|vasta\b/
 const BEFORE = /ennen|mennessä|viimeist|before|\bby\b|latest|före|senast|asti|until|till\b/
