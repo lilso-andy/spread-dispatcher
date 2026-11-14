@@ -1,0 +1,556 @@
+{
+  "recordedAt": "2026-11-13T23:43:09.397Z",
+  "warning": "Partial baseline sweep. Candidate fixed-price policy has not been server validated. Each completed threshold failure is retained.",
+  "policies": [
+    {
+      "directory": "runs/levels-balanced-a",
+      "active": [
+        {
+          "worldId": "w389e0eb99dc3b0f72049",
+          "level": 7,
+          "seed": "spread-1",
+          "state": "running"
+        }
+      ],
+      "source": "1ac2844ec0e48cf2a41f9b2f52de00d3a48e5835",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.2,
+        "emergencyMultiplier": 2.4,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.2,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "offers": true
+      },
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "seeds": [
+        "spread-1"
+      ],
+      "complete": false,
+      "byLevel": [
+        {
+          "level": 1,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 17944,
+          "qualified": 0,
+          "worstOnTimeShare": 0.8888888888888888,
+          "failedSeeds": [
+            "spread-1"
+          ],
+          "actionRefusals": 0
+        },
+        {
+          "level": 2,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 17944,
+          "qualified": 0,
+          "worstOnTimeShare": 0.8888888888888888,
+          "failedSeeds": [
+            "spread-1"
+          ],
+          "actionRefusals": 0
+        },
+        {
+          "level": 3,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 35079,
+          "qualified": 1,
+          "worstOnTimeShare": 0.9444444444444444,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 4,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 177888,
+          "qualified": 1,
+          "worstOnTimeShare": 1,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 5,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 125486,
+          "qualified": 1,
+          "worstOnTimeShare": 1,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 6,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 145858,
+          "qualified": 1,
+          "worstOnTimeShare": 1,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 7,
+          "completed": 0,
+          "planned": 1,
+          "marginCents": 0,
+          "qualified": 0,
+          "worstOnTimeShare": null,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        }
+      ],
+      "results": [
+        {
+          "worldId": "w1cae6cbf70a8a4d27a90",
+          "score": {
+            "marginCents": 17944,
+            "revenueCents": 249300,
+            "marginShare": 0.07197753710389089,
+            "wonOrders": 18,
+            "onTimeShare": 0.8888888888888888,
+            "undeliveredShare": 0,
+            "ranked": false
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.2,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.2,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 1,
+            "seed": "spread-1",
+            "output": "runs\\levels-balanced-a\\level-1",
+            "reveal": true
+          },
+          "elapsedSeconds": 46.33,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w2bd1cd9d31394535449b",
+          "score": {
+            "marginCents": 17944,
+            "revenueCents": 249300,
+            "marginShare": 0.07197753710389089,
+            "wonOrders": 18,
+            "onTimeShare": 0.8888888888888888,
+            "undeliveredShare": 0,
+            "ranked": false
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.2,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.2,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 2,
+            "seed": "spread-1",
+            "output": "runs\\levels-balanced-a\\level-2",
+            "reveal": true
+          },
+          "elapsedSeconds": 49.724,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w78db243b99c2e2979e6f",
+          "score": {
+            "marginCents": 35079,
+            "revenueCents": 249300,
+            "marginShare": 0.14070998796630566,
+            "wonOrders": 18,
+            "onTimeShare": 0.9444444444444444,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.2,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.2,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 3,
+            "seed": "spread-1",
+            "output": "runs\\levels-balanced-a\\level-3",
+            "reveal": true
+          },
+          "elapsedSeconds": 51.62,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w85121124ba710a6eebfc",
+          "score": {
+            "marginCents": 177888,
+            "revenueCents": 701400,
+            "marginShare": 0.2536184773310522,
+            "wonOrders": 76,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.2,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.2,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 4,
+            "seed": "spread-1",
+            "output": "runs\\levels-balanced-a\\level-4",
+            "reveal": true
+          },
+          "elapsedSeconds": 97.984,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w26c668fa6746b47a24cc",
+          "score": {
+            "marginCents": 125486,
+            "revenueCents": 506700,
+            "marginShare": 0.24765344385237814,
+            "wonOrders": 58,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.2,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.2,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 5,
+            "seed": "spread-1",
+            "output": "runs\\levels-balanced-a\\level-5",
+            "reveal": true
+          },
+          "elapsedSeconds": 71.676,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w782dd81747da8990026e",
+          "score": {
+            "marginCents": 145858,
+            "revenueCents": 577500,
+            "marginShare": 0.2525679653679654,
+            "wonOrders": 63,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.2,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.2,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 6,
+            "seed": "spread-1",
+            "output": "runs\\levels-balanced-a\\level-6",
+            "reveal": true
+          },
+          "elapsedSeconds": 66.501,
+          "actionRefusals": 0
+        }
+      ]
+    },
+    {
+      "directory": "runs/levels-cost-a",
+      "active": [
+        {
+          "worldId": "wd37605442553a50098e7",
+          "level": 5,
+          "seed": "spread-1",
+          "state": "running"
+        }
+      ],
+      "source": "1ac2844ec0e48cf2a41f9b2f52de00d3a48e5835",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2.4,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "offers": true
+      },
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "seeds": [
+        "spread-1"
+      ],
+      "complete": false,
+      "byLevel": [
+        {
+          "level": 1,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 17944,
+          "qualified": 0,
+          "worstOnTimeShare": 0.8888888888888888,
+          "failedSeeds": [
+            "spread-1"
+          ],
+          "actionRefusals": 0
+        },
+        {
+          "level": 2,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 17944,
+          "qualified": 0,
+          "worstOnTimeShare": 0.8888888888888888,
+          "failedSeeds": [
+            "spread-1"
+          ],
+          "actionRefusals": 0
+        },
+        {
+          "level": 3,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 35079,
+          "qualified": 1,
+          "worstOnTimeShare": 0.9444444444444444,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 4,
+          "completed": 1,
+          "planned": 1,
+          "marginCents": 177888,
+          "qualified": 1,
+          "worstOnTimeShare": 1,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 5,
+          "completed": 0,
+          "planned": 1,
+          "marginCents": 0,
+          "qualified": 0,
+          "worstOnTimeShare": null,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 6,
+          "completed": 0,
+          "planned": 1,
+          "marginCents": 0,
+          "qualified": 0,
+          "worstOnTimeShare": null,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        },
+        {
+          "level": 7,
+          "completed": 0,
+          "planned": 1,
+          "marginCents": 0,
+          "qualified": 0,
+          "worstOnTimeShare": null,
+          "failedSeeds": [],
+          "actionRefusals": 0
+        }
+      ],
+      "results": [
+        {
+          "worldId": "w9785a48b387025115b0e",
+          "score": {
+            "marginCents": 17944,
+            "revenueCents": 249300,
+            "marginShare": 0.07197753710389089,
+            "wonOrders": 18,
+            "onTimeShare": 0.8888888888888888,
+            "undeliveredShare": 0,
+            "ranked": false
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.08,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 1,
+            "seed": "spread-1",
+            "output": "runs\\levels-cost-a\\level-1",
+            "reveal": true
+          },
+          "elapsedSeconds": 45.548,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w16c846ecbb6606de0157",
+          "score": {
+            "marginCents": 17944,
+            "revenueCents": 249300,
+            "marginShare": 0.07197753710389089,
+            "wonOrders": 18,
+            "onTimeShare": 0.8888888888888888,
+            "undeliveredShare": 0,
+            "ranked": false
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.08,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 2,
+            "seed": "spread-1",
+            "output": "runs\\levels-cost-a\\level-2",
+            "reveal": true
+          },
+          "elapsedSeconds": 44.553,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w3229a9534645395358e6",
+          "score": {
+            "marginCents": 35079,
+            "revenueCents": 249300,
+            "marginShare": 0.14070998796630566,
+            "wonOrders": 18,
+            "onTimeShare": 0.9444444444444444,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.08,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 3,
+            "seed": "spread-1",
+            "output": "runs\\levels-cost-a\\level-3",
+            "reveal": true
+          },
+          "elapsedSeconds": 49.967,
+          "actionRefusals": 0
+        },
+        {
+          "worldId": "w63873312ee6f51a8e0c0",
+          "score": {
+            "marginCents": 177888,
+            "revenueCents": 701400,
+            "marginShare": 0.2536184773310522,
+            "wonOrders": 76,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.08,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "offers": true
+          },
+          "options": {
+            "level": 4,
+            "seed": "spread-1",
+            "output": "runs\\levels-cost-a\\level-4",
+            "reveal": true
+          },
+          "elapsedSeconds": 100.009,
+          "actionRefusals": 0
+        }
+      ]
+    }
+  ]
+}

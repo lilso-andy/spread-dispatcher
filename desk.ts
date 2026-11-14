@@ -224,9 +224,15 @@ export class Desk {
   }
 
   feeMultiplier(place: string): number {
+    // In fixed-price training worlds, a quick booking at our own posted fee is
+    // an upper bound on cost, not evidence that the next gig needs a raise.
+    if (this.level <= 3 && this.config.trainingEconomy) return this.config.feeMultiplier
+    if (this.level <= 3) return 1.05
+    // Explicit lower multipliers opt market levels into fixed opening economics.
+    if (this.level >= 4 && this.level <= 6 && this.config.feeMultiplier < 1.05) return this.config.feeMultiplier
     const samples = [...(this.observedBookings.get(place) ?? [])].sort((a, b) => a - b)
     const learned = samples.length >= 5 ? samples[Math.floor(samples.length * 0.7)]! * 1.03 : 0
-    return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(1.9, learned))
+    return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(this.level >= 7 ? this.config.feeMultiplier + 0.08 : 1.9, learned))
   }
 
   quote(request: PriceRequest): Action | null {
@@ -246,26 +252,41 @@ export class Desk {
     if (completed.length >= 10 && lateCount / completed.length > 0.045) return refuse("service recovery: pause new exposure")
     // Give explicit private appointments their actual deadline, not just the option's 20:00.
     const options = this.level <= 3 ? request.options.slice(0,1) : [...request.options].sort((a, b) => b.deadline - a.deadline)
+    const prices: Extract<Action, { type: "quote" }>["prices"] = {}
+    let reservation: Decision | undefined
     for (const option of options) {
       const order = asOrder(request, option)
       const route = routeFor(order, order.legs.map((_, i) => i), facts, this.network, this.now + this.config.minLeadMinutes, this.endsAt)
       if (!route || route.latestStart < this.now + this.config.minLeadMinutes) continue
+      // Additional, faster options need extra booking slack. Keep the original
+      // slowest feasible offer, but do not sell a rush alternative near cutoff.
+      if (reservation && route.latestStart < this.now + 2 * this.config.minLeadMinutes) continue
       if (!this.capacity(order, route)) continue
       const place = request.legs[0]!.pickup.placeId
       const local = this.localDrivers(order, route).length
       const scarcity = local < 15 ? 0.15 : local < 30 ? 0.07 : 0
-      const fee = request.referenceFeeCents * (this.feeMultiplier(place) + scarcity)
-      const base = this.level <= 6 ? 1.20 : this.config.quoteMultiplier
+      const fixedPrice = this.level <= 3
+      // Long one-way work needed rescue fees above the fixed dealer price in
+      // the training baseline. Price that exposure into acceptance, not a
+      // promise to the dealer that cannot cover its likely recovery cost.
+      const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity, fixedPrice && route.driveMinutes > 300 ? (this.config.trainingEconomy ? 1.20 : 1.85) : 0)
+      const base = this.level <= 3 ? 1.20 : this.level <= 6 ? Math.min(1.20, this.config.quoteMultiplier) : this.config.quoteMultiplier
       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
-      const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + this.config.minMarginCents)
+      const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + (fixedPrice ? Math.min(500, this.config.minMarginCents) : this.config.minMarginCents))
       if (this.level <= 3 && minimum > option.listPriceCents) continue
       const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (base + adjustment) * (1 + trust)) / 100) * 100
       // Do not devote capacity to a near-impossible bid. Explicitly declining is free.
       if (price > option.listPriceCents * (this.level >= 7 ? 2.25 : 1.70)) continue
-      this.decisions.set(request.id, { accepted: true, price, reference: request.referenceFeeCents, route, expires: request.respondBy, reason: "feasible with capacity and margin reserve" })
+      prices[option.kind] = price
+      reservation ??= { accepted: true, price, reference: request.referenceFeeCents, route, expires: request.respondBy, reason: "feasible with capacity and margin reserve" }
       this.log({ type: "decision", at: this.now, requestId: request.id, accepted: true, option: option.kind, priceCents: price, expectedFeeCents: Math.round(fee), localDrivers: local, route })
-      return { type: "quote", requestId: request.id, prices: { [option.kind]: price } }
+    }
+    // Options are alternatives for one order: reserve capacity once, after testing
+    // every offered deadline independently. The dealer can buy only one option.
+    if (reservation) {
+      this.decisions.set(request.id, reservation)
+      return { type: "quote", requestId: request.id, prices }
     }
     return refuse("insufficient safe capacity, time or margin")
   }
@@ -294,11 +315,12 @@ export class Desk {
       const urgency = order.lastPickupAt - this.now
       if (urgency <= 240 && (this.lastReprice.get(gig.id) ?? -Infinity) + 60 <= this.now) {
         const base = this.baseFee(order, gig.stops.filter((s) => s.kind === "pickup").length)
-        const multiplier = urgency <= 90 ? this.config.emergencyMultiplier : urgency <= 180 ? 1.95 : 1.65
+        const multiplier = urgency <= 90 ? this.config.emergencyMultiplier : urgency <= 180 ? (this.level <= 3 && this.config.trainingEconomy ? 1.30 : 1.95) : (this.level <= 3 && this.config.trainingEconomy ? 1.15 : 1.65)
         const feeCents = Math.max(this.currentFee(gig), Math.round(base * Math.max(multiplier, this.feeMultiplier(order.legs[first.leg]!.pickup.placeId))))
-        actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
+        if (feeCents > this.currentFee(gig)) actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
       }
-      if (this.config.offers && this.level >= 3 && (urgency <= 300 || this.now - gig.postedAt >= 90)) actions.push(...this.offersFor(gig, order))
+      const offerDue = this.level >= 8 ? (first.window?.from ?? order.legs[first.leg]!.pickup.window.from) <= this.now + 180 : urgency <= 300 || this.now - gig.postedAt >= 90
+      if (this.config.offers && this.level >= 3 && offerDue) actions.push(...this.offersFor(gig, order))
     }
     return actions
   }
@@ -318,12 +340,12 @@ export class Desk {
     if (!route) return null // private pickups must await the next booked slot
     const base = this.baseFee(order, legs.length)
     const urgent = order.lastPickupAt - this.now <= 240
-    const multiple = Math.max(this.feeMultiplier(order.legs[legs[0]!]!.pickup.placeId), urgent ? 1.85 : 0)
+    const multiple = Math.max(this.feeMultiplier(order.legs[legs[0]!]!.pickup.placeId), urgent ? (this.level <= 3 && this.config.trainingEconomy ? 1.25 : 1.85) : 0)
     const feeCents = Math.max(1, Math.round(base * multiple))
     const schedule = [{ at: this.now, feeCents }]
     // A single planned rescue raise, well before last pickup, avoids hourly fee conditioning.
     const rescueAt = order.lastPickupAt - 210
-    if (this.level >= 2 && rescueAt > this.now) schedule.push({ at: rescueAt, feeCents: Math.max(feeCents, Math.round(base * 1.85)) })
+    if (this.level >= 2 && rescueAt > this.now) schedule.push({ at: rescueAt, feeCents: Math.max(feeCents, Math.round(base * (this.level <= 3 && this.config.trainingEconomy ? 1.30 : 1.85))) })
     return { type: "post", stops: route.stops, audience: { experienced: route.experienced, manualLicence: route.manual }, schedule }
   }
 

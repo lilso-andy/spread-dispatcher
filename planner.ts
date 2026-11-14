@@ -49,14 +49,22 @@ export function routeFor(order: Order, legs: number[], facts: NoteFacts, network
   const stops: StopRef[] = []
   const times: number[] = []
   const travel: number[] = []
+  const attachedPickups: number[] = []
+  let previousLeg: Leg | undefined
   for (const index of legs) {
     const leg = order.legs[index]!
-    const between = previous ? network.road(previous, leg.pickup.placeId).minutes : 0
+    const mappedBetween = previous ? network.road(previous, leg.pickup.placeId).minutes : 0
+    const attached = previousLeg?.delivery.privateAddress === true && leg.pickup.privateAddress && previousLeg.delivery.placeId === leg.pickup.placeId
+    // A trade-in collects the old car during the new-car handover. The map's
+    // same-town journey is for separate sites, not this same-address visit.
+    const between = attached ? 0 : mappedBetween
     const road = network.road(leg.pickup.placeId, leg.delivery.placeId)
     const extras = (facts.plates ? 30 : 0) + (charging(leg, network) ? 40 : 0)
     const duration = Math.ceil(road.minutes * (late ? 1 : 1.18)) + extras + 15
-    driveMinutes += between + road.minutes
-    const picks = intervals(leg.pickup, time + between, deadline, facts.pickupHours, Math.max(facts.pickupFrom ?? 0, leg.pickup.window.from), late ? undefined : facts.pickupTo)
+    // Keep the contract's mapped road total as a conservative 12-hour cap.
+    driveMinutes += mappedBetween + road.minutes
+    const pickupPlace = attached ? { ...leg.pickup, privateAddress: false, hours: null, window: { from: previousLeg!.delivery.window.from, to: endsAt } } : leg.pickup
+    const picks = intervals(pickupPlace, time + between, deadline, attached ? undefined : facts.pickupHours, attached ? undefined : Math.max(facts.pickupFrom ?? 0, leg.pickup.window.from), attached || late ? undefined : facts.pickupTo)
     // Only private pickups have a hard slot. A missed private delivery must still move,
     // and the rules explicitly allow its posted window to extend beyond the booked hour.
     const deliveryPlace = late && leg.delivery.privateAddress ? { ...leg.delivery, privateAddress: false, hours: null } : leg.delivery
@@ -64,7 +72,7 @@ export function routeFor(order: Order, legs: number[], facts: NoteFacts, network
     let found: { p: TimeWindow; d: TimeWindow; start: number; end: number } | undefined
     for (const p of picks) {
       for (const d of deliveries) {
-        const start = Math.max(p.from, d.from - duration)
+        const start = p.from // Delivery may wait until a later opening, including overnight.
         const end = Math.max(d.from, start + duration)
         if (start <= p.to && end <= d.to) { found = { p, d, start, end }; break }
       }
@@ -72,13 +80,15 @@ export function routeFor(order: Order, legs: number[], facts: NoteFacts, network
     }
     if (!found) return null
     const { p, d, start, end } = found
-    const pickupWindow = { from: Math.max(p.from, leg.pickup.window.from), to: Math.min(p.to, d.to - duration) }
+    const pickupWindow = { from: Math.max(p.from, pickupPlace.window.from), to: Math.min(p.to, d.to - duration) }
     const deliveryWindow = { from: Math.max(d.from, leg.delivery.window.from), to: d.to }
     if (pickupWindow.from > pickupWindow.to || deliveryWindow.from > deliveryWindow.to) return null
+    if (attached) attachedPickups.push(stops.length)
     stops.push({ orderId: order.id, leg: index, kind: "pickup", window: pickupWindow, withPlates: facts.plates, withCharging: charging(leg, network) }, { orderId: order.id, leg: index, kind: "delivery", window: deliveryWindow })
     times.push(start, end)
     travel.push(between, duration)
     previous = leg.delivery.placeId
+    previousLeg = leg
     time = end
   }
   if (legs.length > 1 && driveMinutes > 720) return null
@@ -90,9 +100,13 @@ export function routeFor(order: Order, legs: number[], facts: NoteFacts, network
     if (stops[i]!.window!.from > latest) return null
     if (i > 0) latest -= travel[i]!
   }
+  // Let the server apply the explicit trade-in exception: the attached old-car
+  // pickup neither expires the gig nor constrains booking to its standalone slot.
+  for (const i of attachedPickups) delete stops[i]!.window
   return { stops, startsAt: times[0]!, finishesAt: time, latestStart: stops[0]!.window!.to, driveMinutes, experienced: legs.some((i) => order.legs[i]!.car.premium), manual: facts.manual }
 }
 
 export function asOrder(request: PriceRequest, option: PriceRequest["options"][number]): Order {
   return { id: request.id, dealerId: request.dealerId, option: option.kind, priceCents: option.listPriceCents, deadline: option.deadline, legs: request.legs, status: "waiting", deliveredAt: request.legs.map(() => null), lastPickupAt: option.deadline }
 }
+

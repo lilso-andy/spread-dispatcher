@@ -1,0 +1,192 @@
+[
+  {
+    "source": "1ac2844ec0e48cf2a41f9b2f52de00d3a48e5835",
+    "arm": "balanced",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.2,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.2,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "results": [
+      {
+        "worldId": "w1cae6cbf70a8a4d27a90",
+        "level": 1,
+        "seed": "spread-1",
+        "marginCents": 17944,
+        "wonOrders": 18,
+        "onTimeShare": 0.8888888888888888,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": false
+      },
+      {
+        "worldId": "w2bd1cd9d31394535449b",
+        "level": 2,
+        "seed": "spread-1",
+        "marginCents": 17944,
+        "wonOrders": 18,
+        "onTimeShare": 0.8888888888888888,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": false
+      },
+      {
+        "worldId": "w78db243b99c2e2979e6f",
+        "level": 3,
+        "seed": "spread-1",
+        "marginCents": 35079,
+        "wonOrders": 18,
+        "onTimeShare": 0.9444444444444444,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "w85121124ba710a6eebfc",
+        "level": 4,
+        "seed": "spread-1",
+        "marginCents": 177888,
+        "wonOrders": 76,
+        "onTimeShare": 1,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "w26c668fa6746b47a24cc",
+        "level": 5,
+        "seed": "spread-1",
+        "marginCents": 125486,
+        "wonOrders": 58,
+        "onTimeShare": 1,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "w782dd81747da8990026e",
+        "level": 6,
+        "seed": "spread-1",
+        "marginCents": 145858,
+        "wonOrders": 63,
+        "onTimeShare": 1,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "w389e0eb99dc3b0f72049",
+        "level": 7,
+        "seed": "spread-1",
+        "marginCents": 298901,
+        "wonOrders": 120,
+        "onTimeShare": 0.9916666666666667,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      }
+    ]
+  },
+  {
+    "source": "1ac2844ec0e48cf2a41f9b2f52de00d3a48e5835",
+    "arm": "cost",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "results": [
+      {
+        "worldId": "w9785a48b387025115b0e",
+        "level": 1,
+        "seed": "spread-1",
+        "marginCents": 17944,
+        "wonOrders": 18,
+        "onTimeShare": 0.8888888888888888,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": false
+      },
+      {
+        "worldId": "w16c846ecbb6606de0157",
+        "level": 2,
+        "seed": "spread-1",
+        "marginCents": 17944,
+        "wonOrders": 18,
+        "onTimeShare": 0.8888888888888888,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": false
+      },
+      {
+        "worldId": "w3229a9534645395358e6",
+        "level": 3,
+        "seed": "spread-1",
+        "marginCents": 35079,
+        "wonOrders": 18,
+        "onTimeShare": 0.9444444444444444,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "w63873312ee6f51a8e0c0",
+        "level": 4,
+        "seed": "spread-1",
+        "marginCents": 177888,
+        "wonOrders": 76,
+        "onTimeShare": 1,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "wd37605442553a50098e7",
+        "level": 5,
+        "seed": "spread-1",
+        "marginCents": 125486,
+        "wonOrders": 58,
+        "onTimeShare": 1,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "w402bdc0c35b82a6d83ba",
+        "level": 6,
+        "seed": "spread-1",
+        "marginCents": 149771,
+        "wonOrders": 63,
+        "onTimeShare": 1,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      },
+      {
+        "worldId": "w4e09151fc293041ed7b6",
+        "level": 7,
+        "seed": "spread-1",
+        "marginCents": 411143,
+        "wonOrders": 153,
+        "onTimeShare": 0.9869281045751634,
+        "undeliveredOrders": 0,
+        "actionRefusals": 0,
+        "qualified": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,223 @@
+[
+  {
+    "worldId": "w76806d57c1c574d069f4",
+    "source": "cd40c2241d0d49c9bd1b271a3b9638e67948993f",
+    "level": 8,
+    "seed": "sync-78-a",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "arm": "baseline",
+    "phase": "development",
+    "score": {
+      "marginCents": 587266,
+      "revenueCents": 2334900,
+      "marginShare": 0.25151655317144206,
+      "wonOrders": 190,
+      "onTimeShare": 0.9842105263157894,
+      "undeliveredShare": 0.005263157894736842,
+      "ranked": true
+    },
+    "undeliveredOrders": 1,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2334900,
+      "driver_fee": -1656395,
+      "release_fee": -18324,
+      "late_refund": -8915,
+      "undelivered_penalty": -64000
+    }
+  },
+  {
+    "worldId": "wefe0c8c717650b819675",
+    "source": "9205a344351786b5f3e198a4be11bb7486d9cf07",
+    "level": 8,
+    "seed": "sync-78-a",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "arm": "integrated",
+    "phase": "development",
+    "score": {
+      "marginCents": 668407,
+      "revenueCents": 2388700,
+      "marginShare": 0.27982040440406913,
+      "wonOrders": 192,
+      "onTimeShare": 0.9895833333333334,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2388700,
+      "driver_fee": -1697137,
+      "release_fee": -13406,
+      "late_refund": -9750
+    }
+  },
+  {
+    "worldId": "w315196d66cc5751d2b58",
+    "source": "cd40c2241d0d49c9bd1b271a3b9638e67948993f",
+    "level": 8,
+    "seed": "sync-78-b",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "arm": "baseline",
+    "phase": "development",
+    "score": {
+      "marginCents": 451265,
+      "revenueCents": 1599700,
+      "marginShare": 0.2820935175345377,
+      "wonOrders": 121,
+      "onTimeShare": 0.9917355371900827,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 1599700,
+      "driver_fee": -1146215,
+      "late_refund": -2220
+    }
+  },
+  {
+    "worldId": "w8ff477daa1ba417eeba2",
+    "source": "9205a344351786b5f3e198a4be11bb7486d9cf07",
+    "level": 8,
+    "seed": "sync-78-b",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "arm": "integrated",
+    "phase": "development",
+    "score": {
+      "marginCents": 452822,
+      "revenueCents": 1692400,
+      "marginShare": 0.26756204207043255,
+      "wonOrders": 125,
+      "onTimeShare": 0.984,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 1692400,
+      "driver_fee": -1234778,
+      "late_refund": -4800
+    }
+  },
+  {
+    "worldId": "w1db8a3202c8e8adf8171",
+    "source": "cd40c2241d0d49c9bd1b271a3b9638e67948993f",
+    "level": 8,
+    "seed": "route-proof-d",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "arm": "baseline",
+    "phase": "holdout",
+    "score": {
+      "marginCents": 604848,
+      "revenueCents": 2823200,
+      "marginShare": 0.21424199489940493,
+      "wonOrders": 217,
+      "onTimeShare": 0.9170506912442397,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2823200,
+      "driver_fee": -2111097,
+      "late_refund": -86660,
+      "release_fee": -20595
+    }
+  },
+  {
+    "worldId": "w2c6bc90c2fbfb0d8d744",
+    "source": "9205a344351786b5f3e198a4be11bb7486d9cf07",
+    "level": 8,
+    "seed": "route-proof-d",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "offers": true
+    },
+    "arm": "integrated",
+    "phase": "holdout",
+    "score": {
+      "marginCents": 652513,
+      "revenueCents": 2939600,
+      "marginShare": 0.22197339774118927,
+      "wonOrders": 220,
+      "onTimeShare": 0.9090909090909091,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2939600,
+      "driver_fee": -2179117,
+      "late_refund": -103750,
+      "release_fee": -4220
+    }
+  }
+]

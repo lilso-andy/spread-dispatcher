@@ -1,0 +1,12 @@
+{
+  "quoteMultiplier": 1.4,
+  "feeMultiplier": 1.2,
+  "emergencyMultiplier": 1.9,
+  "marginReserve": 0.07,
+  "minMarginCents": 250,
+  "capacityFraction": 0.32,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 210,
+  "strictNotes": true,
+  "offers": true
+}
