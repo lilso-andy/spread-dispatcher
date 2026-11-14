@@ -1425,7 +1425,7 @@ Checkpoint: source inspection/leaderboard reads/old-world analyses complete; no 
 
 User explicitly authorizes desk.ts and new test/market-economics.test.ts on personal branch; no shared configs, merge, ranking or final. Authorization supersedes the prior Notes-only prohibition for these two files only. Existing per-level Notes choices remain: cargo at4/5, focused keys at6. Target is to improve controlled practice margin toward the current level6 reference32961.79 EUR/5 secret weeks; practice seeds do not establish a leaderboard rank. No ranking is created.
 
-Status in progress. Branch work/notes-thanhdatLUT. Common integrated core2213766b83900ad7aa289437d37dd055a938dbc4; main9dccfdb is not the server dispatcher. Registered lower-quote/fee opt-in preserves the selected legacy config and other levels; trial config is explicit, never written to shared configs/.
+Status in progress. Branch work/notes-thanhdatLUT. Common integrated core1e8e5211364f95f75ec165e3338e0729259a530f; main9dccfdb is not the server dispatcher. Registered lower-quote/fee opt-in preserves the selected legacy config and other levels; trial config is explicit, never written to shared configs/.
 
 ### Economics round1, level6
 
@@ -1603,7 +1603,7 @@ Derived completed-world field audit/whole-cohort attribution: {"checkedAt":"2026
 
 ### Economics round4, level6
 
-Before-edit registration 2026-11-14T10:09:53.560Z. Hypothesis: Lower fixed opening fee0.95?0.86 under same code/config otherwise. Accepted0.95 policy has98.10?100% service but still far fewer won jobs than public top6 reference. Actual driver fees dominate spend; a hypothetical uniform9.47% reduction in price-sensitive fees is a sensitivity, not guaranteed saving (late/rescue fees unchanged and bookings can decline). More competitive fee-based quote floors can win profitable volume. Larger lever than tiny additional parser coverage; prior training-level0.86 evidence is motivation only, not validation at6.. Baselinef73489616ce0daadf08bbaaff65ea79f44b0721e; candidatef73489616ce0daadf08bbaaff65ea79f44b0721e. Controlled diff fingerprintsame immutable source; sole config delta feeMultiplier0.95?0.86. Offline Fresh full89/89 tests pass on identical baseline/candidate source; validateConfig accepts full0.86 profile; no code edits. Development seeds top6-economics-a, top6-economics-b; reserved untouched decision seedtop6-economics-fee086-decision-6-v1. Decision Preregistered one-parameter fee test after accepted0.95 proof; unchanged source/quote/floor/capacity.
+Before-edit registration 2026-11-14T10:09:53.560Z. Hypothesis: Lower fixed opening fee0.95?0.86 under same code/config otherwise. Accepted0.95 policy has98.10?100% service but still far fewer won jobs than public top6 reference. Actual driver fees dominate spend; a hypothetical uniform9.47% reduction in price-sensitive fees is a sensitivity, not guaranteed saving (late/rescue fees unchanged and bookings can decline). More competitive fee-based quote floors can win profitable volume. Larger lever than tiny additional parser coverage; prior training-level0.86 evidence is motivation only, not validation at6.. Baselinef73489616ce0daadf08bbaaff65ea79f44b0721e; candidatef73489616ce0daadf08bbaaff65ea79f44b0721e. Controlled diff fingerprintsame immutable source; sole config delta feeMultiplier0.95?0.86. Offline Fresh full89/89 tests pass on identical baseline/candidate source; validateConfig accepts full0.86 profile; no code edits. Development seeds top6-economics-a, top6-economics-b; reserved untouched decision seedtop6-economics-fee086-decision-6-v1. Decision REJECT fee0.86 as a near tie with worse buffer: development+8.15 EUR (+0.27%), seedA -367.95,seedB +376.10; minimum98.43% vs0.95 control99.09%. The under1% rule prefers the better service buffer. No new0.86 decision world is created; reserved seed remains unseen..
 
 Baseline config:
 
@@ -1659,7 +1659,52 @@ Actual ledger EUR, seq-deduplicated and reconciled to final score:
 
 Derived completed-world field audit/whole-cohort attribution: {"checkedAt":"2026-11-14T10:46:48.440Z","method":"Completed-world reveal only; deduplicated seq ledger reconciled to final margin. Won-order truth checked for manual/plates/tyres/deadline/release and note hours against public hours; unrevealed lost/unquoted requests have no order truth.","pairs":[{"seed":"top6-economics-a","phase":"development","baseline":{"ledger":{"revenue":1178300,"driver_fee":-935027,"release_fee":-7764,"late_refund":-1775},"totalCents":233734,"declines":260,"noteCount":410,"safeCount":189,"checkedWonNotes":23,"misses":[]},"candidate":{"ledger":{"revenue":1291600,"driver_fee":-1078683,"release_fee":-7028,"waiting":-3000,"late_refund":-5950},"totalCents":196939,"declines":260,"noteCount":410,"safeCount":189,"checkedWonNotes":29,"misses":[]},"newlySafeCount":0,"newlyQuotedCount":0,"newlyWonCount":0,"introducedCriticalMisses":[]},{"seed":"top6-economics-b","phase":"development","baseline":{"ledger":{"revenue":358500,"driver_fee":-284982},"totalCents":73518,"declines":271,"noteCount":422,"safeCount":178,"checkedWonNotes":8,"misses":[]},"candidate":{"ledger":{"revenue":536200,"driver_fee":-419633,"release_fee":-5439},"totalCents":111128,"declines":275,"noteCount":422,"safeCount":178,"checkedWonNotes":11,"misses":[]},"newlySafeCount":0,"newlyQuotedCount":0,"newlyWonCount":0,"introducedCriticalMisses":[]}],"wholeCohortEffects":[{"commonLedgerDeltaCents":{"revenue":-18700,"driver_fee":-9737,"release_fee":736,"late_refund":-4175,"waiting":-3000},"newOrderLedgerCents":{"revenue":187300,"driver_fee":-178700},"seed":"top6-economics-a","phase":"development","deltaCents":-36795,"newlyQuoted":2,"removedQuotes":2,"newWonOrderCount":23,"lostWonOrderCount":5,"newOrderMarginCents":8600,"displacedBaselineMarginEffectCents":-10519,"commonOrderInteractionCents":-34876,"newOrderMargins":[{"orderId":"R00013","marginCents":1992},{"orderId":"R00106","marginCents":-7342},{"orderId":"R00107","marginCents":-6331},{"orderId":"R00177","marginCents":1695},{"orderId":"R00207","marginCents":1681},{"orderId":"R00232","marginCents":1659},{"orderId":"R00271","marginCents":1629},{"orderId":"R00319","marginCents":1658},{"orderId":"R00326","marginCents":1603},{"orderId":"R00329","marginCents":1650},{"orderId":"R00350","marginCents":1606},{"orderId":"R00370","marginCents":1661},{"orderId":"R00445","marginCents":2663},{"orderId":"R00489","marginCents":3195},{"orderId":"R00505","marginCents":1681},{"orderId":"R00515","marginCents":1638},{"orderId":"R00543","marginCents":1647},{"orderId":"R00593","marginCents":1930},{"orderId":"R00824","marginCents":1950},{"orderId":"R00862","marginCents":1781},{"orderId":"R00905","marginCents":1619},{"orderId":"R00912","marginCents":-14378},{"orderId":"R00965","marginCents":1713}],"commonOrdersChanged":103,"baseline":{"plannedDrivingHours":381.51666666666665,"marginPerOrderEUR":21.248545454545457,"marginPerPlannedHourEUR":6.126442706740641},"candidate":{"plannedDrivingHours":424.15,"marginPerOrderEUR":15.507007874015748,"marginPerPlannedHourEUR":4.643145113756926},"driverHourLimit":"Logged winning-quote driving proxy excludes approach, waiting and operational constraints; not measured driver labor."},{"commonLedgerDeltaCents":{"revenue":-27600,"driver_fee":33133,"release_fee":-5439},"newOrderLedgerCents":{"revenue":220300,"driver_fee":-180369},"seed":"top6-economics-b","phase":"development","deltaCents":37610,"newlyQuoted":2,"removedQuotes":6,"newWonOrderCount":21,"lostWonOrderCount":1,"newOrderMarginCents":39931,"displacedBaselineMarginEffectCents":-2415,"commonOrderInteractionCents":94,"newOrderMargins":[{"orderId":"R00049","marginCents":1663},{"orderId":"R00062","marginCents":1662},{"orderId":"R00128","marginCents":1871},{"orderId":"R00156","marginCents":2327},{"orderId":"R00189","marginCents":1831},{"orderId":"R00318","marginCents":1669},{"orderId":"R00334","marginCents":1944},{"orderId":"R00355","marginCents":1617},{"orderId":"R00396","marginCents":3088},{"orderId":"R00454","marginCents":710},{"orderId":"R00480","marginCents":1612},{"orderId":"R00541","marginCents":1643},{"orderId":"R00721","marginCents":3910},{"orderId":"R00774","marginCents":1635},{"orderId":"R00786","marginCents":1652},{"orderId":"R00847","marginCents":1664},{"orderId":"R00938","marginCents":1768},{"orderId":"R00974","marginCents":1626},{"orderId":"R00981","marginCents":1647},{"orderId":"R00987","marginCents":1697},{"orderId":"R00994","marginCents":2695}],"commonOrdersChanged":37,"baseline":{"plannedDrivingHours":112.13333333333334,"marginPerOrderEUR":18.85076923076923,"marginPerPlannedHourEUR":6.5563020214030905},"candidate":{"plannedDrivingHours":181.65,"marginPerOrderEUR":19.49614035087719,"marginPerPlannedHourEUR":6.1176988714560965},"driverHourLimit":"Logged winning-quote driving proxy excludes approach, waiting and operational constraints; not measured driver labor."}]}
 
-Controller {"pid":18132,"round":4,"startedAt":"2026-11-14T10:35:30.008Z","state":"running","command":"work/economics-worker.mjs 4"}. Next Push completed pair top6-economics-b before continuing. Shared slots checked; own worlds run serially, never more than2 active. Only own IDs can be resumed after the old controller stops. Frozen source finishes its worlds despite later teammate updates; fetch/rebaseline/test before a new round. Dependency: exact per-level parser, core, both full configs and unchanged route/capacity/rescue algorithms. Quotes and opening fees are a joint policy, so mechanism is established through ledger and ablations, not inferred from one scalar. No declined list revenue counts as a loss. Planned-driving-hour ratios are logged-route proxies excluding approach/waiting.
+### Economics round5, level6
+
+Before-edit registration 2026-11-14T10:51:13.360Z. Hypothesis: Keep driver fee0.95 and quote1.05, lower ONLY absolute contribution floor1600?900 to target short profitable work without the driver-booking/wait/refund side effects seen at fee0.86. Completed0.95 data show424/439 lost near-fee-floor bids with >=5 EUR possible floor room; existing winner revenue sacrifice is bounded by284/152 EUR if all exposed discounts applied. Scenario50 extra NET9-EUR orders gives450 EUR before that sacrifice, not a win/profit forecast; real driver/capacity costs may erase it. Prior1100-floor loss on the old fee-learning source remains recorded and is not a validation of this new fixed-fee model. New integration source requires fresh paired baselines even though training flag is false at6.. Baselineca6ed3f4ce3e4beb114e8380a38892a16f7a7752; candidateca6ed3f4ce3e4beb114e8380a38892a16f7a7752. Controlled diff fingerprintidentical source commit on both sides; sole scalar change minMarginCents1600?900. Offline New integrated key-overlay full90/90 tests pass; validateConfig on both profiles required. Development seeds top6-economics-a, top6-economics-b; reserved untouched decision seedtop6-floor900-decision-6-v1. Decision Preregistered floor-only experiment; fresh decision seed reserved before any floor900 score.
+
+Baseline config:
+
+```json
+{
+  "quoteMultiplier": 1.05,
+  "feeMultiplier": 0.95,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true,
+  "trainingEconomy": false
+}
+```
+
+Candidate config:
+
+```json
+{
+  "quoteMultiplier": 1.05,
+  "feeMultiplier": 0.95,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 900,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true,
+  "trainingEconomy": false
+}
+```
+
+Gate: pooled development margin gain, every candidate final week>=93%, no undelivered/refused actions or critical missed note facts; then positive fresh-decision delta. Under1% gains prefer greater worst service, ties retain baseline. Negative/unranked weeks and losing candidates remain in the report. World creation/output/source/config checkpoint is saved before first advance, final week immediately saved, each complete pair pushed before continuation.
+
+| Phase | Seed | Side | World | Margin EUR | Won | EUR/order | On time | Undelivered | Refusals | Output |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+
+Controller {"pid":18132,"round":4,"startedAt":"2026-11-14T10:35:30.008Z","state":"stopped","command":"work/economics-worker.mjs 4","endedAt":"2026-11-14T10:46:57.904Z"}. Next New core pinned and tested; validate both full configs and publish checkpoint before fresh floor-only worlds. Shared slots checked; own worlds run serially, never more than2 active. Only own IDs can be resumed after the old controller stops. Frozen source finishes its worlds despite later teammate updates; fetch/rebaseline/test before a new round. Dependency: exact per-level parser, core, both full configs and unchanged route/capacity/rescue algorithms. Quotes and opening fees are a joint policy, so mechanism is established through ledger and ablations, not inferred from one scalar. No declined list revenue counts as a loss. Planned-driving-hour ratios are logged-route proxies excluding approach/waiting.
 
 Exact integrated file artifact: https://github.com/lilso-andy/spread-dispatcher/commit/2fd2bf3e36e4a39b588214884ff976a7354e7897. To reproduce tested level6 source f734896, start from core2213766 and restore ONLY desk.ts, test/market-economics.test.ts, notes.ts and test/notes.test.ts from that artifact. Other files in the main-based review commit are not the executed dispatcher. Branch HEAD retains a minimal compatible Desk diff and cargo-default Notes. For level5 use cargo Notes from HEAD, not the level6 key variant. Newer integration must merge the scoped diff and rebaseline; never overwrite newer teammate code with the archived file.
 
