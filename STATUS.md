@@ -1,5 +1,9 @@
 # Shared status
 
+## Active level 7 batch 02
+
+Session `62996` runs `runs/level7-batch02/matrix.mjs`, after batch01 completed 18 weeks and retained baseline. Baseline source `8a19a32` includes the latest teammate documentation and the same dispatcher behavior/preset as `9e47485`. Four profiles on four fixed seeds give 16 development weeks, then a fresh paired proof for the top eligible candidate. Sources, parameter scopes and offline tests are in `docs/LEVEL7_BATCH02.md`. Current first pair is baseline `w9ee94c93bb2eb4c64f27` and short quotes `w9e4481ec697894cd7bcc` on `spread-1`. The single matrix controller owns all its worlds. Check the original PID before takeover. User updates occur once per completed batch of at least 15 weeks.
+
 ## Level 7 batch 01 completed, baseline retained
 
 Eighteen ordinary-practice weeks completed and reconciled with final server scores and complete server ledger. One candidate week failed 90%, at 89.37%. Capacity0.22 improved the two development weeks by €1,144.68 with a better worst on-time share, but lost €161.86 on the preregistered fresh proof, so the selected preset stays at capacity0.28. The tight long-route reserve lost €129.50 on development and had extra refused offers. Driver lookup reuse matched clean fixed seeds and an additional fresh pair, while an interrupted proof differed. The initial cross-checkout client error in the test harness was fixed and all interrupted diagnostics remain recorded. Source `9e47485` plus the existing level7 preset remains selected. Full metrics and source/config/world accounting are in `docs/LEVEL7_BATCH01_RESULTS.json`, summary in `docs/LEVEL7_BATCH01.md`. The €16,000 weekly target remains unmet. Next work is a fresh level7 batch testing targeted public short quotes, bounded recovery and their combination, at least16 completed weeks before the next update.
