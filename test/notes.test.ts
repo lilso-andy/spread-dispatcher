@@ -117,3 +117,11 @@ test("completed-world duplicated-vowel tomorrow retains the relative day", () =>
   assert.equal(f.pickupFrom, 3 * DAY + 720)
   assert.equal(f.uncertain, false)
 })
+test("Finnish inflected clocks retain their whole-word meaning", () => {
+  const f = parse("Valmiina puoli neljästä alkaen.")
+  assert.equal(f.pickupFrom, 930)
+  assert.equal(f.uncertain, false)
+  assert.equal(parse("Nouto viideltä jälkeen").pickupFrom, 1020)
+  assert.equal(parse("Nouto kolmesta alkaen").pickupFrom, 900)
+  assert.equal(parse("Valmiina puoli neljästää alkaen").uncertain, true)
+})

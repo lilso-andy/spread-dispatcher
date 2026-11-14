@@ -213,7 +213,7 @@ Both completed pairs preserve margin and on-time share exactly. The fix is adopt
 
 ### Equal-allocation levels 1–4 configuration comparison
 
-Status: 9/20 pairs completed; in progress. Both sides use source 085b3cc57e405d13ec12fe5b0f322786a90072a2; configurations taken unchanged from teammate pricing revision 766fdab7db20569377731bee14b4842ea9dac20f. This is configuration evidence, not a parser-code effect. Level 1–3 candidate uses training; level 4 candidate uses competitive.
+Status: 12/20 pairs completed; in progress. Both sides use source 085b3cc57e405d13ec12fe5b0f322786a90072a2; configurations taken unchanged from teammate pricing revision 766fdab7db20569377731bee14b4842ea9dac20f. This is configuration evidence, not a parser-code effect. Level 1–3 candidate uses training; level 4 candidate uses competitive.
 
 Full configurations:
 
@@ -269,10 +269,17 @@ Full configurations:
 | 3 | notes-cycle-04 | w02475e23d7754b031637 | w1a3334f6f0eaeced983e | 2120.08 | 2886.68 | 766.60 | 97.24% | 99.23% | true | 0/0 |
 | 4 | notes-cycle-04 | w01d0b11f26e5221c7a5e | w7f4549f664b6e64f2616 | 4933.45 | 5157.59 | 224.14 | 100.00% | 100.00% | true | 0/0 |
 | 1 | notes-cycle-05 | web4d8c2ba326a2202ef0 | w39a33c23dae1c8a62f75 | 2010.71 | 2623.00 | 612.29 | 98.77% | 99.56% | true | 0/0 |
+| 2 | notes-cycle-05 | w580fdf07d25d7b31b312 | w50d4eebdc22d0e8c5cf9 | 1996.40 | 2562.78 | 566.38 | 98.77% | 98.68% | true | 0/0 |
+| 3 | notes-cycle-05 | wbaf73064f8d10fc10dcd | w38ce6b159ab881878404 | 1996.40 | 2562.78 | 566.38 | 98.77% | 98.68% | true | 0/0 |
+| 4 | notes-cycle-05 | wd9f316b85ae5895201c9 | w2fa73504019ab5e35fbb | 957.06 | 1122.91 | 165.85 | 100.00% | 100.00% | true | 0/0 |
+
+### Inflected-clock regression follow-up
+
+Completed-pair loss analysis found R00725 on notes-cycle-07 level 8: “Valmiina puoli neljästä alkaen.” The complete Unicode boundary rejected neljästä because only neljä/neljän were listed; the old parser happened to match a prefix. Baseline won this request, candidate declined it, with downstream quote differences. Snapshot 78b0670 adds explicit complete Finnish inflected hour forms. Its extraction is 5250 for request arrival 5072, exactly matching baseline reveal readyAt 5250. The malformed near-word neljästää remains uncertain. Tests: 50 main-based / 69 integrated pass. This semantic regression fix is included in the review branch; its separate paired server validation is queued behind the lower-level job, so no recovered-money claim is made yet. Ongoing contact comparisons retain their older frozen baseline/candidate, which both share the missing inflection.
 
 ### Contact-notice candidate: next evenly allocated batch
 
-Status 0/16 matched pairs; in progress. Two pairs allocated to every level 1–8. Baseline fb35ea89587f655cd3f95c442eb572eb9c937e8d, candidate a3a468e93f2100341d8d549f734f2ffeff184db3; pricing configuration snapshot 62a128663666537889fcef8f2d09be44018739d1. Both sides use the same selected configuration at each level: training 1–3, competitive 4–7, Balanced 8. This comparison tests only parser changes, not configuration selection. Candidate recognizes only complete relative contact notices and declines unsupported contact clauses. Tests: 69 integrated before server validation. No adoption solely from offline tests.
+Status 2/16 matched pairs; in progress. Two pairs allocated to every level 1–8. Baseline fb35ea89587f655cd3f95c442eb572eb9c937e8d, candidate a3a468e93f2100341d8d549f734f2ffeff184db3; pricing configuration snapshot 62a128663666537889fcef8f2d09be44018739d1. Both sides use the same selected configuration at each level: training 1–3, competitive 4–7, Balanced 8. This comparison tests only parser changes, not configuration selection. Candidate recognizes only complete relative contact notices and declines unsupported contact clauses. Tests: 69 integrated before server validation. No adoption solely from offline tests.
 
 Full configurations:
 
@@ -319,6 +326,8 @@ Full configurations:
 
 | Level | Seed | Baseline world | Candidate world | Base EUR | Candidate EUR | Delta EUR | Base on time | Candidate on time | Both eligible | Refusals base/candidate |
 | ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| 1 | notes-contact-08 | w6b7cca713fa536c6d913 | w736b645ea8916f78ff46 | 3057.38 | 3057.38 | 0.00 | 99.00% | 99.00% | true | 0/0 |
+| 2 | notes-contact-08 | w50153cab6a20bfbea1bb | w781bf7bc9878ec263684 | 3055.38 | 3055.38 | 0.00 | 99.00% | 99.00% | true | 0/0 |
 
 ### Allocation scoreboard
 
@@ -327,9 +336,9 @@ Code-only parser comparisons at 5–8 and configuration comparisons at 1–4 are
 | Level | Completed/planned pairs | Baseline EUR | Candidate EUR | Delta EUR | Delta % | Worst candidate on time | Failed baseline/candidate weeks |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | 3/5 | 6438.34 | 8158.56 | 1720.22 | 26.72 | 99.23% | 0/0 |
-| 2 | 2/5 | 4406.57 | 5754.84 | 1348.27 | 30.60 | 99.23% | 0/0 |
-| 3 | 2/5 | 4464.49 | 5806.74 | 1342.25 | 30.07 | 99.23% | 0/0 |
-| 4 | 2/5 | 8187.35 | 8526.29 | 338.94 | 4.14 | 99.22% | 0/0 |
+| 2 | 3/5 | 6402.97 | 8317.62 | 1914.65 | 29.90 | 98.68% | 0/0 |
+| 3 | 3/5 | 6460.89 | 8369.52 | 1908.63 | 29.54 | 98.68% | 0/0 |
+| 4 | 3/5 | 9144.41 | 9649.20 | 504.79 | 5.52 | 99.22% | 0/0 |
 | 5 | 5/5 | 8306.70 | 8351.28 | 44.58 | 0.54 | 98.81% | 0/0 |
 | 6 | 5/5 | 10679.40 | 10679.40 | 0.00 | 0.00 | 99.33% | 0/0 |
 | 7 | 5/5 | 11555.79 | 11555.79 | 0.00 | 0.00 | 94.44% | 0/0 |
