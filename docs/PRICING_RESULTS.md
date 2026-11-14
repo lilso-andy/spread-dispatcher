@@ -539,3 +539,35 @@ Cấu hình đầy đủ cho từng lượt.
 
 - baseline · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
 - 01-minMarginCents · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1100, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+
+### Kiểm chứng seed mới sau các thử nghiệm
+
+Cùng seed `pricing-final-check-c`, so cấu hình đã công bố với ứng viên thắng trên tập tune. Bản tích hợp dispatcher giữ `3cb7ba4` và lần lượt cập nhật parser sang `f1eae8b` và `f632abc`. Bộ test offline lần lượt đạt 67/67 và 68/68. So sánh trong từng phiên bản parser.
+
+| Parser | Level | Cấu hình | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| `f1eae8b` | 1 | baseline | `wd5aee4af1bc8c1a4d417` | 276736 | 263 | 99.24% | 0.00% | Có | 0 |
+| `f1eae8b` | 1 | best | `wcbc9ec329b3d113b8e6c` | 276736 | 263 | 99.24% | 0.00% | Có | 0 |
+| `f1eae8b` | 2 | baseline | `w355a9cb8ef1feda1de7d` | 280430 | 263 | 98.86% | 0.00% | Có | 0 |
+| `f1eae8b` | 2 | best | `w1e38bd5e4329f1c7b6d5` | 316248 | 352 | 99.43% | 0.00% | Có | 0 |
+| `f1eae8b` | 3 | baseline | `w06b3a18a067f7cde04ad` | 283748 | 263 | 98.86% | 0.00% | Có | 0 |
+| `f1eae8b` | 3 | best | `wdf4aea1c1b1a2f352478` | 288173 | 301 | 99.34% | 0.00% | Có | 0 |
+| `f1eae8b` | 5 | baseline | `wd8b487ee16a17c0ecd56` | 168071 | 60 | 100.00% | 0.00% | Có | 0 |
+| `f1eae8b` | 5 | best | `w16f923d5e8f3e8a182ec` | 182922 | 72 | 100.00% | 0.00% | Có | 0 |
+| `f1eae8b` | 6 | baseline | `wcdb52a25360b38147b66` | 239496 | 91 | 100.00% | 0.00% | Có | 0 |
+| `f1eae8b` | 6 | best | `wd8bc41b2eab0189b94db` | 234403 | 98 | 100.00% | 0.00% | Có | 0 |
+| `f632abc` | 2 | baseline | `we1fce9c37adcf31d67b9` | 280430 | 263 | 98.86% | 0.00% | Có | 0 |
+| `f632abc` | 2 | best | `w99f2f7e4d2d1fd445a13` | 316248 | 352 | 99.43% | 0.00% | Có | 0 |
+| `f632abc` | 3 | baseline | `w1700c4173b31288f3ee8` | 283748 | 263 | 98.86% | 0.00% | Có | 0 |
+| `f632abc` | 3 | best | `w0f178e1ad3fd8f3627e3` | 288173 | 301 | 99.34% | 0.00% | Có | 0 |
+| `f632abc` | 5 | baseline | `we1df4061d0ff116b4424` | 168071 | 60 | 100.00% | 0.00% | Có | 0 |
+| `f632abc` | 5 | best | `w29a975a5c8b5f6e82510` | 182922 | 72 | 100.00% | 0.00% | Có | 0 |
+
+### Cấu hình chọn sau kiểm chứng
+
+Level 1 hòa trên seed mới, level 6 giảm margin, và level 4/7 không có thay đổi nào thắng trên tập tune. Giữ cấu hình đã công bố cho bốn level đó.
+- Level 2: dùng `pricing-baotran1604-level-2.json`, tăng 12.77% trên seed mới ở parser `f632abc`.
+- Level 3: dùng `pricing-baotran1604-level-3.json`, tăng 1.56% trên seed mới ở parser `f632abc`.
+- Level 5: dùng `pricing-baotran1604-level-5.json`, tăng 8.84% trên seed mới ở parser `f632abc`.
+
+19 thử nghiệm chia theo level 1–7 là 1/5/1/1/1/5/5. Đợt tiếp theo nên xoay vòng các level để mỗi level được thử cùng số lượt trước khi ưu tiên thêm theo kết quả. Không dùng ranking hay final.
