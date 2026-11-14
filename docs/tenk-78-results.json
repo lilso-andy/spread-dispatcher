@@ -305,5 +305,161 @@
       "failed_visit": -5000,
       "waiting": -3000
     }
+  },
+  {
+    "worldId": "w67df22841635e280f3fd",
+    "level": 7,
+    "seed": "tenk-proof-01",
+    "arm": "baseline",
+    "source": "3cd022025601a747083bf296663b26ddf7e700ea",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.02,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "phase": "r1-proof",
+    "score": {
+      "marginCents": 359387,
+      "revenueCents": 1362000,
+      "marginShare": 0.26386710719530104,
+      "wonOrders": 92,
+      "onTimeShare": 0.967391304347826,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 1362000,
+      "driver_fee": -980020,
+      "waiting": -3000,
+      "release_fee": -9593,
+      "late_refund": -10000
+    }
+  },
+  {
+    "worldId": "wf5fe937c7681641db4fe",
+    "level": 7,
+    "seed": "tenk-proof-01",
+    "arm": "candidate",
+    "source": "a5286b4334c6b366698b2c0000ff851a21d700c8",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.02,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "phase": "r1-proof",
+    "score": {
+      "marginCents": 370358,
+      "revenueCents": 1361600,
+      "marginShare": 0.2720020564042303,
+      "wonOrders": 92,
+      "onTimeShare": 0.967391304347826,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 1361600,
+      "driver_fee": -970398,
+      "waiting": -3000,
+      "release_fee": -9514,
+      "late_refund": -8330
+    }
+  },
+  {
+    "worldId": "wc81c2f308b86c0417ae2",
+    "level": 8,
+    "seed": "tenk-proof-01",
+    "arm": "baseline",
+    "source": "3cd022025601a747083bf296663b26ddf7e700ea",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "phase": "r1-proof",
+    "score": {
+      "marginCents": 563115,
+      "revenueCents": 2153300,
+      "marginShare": 0.2615125621139646,
+      "wonOrders": 143,
+      "onTimeShare": 0.958041958041958,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2153300,
+      "driver_fee": -1543781,
+      "waiting": -3000,
+      "late_refund": -22750,
+      "release_fee": -20654
+    }
+  },
+  {
+    "worldId": "we94a474042e6c1b84770",
+    "level": 8,
+    "seed": "tenk-proof-01",
+    "arm": "candidate",
+    "source": "a5286b4334c6b366698b2c0000ff851a21d700c8",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "phase": "r1-proof",
+    "score": {
+      "marginCents": 609150,
+      "revenueCents": 2182300,
+      "marginShare": 0.279132108326078,
+      "wonOrders": 145,
+      "onTimeShare": 0.9724137931034482,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2182300,
+      "driver_fee": -1541478,
+      "waiting": -3000,
+      "late_refund": -18625,
+      "release_fee": -10047
+    }
   }
 ]

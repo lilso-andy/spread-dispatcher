@@ -6,3 +6,7 @@ User steering: continue algorithm/practice tuning; do NOT run ranking automatica
 Target superseded by user: EUR16,000 per completed week, not EUR10,000. At least three identical-seed comparisons per level (two development plus fresh holdout), every chosen candidate week >=1,600,000 cents and >=90% on time. Notify user to switch model before any further ranking. Do not substitute averages or cherry-pick seeds.
 
 Round1 development complete: level7 total689585->814165 cents (+124580), level8 total1137611->1360449 (+222838). Every week >=90%, no undelivered/refusals; level8 study2 service91.43%->91.14%. Candidate not yet selected, independent tenk-proof-01 runs pending. No ranking authorized until target and user model-switch. Raw source worktrees frozen.
+
+Round1 selected at both levels after independent proof: level7 +10,971 cents, same96.74% service; level8 +46,035 cents,95.80%->97.24%. All twelve weeks qualified, zero undelivered/refusals. EUR16,000 gate NOT met. Frozen selected code a5286b4.
+
+Round2 registered before runs: quote multiplier1.40->1.25 only. In shortage, prior study2 wins165/794 quotes at level7; competitor range makes lost-price volume a plausible lever. Same capacity, safety, opening and rescue policies. Reuse only round1 candidate baselines with exact a5286b4 source, full config, seed and level checked. Same spread-1/study-2, then unused tenk-price-proof-02 if gain and all >=90%, no extra undelivered/refusals; apply1% service tie-break. Do not rank unless each of three weeks >=EUR16,000 and user switches model.
