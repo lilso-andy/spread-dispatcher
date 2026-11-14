@@ -340,3 +340,44 @@ Sau khi push và fetch, áp dụng diff notes `2678287..ea47940` lên bản tíc
 | 6 | pricing-baotran1604-competitive | `w5b3049a2516192e78aef` | 104791 | 41 | 100.00% | 0.00% | Có | 0 |
 | 7 | balanced | `we8242e03ca4a3608a336` | 212254 | 76 | 98.68% | 0.00% | Có | 0 |
 | 7 | pricing-baotran1604-competitive | `w1952b93562a1f6d4e8c1` | 425713 | 149 | 100.00% | 0.00% | Có | 0 |
+
+## Tối ưu theo từng tham số
+
+Bản kiểm chứng dùng dispatcher-integration `3cb7ba4` và parser `ea47940`. Mỗi vòng chỉ đổi một tham số từ cấu hình đang dẫn đầu trên level tương ứng. Chỉ chọn ứng viên tăng tổng margin và đạt 90% đúng hạn trên cả hai seed `spread-1` và `multilevel-holdout-b`. Hai seed này được dùng để tune. Seed mới ở cuối mục dùng để kiểm tra mức cải thiện ngoài tập tune.
+
+### Level 2
+
+| Lượt | So với | Thay đổi | Margin (cent) | Thấp nhất | Đủ điều kiện |
+| --- | --- | --- | ---: | ---: | ---: |
+| baseline | — | Cấu hình đã công bố | 584051 | 98.89% | 2/2 |
+| 01-capacityFraction | baseline | `capacityFraction=0.32` | 591230 | 99.26% | 2/2 |
+| 02-marginReserve | 01-capacityFraction | `marginReserve=0.07` | 649207 | 99.34% | 2/2 |
+| 03-minLeadMinutes | 02-marginReserve | `minLeadMinutes=270` | 638335 | 98.97% | 2/2 |
+| 04-emergencyMultiplier | 02-marginReserve | `emergencyMultiplier=1.9` | 650305 | 99.34% | 2/2 |
+| 05-minMarginCents | 04-emergencyMultiplier | `minMarginCents=250` | 689755 | 99.71% | 2/2 |
+
+Đang dẫn đầu: `05-minMarginCents`.
+
+| Lượt | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| baseline | spread-1 | `w57b9c34f7f62e8d5a434` | 303009 | 270 | 99.63% | 0.00% | Có | 0 |
+| baseline | multilevel-holdout-b | `wfd99442fd9d9895a46ee` | 281042 | 271 | 98.89% | 0.00% | Có | 0 |
+| 01-capacityFraction | spread-1 | `wfd35261f5800b3f73470` | 303009 | 270 | 99.63% | 0.00% | Có | 0 |
+| 01-capacityFraction | multilevel-holdout-b | `wc40de892111fd9dd6201` | 288221 | 272 | 99.26% | 0.00% | Có | 0 |
+| 02-marginReserve | spread-1 | `wf8e11e6bc65fe1f9b7a3` | 340563 | 320 | 99.38% | 0.00% | Có | 0 |
+| 02-marginReserve | multilevel-holdout-b | `w63fbbbf9b620cb8b525c` | 308644 | 302 | 99.34% | 0.00% | Có | 0 |
+| 03-minLeadMinutes | spread-1 | `w2fdc5ba991d1923eb306` | 329313 | 300 | 99.67% | 0.00% | Có | 0 |
+| 03-minLeadMinutes | multilevel-holdout-b | `w3b39505188ef089bf378` | 309022 | 291 | 98.97% | 0.00% | Có | 0 |
+| 04-emergencyMultiplier | spread-1 | `wde30ec71703d7a92f3c6` | 340841 | 320 | 99.38% | 0.00% | Có | 0 |
+| 04-emergencyMultiplier | multilevel-holdout-b | `we18b899b058a73833bc7` | 309464 | 302 | 99.34% | 0.00% | Có | 0 |
+| 05-minMarginCents | spread-1 | `w6067093eda378360dd8e` | 357543 | 363 | 100.00% | 0.00% | Có | 0 |
+| 05-minMarginCents | multilevel-holdout-b | `weaecc46c39804a34463b` | 332212 | 340 | 99.71% | 0.00% | Có | 0 |
+
+Cấu hình đầy đủ cho từng lượt.
+
+- baseline · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- 01-capacityFraction · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.32, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- 02-marginReserve · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.07, "minMarginCents": 500, "capacityFraction": 0.32, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- 03-minLeadMinutes · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.07, "minMarginCents": 500, "capacityFraction": 0.32, "maxApproachMinutes": 100, "minLeadMinutes": 270, "strictNotes": true, "offers": true}`
+- 04-emergencyMultiplier · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 1.9, "marginReserve": 0.07, "minMarginCents": 500, "capacityFraction": 0.32, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- 05-minMarginCents · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 1.9, "marginReserve": 0.07, "minMarginCents": 250, "capacityFraction": 0.32, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
