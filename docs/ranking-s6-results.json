@@ -139,9 +139,20 @@
         "trainingEconomy": false,
         "offers": true
       },
-      "status": "running",
+      "status": "ended",
       "worldId": "w459ef7f4709060efad12",
-      "boardRun": null
+      "boardRun": 1,
+      "score": {
+        "marginCents": 142327,
+        "revenueCents": 772600,
+        "marginShare": 0.1842182241780999,
+        "wonOrders": 64,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "undeliveredOrders": 0,
+      "actionRefusals": 0
     },
     {
       "level": 6,
@@ -158,8 +169,57 @@
         "trainingEconomy": false,
         "offers": true
       },
-      "status": "running",
+      "status": "ended",
       "worldId": "we4df81484ba0cb962c7c",
+      "boardRun": 1,
+      "score": {
+        "marginCents": 206001,
+        "revenueCents": 1341300,
+        "marginShare": 0.15358309103108925,
+        "wonOrders": 116,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "undeliveredOrders": 0,
+      "actionRefusals": 0
+    },
+    {
+      "level": 7,
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.02,
+        "emergencyMultiplier": 2.4,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "status": "running",
+      "worldId": "w63d5f03b3a6efc2de2a4",
+      "boardRun": null
+    },
+    {
+      "level": 8,
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2.2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "status": "running",
+      "worldId": "w3b595f7951efb916b8f3",
       "boardRun": null
     }
   ]
