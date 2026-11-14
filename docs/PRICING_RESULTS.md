@@ -768,3 +768,22 @@ Dispatcher `2213766`, 73/73 test offline cho hai bản thử. Bản vá opt-in `
 | Phí 0,80 | 3 | full-check-b | `wf1c3a078b911a3895d8f` | 489518 | 498 | 92.37% | 0.00% | 0 |
 
 Giữ phí 0,86. Phí 0,80 thua tổng margin trên hai seed chung ở cả level 2 và 3. Phí giảm chọn lọc ở level 1 đạt ngưỡng mới 91% nhưng cũng thua tổng margin. Mục tiêu €70.000 qua năm tuần chưa đạt. Không dùng ranking.
+
+## 80K target: preregistered service-budget experiment (2026-11-14)
+
+User explicitly approved desk.ts and relevant test changes for an 8% recovery pause, restricted to opted-in training levels 1–3. Source baseline `ab4f5b139176de9c12687a7b73685d8d19403af3` differs from main `9dccfdb`; candidate is exactly that source plus `analysis/training-service-budget.patch`. The personal branch fast-forwarded to the confirmed integration, preserving all teammate changes. Baseline 87/87 offline tests, candidate 89/89 (boundary and level isolation tests included).
+
+Hypothesis: 4.5% historical completed-order lateness stops profitable quoting too early relative to the user's >=90% weekly constraint. Change only this pause to 8%; opening fee .86, rescue, capacity and lead time unchanged. Historical full-check-b level2 ledger: revenue €42,468, driver fees €35,179.08, refunds €1,197.90, release €57.35. 246 requests rejected by recovery pause; replay on the same states found only 7 admissions from doubling capacity, 9 from lead180→90, 10 from lowering reserve. Actual baseline-state decision replay matched all recorded decisions. These are opportunity counts, not foregone margin: future driver availability and net contribution remain unknown. At the historical €10.04/order average, 246 requests correspond to an illustrative €2,470/week ONLY if all become equally profitable noncancelled orders without harming other work. No such gain is assumed in selection.
+
+Three rounds, level1→2→3, two paired development seeds `full-check-a`, `full-check-b`; pre-reserved holdout `pricing80-service-holdout-m` only after positive aggregate development margin and every candidate final week >=90%. Reject on failed weekly threshold or nonpositive holdout difference. Full configs, world IDs, source hashes, output paths and next actions in `analysis/pricing80k-checkpoint.json`. At most two own controllers; slots checked before creation. Raw journals/reveal remain local. No ranking until >=€80,000 observed over five full practice weeks per level, each >=90%; five-times a development average alone is not that evidence. Any ranking remains unseen-world risk. Report all negative outcomes. No final.
+
+### Service-budget completed pairs
+
+Full config/source/output/ledger in the checkpoint JSON. Completed-week scores only; comparisons are paired by level and seed.
+
+| Level | Seed | Version | World | Margin EUR | Won | On time | Undelivered | Refusals |
+|---:|---|---|---|---:|---:|---:|---:|---:|
+| 1 | full-check-a | baseline | `webfa6cdb7737ccf51094` | 8038.74 | 761 | 96.85% | 0.00% | 0 |
+| 1 | full-check-a | candidate | `wf8413d54aafa97a678f7` | 8038.74 | 761 | 96.85% | 0.00% | 0 |
+
+Level 1: 1 complete pairs, baseline €8,038.74, candidate €8,038.74, delta €+0.00; candidate minimum on-time 96.85%. Selection pending development/holdout gate.
