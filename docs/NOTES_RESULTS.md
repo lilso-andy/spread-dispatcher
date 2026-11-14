@@ -1419,3 +1419,57 @@ Proposed order after scope authorization: freeze latest confirmed integrated cor
 The assigned user scope is notes.ts, parser tests and docs/NOTES_RESULTS.md. prompts/notes-tests.md explicitly says: "Không sửa desk.ts, planner.ts, runner.ts, config.ts, configs/ hay evaluate.ts." This proposal therefore remains report-only. A code change to desk.ts and the new economics test needs an explicit scope exception or application by the Dispatcher owner. This is a file-ownership decision, not a new request for ordinary practice permission. The personal branch remains clean of teammate-file edits. No new world is created merely to disguise an unchanged/ineffective config experiment.
 
 Checkpoint: source inspection/leaderboard reads/old-world analyses complete; no active own practice controller. The latest per-level parser choices and reviewable key variant remain unchanged. Proposal is ready for review in PR https://github.com/lilso-andy/spread-dispatcher/pull/5. Ranking confirmation of actual top6 still requires a separate explicit user instruction, and future competitor entries can move the cutoff.
+
+
+## Authorized top-six economics practice — minimum93% service
+
+User explicitly authorizes desk.ts and new test/market-economics.test.ts on personal branch; no shared configs, merge, ranking or final. Authorization supersedes the prior Notes-only prohibition for these two files only. Existing per-level Notes choices remain: cargo at4/5, focused keys at6. Target is to improve controlled practice margin toward the current level6 reference32961.79 EUR/5 secret weeks; practice seeds do not establish a leaderboard rank. No ranking is created.
+
+Status in progress. Branch work/notes-thanhdatLUT. Common integrated core2213766b83900ad7aa289437d37dd055a938dbc4; main9dccfdb is not the server dispatcher. Registered lower-quote/fee opt-in preserves the selected legacy config and other levels; trial config is explicit, never written to shared configs/.
+
+### Economics round1, level6
+
+Before-edit registration 2026-11-14T09:30:46.506Z. Hypothesis: Opt-in lower bid/fee economics at4?6: fixed0.95 opening multiplier instead of own-fee upward feedback and1.05 list-price base. Current selected cohorts win5?16% of quotes. Static screen exposes452?530 lost bids/week lowered at least5 EUR; this is not predicted profit. Sensitivity:5% lower actual fee spend115?588 EUR/week;50 additional NET20-EUR orders would add1000 EUR/week if deliverable. Evidenced lower bound0. Keep1600 floor,13% reserve,0.28 capacity,180 lead and existing rescue schedule. Joint hypothesis needs ablation if it loses.. Baselinefa4bd30cbfc46ce173c52ea31d3724950f718721; candidated165e7e00d7da894a9e04f4c646a0b60c15397f1. Controlled diff fingerprintsha256:21c61fb35b1d86d295c08ed68b245af5b7bf74c3e7a76bcc7b66e053c96c8838. Offline Baseline78/78 and candidate85/85 full integrated tests pass; diff check clean. Development seeds top6-economics-a, top6-economics-b; reserved untouched decision seedtop6-economics-decision-6-v1. Decision Registered before code edits; candidate/config frozen before practice.
+
+Baseline config:
+
+```json
+{
+  "quoteMultiplier": 1.35,
+  "feeMultiplier": 1.08,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+Candidate config:
+
+```json
+{
+  "quoteMultiplier": 1.05,
+  "feeMultiplier": 0.95,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+Gate: pooled development margin gain, every candidate final week>=93%, no undelivered/refused actions or critical missed note facts; then positive fresh-decision delta. Under1% gains prefer greater worst service, ties retain baseline. Negative/unranked weeks and losing candidates remain in the report. World creation/output/source/config checkpoint is saved before first advance, final week immediately saved, each complete pair pushed before continuation.
+
+| Phase | Seed | Side | World | Margin EUR | Won | EUR/order | On time | Undelivered | Refusals | Output |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+
+Controller null. Next Ready to publish pre-practice checkpoint; exact source/config and new seed protocol frozen. Shared slots checked; own worlds run serially, never more than2 active. Only own IDs can be resumed after the old controller stops. Frozen source finishes its worlds despite later teammate updates; fetch/rebaseline/test before a new round. Dependency: exact per-level parser, core, both full configs and unchanged route/capacity/rescue algorithms. Quotes and opening fees are a joint policy, so mechanism is established through ledger and ablations, not inferred from one scalar. No declined list revenue counts as a loss. Planned-driving-hour ratios are logged-route proxies excluding approach/waiting.
+
+Scope: notes.ts/parser tests/report plus explicitly approved desk.ts and test/market-economics.test.ts. No shared config, planner/runner or teammate-branch edits, PR merge, force-push, ranking/test-final/live-final. Raw logs/reveals/keys stay local.
