@@ -27,7 +27,18 @@
       "l8-20k-proof-b"
     ],
     "mode": "practice only",
-    "hypotheses": []
+    "hypotheses": [
+      {
+        "id": "notes-permissive",
+        "change": {
+          "strictNotes": false
+        },
+        "reason": "Many baseline request declines caused by parser uncertainty; test economic effect of known parsed constraints without uncertainty veto. Actual deliveries, failed visits and refunds determine suitability.",
+        "opportunity": "100 additional won orders at observed 35-37 EUR/order would be 3500-3700 EUR/week; assumption only, not lost profit.",
+        "reject": "Any development or proof week below91%, nonpositive paired gain, extra undelivered or action refusals",
+        "holdout": "l8-20k-proof-a"
+      }
+    ]
   },
   "results": [
     {
@@ -155,6 +166,76 @@
       "branch": "work/pricing-baotran1604",
       "source": "0b5a2e97a6c617eadbe710d2faf63a99bfc06661",
       "level": 8,
+      "seed": "l8-20k-dev-a",
+      "variant": "notes-permissive",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2.2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w6620d08926e47394555c",
+      "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-20k/results/l8-20k-dev-a/notes-permissive",
+      "pid": 24704,
+      "createdAt": "2026-11-14T22:14:10.642Z",
+      "next": "Analyze ledger and paired final score",
+      "score": {
+        "marginCents": 914816,
+        "revenueCents": 3097200,
+        "marginShare": 0.29536872013431487,
+        "wonOrders": 264,
+        "onTimeShare": 0.9810606060606061,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "endedAt": "2026-11-14T22:15:10.094Z",
+      "ledgerCents": {
+        "revenue": 3097200,
+        "driver_fee": -2149061,
+        "release_fee": -11965,
+        "failed_visit": -7553,
+        "waiting": -3000,
+        "late_refund": -10805
+      },
+      "decisionDeclines": {
+        "insufficient safe capacity, time or margin": 137,
+        "summer tyres: weather exposure": 10
+      },
+      "quotedRequests": 884,
+      "eventCounts": {
+        "forecast": 2,
+        "price_request": 1031,
+        "order_lost": 763,
+        "order_won": 268,
+        "gig_viewed": 5287,
+        "gig_booked": 289,
+        "gig_started": 267,
+        "offer_answered": 2769,
+        "picked_up": 268,
+        "gig_expired": 80,
+        "delivered": 268,
+        "ledger": 542,
+        "gig_dropped": 19,
+        "order_cancelled": 4,
+        "driver_late": 1,
+        "visit_failed": 2,
+        "order_changed": 12,
+        "release": 3,
+        "deadline_close": 10
+      }
+    },
+    {
+      "branch": "work/pricing-baotran1604",
+      "source": "0b5a2e97a6c617eadbe710d2faf63a99bfc06661",
+      "level": 8,
       "seed": "l8-20k-dev-b",
       "variant": "baseline",
       "config": {
@@ -270,6 +351,73 @@
         "order_changed": 6,
         "release": 2,
         "driver_late": 1
+      }
+    },
+    {
+      "branch": "work/pricing-baotran1604",
+      "source": "0b5a2e97a6c617eadbe710d2faf63a99bfc06661",
+      "level": 8,
+      "seed": "l8-20k-dev-b",
+      "variant": "notes-permissive",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2.2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w18ab92dd2ce504993d7b",
+      "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-20k/results/l8-20k-dev-b/notes-permissive",
+      "pid": 24704,
+      "createdAt": "2026-11-14T22:14:10.762Z",
+      "next": "Analyze ledger and paired final score",
+      "score": {
+        "marginCents": 1492620,
+        "revenueCents": 5185800,
+        "marginShare": 0.28782830035867174,
+        "wonOrders": 386,
+        "onTimeShare": 0.9740932642487047,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "endedAt": "2026-11-14T22:15:24.961Z",
+      "ledgerCents": {
+        "revenue": 5185800,
+        "driver_fee": -3656165,
+        "waiting": -3000,
+        "late_refund": -34015
+      },
+      "decisionDeclines": {
+        "insufficient safe capacity, time or margin": 329,
+        "summer tyres: weather exposure": 14
+      },
+      "quotedRequests": 696,
+      "eventCounts": {
+        "forecast": 1,
+        "price_request": 1039,
+        "order_won": 387,
+        "gig_viewed": 7156,
+        "gig_booked": 440,
+        "order_lost": 652,
+        "offer_answered": 5037,
+        "gig_started": 386,
+        "picked_up": 394,
+        "gig_dropped": 52,
+        "delivered": 394,
+        "ledger": 784,
+        "deadline_close": 28,
+        "gig_expired": 118,
+        "order_changed": 6,
+        "release": 5,
+        "no_show": 2,
+        "order_cancelled": 1
       }
     }
   ]
