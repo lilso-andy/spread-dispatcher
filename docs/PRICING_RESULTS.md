@@ -747,3 +747,24 @@ Source tích hợp 2213766. 73/73 test offline. Bản vá opt-in ở `analysis/l
 | Phí 0,83 / công suất 0,44 | economics-holdout-j | `w331ae897b500cf5b1b4e` | 983371 | 776 | 98.71% | 0.00% | Có | 0 |
 
 Chọn bản phí 0,86 để tích hợp thử. Trên full-check-a/b, baseline €6.849,25, ứng viên €12.946,58. Seed mới €3.171,30 → €9.391,64. Loại bản 0,78 vì 89,07% trên full-check-b. Bản trung gian thắng một seed và thua một seed so với 0,86. Mục tiêu €60.000 qua năm tuần chưa đạt. Không dùng ranking.
+
+## Practice chính sách phí level 1–3
+
+Dispatcher `2213766`, 73/73 test offline cho hai bản thử. Bản vá opt-in `analysis/training-economics.patch` dùng cùng chính sách phí mở 0,86 ở level 1–3, với mức tăng phí lên lịch 1,30 ở level 2–3. Đề xuất áp bản vá lên source tích hợp rồi dùng cấu hình training-economics cho level 2–3. Tiếp tục dùng bản level1-economics cho level 1.
+
+| Bản | Level | Seed | World | Margin (cent) | Đơn | Đúng hạn | Chưa giao | Refusals |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Phí chọn lọc | 1 | full-check-a | `w95a3fbedf50b0f6d8ad6` | 856635 | 762 | 96.19% | 0.00% | 0 |
+| Phí chọn lọc | 1 | full-check-b | `w98336a9f36cf50bdae38` | 450490 | 511 | 91.78% | 0.00% | 0 |
+| Phí 0,86 | 2 | training-economics-holdout-l | `wf2363736a7b84765c09f` | 897965 | 756 | 96.83% | 0.00% | 0 |
+| Phí 0,86 | 3 | training-economics-holdout-l | `w0db98d1ac792470ea8c9` | 907320 | 756 | 96.56% | 0.00% | 0 |
+| Phí 0,86 | 2 | full-check-b | `w2676ae6894298360599a` | 603367 | 601 | 94.68% | 0.00% | 0 |
+| Phí 0,86 | 2 | full-check-a | `w57f53b0bb133b205b7f6` | 897174 | 761 | 97.37% | 0.00% | 0 |
+| Phí 0,86 | 3 | full-check-a | `w901b813746dadc53a385` | 922635 | 760 | 97.50% | 0.00% | 0 |
+| Phí 0,86 | 3 | full-check-b | `wb89f31a771dfea08ca67` | 683473 | 669 | 95.07% | 0.00% | 0 |
+| Phí 0,80 | 2 | training-economics-holdout-l | `w019879f9a5ba6644a3e2` | 949623 | 772 | 96.11% | 0.00% | 0 |
+| Phí 0,80 | 2 | full-check-b | `w0cfa077a8975a5af53df` | 490006 | 498 | 92.37% | 0.00% | 0 |
+| Phí 0,80 | 3 | training-economics-holdout-l | `w7f8c8eed0e13382b1a96` | 1042546 | 771 | 95.85% | 0.00% | 0 |
+| Phí 0,80 | 3 | full-check-b | `wf1c3a078b911a3895d8f` | 489518 | 498 | 92.37% | 0.00% | 0 |
+
+Giữ phí 0,86. Phí 0,80 thua tổng margin trên hai seed chung ở cả level 2 và 3. Phí giảm chọn lọc ở level 1 đạt ngưỡng mới 91% nhưng cũng thua tổng margin. Mục tiêu €70.000 qua năm tuần chưa đạt. Không dùng ranking.
