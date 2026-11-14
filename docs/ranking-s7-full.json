@@ -3,7 +3,7 @@
   "name": "Saturday 15:00",
   "team": "team-co-tai",
   "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
-  "verifiedAt": "2026-11-14T15:40:46.298Z",
+  "verifiedAt": "2026-11-14T15:50:13.129Z",
   "complete": false,
   "levels": [
     {
@@ -173,11 +173,11 @@
     },
     {
       "level": 7,
-      "rank": null,
-      "played": 3,
-      "qualified": false,
-      "marginCents": null,
-      "onTimeShare": null,
+      "rank": 21,
+      "played": 5,
+      "qualified": true,
+      "marginCents": 2306660,
+      "onTimeShare": 0.9754689754689755,
       "runs": [
         {
           "worldId": "we2d4f84ad7f91966adf5",
@@ -286,12 +286,82 @@
             "release_fee": -19443,
             "late_refund": -23040
           }
+        },
+        {
+          "worldId": "wb69bb0cae9b4ed34ee5e",
+          "run": 4,
+          "score": {
+            "marginCents": 230116,
+            "revenueCents": 758200,
+            "marginShare": 0.30350303350039565,
+            "wonOrders": 63,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "leaderboardVerified": true,
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.02,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 0,
+          "journalLedgerGapCents": 0,
+          "ledgerCents": {
+            "revenue": 758200,
+            "driver_fee": -523482,
+            "release_fee": -4602
+          }
+        },
+        {
+          "worldId": "w0e65754f7d6eec801bde",
+          "run": 5,
+          "score": {
+            "marginCents": 732696,
+            "revenueCents": 2824900,
+            "marginShare": 0.259370597189281,
+            "wonOrders": 238,
+            "onTimeShare": 0.957983193277311,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "leaderboardVerified": true,
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.02,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 0,
+          "journalLedgerGapCents": 0,
+          "ledgerCents": {
+            "revenue": 2824900,
+            "driver_fee": -2043854,
+            "late_refund": -48350
+          }
         }
       ]
     },
     {
       "level": 8,
-      "rank": 51,
+      "rank": 52,
       "played": 5,
       "qualified": true,
       "marginCents": 4672706,

@@ -1,6 +1,12 @@
 # Shared status
 
+## Current focus is level 7 practice in batches of at least 15 completed weeks
+
+The user redirected work to level 7 algorithms and configuration, server practice comparisons and iterative improvements, with one update after at least 15 completed weeks per batch. Ranking allocation was stopped and original process exits confirmed. The remaining owned ranking worlds are parked in `runs/rank7-full/manifest.json`. Current practice session `49006` resumes the exact existing level 7 recovery and performance candidate worlds. Batch state and accounting live in `runs/level7-batch01/state.json`. Each world is checked against final server scores and authoritative ledger. Reused baselines require matching source, full config, level and seed. Both failed service weeks and losing candidates remain reportable. See `docs/LEVEL7_BATCH01.md` and `prompts/resume-16000.md`.
+
 ## Full season 7 ranking request
+
+Level 7 is COMPLETE and officially ranked in season 7. Five of five weeks qualified, total margin €23,066.60, weighted on-time share 97.55%, rank 21 at verification. All orders delivered. Eight refused direct-offer actions across the five weeks are preserved in the results. Level 8 was rank 52 at the latest check, with its unchanged €46,727.06 total. The controller has moved to level 6. The recovery candidate matched baseline exactly on level 7 `spread-1`, and `study-2` pairing is in progress.
 
 Sequential controller `64768` now continues incomplete levels across a round change if needed, after finishing any existing world. It records each world's season and completes a five-week set at one level before descending. Level 8 is complete in season 7 and will not be repeated by this controller. Level 7 run 3 completed at €7,687.86, 97.93% on time, all delivered, six refused direct-offer actions. Run 4 is active. The recovery experiment's level 7 baseline on `spread-1` matched the selected source's €5,012.15 exactly and the candidate arm has begun.
 
