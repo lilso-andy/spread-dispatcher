@@ -250,15 +250,36 @@ Level 1–3 dùng giá danh sách cố định. Ứng viên thử sàn đóng g�
 
 | Level | Cấu hình | Seed | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| 1 | followup | multilevel-holdout-b | `w83d280b4898a76723fd7` | 272199 | 270 | 99.63% | 0.00% | Có | 0 |
 | 1 | baseline | multilevel-verify-a | `wfeac127c2fea99e4f9ca` | 194218 | 176 | 99.43% | 0.00% | Có | 0 |
 | 1 | candidate | multilevel-verify-a | `w448154165056fe1341fd` | 254406 | 231 | 99.57% | 0.00% | Có | 0 |
 | 1 | baseline | spread-1 | `waf056c70795294114e9e` | 218244 | 196 | 99.49% | 0.00% | Có | 0 |
 | 1 | candidate | spread-1 | `wd6fa064dfc4d6d1e7f0e` | 292595 | 269 | 99.63% | 0.00% | Có | 0 |
+| 2 | followup | multilevel-holdout-b | `wb81d0e13cf95713f8981` | 281042 | 271 | 98.89% | 0.00% | Có | 0 |
 | 2 | baseline | multilevel-verify-a | `wc17a377a5e6586ed5dcc` | 191191 | 175 | 99.43% | 0.00% | Có | 0 |
 | 2 | candidate | multilevel-verify-a | `w53389aa0a56fdc01c1d7` | 259157 | 231 | 99.57% | 0.00% | Có | 0 |
 | 2 | baseline | spread-1 | `w9849dcd05e70323de31c` | 227432 | 197 | 99.49% | 0.00% | Có | 0 |
 | 2 | candidate | spread-1 | `w7a3ab178497abf69dfaf` | 303009 | 270 | 99.63% | 0.00% | Có | 0 |
+| 3 | baseline | multilevel-verify-a | `wc0e7142bc502ebdc547d` | 188207 | 175 | 99.43% | 0.00% | Có | 0 |
+| 3 | candidate | multilevel-verify-a | `w260aec1d326caa4821e2` | 262295 | 232 | 99.57% | 0.00% | Có | 0 |
 | 3 | baseline | spread-1 | `w49b612bc85deb0aa606d` | 230153 | 197 | 99.49% | 0.00% | Có | 0 |
+| 3 | candidate | spread-1 | `w9f0b4dd6ec0dce417bb8` | 308464 | 270 | 99.63% | 0.00% | Có | 0 |
+| 4 | baseline | multilevel-verify-a | `w3f7de264b7e359165aaa` | 265454 | 84 | 100.00% | 0.00% | Có | 0 |
+| 4 | candidate | multilevel-verify-a | `wef46085217d778faacac` | 282401 | 106 | 100.00% | 0.00% | Có | 0 |
+| 4 | baseline | spread-1 | `wd0a335200ca918d84f6e` | 177888 | 76 | 100.00% | 0.00% | Có | 0 |
+| 4 | candidate | spread-1 | `w2d86d6ea734dff1a4af4` | 210654 | 108 | 99.07% | 0.00% | Có | 0 |
+| 5 | baseline | multilevel-verify-a | `wd3e47d4a3ab2d68030ce` | 186047 | 57 | 100.00% | 0.00% | Có | 0 |
+| 5 | candidate | multilevel-verify-a | `w2b88f6818edb85c8509a` | 202286 | 76 | 98.68% | 0.00% | Có | 0 |
+| 5 | baseline | spread-1 | `w0629b64ed4461ce072b8` | 120436 | 54 | 100.00% | 0.00% | Có | 0 |
+| 5 | candidate | spread-1 | `wc47bea40bedce8e4b879` | 137788 | 71 | 100.00% | 0.00% | Có | 0 |
+| 6 | baseline | multilevel-verify-a | `w945466937096bc81cf0e` | 239020 | 75 | 100.00% | 0.00% | Có | 0 |
+| 6 | candidate | multilevel-verify-a | `w199e75a19fa75c5d70dc` | 251664 | 95 | 100.00% | 0.00% | Có | 0 |
+| 6 | baseline | spread-1 | `w29dee8770332484811e3` | 131043 | 58 | 100.00% | 0.00% | Có | 0 |
+| 6 | candidate | spread-1 | `wec1ef904ca510bfd711b` | 148050 | 73 | 100.00% | 0.00% | Có | 0 |
+| 7 | baseline | multilevel-verify-a | `w9a7cbd90baab93d78056` | 435946 | 154 | 98.70% | 0.00% | Có | 0 |
+| 7 | candidate | multilevel-verify-a | `w9cf916439c76596720dd` | 523589 | 207 | 99.03% | 0.00% | Có | 0 |
+| 7 | baseline | spread-1 | `wf22488974534b7bae079` | 257866 | 101 | 100.00% | 0.00% | Có | 0 |
+| 7 | candidate | spread-1 | `w175410200ff9c4c2677f` | 399977 | 172 | 99.42% | 0.00% | Có | 0 |
 
 ### So sánh theo level
 
@@ -266,8 +287,15 @@ Level 1–3 dùng giá danh sách cố định. Ứng viên thử sàn đóng g�
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | 2 | 412462 | 547001 | 99.43% | 99.57% | Ứng viên |
 | 2 | 2 | 418623 | 562166 | 99.43% | 99.57% | Ứng viên |
+| 3 | 2 | 418360 | 570759 | 99.43% | 99.57% | Ứng viên |
+| 4 | 2 | 443342 | 493055 | 100.00% | 99.07% | Ứng viên |
+| 5 | 2 | 306483 | 340074 | 100.00% | 98.68% | Ứng viên |
+| 6 | 2 | 370063 | 399714 | 100.00% | 100.00% | Ứng viên |
+| 7 | 2 | 693812 | 923566 | 98.70% | 99.03% | Ứng viên |
 
 ### Cấu hình đầy đủ
 
-- baseline, level 1, 2, 3 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.2, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
-- candidate, level 1, 2 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- followup, level 1, 2 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- baseline, level 1, 2, 3, 4, 5, 6, 7 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.4, "marginReserve": 0.15, "minMarginCents": 2000, "capacityFraction": 0.2, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
+- candidate, level 1, 2, 3 · `{"quoteMultiplier": 1.4, "feeMultiplier": 1.2, "emergencyMultiplier": 2.1, "marginReserve": 0.1, "minMarginCents": 500, "capacityFraction": 0.26, "maxApproachMinutes": 100, "minLeadMinutes": 210, "strictNotes": true, "offers": true}`
+- candidate, level 4, 5, 6, 7 · `{"quoteMultiplier": 1.35, "feeMultiplier": 1.08, "emergencyMultiplier": 2.4, "marginReserve": 0.13, "minMarginCents": 1600, "capacityFraction": 0.28, "maxApproachMinutes": 100, "minLeadMinutes": 180, "strictNotes": true, "offers": true}`
