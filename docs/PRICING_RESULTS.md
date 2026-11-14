@@ -799,3 +799,11 @@ Full config/source/output/ledger in the checkpoint JSON. Completed-week scores o
 Level 1: 3 complete pairs, baseline €21,084.86, candidate €21,766.14, delta €+681.28; candidate minimum on-time 92.70%. Selection pending development/holdout gate.
 
 Level 2: 3 complete pairs, baseline €23,896.34, candidate €25,986.85, delta €+2,090.51; candidate minimum on-time 95.01%. Selection pending development/holdout gate.
+
+## Target80 continuation, Astra
+
+Frozen integration 1b3c2beed33fc9ff3fc720e20248a9b9d04c2bd2. Baseline passed 91 offline tests. Latest user requests practice only until each level1–3 achieves EUR80,000 across five weeks, with weekly on-time minimum interpreted as91%. Source and full configs are recorded in local work/target80/results checkpoints, including original world IDs. Existing controllers were monitored through completion.
+
+Level1 target80-dev-a baseline world w8c630c06c43d78e8ff7f ended at 497246 cents, 745 won,92.885906% on time,0 undelivered,0 refusals. Fee082 world w0c2d80b4c2b926b93f52 ended at502703 cents,748 won,92.379679% on time,0 undelivered,0 refusals. Delta +5457 cents (+1.10%). One seed only, candidate not selected. Full config is quoteMultiplier1.6,feeMultiplier0.86 baseline/0.82 candidate,emergencyMultiplier1.65,marginReserve0.02,minMarginCents200,capacityFraction0.5,maxApproachMinutes100,minLeadMinutes180,strictNotes true,trainingEconomy true,offers true.
+
+Ledger baseline cents revenue5172100,driver_fee-4488669,late_refund-180675,release_fee-5510. Candidate revenue5190000,driver_fee-4505316,late_refund-177350,release_fee-4631. Both reconcile. Baseline had52 driver-fee lines above1.3 times attributed reference fee, totaling732305 cents. Next grounded hypothesis after rotating levels is a lower emergencyMultiplier, with all other settings fixed. Reject any weekly service below91% or nonpositive paired margin. No target reached and no ranking authorized in this continuation.
