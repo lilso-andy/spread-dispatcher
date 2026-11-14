@@ -54,3 +54,4 @@ Candidate production `4766c82` changes only levels 1–3: a 500-cent absolute co
 User requested an immediate GitHub checkpoint before running out of context. See prompts/resume-integration.md for source hashes, active evaluation sessions/worlds, credential setup and the ordered continuation plan. docs/levels-initial-partial.json is a timestamped incomplete baseline snapshot; it does not validate the candidate. No ranking or final was started by this integration loop.
 
 Dispatch lead: round 1 completed on frozen integration 3cb7ba4. Cost passed the fresh level 7 and 8 holdout; see docs/DISPATCH_78.md and docs/dispatch-78-practice.json for all paired weeks. Both prior matrices ended; full results, including the four failures, are in docs/dispatch-prior-matrices.json.
+Level 8: lower emergency fee passed a new holdout at identical service (+126.65 euros). Selected preset and every paired result in docs/DISPATCH_78.md.
