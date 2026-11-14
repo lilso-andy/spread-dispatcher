@@ -327,3 +327,16 @@ Level 1–3 dùng giá danh sách cố định. Ứng viên thử sàn đóng g�
 | 7 | 203704 | 369062 | +81.18% | 100.00% | 100.00% |
 
 Ứng viên tăng margin ở 7/7 level trên seed mới. Tỷ lệ đủ điều kiện ở cả hai cấu hình: 7/7 và 7/7. Mỗi level chỉ được đo trên ba seed, nên kết quả xác định cấu hình tốt nhất trong các phương án đã thử.
+
+### Kiểm tra lại sau khi cập nhật parser
+
+Sau khi push và fetch, áp dụng diff notes `2678287..ea47940` lên bản tích hợp ở trên. 65/65 test offline đạt. Chạy đối chứng practice trên `multilevel-holdout-b` cho level 5–7.
+
+| Level | Cấu hình | World ID | Margin (cent) | Đơn thắng | Đúng hạn | Chưa giao | Đủ điều kiện | Refusals |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
+| 5 | balanced | `w326d298c18effb98e20a` | 93689 | 32 | 100.00% | 0.00% | Có | 0 |
+| 5 | pricing-baotran1604-competitive | `w2ea05bca109ac427ec27` | 102782 | 40 | 100.00% | 0.00% | Có | 0 |
+| 6 | balanced | `w96cbfc12b6e5e113a79e` | 95777 | 33 | 100.00% | 0.00% | Có | 0 |
+| 6 | pricing-baotran1604-competitive | `w5b3049a2516192e78aef` | 104791 | 41 | 100.00% | 0.00% | Có | 0 |
+| 7 | balanced | `we8242e03ca4a3608a336` | 212254 | 76 | 98.68% | 0.00% | Có | 0 |
+| 7 | pricing-baotran1604-competitive | `w1952b93562a1f6d4e8c1` | 425713 | 149 | 100.00% | 0.00% | Có | 0 |
