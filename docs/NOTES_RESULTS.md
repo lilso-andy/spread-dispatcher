@@ -1957,3 +1957,25 @@ candidate: level8 study-2; world wa9deb41cdf6625c88333; source 6ae5f07c39ef834a5
 baseline: level8 final8-priceup-dev-v1; world w662db543b539504aa33c; source a1841228f2c9d3f1716d49d1fd77307d3f633333; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2.2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-shortfee\level8\final8-priceup-dev-v1\baseline; {"score":{"marginCents":777860,"revenueCents":2465400,"marginShare":0.3155106676401395,"wonOrders":178,"onTimeShare":1,"undeliveredShare":0,"ranked":true},"refusals":0}.
 
 candidate: level8 final8-priceup-dev-v1; world wb13e62b932653dc1fcc4; source 6ae5f07c39ef834a5e6933725c25eb6f4d6e5b26; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2.2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-risk-route-results\level8\final8-priceup-dev-v1\candidate; {"score":{"marginCents":777860,"revenueCents":2465400,"marginShare":0.3155106676401395,"wonOrders":178,"onTimeShare":1,"undeliveredShare":0,"ranked":true},"refusals":0}.
+
+## Level8 minimum16 practice batch
+
+User requests at least15 server practice weeks; plan16 new weeks (8 paired comparisons). Repeated baselines on same two development seeds do NOT provide independent evidence. Any selected candidate needs a new untouched holdout afterwards. Threshold every candidate week>=93%, pooled margin gain. Practice only, no ranking/final/merge.
+
+Safety reference: conditional route guard6ae5f07 completed third paired seed final8-risk-route-holdout-v1, baseline and candidate6330.10EUR/99.40%, worlds w5f590093e8765bc4ccb8 and wcfbad43b2100d3154424. Three-seed pooled reference20865.83EUR vs guarded20682.28EUR (-0.88%), worst guarded95.18%. Accepted as explicitly documented safety fallback, NOT a margin gain.
+
+Latest team source 8a9603821d5cb0705c90b9de39f4cb90f163dca4; actual frozen runtime bc444705bde4cb1e4a7a158199ca34b9d24c4565 adds verified route guard,92 full tests pass. Branch work/notes-thanhdatLUT. Controller 32036 running; next Run owned w448be81616cfeb235a20. Local checkpoint work/level8-batch15-results/checkpoint.json. Full raw outputs remain local.
+
+Hypothesisemergency: Lower final rescue fee2.2 to2.0 only. Driver fees dominate; 1% of observed26842EUR fee bill is268EUR sensitivity, not predicted savings. Reject lower margin or any week<93%; may worsen bookings.; candidate overrides {"emergencyMultiplier":2}; reserved holdout batch15-emergency-proof-v1.
+
+Hypothesisfloor: Raise contribution floor20 to30EUR. Conditional route guard protects service; preserve more net per accepted scarce hour. Up to10EUR per affected won order before demand response; measure actual lost volume, no assumed profit on skipped requests.; candidate overrides {"minMarginCents":3000}; reserved holdout batch15-floor-proof-v1.
+
+Hypothesisquote: Intermediate quote1.45 versus1.4 on safe reference. Uniform1.5 failed pooled margin; modest increase may retain easy-week volume. 1% observed35634EUR revenue is356EUR sensitivity; demand losses can reverse gain.; candidate overrides {"quoteMultiplier":1.45}; reserved holdout batch15-quote-proof-v1.
+
+Hypothesiscapacity: Reduce simultaneous local exposure0.28 to0.22. Study2 original late refunds1749EUR expose service cost; guarded reference already improves it. Require saved actual cost and replacement profit to outweigh reduced volume; never count skipped revenue as realized loss.; candidate overrides {"capacityFraction":0.22}; reserved holdout batch15-capacity-proof-v1.
+
+|Trial|Seed|Arm|World|Margin EUR|Won|On time|Undelivered share|Refusals|
+|---|---|---|---|---:|---:|---:|---:|---:|
+|emergency|study-2|baseline|w448be81616cfeb235a20|pending|||||
+
+w448be81616cfeb235a20: branch work/notes-thanhdatLUT; commit bc444705bde4cb1e4a7a158199ca34b9d24c4565; level8 seed study-2; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2.2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch15-results\emergency\study-2\baseline; next finish owned world with frozen source/config.
