@@ -16,6 +16,16 @@ function request(): PriceRequest {
 }
 function bid(d: Desk, q = request()) { const a = d.quote(q); assert.equal(a?.type, "quote"); if (a?.type !== "quote") throw Error("No quote"); return a.prices.next_day! }
 
+test('level8 restricts long routes only when completed deliveries show service stress', () => {
+ const longMap={...map,roads:map.roads.map(r=>({...r,minutes:r.from===r.to?0:360}))};
+ const build=(level:number,long:boolean)=>{const d=new Desk(legacy,level,long?longMap:map,roster);d.now=480;return d};
+ const history=(d:Desk)=>{for(let i=0;i<30;i++)d.orders.set(`done${i}`,{...request(),id:`done${i}`,status:'delivered',deadline:100,deliveredAt:[i===0?101:99],lastPickupAt:80,option:'next_day',priceCents:20000} as any)};
+ assert.ok(bid(build(8,true))<10000000);
+ const stressed=build(8,true);history(stressed);assert.ok(bid(stressed)>=10000000);
+ const short=build(8,false);history(short);assert.equal(bid(short),27000);
+ const other=build(7,true);history(other);assert.ok(bid(other)<10000000);
+});
+
 test("market levels opt into fixed opening fees without conditioning on our own bids", () => {
   for (const level of [4, 5, 6]) { const d = desk(level); d.observedBookings.set("a", [1.7, 1.7, 1.7, 1.7, 1.7]); assert.equal(d.feeMultiplier("a"), .95) }
 })
