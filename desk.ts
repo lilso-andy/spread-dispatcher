@@ -319,7 +319,8 @@ export class Desk {
         const feeCents = Math.max(this.currentFee(gig), Math.round(base * Math.max(multiplier, this.feeMultiplier(order.legs[first.leg]!.pickup.placeId))))
         if (feeCents > this.currentFee(gig)) actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
       }
-      if (this.config.offers && this.level >= 3 && (urgency <= 300 || this.now - gig.postedAt >= 90)) actions.push(...this.offersFor(gig, order))
+      const offerDue = this.level >= 7 ? (first.window?.from ?? order.legs[first.leg]!.pickup.window.from) <= this.now + 180 : urgency <= 300 || this.now - gig.postedAt >= 90
+      if (this.config.offers && this.level >= 3 && offerDue) actions.push(...this.offersFor(gig, order))
     }
     return actions
   }
