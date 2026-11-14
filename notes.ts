@@ -22,6 +22,10 @@ const BEFORE = /ennen|mennessä|viimeist|before|\bby\b|latest|före|senast|asti|
 const week = [ /maanantai|\bma\.?\b|måndag|\bmån\b|monday|\bmon\b/, /tiistai|\bti\.?\b|tisdag|\btis\b|tuesday|\btue(?:s)?\b/, /keskiviik|\bke\.?\b|onsdag|\bons\b|wednesday|\bwed\b/, /torstai|\bto\.\s|torsdag|\btors?\b|thursday|\bthu(?:rs)?\b/, /perjantai|\bpe\.?\b|fredag|\bfre\b|friday|\bfri\b/, /lauantai|\bla\.?\b|lördag|saturday|\bsat\b/, /sunnuntai|\bsu\.?\b|söndag|sunday|\bsun\b/ ]
 const words: Record<string, number> = { one:13, two:14, three:15, four:16, five:17, nine:9, ten:10, eleven:11, twelve:12, yksi:13, yhden:13, kaksi:14, kahden:14, kolme:15, kolmen:15, neljä:16, neljän:16, viisi:17, viiden:17, yhdeksän:9, yhdeksältä:9, kymmenen:10, kymmeneltä:10, yksitoista:11, kaksitoista:12, ett:13, en:13, två:14, tre:15, fyra:16, fem:17, nio:9, tio:10, elva:11, tolv:12 }
 
+// Complete clauses only: never let a cargo/keys keyword erase a deadline.
+const BENIGN = /^(?:(?:summer tyres in the trunk, go with the car|extra set of tyres in the boot, take along|spare wheels in the boot, thx)|(?:4 rengasta vanteilla tavaratilassa|lisärenkaat mukaan|rengassarja mukaan|rengassarja takapenkillä, kulkee mukana|kesärenkaat vanteineen takakontissa|lisäksi 4 kesärengasta tavaratilassa|ylimääräinen rengassarja takakontissa, mukaan)|(?:sommardäcken i bakluckan, följer med|däcken ligger i bilen, ska med)|(?:keys at service desk|avaimet huollosta|avaimet myyjältä|avaimet huollon tiskiltä)|(?:(?:our ref:|booking ref|ref|viite|varaus|tilausnumero)\s*\d{4,8})|(?:hello|hei|hei vaan|kiitos paljon|kiitos taas|kiitos etukäteen|cheers|standard transfer, thanks))[.! ]*$/
+const BENIGN_EXTRA = /^(?:hi|hi there|moi|moikka|kiittos|kiios paljon|tack på förhand|hyvää päivänjatkoa|paperit hanskalokerossa|paperit kuljettajalle tiskiltä|kauppakirja mukana, anna vastaanottajalle|extra däcksats i bagaget, ska med|2 sarjaa renkaita, toinen sarja kontissa|4 rengasta vanteilla tavaratilassa, avain autossa|rengassarja mukaan, avaimet myyjältä|rengassarja mukaan, avaimet huollon tiskiltä|lisärenkaat mukaan, kiitos taas|lisärenkaat mukkaan|(?:order no|tilausnro)\s+\d{4,8})[.! ]*$/
+
 function dayFor(text: string, arrived: number): number {
   const today = Math.floor(arrived / DAY)
   if (/ylihuomen|över.?morgon|day after tomorrow/.test(text)) return today + 2
@@ -38,7 +42,8 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   const facts: NoteFacts = { manual: false, plates: false, summerTyres: false, uncertain: false, reasons: [] }
   if (!note?.text.trim()) return facts
   let text = note.text.normalize("NFKC").toLowerCase()
-  // Corrections replace the earlier clause; retain unrelated earlier facts.
+  // Cargo tyres are not tyres fitted to the car. Mask only fully matched benign clauses.
+  text = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/).map(c => BENIGN.test(c.trim()) || BENIGN_EXTRA.test(c.trim()) ? "thanks" : c).join("; ")
   // A correction may replace a time while leaving equipment facts in force.
   // Until its scope is resolved, retain the text and decline the note.
   if (/\b(?:correction|actually|korjaus|siis|rättelse)\b/.test(text)) facts.reasons.push("correction scope requires review")
@@ -50,11 +55,13 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   const clauses = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/)
   for (let clause of clauses) {
     if (!clause.trim()) continue
+    // A bounded whitelist for complete equipment sentences, including handbook examples.
+    if (/^(?:car has no plates|auto ilman kilpiä|manuaalivaihteisto|auto vielä kesärenkailla)[.! ]*$/.test(clause.trim())) continue
     const equipmentOnly = /^(?:manuaali[a-zåäö]*|manual(?:\s+(?:gearbox|transmission|licence))?|manuell[a-zåäö]*|käsivaihte[a-zåäö]*|(?:auto\s+)?ilman\s+kilpi[a-zåäö]*|(?:no|without|missing)\s+(?:registration\s+)?plates|saknar\s+skylt[a-zåäö]*|kesären[a-zåäö]*|summer\s+t[yi]res|sommardäck)[.! ]*$/.test(clause.trim())
     const harmless = /^(?:kiitos|tack|thank you|thanks|ok)[.! ]*$/.test(clause.trim())
-    if (equipmentOnly || harmless) continue
+    if (equipmentOnly || harmless) { recognized = true; continue }
     let clauseRecognized = false
-    if (/provided|unless|if\b|when\b|jos\b|kun\b|om\b|när\b/.test(clause)) facts.reasons.push("conditional constraint requires review")
+    if (/\b(?:provided|unless|if|when|jos|kun|om|när)\b/.test(clause)) facts.reasons.push("conditional constraint requires review")
     if ([...clause.matchAll(/\b\d{1,2}(?:[.:]\d{2})?\s*[-–]\s*\d{1,2}(?:[.:]\d{2})?\b/g)].length > 1) facts.reasons.push("multiple opening ranges cannot be represented")
     // Clause-wide direction/date matching cannot safely associate competing facts.
     const directionText = clause.replace(/(?:the )?day after tomorrow/g, "tomorrow")

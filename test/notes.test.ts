@@ -36,6 +36,8 @@ for (const [text, key, expected] of [
   ["Pickup after tomorrow 12am", "pickupFrom", DAY],
   ["Delivery before the day after tomorrow 12pm", "deliveryTo", 2 * DAY + 720],
   ["Pickup ready Thurs at 10:00", "pickupFrom", 3 * DAY + 600],
+  ["Pickup from 14:00", "pickupFrom", 840],
+  ["Hämtning tidigast imorgon 14:00", "pickupFrom", DAY + 840],
 ] as const) test(`grounded time: ${text}`, () => {
   const f = parse(text)
   assert.equal(f[key], expected)
@@ -60,4 +62,26 @@ test("recurring hours remain clock minutes", () => {
 })
 test("greetings and empty notes are harmless", () => {
   for (const text of ["", "thanks", "kiitos", "tack"]) assert.equal(parse(text).uncertain, false)
+})
+test("handbook equipment sentences are fully understood", () => {
+  const plates = parse("Car has no plates.")
+  assert.equal(plates.plates, true)
+  assert.equal(plates.uncertain, false)
+  const summer = parse("Auto vielä kesärenkailla.")
+  assert.equal(summer.summerTyres, true)
+  assert.equal(summer.uncertain, false)
+  assert.equal(parse("Car has no plates; pickup after payment clears").uncertain, true)
+})
+test("completed-world cargo and reference clauses do not imply fitted summer tyres", () => {
+  for (const text of ["Summer tyres in the trunk, go with the car.", "Sommardäcken i bakluckan, följer med", "Lisäksi 4 kesärengasta tavaratilassa. Kiitos taas", "Keys at service desk. Our ref: 562260"]) {
+    const f = parse(text)
+    assert.equal(f.summerTyres, false)
+    assert.equal(f.uncertain, false)
+  }
+  const constrained = parse("Summer tyres in the trunk, go with the car; delivery by sunset")
+  assert.equal(constrained.uncertain, true)
+  assert.equal(parse("Summer tyres in the trunk, go with the car before sunset").uncertain, true)
+  const timed = parse("Keys at service desk; delivery before 16:00")
+  assert.equal(timed.deliveryTo, 960)
+  assert.equal(timed.uncertain, false)
 })
