@@ -826,3 +826,15 @@ Full source, configuration, world and recovery paths are in analysis/target80-re
 | 3 | target80-dev-a | fee082 | w0f06eb85e8d71588d019 | 6984.89 | 754 | 93.7666% | 0.0000% | 0 |
 
 Selection pending paired development and fresh holdout. Qualification requires five reserved completed weeks per level totaling more than EUR80,000, with each week at least91% on time.
+
+
+## Level 8 EUR20,000 practice batch (2026-11-15)
+
+Frozen team integration 0b5a2e97a6c617eadbe710d2faf63a99bfc06661. Main is not the executed source. Practice only; minimum service 91%; at least15 new completed worlds requested. Full source/config/world/output/ledger in analysis/level8-20k-results.json. Baseline suite91/91. Never resume before verifying old controller stopped.
+
+|Seed|Variant|World|Margin EUR|Won|On time|Undelivered share|Refusals|
+|---|---|---|---:|---:|---:|---:|---:|
+|l8-20k-dev-a|baseline|wa4b90b4fe2d24fddec59|7183.43|207|99.034%|0|0|
+|l8-20k-dev-b|baseline|w44112bcf4ded7cb36bde|11931.65|325|96.923%|0|0|
+
+Decision: Unselected: comparisons in progress. Target not demonstrated.
