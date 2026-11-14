@@ -72,7 +72,7 @@ export function routeFor(order: Order, legs: number[], facts: NoteFacts, network
     let found: { p: TimeWindow; d: TimeWindow; start: number; end: number } | undefined
     for (const p of picks) {
       for (const d of deliveries) {
-        const start = Math.max(p.from, d.from - duration)
+        const start = p.from // Delivery may wait until a later opening, including overnight.
         const end = Math.max(d.from, start + duration)
         if (start <= p.to && end <= d.to) { found = { p, d, start, end }; break }
       }
@@ -109,3 +109,4 @@ export function routeFor(order: Order, legs: number[], facts: NoteFacts, network
 export function asOrder(request: PriceRequest, option: PriceRequest["options"][number]): Order {
   return { id: request.id, dealerId: request.dealerId, option: option.kind, priceCents: option.listPriceCents, deadline: option.deadline, legs: request.legs, status: "waiting", deliveredAt: request.legs.map(() => null), lastPickupAt: option.deadline }
 }
+
