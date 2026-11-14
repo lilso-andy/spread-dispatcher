@@ -224,6 +224,8 @@ export class Desk {
   }
 
   feeMultiplier(place: string): number {
+    // Explicit lower multipliers opt market levels into fixed opening economics.
+    if (this.level >= 4 && this.level <= 6 && this.config.feeMultiplier < 1.05) return this.config.feeMultiplier
     const samples = [...(this.observedBookings.get(place) ?? [])].sort((a, b) => a - b)
     const learned = samples.length >= 5 ? samples[Math.floor(samples.length * 0.7)]! * 1.03 : 0
     return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(1.9, learned))
@@ -250,12 +252,13 @@ export class Desk {
       const order = asOrder(request, option)
       const route = routeFor(order, order.legs.map((_, i) => i), facts, this.network, this.now + this.config.minLeadMinutes, this.endsAt)
       if (!route || route.latestStart < this.now + this.config.minLeadMinutes) continue
+      if (this.level === 8 && completed.length >= 10 && lateCount / completed.length > 0.02 && route.driveMinutes > 300) continue
       if (!this.capacity(order, route)) continue
       const place = request.legs[0]!.pickup.placeId
       const local = this.localDrivers(order, route).length
       const scarcity = local < 15 ? 0.15 : local < 30 ? 0.07 : 0
       const fee = request.referenceFeeCents * (this.feeMultiplier(place) + scarcity)
-      const base = this.level <= 6 ? 1.20 : this.config.quoteMultiplier
+      const base = this.level <= 3 ? 1.20 : this.level <= 6 ? Math.min(1.20, this.config.quoteMultiplier) : this.config.quoteMultiplier
       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
       const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + this.config.minMarginCents)
