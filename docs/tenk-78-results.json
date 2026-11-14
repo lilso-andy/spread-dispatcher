@@ -619,5 +619,237 @@
       "late_refund": -195510,
       "failed_visit": -2500
     }
+  },
+  {
+    "worldId": "w64852dbd2acb7bda3d6e",
+    "level": 7,
+    "seed": "spread-1",
+    "arm": "candidate",
+    "source": "cb2e5ab34b7f92c422081c1d5c79689bce9fe22e",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.02,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "baselineWorldId": "w9a25ddb23a55870327f6",
+    "phase": "r3",
+    "score": {
+      "marginCents": 504045,
+      "revenueCents": 1595600,
+      "marginShare": 0.31589684131361245,
+      "wonOrders": 183,
+      "onTimeShare": 0.9836065573770492,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 1595600,
+      "driver_fee": -1072205,
+      "late_refund": -19350
+    }
+  },
+  {
+    "worldId": "w5b6629853fe8a63398f7",
+    "level": 7,
+    "seed": "study-2",
+    "arm": "candidate",
+    "source": "cb2e5ab34b7f92c422081c1d5c79689bce9fe22e",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.02,
+      "emergencyMultiplier": 2.4,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "baselineWorldId": "w61a19afead8294c65a2b",
+    "phase": "r3",
+    "score": {
+      "marginCents": 277000,
+      "revenueCents": 2108500,
+      "marginShare": 0.13137301399098886,
+      "wonOrders": 157,
+      "onTimeShare": 0.9171974522292994,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2108500,
+      "driver_fee": -1706908,
+      "release_fee": -15442,
+      "late_refund": -104150,
+      "failed_visit": -5000
+    }
+  },
+  {
+    "worldId": "wb01aa69a8f0293ebe8c3",
+    "level": 8,
+    "seed": "spread-1",
+    "arm": "candidate",
+    "source": "cb2e5ab34b7f92c422081c1d5c79689bce9fe22e",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "baselineWorldId": "wcd583fed10f1493e0a50",
+    "phase": "r3",
+    "score": {
+      "marginCents": 767706,
+      "revenueCents": 2450400,
+      "marginShare": 0.31329823702252696,
+      "wonOrders": 257,
+      "onTimeShare": 0.9844357976653697,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 2450400,
+      "driver_fee": -1662440,
+      "late_refund": -16050,
+      "release_fee": -4204
+    }
+  },
+  {
+    "worldId": "w7f0eef21a9cb7cc49153",
+    "level": 8,
+    "seed": "study-2",
+    "arm": "candidate",
+    "source": "cb2e5ab34b7f92c422081c1d5c79689bce9fe22e",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "baselineWorldId": "w9cab93ae390c8523045d",
+    "phase": "r3",
+    "score": {
+      "marginCents": 675713,
+      "revenueCents": 3563400,
+      "marginShare": 0.1896259190660605,
+      "wonOrders": 265,
+      "onTimeShare": 0.9207547169811321,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 3563400,
+      "driver_fee": -2684232,
+      "release_fee": -22980,
+      "late_refund": -174975,
+      "failed_visit": -2500,
+      "waiting": -3000
+    }
+  },
+  {
+    "worldId": "w9ec441368d4920eada98",
+    "level": 8,
+    "seed": "offer-proof-03",
+    "arm": "baseline",
+    "source": "a5286b4334c6b366698b2c0000ff851a21d700c8",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "phase": "r3-proof",
+    "score": {
+      "marginCents": 745280,
+      "revenueCents": 3211500,
+      "marginShare": 0.23206601276661995,
+      "wonOrders": 209,
+      "onTimeShare": 0.9425837320574163,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 3211500,
+      "driver_fee": -2389105,
+      "late_refund": -77115
+    }
+  },
+  {
+    "worldId": "w5eb2960b6b0b9c6eeef9",
+    "level": 8,
+    "seed": "offer-proof-03",
+    "arm": "candidate",
+    "source": "cb2e5ab34b7f92c422081c1d5c79689bce9fe22e",
+    "config": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2.2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "phase": "r3-proof",
+    "score": {
+      "marginCents": 783926,
+      "revenueCents": 3258300,
+      "marginShare": 0.24059356105944818,
+      "wonOrders": 212,
+      "onTimeShare": 0.9528301886792453,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "undeliveredOrders": 0,
+    "actionRefusals": 0,
+    "ledgerCents": {
+      "revenue": 3258300,
+      "driver_fee": -2397164,
+      "late_refund": -77210
+    }
   }
 ]

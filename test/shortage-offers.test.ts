@@ -7,5 +7,5 @@ function setup(level:number,now:number,ready:number,age=1){
  d.gigs.set("g",{id:"g",stops:[{orderId:"r",leg:0,kind:"pickup",window:{from:ready,to:1600}},{orderId:"r",leg:0,kind:"delivery",window:{from:ready,to:2000}}],audience:{experienced:false,manualLicence:false},schedule:[{at:0,feeCents:15000}],feeCents:15000,status:"open",postedAt:now-age,driverId:null});return d;
 }
 test("shortage offers wait for readiness and keep daily quota for nearer work",()=>{const d=setup(8,600,1000,120);assert.equal(d.actions().filter(a=>a.type==="offer").length,0);assert.equal(d.offerCounts.size,0)});
-test("a fresh acknowledged shortage gig can receive an immediate near-ready offer",()=>{const d=setup(7,900,1000);assert.equal(d.actions().filter(a=>a.type==="offer").length,1);assert.equal(d.offerCounts.get("0:d"),1)});
-test("market levels keep the existing offer age trigger",()=>{assert.equal(setup(6,900,1000).actions().filter(a=>a.type==="offer").length,0);assert.equal(setup(6,900,1000,120).actions().filter(a=>a.type==="offer").length,1)});
+test("a fresh acknowledged shortage gig can receive an immediate near-ready offer",()=>{const d=setup(8,900,1000);assert.equal(d.actions().filter(a=>a.type==="offer").length,1);assert.equal(d.offerCounts.get("0:d"),1)});
+test("levels 6 and 7 keep the existing offer age trigger",()=>{for(const level of [6,7])assert.equal(setup(level,900,1000).actions().filter(a=>a.type==="offer").length,0);assert.equal(setup(6,900,1000,120).actions().filter(a=>a.type==="offer").length,1)});
