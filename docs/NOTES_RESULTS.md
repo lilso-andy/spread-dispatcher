@@ -1964,7 +1964,7 @@ User requests at least15 server practice weeks; plan16 new weeks (8 paired compa
 
 Safety reference: conditional route guard6ae5f07 completed third paired seed final8-risk-route-holdout-v1, baseline and candidate6330.10EUR/99.40%, worlds w5f590093e8765bc4ccb8 and wcfbad43b2100d3154424. Three-seed pooled reference20865.83EUR vs guarded20682.28EUR (-0.88%), worst guarded95.18%. Accepted as explicitly documented safety fallback, NOT a margin gain.
 
-Latest team source 8a9603821d5cb0705c90b9de39f4cb90f163dca4; actual frozen runtime bc444705bde4cb1e4a7a158199ca34b9d24c4565 adds verified route guard,92 full tests pass. Branch work/notes-thanhdatLUT. Controller 32036 running; next Push pair emergency batch15-dev-b-v1 before next world. Local checkpoint work/level8-batch15-results/checkpoint.json. Full raw outputs remain local.
+Latest team source 8a9603821d5cb0705c90b9de39f4cb90f163dca4; actual frozen runtime bc444705bde4cb1e4a7a158199ca34b9d24c4565 adds verified route guard,92 full tests pass. Branch work/notes-thanhdatLUT. Controller 32036 running; next Push pair floor study-2 before next world. Local checkpoint work/level8-batch15-results/checkpoint.json. Full raw outputs remain local.
 
 Hypothesisemergency: Lower final rescue fee2.2 to2.0 only. Driver fees dominate; 1% of observed26842EUR fee bill is268EUR sensitivity, not predicted savings. Reject lower margin or any week<93%; may worsen bookings.; candidate overrides {"emergencyMultiplier":2}; reserved holdout batch15-emergency-proof-v1.
 
@@ -1980,6 +1980,8 @@ Hypothesiscapacity: Reduce simultaneous local exposure0.28 to0.22. Study2 origin
 |emergency|study-2|candidate|wc3693f55d4dfe35454b2|6697.15|249|94.378|0|0|
 |emergency|batch15-dev-b-v1|baseline|w11281f29c12ab69d7267|7980.44|198|98.485|0|0|
 |emergency|batch15-dev-b-v1|candidate|wd8ee4d664a1531fd7b1f|8025.20|198|98.485|0|0|
+|floor|study-2|baseline|wcb8bad1eb761c19c5105|6573.58|249|95.181|0|0|
+|floor|study-2|candidate|wffd44c204331fe6efe05|4682.31|190|91.053|0|0|
 
 w448be81616cfeb235a20: branch work/notes-thanhdatLUT; commit bc444705bde4cb1e4a7a158199ca34b9d24c4565; level8 seed study-2; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2.2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch15-results\emergency\study-2\baseline; next final week saved, evaluate complete pair.
 
@@ -1988,5 +1990,9 @@ wc3693f55d4dfe35454b2: branch work/notes-thanhdatLUT; commit bc444705bde4cb1e4a7
 w11281f29c12ab69d7267: branch work/notes-thanhdatLUT; commit bc444705bde4cb1e4a7a158199ca34b9d24c4565; level8 seed batch15-dev-b-v1; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2.2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch15-results\emergency\batch15-dev-b-v1\baseline; next final week saved, evaluate complete pair.
 
 wd8ee4d664a1531fd7b1f: branch work/notes-thanhdatLUT; commit bc444705bde4cb1e4a7a158199ca34b9d24c4565; level8 seed batch15-dev-b-v1; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch15-results\emergency\batch15-dev-b-v1\candidate; next final week saved, evaluate complete pair.
+
+wcb8bad1eb761c19c5105: branch work/notes-thanhdatLUT; commit bc444705bde4cb1e4a7a158199ca34b9d24c4565; level8 seed study-2; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2.2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch15-results\floor\study-2\baseline; next final week saved, evaluate complete pair.
+
+wffd44c204331fe6efe05: branch work/notes-thanhdatLUT; commit bc444705bde4cb1e4a7a158199ca34b9d24c4565; level8 seed study-2; config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2.2,"marginReserve":0.15,"minMarginCents":3000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch15-results\floor\study-2\candidate; next final week saved, evaluate complete pair.
 
 Trialemergency development decision: NEEDS FRESH HOLDOUT; deltaEUR168.33, minimum candidate ontime94.378%.
