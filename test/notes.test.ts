@@ -175,3 +175,32 @@ test("carried-wheel whitelist cannot erase conditions or fitted summer tyres", (
   assert.equal(deadline.deliveryTo, 900)
   assert.equal(deadline.uncertain, false)
 })
+
+test("observed destination typo keeps a delivery deadline off the pickup side", () => {
+  const f = parse("At destinattion tomorrow 15:00 latest")
+  assert.equal(f.deliveryTo, DAY + 900)
+  assert.equal(f.pickupTo, undefined)
+  assert.equal(f.uncertain, false)
+})
+
+test("I mean day corrections remain uncertain while preserving equipment", () => {
+  const f = readNote({ text: "No plates; At destinattion tomorrow 15:00 latest, sorry, I mean Friday!" }, 3811)
+  assert.equal(f.uncertain, true)
+  assert.ok(f.reasons.includes("correction scope requires review"))
+  assert.equal(f.plates, true)
+  assert.equal(parse("Delivery tomorrow 15:00 latest, I mean Friday!").uncertain, true)
+})
+
+test("observed Peirlla typo remains a Monday delivery deadline", () => {
+  const f = readNote({ text: "Peirllä ma klo 19.00 mennessä!" }, 3587)
+  assert.equal(f.deliveryTo, 7 * DAY + 1140)
+  assert.equal(f.pickupTo, undefined)
+  assert.equal(f.uncertain, false)
+})
+
+test("a timed clause without a grounded stop side cannot silently become pickup", () => {
+  const f = parse("Manual; mysterious depot tomorrow 15:00 latest")
+  assert.equal(f.manual, true)
+  assert.equal(f.uncertain, true)
+  assert.ok(f.reasons.includes("unrecognized stop side"))
+})
