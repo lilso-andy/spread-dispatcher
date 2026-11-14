@@ -807,3 +807,22 @@ Frozen integration 1b3c2beed33fc9ff3fc720e20248a9b9d04c2bd2. Baseline passed 91 
 Level1 target80-dev-a baseline world w8c630c06c43d78e8ff7f ended at 497246 cents, 745 won,92.885906% on time,0 undelivered,0 refusals. Fee082 world w0c2d80b4c2b926b93f52 ended at502703 cents,748 won,92.379679% on time,0 undelivered,0 refusals. Delta +5457 cents (+1.10%). One seed only, candidate not selected. Full config is quoteMultiplier1.6,feeMultiplier0.86 baseline/0.82 candidate,emergencyMultiplier1.65,marginReserve0.02,minMarginCents200,capacityFraction0.5,maxApproachMinutes100,minLeadMinutes180,strictNotes true,trainingEconomy true,offers true.
 
 Ledger baseline cents revenue5172100,driver_fee-4488669,late_refund-180675,release_fee-5510. Candidate revenue5190000,driver_fee-4505316,late_refund-177350,release_fee-4631. Both reconcile. Baseline had52 driver-fee lines above1.3 times attributed reference fee, totaling732305 cents. Next grounded hypothesis after rotating levels is a lower emergencyMultiplier, with all other settings fixed. Reject any weekly service below91% or nonpositive paired margin. No target reached and no ranking authorized in this continuation.
+
+### Target80 current completed weeks
+
+Full source, configuration, world and recovery paths are in analysis/target80-results.json. All money is game euros.
+
+| Level | Seed | Policy | World | Margin EUR | Won | On time | Undelivered | Refusals |
+|---:|---|---|---|---:|---:|---:|---:|---:|
+| 1 | target80-dev-a | baseline | w8c630c06c43d78e8ff7f | 4972.46 | 745 | 92.8859% | 0.0000% | 0 |
+| 1 | target80-dev-a | fee082 | w0c2d80b4c2b926b93f52 | 5027.03 | 748 | 92.3797% | 0.0000% | 0 |
+| 1 | target80-dev-b | baseline | w9b35a4f3152777312a85 | 9309.54 | 759 | 98.0237% | 0.0000% | 0 |
+| 1 | target80-dev-b | fee082 | w2950d77b937471c6e937 | 9932.41 | 778 | 97.1722% | 0.0000% | 0 |
+| 2 | target80-dev-a | baseline | wed20f8e6fa125ca70470 | 6139.45 | 744 | 94.6237% | 0.0000% | 0 |
+| 2 | target80-dev-a | fee082 | w5bb9d97c164d60e18595 | 6374.91 | 753 | 93.3599% | 0.0000% | 0 |
+| 2 | target80-dev-b | baseline | w10f3ea72cc7b107b1374 | 9850.16 | 758 | 98.1530% | 0.0000% | 0 |
+| 2 | target80-dev-b | fee082 | we68cae7df9442ebe1339 | 10579.39 | 780 | 97.5641% | 0.0000% | 0 |
+| 3 | target80-dev-a | baseline | wb27b1e82d83e41462cef | 6701.25 | 744 | 95.2957% | 0.0000% | 0 |
+| 3 | target80-dev-a | fee082 | w0f06eb85e8d71588d019 | 6984.89 | 754 | 93.7666% | 0.0000% | 0 |
+
+Selection pending paired development and fresh holdout. Qualification requires five reserved completed weeks per level totaling more than EUR80,000, with each week at least91% on time.
