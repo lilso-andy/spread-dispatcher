@@ -418,13 +418,116 @@
       "marginPerWonOrderEUR": 11.789408672798949,
       "negativeContributionCount": 67,
       "negativeContributionCents": -176729
+    },
+    {
+      "side": "baseline",
+      "level": 2,
+      "seed": "full-check-b",
+      "worldId": "w439394a9477c494fa077",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": null,
+      "deskSha256": "757636d15ce56ead10cbe2911426cea201d31c2d7b4ec0bc419affb712e19416",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-2/full-check-b/baseline",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-ab4f5b1",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 2,
+      "score": {
+        "marginCents": 603367,
+        "revenueCents": 4246800,
+        "marginShare": 0.1420756805123858,
+        "wonOrders": 601,
+        "onTimeShare": 0.9467554076539102,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 106.426,
+      "ledgerCents": {
+        "revenue": 4246800,
+        "driver_fee": -3517908,
+        "release_fee": -5735,
+        "late_refund": -119790
+      },
+      "declines": {
+        "insufficient safe capacity, time or margin": 148,
+        "service recovery: pause new exposure": 246
+      },
+      "marginPerWonOrderEUR": 10.039384359400998,
+      "negativeContributionCount": 65,
+      "negativeContributionCents": -216349
+    },
+    {
+      "side": "candidate",
+      "level": 2,
+      "seed": "full-check-b",
+      "worldId": "wc8a4d2fd05b1e87ddf94",
+      "branch": "work/pricing-baotran1604",
+      "source": "ab4f5b139176de9c12687a7b73685d8d19403af3",
+      "diff": "analysis/training-service-budget.patch",
+      "deskSha256": "fb893f968ddd87ac2bdfc0fe07246b3f717532c17cdc57581e78da6452aa328a",
+      "config": {
+        "quoteMultiplier": 1.6,
+        "feeMultiplier": 0.86,
+        "emergencyMultiplier": 1.65,
+        "marginReserve": 0.02,
+        "minMarginCents": 200,
+        "capacityFraction": 0.5,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": true,
+        "offers": true
+      },
+      "output": "/Users/davetran/Documents/spread-dispatcher/runs/pricing80-service/level-2/full-check-b/candidate",
+      "sourceDirectory": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/pricing-80k-service08",
+      "status": "complete",
+      "next": "Compare complete pair, push checkpoint",
+      "activeTeamSlotsBeforeCreation": 3,
+      "score": {
+        "marginCents": 812418,
+        "revenueCents": 5356500,
+        "marginShare": 0.15166956034724166,
+        "wonOrders": 782,
+        "onTimeShare": 0.9501278772378516,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "elapsedSeconds": 106.921,
+      "ledgerCents": {
+        "revenue": 5356500,
+        "driver_fee": -4407157,
+        "release_fee": -5735,
+        "late_refund": -131190
+      },
+      "declines": {
+        "insufficient safe capacity, time or margin": 212
+      },
+      "marginPerWonOrderEUR": 10.388976982097187,
+      "negativeContributionCount": 80,
+      "negativeContributionCents": -233823
     }
   ],
   "controller": {
-    "pid": 17998,
+    "pid": 18067,
     "level": 2,
-    "seed": "full-check-a",
-    "started": "2026-11-14T11:17:34.737Z",
+    "seed": "full-check-b",
+    "started": "2026-11-14T11:20:49.789Z",
     "state": "stopped"
   }
 }
