@@ -1,0 +1,153 @@
+{
+  "season": 7,
+  "name": "Saturday 15:00",
+  "team": "team-co-tai",
+  "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+  "verifiedAt": "2026-11-14T14:55:03.078Z",
+  "complete": false,
+  "levels": [
+    {
+      "level": 1,
+      "rank": null,
+      "played": 0,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": []
+    },
+    {
+      "level": 2,
+      "rank": null,
+      "played": 0,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": []
+    },
+    {
+      "level": 3,
+      "rank": null,
+      "played": 0,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": []
+    },
+    {
+      "level": 4,
+      "rank": null,
+      "played": 0,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": []
+    },
+    {
+      "level": 5,
+      "rank": null,
+      "played": 0,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": []
+    },
+    {
+      "level": 6,
+      "rank": null,
+      "played": 0,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": []
+    },
+    {
+      "level": 7,
+      "rank": null,
+      "played": 1,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": [
+        {
+          "worldId": "we2d4f84ad7f91966adf5",
+          "run": 1,
+          "score": {
+            "marginCents": 64783,
+            "revenueCents": 272000,
+            "marginShare": 0.23817279411764705,
+            "wonOrders": 21,
+            "onTimeShare": 0.9523809523809523,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "leaderboardVerified": true,
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.02,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 0,
+          "ledgerCents": {
+            "revenue": 272000,
+            "driver_fee": -203217,
+            "late_refund": -4000
+          }
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "rank": null,
+      "played": 1,
+      "qualified": false,
+      "marginCents": null,
+      "onTimeShare": null,
+      "runs": [
+        {
+          "worldId": "wc57a9452fa93207eb9cc",
+          "run": 1,
+          "score": {
+            "marginCents": 915387,
+            "revenueCents": 3684500,
+            "marginShare": 0.24844266521916136,
+            "wonOrders": 281,
+            "onTimeShare": 0.9430604982206405,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "leaderboardVerified": true,
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.08,
+            "emergencyMultiplier": 2.2,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 0,
+          "ledgerCents": {
+            "revenue": 3684500,
+            "driver_fee": -2674515,
+            "release_fee": -9778,
+            "late_refund": -84820
+          }
+        }
+      ]
+    }
+  ]
+}

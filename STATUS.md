@@ -1,5 +1,9 @@
 # Shared status
 
+## Full season 7 ranking request
+
+The user authorized completing all five official ranking weeks at every level. Session `79989` owns `runs/rank7-full/manifest.json`, frozen source `9e47485` and the selected ranking presets. At start, levels 7 and 8 each had one qualified completed week and levels 1–6 had none. The full sweep runs up to six owned worlds concurrently, checks shared slots and prioritizes completing levels 7–8. Results are recorded in `docs/ranking-s7-full.json`. Read `prompts/resume-16000.md` before resuming anything. This section records an active run, not evidence of a completed five-week rank.
+
 ## Ranking recovery after round change
 
 Recovery is complete. All six previously interrupted season 6 worlds ended and were independently checked against the public board. Final margins were €8,882.90 at level 1, €8,406.18 at level 2, €8,984.92 at level 3, €2,721.85 at level 6, €8,142.44 at level 7 and €10,046.25 at level 8. Every week qualified, all orders delivered, zero refused actions. This is a partial season because the round changed before the remaining runs were created.
