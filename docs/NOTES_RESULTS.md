@@ -831,6 +831,10 @@ Development seeds: thanhdat-bounded4-a, thanhdat-bounded4-b. Untouched planned h
 
 | Phase | Seed | Side | Snapshot | World ID | Margin EUR | Won | On time | Undelivered count/share | Refusals | Eligible | Output folder |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | --- | ---: | --- | --- |
+| development | thanhdat-bounded4-a | baseline | e1d59e4c7d3c75987263f2a840e4c452f312a592 | w6a80763cd35dfe04d53d | 736.08 | 25 | 100.00% | 0/0 | 0 | true | C:\Users\thanh\Documents\Codex\2026-11-14\t\work\bounded-l456\round-1\development\thanhdat-bounded4-a\baseline |
+| development | thanhdat-bounded4-a | candidate | c647f22f556afd4e99a2190f235df4cf13445fd5 | w1ddebfffa5d6ff7f63f4 | 736.08 | 25 | 100.00% | 0/0 | 0 | true | C:\Users\thanh\Documents\Codex\2026-11-14\t\work\bounded-l456\round-1\development\thanhdat-bounded4-a\candidate |
+
+Post-week field audit: {"checkedAt":"2026-11-14T03:37:39.297Z","method":"Completed-world reveal only; deduplicated seq ledger reconciled to final margin. Won-order truth checked for manual/plates/tyres/deadline/release; opening-hour associations need separate review when newly accepted.","pairs":[{"seed":"thanhdat-bounded4-a","phase":"development","baseline":{"ledger":{"revenue":389800,"driver_fee":-316192},"totalCents":73608,"declines":56,"noteCount":0,"safeCount":0,"checkedWonNotes":0,"misses":[]},"candidate":{"ledger":{"revenue":389800,"driver_fee":-316192},"totalCents":73608,"declines":56,"noteCount":0,"safeCount":0,"checkedWonNotes":0,"misses":[]},"newlySafeCount":0,"introducedCriticalMisses":[]}]}
 
 ### New round 2: level 5 — Scoped Finnish delivery-deadline abbreviation
 
@@ -854,4 +858,4 @@ Development seeds: thanhdat-bounded6-a, thanhdat-bounded6-b. Untouched planned h
 | Phase | Seed | Side | Snapshot | World ID | Margin EUR | Won | On time | Undelivered count/share | Refusals | Eligible | Output folder |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | --- | ---: | --- | --- |
 
-Checkpoint owner: this Codex desktop host; active controller: none. Next action: Ready for level4 control on pinned e225, no cached baseline reuse. Only ordinary practice; no ranking/test-final/live-final, no merge/force-push, no teammate branch edits. Source changes trigger a new baseline before any next round. Planner interface changes remain a proposal for its owner. Displayed percentages are rounded; eligibility gates use exact final scores.
+Checkpoint owner: this Codex desktop host; active controller: {"pid":10524,"round":1,"startedAt":"2026-11-14T03:35:10.160Z","state":"running","command":"work/bounded-worker.mjs 1"}. Next action: Push completed pair thanhdat-bounded4-a before continuing. Only ordinary practice; no ranking/test-final/live-final, no merge/force-push, no teammate branch edits. Source changes trigger a new baseline before any next round. Planner interface changes remain a proposal for its owner. Displayed percentages are rounded; eligibility gates use exact final scores.
