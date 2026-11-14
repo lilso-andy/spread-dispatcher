@@ -28,6 +28,8 @@ Object.assign(words, { yhdeltä:13, yhdestä:13, kahdelta:14, kahdesta:14, kolme
 // Complete clauses only: never let a cargo/keys keyword erase a deadline.
 const BENIGN = /^(?:(?:summer tyres in the trunk, go with the car|extra set of tyres in the boot, take along|spare wheels in the boot, thx)|(?:4 rengasta vanteilla tavaratilassa|lisärenkaat mukaan|rengassarja mukaan|rengassarja takapenkillä, kulkee mukana|kesärenkaat vanteineen takakontissa|lisäksi 4 kesärengasta tavaratilassa|ylimääräinen rengassarja takakontissa, mukaan)|(?:sommardäcken i bakluckan, följer med|däcken ligger i bilen, ska med)|(?:keys at service desk|avaimet huollosta|avaimet myyjältä|avaimet huollon tiskiltä)|(?:(?:our ref:|booking ref|ref|viite|varaus|tilausnumero)\s*\d{4,8})|(?:hello|hei|hei vaan|kiitos paljon|kiitos taas|kiitos etukäteen|cheers|standard transfer, thanks))[.! ]*$/
 const BENIGN_EXTRA = /^(?:hi|hi there|moi|moikka|kiittos|kiios paljon|tack på förhand|hyvää päivänjatkoa|paperit hanskalokerossa|paperit kuljettajalle tiskiltä|kauppakirja mukana, anna vastaanottajalle|extra däcksats i bagaget, ska med|2 sarjaa renkaita, toinen sarja kontissa|4 rengasta vanteilla tavaratilassa, avain autossa|rengassarja mukaan, avaimet myyjältä|rengassarja mukaan, avaimet huollon tiskiltä|lisärenkaat mukaan, kiitos taas|lisärenkaat mukkaan|(?:order no|tilausnro)\s+\d{4,8})[.! ]*$/
+// Repeated cargo statements name carried wheels, not tyres fitted to the car.
+const BENIGN_CARGO = /^(?:renkaat kyydissä|renkaat takakontissa, menee mukana|spare wheels in the boot|second set of wheels in the back)[.! ]*$/
 
 function dayFor(text: string, arrived: number): number {
   const today = Math.floor(arrived / DAY)
@@ -45,6 +47,10 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   const facts: NoteFacts = { manual: false, plates: false, summerTyres: false, uncertain: false, reasons: [] }
   if (!note?.text.trim()) return facts
   let text = note.text.normalize("NFKC").toLowerCase()
+  // Observed in completed practice: the doubled t still names the destination.
+  text = text.replace(/\bdestinattion\b/g, "destination")
+  text = text.replace(/(?<![\p{L}\p{N}_])peirll[äa](?![\p{L}\p{N}_])/gu, "perillä")
+  text = text.replace(/\bvalims\b/g, "valmis")
   // Explicit negative stop statements preserve their side and reverse the bound.
   text = text.replace(/\bno\s+(pickup|pick up|collection|handover|delivery)\s+(before|until|after)\b/g,
     (_match, side: string, direction: string) => `${side} ${direction === "after" ? "before" : "not before"}`)
@@ -68,10 +74,10 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   }
   text = pieces.join("; ")
   // Cargo tyres are not tyres fitted to the car. Mask only fully matched benign clauses.
-  text = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/).map(c => BENIGN.test(c.trim()) || BENIGN_EXTRA.test(c.trim()) ? "thanks" : c).join("; ")
+  text = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/).map(c => BENIGN.test(c.trim()) || BENIGN_EXTRA.test(c.trim()) || BENIGN_CARGO.test(c.trim()) ? "thanks" : c).join("; ")
   // A correction may replace a time while leaving equipment facts in force.
   // Until its scope is resolved, retain the text and decline the note.
-  if (/\b(?:correction|actually|korjaus|siis|rättelse)\b/.test(text)) facts.reasons.push("correction scope requires review")
+  if (/\b(?:correction|actually|korjaus|siis|rättelse|i\s+mean)\b/.test(text)) facts.reasons.push("correction scope requires review")
   facts.manual = /manuaali|manual(?:\s+(?:gear|transmission|licen))?|manuell|käsivaihte/.test(text)
   facts.plates = /(?:no|without|missing)\s+(?:registration\s+)?plates|ei\s+(?:ole\s+)?(?:rekisteri)?kilpi|ilman\s+kilpi|kilvetön|saknar\s+(?:reg(?:istrerings)?[ -]?)?skylt|utan\s+skylt/.test(text)
   facts.summerTyres = /kesären|summer\s+t[yi]re|sommardäck/.test(text)
@@ -93,6 +99,7 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
     if (AFTER.test(directionText) && BEFORE.test(directionText) && !/not before|ei ennen|inte före/.test(clause)) facts.reasons.push("multiple time directions in one clause")
     if (/(?:\bnot\b|\bei\b|\binte\b)/.test(clause) && !/not before|ei ennen|inte före/.test(clause)) facts.reasons.push("negated constraint requires review")
     const delivery = DELIVERY.test(clause)
+    if (!delivery && !PICKUP.test(clause)) facts.reasons.push("unrecognized stop side")
     const pickup = PICKUP.test(clause) || !delivery
     if (delivery && PICKUP.test(clause)) {
       facts.reasons.push("pickup and delivery constraints in the same clause")

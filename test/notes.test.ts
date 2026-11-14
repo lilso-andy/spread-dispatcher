@@ -152,3 +152,55 @@ test("explicit no-pickup negation reverses the time direction without losing its
 test("exceptions to a clock remain uncertain", () => {
   for (const text of ["No pickup after 17:00 except Friday", "Nouto klo 15 jälkeen paitsi huomenna", "Hämtning efter 15 utom fredag"]) assert.equal(parse(text).uncertain, true)
 })
+
+test("observed carried-wheel clauses do not become fitted-tyre restrictions", () => {
+  for (const text of ["Renkaat kyydissä", "Renkaat takakontissa, menee mukana.", "Spare wheels in the boot", "Second set of wheels in the back."]) {
+    const f = parse(text)
+    assert.equal(f.uncertain, false)
+    assert.equal(f.summerTyres, false)
+  }
+  const f = parse("Renkaat kyydissä; manual; delivery before tomorrow 14:00")
+  assert.equal(f.manual, true)
+  assert.equal(f.deliveryTo, DAY + 840)
+  assert.equal(f.uncertain, false)
+  assert.equal(parse("Spare wheels in the boot; no plates").plates, true)
+})
+
+test("carried-wheel whitelist cannot erase conditions or fitted summer tyres", () => {
+  assert.equal(parse("Renkaat kyydissä vain jos nouto onnistuu").uncertain, true)
+  assert.equal(parse("Spare wheels in the boot unless collection changes").uncertain, true)
+  const f = parse("Renkaat kyydissä; car has summer tyres")
+  assert.equal(f.summerTyres, true)
+  const deadline = parse("Second set of wheels in the back; delivery before 15:00")
+  assert.equal(deadline.deliveryTo, 900)
+  assert.equal(deadline.uncertain, false)
+})
+
+test("observed destination typo keeps a delivery deadline off the pickup side", () => {
+  const f = parse("At destinattion tomorrow 15:00 latest")
+  assert.equal(f.deliveryTo, DAY + 900)
+  assert.equal(f.pickupTo, undefined)
+  assert.equal(f.uncertain, false)
+})
+
+test("I mean day corrections remain uncertain while preserving equipment", () => {
+  const f = readNote({ text: "No plates; At destinattion tomorrow 15:00 latest, sorry, I mean Friday!" }, 3811)
+  assert.equal(f.uncertain, true)
+  assert.ok(f.reasons.includes("correction scope requires review"))
+  assert.equal(f.plates, true)
+  assert.equal(parse("Delivery tomorrow 15:00 latest, I mean Friday!").uncertain, true)
+})
+
+test("observed Peirlla typo remains a Monday delivery deadline", () => {
+  const f = readNote({ text: "Peirllä ma klo 19.00 mennessä!" }, 3587)
+  assert.equal(f.deliveryTo, 7 * DAY + 1140)
+  assert.equal(f.pickupTo, undefined)
+  assert.equal(f.uncertain, false)
+})
+
+test("a timed clause without a grounded stop side cannot silently become pickup", () => {
+  const f = parse("Manual; mysterious depot tomorrow 15:00 latest")
+  assert.equal(f.manual, true)
+  assert.equal(f.uncertain, true)
+  assert.ok(f.reasons.includes("unrecognized stop side"))
+})

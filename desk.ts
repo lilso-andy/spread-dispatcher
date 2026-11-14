@@ -227,6 +227,8 @@ export class Desk {
     // In fixed-price training worlds, a quick booking at our own posted fee is
     // an upper bound on cost, not evidence that the next gig needs a raise.
     if (this.level <= 3) return 1.05
+    // Explicit lower multipliers opt market levels into fixed opening economics.
+    if (this.level >= 4 && this.level <= 6 && this.config.feeMultiplier < 1.05) return this.config.feeMultiplier
     const samples = [...(this.observedBookings.get(place) ?? [])].sort((a, b) => a - b)
     const learned = samples.length >= 5 ? samples[Math.floor(samples.length * 0.7)]! * 1.03 : 0
     return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(1.9, learned))
@@ -267,7 +269,7 @@ export class Desk {
       // the training baseline. Price that exposure into acceptance, not a
       // promise to the dealer that cannot cover its likely recovery cost.
       const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity, fixedPrice && route.driveMinutes > 300 ? 1.85 : 0)
-      const base = this.level <= 6 ? 1.20 : this.config.quoteMultiplier
+      const base = this.level <= 3 ? 1.20 : this.level <= 6 ? Math.min(1.20, this.config.quoteMultiplier) : this.config.quoteMultiplier
       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
       const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + (fixedPrice ? Math.min(500, this.config.minMarginCents) : this.config.minMarginCents))
