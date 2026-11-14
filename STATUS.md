@@ -1,5 +1,11 @@
 # Shared status
 
+## Level 8 teammate review and level 7 controller recovery
+
+Fetched teammate checkpoint `798682f`. The remote change consists of `docs/NOTES_RESULTS.md` only. Independently verified the three completed plain-practice level 8 scores on the server. Baseline `wf200ca2aa5409d457424` earned €6,757.13 at 92.08%. Conditional long-route candidate `wa9deb41cdf6625c88333` earned €6,573.58 at 95.18%, losing €183.55 (2.72%). Its fee1.02 combination `wce7c3531320acf874c2c` earned €5,257.09 at 93.19%, losing €1,500.04 against the common baseline. All fully delivered. Teammate now explicitly tests a safety fallback with all candidate weeks>=93% and pooled development margin>=98% of the original. A per-holdout margin bound remains to be specified. Source `6ae5f07` is unavailable from this clone or an explicit origin SHA fetch, so code and the reported92 tests require the teammate to push the candidate source/test commit for independent review. The challenge minimum remains90%.
+
+The previous level7 matrix controller PID9784 was confirmed absent after the interrupted turn. Resumed the original matrix using exact existing worlds and outputs under terminal session `19299`. It resumes recovery `w7b59848bf8907980c8b0` and combined `w1ed7c4e7fc318206cfff` on `l7-b02-dev-a`, preserving the ten already completed weeks. Continue the >=15-week batch before its next level7 update.
+
 ## Active level 7 batch 02
 
 Session `62996` runs `runs/level7-batch02/matrix.mjs`, after batch01 completed 18 weeks and retained baseline. Baseline source `8a19a32` includes the latest teammate documentation and the same dispatcher behavior/preset as `9e47485`. Four profiles on four fixed seeds give 16 development weeks, then a fresh paired proof for the top eligible candidate. Sources, parameter scopes and offline tests are in `docs/LEVEL7_BATCH02.md`. Current first pair is baseline `w9ee94c93bb2eb4c64f27` and short quotes `w9e4481ec697894cd7bcc` on `spread-1`. The single matrix controller owns all its worlds. Check the original PID before takeover. User updates occur once per completed batch of at least 15 weeks.
