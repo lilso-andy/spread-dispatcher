@@ -1,5 +1,9 @@
 # Shared status
 
+## Level 7 batch 03 selected emergency fee 2.15
+
+18 completed ordinary practice worlds. The selected level 7 preset changes emergencyMultiplier from 2.4 to 2.15 only. Against four fresh paired control runs it gained EUR281.59, then gained EUR58.41 on the unused proof (EUR6770.45 to EUR6828.86), both arms 201 orders and 97.51% on time. Candidate minimum 91.52%, fully delivered, zero action refusals. Spread-1 lost EUR121.90. The next-day quote premium failed study-2 with 89.09%; the uniform quote increase lost EUR4114.66 pooled. All 18 scores and exact inputs appear in docs/LEVEL7_BATCH03_RESULTS.json. Levels other than 7 keep their last selected presets. Experimental teammate level 8 code 8543c3f was present in the benchmark integration aeaa6de, guarded by level equality; selection at level 8 stays with the teammate. Current main is 9dccfdb. The earlier level 7 handoff below is historical.
+
 ## Level 7 practice handoff
 
 Batch 02 finished 18 worlds. Bounded recovery gained EUR447 across development and tied the fresh proof at EUR7692.11 and 98.17%. All 18 qualified. The short and combined profiles each left one order undelivered on dev-b. Retain the original level 7 preset. Every world, ledger, commit and config appears in docs/LEVEL7_BATCH02_RESULTS.json.
