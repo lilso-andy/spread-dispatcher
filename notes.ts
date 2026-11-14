@@ -30,6 +30,8 @@ const BENIGN = /^(?:(?:summer tyres in the trunk, go with the car|extra set of t
 const BENIGN_EXTRA = /^(?:hi|hi there|moi|moikka|kiittos|kiios paljon|tack på förhand|hyvää päivänjatkoa|paperit hanskalokerossa|paperit kuljettajalle tiskiltä|kauppakirja mukana, anna vastaanottajalle|extra däcksats i bagaget, ska med|2 sarjaa renkaita, toinen sarja kontissa|4 rengasta vanteilla tavaratilassa, avain autossa|rengassarja mukaan, avaimet myyjältä|rengassarja mukaan, avaimet huollon tiskiltä|lisärenkaat mukaan, kiitos taas|lisärenkaat mukkaan|(?:order no|tilausnro)\s+\d{4,8})[.! ]*$/
 // Repeated cargo statements name carried wheels, not tyres fitted to the car.
 const BENIGN_CARGO = /^(?:renkaat kyydissä|renkaat takakontissa, menee mukana|spare wheels in the boot|second set of wheels in the back)[.! ]*$/
+// Only complete key-location statements: a lockbox code is not a clock.
+const BENIGN_KEYS = /^(?:key in the car|avain autossa|avaimet toimistosta|avain avainboksissa, koodi \d{3,8})[.! ]*$/
 
 function dayFor(text: string, arrived: number): number {
   const today = Math.floor(arrived / DAY)
@@ -74,7 +76,7 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   }
   text = pieces.join("; ")
   // Cargo tyres are not tyres fitted to the car. Mask only fully matched benign clauses.
-  text = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/).map(c => BENIGN.test(c.trim()) || BENIGN_EXTRA.test(c.trim()) || BENIGN_CARGO.test(c.trim()) ? "thanks" : c).join("; ")
+  text = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/).map(c => BENIGN.test(c.trim()) || BENIGN_EXTRA.test(c.trim()) || BENIGN_CARGO.test(c.trim()) || BENIGN_KEYS.test(c.trim()) ? "thanks" : c).join("; ")
   // A correction may replace a time while leaving equipment facts in force.
   // Until its scope is resolved, retain the text and decline the note.
   if (/\b(?:correction|actually|korjaus|siis|rättelse|i\s+mean)\b/.test(text)) facts.reasons.push("correction scope requires review")
