@@ -1351,3 +1351,71 @@ Publication: preserved the cargo parser at branch HEAD for safe default level5 b
 Full config remains competitive1600 above. No desk/planner/runner/config changes. The observed service-pause displacement110.79 EUR and proposed threshold0.045?0.06 ablation are handed off as unvalidated Dispatcher work; no recoverable-margin guarantee is made. Keys/logs/reveals remain local. No ranking/test-final/live-final/merge. PR https://github.com/lilso-andy/spread-dispatcher/pull/5.
 
 Reviewable level6-only code/tests: https://github.com/lilso-andy/spread-dispatcher/commit/f8b1a741cc44ace0a511080111420ac38ca2fd65. This ancestor commit is retained in the personal branch history; final branch HEAD deliberately restores the cargo default. To reproduce the server-validated source without touching teammate files, start an isolated worktree at2213766b83900ad7aa289437d37dd055a938dbc4 and restore only notes.ts and test/notes.test.ts from f8b1a741cc44ace0a511080111420ac38ca2fd65. Those two blobs match fa4bd30; the full integrated source passes78 tests. The main-based review variant passes58 tests; cargo HEAD passes55. Commit the isolated snapshot before another practice run. No newer server trial or level8 result is implied.
+
+
+## Top-six goal: economics proposal and scope boundary
+
+The user requests top6 for levels4–6, with the previously authorized93% final-week service floor. Read-only official leaderboard/ended-score calls confirm the key belongs to Team co Tai (all five old level6 run scores match exactly). Team co Tai has0/5 current season5 runs at each of levels4/5/6. These reads create/advance no ranking world and consume no ranking run. No current-round score gap can be calculated for this team. The old round was used for identity only, not as a same-seed comparison.
+
+Current Saturday09:00 season5 level6 sixth-place threshold is32961.79 EUR/5 worlds, or6592.36 EUR/week as a reference. The tied rank6 team has1693 counted won orders (338.6/week),19.47 EUR/order and98.29% pooled on time. Levels4/5 currently have only3 ranked non-house teams; registered teams can still enter. House rows do not occupy team ranks.
+
+The retained level6 key-note study has193 counted wins/3 practice weeks (64.33/week),23.34 EUR/order and1501.80 EUR/week. Those are DIFFERENT seeds, so their ratio to leaderboard results is not an estimate of an exact ranking deficit. They motivate testing order volume and fee economics rather than claiming a parser-only top6 guarantee. The current key-note incremental benefit is54.62 EUR/week on three controlled seeds.
+
+### Measured economics and offline pricing screen
+
+Each row below is an already completed ordinary-practice week using the selected per-level Notes source: level5 cargo4d61a9e; level6 focused keysfa4bd30, both over integrated core2213766. Win rate includes won histories later cancelled, whereas counted wins exclude cancellations. Driver fees are actual ledger spend, not automatically avoidable costs.
+
+| Level | Seed | World | Quoted requests | Counted wins | Quote win rate | Margin EUR | Driver fees EUR | Lost quotes with >=5 EUR lower bid in static screen |
+| ---: | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 6 | notes-clock-18 | w0ec019cbbaf19a598a65 | 757 | 37 | 5.02% | 755.96 | -2625.04 | 452 |
+| 6 | notes-clock-19 | w3edbb983e45dcc892fc2 | 741 | 38 | 5.26% | 804.87 | -3751.13 | 482 |
+| 6 | thanhdat-notes93-keys-decision-6a | wd1e73cb0b44aac9bc577 | 750 | 118 | 15.73% | 2944.56 | -11753.74 | 453 |
+| 5 | notes-clock-18 | wb89928a09d65613eb87f | 755 | 31 | 4.24% | 637.03 | -2308.97 | 456 |
+| 5 | notes-clock-19 | we54600465e46a4ca050e | 732 | 31 | 4.37% | 585.90 | -3226.10 | 480 |
+| 5 | thanhdat-notes93-keys-decision-5a | w3aafb5a9c24b95066888 | 758 | 66 | 9.10% | 1276.96 | -5774.22 | 530 |
+
+The static screen recomputes a hypothetical quote using referenceFee×(0.95+the observed local-driver scarcity uplift),13% reserve,1600-cent floor and1.05×list price. It identifies452–530 lost quotes/week with at least5 EUR lower bids. This is NOT a world replay, competitor-price observation, predicted win count or predicted margin. Current market feedback, booking elasticity, extra driver demand, cancellations and lateness can change the outcome. The median bid movement in this screen is6–7 EUR. Lowering only the list-price factor affects substantially fewer lost quotes (85–101/week); most observed bids are already constrained by the fee estimate/margin floor.
+
+Opportunity scenarios, not observed lost margin: (a) a5% reduction in actual total driver spend would be roughly115–588 EUR/week across these samples, but urgent/rescue fees and booking acceptance may prevent it; (b)50 extra orders at20 EUR NET contribution would add1000 EUR/week, only if they can be won/delivered without displacing profitable work. No declined list-price revenue is counted. The evidenced lower bound is0; an economics change may lose money or fail93%. These scenarios justify a larger controlled experiment, not a claim that the target is reached.
+
+### Concrete proposed opt-in patch, NOT APPLIED
+
+The current code fixes level4–6 quote base at1.20 and fee floor at1.05, allowing upward feedback from the fees we chose ourselves. Changing config alone cannot exercise lower quote/fee multipliers. The proposed desk.ts diff below preserves the selected existing config (quote1.35, fee1.08), levels1–3, and levels7/8; only explicit lower multipliers opt into the new paths.
+
+```diff
+@@ feeMultiplier(place: string): number {
++    if (this.level >= 4 && this.level <= 6 && this.config.feeMultiplier < 1.05) return this.config.feeMultiplier
+     // existing implementation otherwise unchanged
+@@ quote(...)
+-      const base = this.level <= 6 ? 1.20 : this.config.quoteMultiplier
++      const base = this.level <= 3 ? 1.20 : this.level <= 6 ? Math.min(1.20, this.config.quoteMultiplier) : this.config.quoteMultiplier
+```
+
+Initial economics bundle proposed for controlled PRACTICE only:
+
+```json
+{
+  "quoteMultiplier": 1.05,
+  "feeMultiplier": 0.95,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+No floor reduction is included initially: the earlier1100-cent floor lost money and must not be silently promoted. The existing1600 floor/reserve/capacity and scheduled rescue behavior remain. Quote and fee changes are a joint economic-policy hypothesis; only paired totals/ledger establish its effect. If it fails, ablate the quote and fee paths separately rather than assigning causality to one parameter. Config files remain owned by Pricing; the trial can pass config in an ignored local worker and publish parameters/results in this report.
+
+Required new test file proposal: test/market-economics.test.ts. Contracts: explicit sub1.05 fee multiplier takes effect only at4–6 without upward self-conditioning; selected baseline config yields unchanged decisions; level1–3 and7/8 retain current behavior; list-price factor only opts down at4–6; integer cents, minimum contribution, capacity/private windows and refused-action state remain protected by full existing suites. New tests/patch must pass in both main-based review source and exact integrated snapshots before server use. No test/code outside Notes scope has been written yet.
+
+Proposed order after scope authorization: freeze latest confirmed integrated core plus the selected per-level Notes files; level6 first, then5 and4. Reserve development seeds top6-economics-a/b and untouched decision seed top6-economics-decision-6-v1 BEFORE tuning; use new per-level decision names for5/4. Preserve exact source/config on each side, record component differences and verify caches strictly. At most2 own active worlds, slot checks, immediate world/weekly checkpoints, push every pair. Keep only if pooled development margin increases, every candidate final week>=93%, no critical missing note facts/refused actions and a fresh decision repeats the gain. Prefer more on-time buffer for near ties. No ranking/test-final/live-final, even if a new round appears.
+
+### Why a scope decision is necessary
+
+The assigned user scope is notes.ts, parser tests and docs/NOTES_RESULTS.md. prompts/notes-tests.md explicitly says: "Không sửa desk.ts, planner.ts, runner.ts, config.ts, configs/ hay evaluate.ts." This proposal therefore remains report-only. A code change to desk.ts and the new economics test needs an explicit scope exception or application by the Dispatcher owner. This is a file-ownership decision, not a new request for ordinary practice permission. The personal branch remains clean of teammate-file edits. No new world is created merely to disguise an unchanged/ineffective config experiment.
+
+Checkpoint: source inspection/leaderboard reads/old-world analyses complete; no active own practice controller. The latest per-level parser choices and reviewable key variant remain unchanged. Proposal is ready for review in PR https://github.com/lilso-andy/spread-dispatcher/pull/5. Ranking confirmation of actual top6 still requires a separate explicit user instruction, and future competitor entries can move the cutoff.
