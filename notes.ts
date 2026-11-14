@@ -42,6 +42,8 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   const facts: NoteFacts = { manual: false, plates: false, summerTyres: false, uncertain: false, reasons: [] }
   if (!note?.text.trim()) return facts
   let text = note.text.normalize("NFKC").toLowerCase()
+  // Observed in completed practice R00629: the duplicated vowel still means tomorrow.
+  text = text.replace(/(?<![\p{L}\p{N}_])huuomenna(?![\p{L}\p{N}_])/gu, "huomenna")
   const pieces = text.split(/;|\n|(?<=[.!?])\s+(?=[a-zåäö])/)
   for (let i = 1; i < pieces.length; i++) {
     const correction = /^\s*(?:correction|korjaus|rättelse):\s*(?:(?:klo|kl\.?|at)\s*)?(\d{1,2}(?:[.:]\d{2})?(?:\s*(?:am|pm))?)[.! ]*$/.exec(pieces[i]!)

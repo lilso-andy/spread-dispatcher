@@ -145,7 +145,7 @@ Next: review this PR, integrate it with the dispatcher owner, then compare on ad
 
 ## Continuous practice batch 01 — scoped corrections and Unicode clocks
 
-Status: in progress, 5/20 completed pairs (11 completed weeks). Underlying dispatcher is frozen at 3cb7ba4. Baseline parser snapshot 085b3cc57e405d13ec12fe5b0f322786a90072a2; candidate snapshot bf1b9d49a6ac97bd74dc03ab209b09ba5b051e0e. Candidate adds bounded bare-clock corrections and complete Unicode word boundaries, retaining ambiguity declines. No ranking/final calls; one world of this chat is controlled at a time. Fetches do not change source within an active comparison.
+Status: in progress, 7/20 completed pairs (14 completed weeks). Underlying dispatcher is frozen at 3cb7ba4. Baseline parser snapshot 085b3cc57e405d13ec12fe5b0f322786a90072a2; candidate snapshot bf1b9d49a6ac97bd74dc03ab209b09ba5b051e0e. Candidate adds bounded bare-clock corrections and complete Unicode word boundaries, retaining ambiguity declines. No ranking/final calls; one world of this chat is controlled at a time. Fetches do not change source within an active comparison.
 
 Full configuration for both sides:
 
@@ -171,7 +171,81 @@ Full configuration for both sides:
 | 3 | 7 | notes-cycle-03 | wf514bf0669cb988fba98 | w9828df79aba34cb30a0b | 1023.59 | 1023.59 | 0.00 | 94.44% | 94.44% | true | 0/0 |
 | 4 | 8 | notes-cycle-03 | w01b3f01fd0a62602fd0b | w70c73a1d97ba9f738df4 | 5578.72 | 5578.72 | 0.00 | 97.91% | 97.91% | true | 0/0 |
 | 5 | 5 | notes-cycle-04 | w03a35737295a59fa313d | wa7ffd96c207e70988d5e | 4089.87 | 4089.87 | 0.00 | 99.26% | 99.26% | true | 0/0 |
+| 6 | 6 | notes-cycle-04 | w86d68dc1139f9413c400 | w715d8960397bd2c12ebd | 4340.09 | 4340.09 | 0.00 | 99.33% | 99.33% | true | 0/0 |
+| 7 | 7 | notes-cycle-04 | w3ca5e628dcdd576cd998 | w611044d77fa252349e87 | 4314.06 | 4314.06 | 0.00 | 96.13% | 96.13% | true | 0/0 |
 
-Completed-pair totals: EUR 16353.23 -> EUR 16397.81; delta EUR 44.58. Final 90% threshold failures: []. All reductions are retained in the table. Partial truth audit: 96 won note-bearing requests checked; 1 mismatches for equipment, readiness/release and note deadline fields. Hours/unknown prose and lost-order truth remain unverified. Server request occurrences: 2163, passing parser uncertainty/summer filters: 925. These counts are not a calibrated full false-safe/false-uncertain estimate.
+Completed-pair totals: EUR 25007.38 -> EUR 25051.96; delta EUR 44.58. Final 90% threshold failures: []. All reductions are retained in the table. Partial truth audit: 167 won note-bearing requests checked; 1 mismatches for equipment, readiness/release and note deadline fields. Hours/unknown prose and lost-order truth remain unverified. Server request occurrences: 3050, passing parser uncertainty/summer filters: 1315. These counts are not a calibrated full false-safe/false-uncertain estimate.
 
 Tests: 48 main-based / 67 integrated-source tests passed before server comparison. Snapshot source is reconstructible from dispatcher 3cb7ba4 plus the candidate notes.ts and test/notes.test.ts proposed by this branch. Complex corrections remain uncertain. No automatic merge or final policy selection. Local scratch loop writes a checkpoint after every run and reuses completed results; interrupted worlds are resumed only from this chat’s own metadata. Next batch must use new output folders and freeze both source revisions/config before running.
+
+
+## Balanced allocation follow-ups
+
+User requested equal attention to every level. Two matched batches allocate five seeds to each level: twenty parser pairs at levels 5–8, and twenty configuration pairs at levels 1–4. No promise of equal profit growth is made; each level is reported separately. Both use the same underlying integrated dispatcher. No ranking/final run is authorized.
+
+### Readiness typo fix
+
+The batch audit found request R00629, “huolto kesken, valmis huuomenna klo 12”, arriving at minute 3894. Both baseline 085b3cc and scoped-correction candidate bf1b9d4 extracted 3600, while reveal readyAt was 5040. Candidate fb35ea8 normalizes only the complete observed word huuomenna to huomenna and extracts 5040. The existing baseline error is retained in the batch audit above. Its next snapshot is a separate comparison, not a retroactive change to batch scores.
+
+Validation status: complete. Before source bf1b9d4, after source fb35ea8; same Balanced config.
+
+| Seed | Version | World | Margin EUR | On time | Eligible | Refusals |
+| --- | --- | --- | ---: | ---: | --- | ---: |
+| notes-cycle-03 | before | wcfeb7505a072669e9c38 | 5578.72 | 97.91% | true | 0 |
+| notes-cycle-03 | after | w3e14efc93cfcc8dfdc97 | 5578.72 | 97.91% | true | 0 |
+| notes-typo-holdout-08 | before | wdc4524f7d34dd1b35722 | 3351.92 | 99.04% | true | 0 |
+| notes-typo-holdout-08 | after | waee6e703cc2693ca3b4c | 3351.92 | 99.04% | true | 0 |
+
+Both completed pairs preserve margin and on-time share exactly. The fix is adopted for semantic correctness, not claimed profit gain. Final parser tests: 49 main-based / 68 integrated tests. Existing twenty-pair processes retain their frozen older candidate source; their results must not be relabelled as the typo-fixed code.
+
+### Equal-allocation levels 1–4 configuration comparison
+
+Status: 0/20 pairs completed; in progress. Both sides use source 085b3cc57e405d13ec12fe5b0f322786a90072a2; configurations taken unchanged from teammate pricing revision 766fdab7db20569377731bee14b4842ea9dac20f. This is configuration evidence, not a parser-code effect. Level 1–3 candidate uses training; level 4 candidate uses competitive.
+
+Full configurations:
+
+```json
+{
+  "baseline": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.2,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "training": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.1,
+    "marginReserve": 0.1,
+    "minMarginCents": 500,
+    "capacityFraction": 0.26,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 210,
+    "strictNotes": true,
+    "offers": true
+  },
+  "competitive": {
+    "quoteMultiplier": 1.35,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.13,
+    "minMarginCents": 1600,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  }
+}
+```
+
+| Level | Seed | Baseline world | Candidate world | Base EUR | Candidate EUR | Delta EUR | Base on time | Candidate on time | Both eligible | Refusals base/candidate |
+| ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+
+No automatic merge. Other agents keep ownership of dispatcher/planner/pricing files. Closing-only recurring hours cannot safely be expressed with the current full-hours override type: setting an invented opening hour would replace the site opening rather than intersect it. Such notes remain uncertain pending an interface change coordinated through review. No raw logs or credentials are included.

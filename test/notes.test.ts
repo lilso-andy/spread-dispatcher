@@ -112,3 +112,8 @@ test("Unicode word clocks match complete Finnish and Swedish words", () => {
   assert.equal(parse("Nouto jälkeen yhdeksän").pickupFrom, 540)
   assert.equal(parse("Hämtning tidigast halvtvå").uncertain, true)
 })
+test("completed-world duplicated-vowel tomorrow retains the relative day", () => {
+  const f = parse("huolto kesken, valmis huuomenna klo 12", 3894)
+  assert.equal(f.pickupFrom, 3 * DAY + 720)
+  assert.equal(f.uncertain, false)
+})
