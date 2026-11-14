@@ -1187,3 +1187,59 @@ Efficiency tradeoff: gross margin/order21.4508?21.3350 EUR; gross margin/planned
 Next-priority handoff: investigate resource-normalized acceptance and price/fee feedback with the Pricing/Dispatcher owners before adding lower-yield note coverage. A broad prior contact patch lost250.16 EUR; a narrower relative-call corpus probe finds0 historical target winners and only0?3 newly understood requests per old week, so no larger gain is substantiated. A greeting-only probe unlocks6?10 requests/week, below cargo coverage; no score claim or additional world is manufactured for it. Higher-impact code outside Notes scope is not edited.
 
  Sixteen complete practice weeks, eight matched pairs, on frozen core2213766 versus scoped candidate4d61a9e; main9dccfdb was not executed. No >=94% claim applies to the older90%-floor session. Both initial decision seeds were reserved before new practice tuning; supplementary proofs were chosen after initial selection, before any proof score, with unchanged code/config and an explicit withdrawal rule. They are now consumed evidence, never future fresh holdouts. The level5 development loss-4.00 EUR is retained; gains are not seed-uniform. Actual full config above is unchanged for both levels; no Pricing config file is edited. Level4 retains baseline because there are no notes; no new cargo-specific level4 money gain is claimed. Level8 remains for the Dispatcher owner to validate on the exact integration/config before any final selection. Margin per order and planned-drive-hour efficiency can decline despite a total-margin gain; the ratio is a driving proxy, not driver labor. Field truth is available only for won orders. All current own worlds ended, no active controller, zero ranking/test-final/live-final/merge/force-push. Raw logs/reveals/keys stay local. Full branch/world/source/config/output checkpoints above support safe continuation. Larger evidenced costs (release/cancellation/recovery and price/fee feedback) are handed off as analysis in this report, not changed outside scope. No invented list-price revenue loss is included. PR https://github.com/lilso-andy/spread-dispatcher/pull/5.
+
+
+## Further margin-first notes session — service floor93%
+
+Status: practice in progress. The latest user explicitly permits93% on-time service. This changes the current selection gate, not historical evidence or the prohibition on ranking/final. Branch work/notes-thanhdatLUT; core 2213766b83900ad7aa289437d37dd055a938dbc4; main 9dccfdb6238abe56e61938ecb48fd64b371651b2 is NOT the server dispatcher. The retained cargo baseline is4d61a9e on that integrated core.
+
+Before-edit opportunity analysis uses only completed practice worlds from the prior cargo session. The preceding ledger/route/slack/rescue analysis remains applicable: driver fees dominate spend, both earlier refunded orders were unnoted and no won-order parser miss was confirmed. Necessary driver costs are not claimed as avoidable losses. This next hypothesis targets repeated first-gate parser refusals rather than inventing revenue losses for declined requests.
+
+| Level | Completed seed | Newly understood requests under offline probe | Actually quoted baseline requests | Scenario EUR/week |
+| ---: | --- | ---: | ---: | ---: |
+| 5 | notes-clock-18 | 23 | 755 | 19.41 |
+| 5 | notes-clock-19 | 31 | 732 | 24.81 |
+| 5 | thanhdat-notes94-cargo-decision-5a | 34 | 739 | 46.03 |
+| 5 | thanhdat-notes94-cargo-proof-5b | 30 | 734 | 30.82 |
+| 6 | notes-clock-18 | 23 | 755 | 23.06 |
+| 6 | notes-clock-19 | 31 | 732 | 29.31 |
+| 6 | thanhdat-notes94-cargo-decision-6a | 31 | 741 | 48.67 |
+| 6 | thanhdat-notes94-cargo-proof-6b | 23 | 750 | 51.03 |
+
+Scenario = newly understood count × observed final gross margin / actually quoted requests. It assumes the unlocked cohort has comparable win probability and actual delivery cost and clears capacity/route gates. It is NOT observed lost margin or an upper/lower confidence bound; evidenced lower bound0, actual paired delta may be negative. Opportunity is about20–51 EUR/week, greater coverage than the earlier greeting-only probe and grounded in references/key-location/signoff clauses repeated across completed worlds. No potential list-price revenue is treated as margin.
+
+Preregistered full-clause pattern (only exact metadata is masked; no arbitrary surrounding prose is discarded):
+
+```text
+^(?:terve|kiitti|kiitos, thx|thx|myynti|terveisin myynti|ei erityist?|normaali siirto, kiitos|huoltokirja ja rekisteriote autossa|service book and reg papers in the car|key in the car|avain autossa|avaimet toimistosta|auto liikkeen edess?|nouto liikkeen pihasta|(?:meid?n viite|viitenro)\s+\d{4,8}|avain avainboksissa, koodi \d{3,8}|auto pihalla ruudussa \d{1,3}, avain tiskilt?|car in bay \d{1,3}, keys at the desk)[.! ]*$
+```
+
+Code scope: notes.ts and parser tests only; all reporting stays in docs/NOTES_RESULTS.md. No changes to planner/desk/runner/config or teammate branches. Every comparison uses the full fixed config below; baseline cache must verify exact snapshot, config, level, seed and ended ordinary-practice state. Already viewed proof seeds from earlier sessions are not fresh decisions here.
+
+```json
+{
+  "quoteMultiplier": 1.35,
+  "feeMultiplier": 1.08,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+### Metadata round1: level5
+
+Registered before editing: 2026-11-14T04:38:08.231Z. Repeated complete benign metadata clauses create23?34 avoidable uncertain requests per completed week. Recognize only the preregistered anchored metadata pattern; keep adjacent bounds/equipment/conditions intact. Scenario margin20?50 EUR/week assumes quoted-cohort win/cost mix and no extra capacity pressure; evidenced lower bound0, actual change can be negative.
+
+Core2213766b83900ad7aa289437d37dd055a938dbc4, baseline4d61a9ed80f67348097c8930086825b1f56f20a4, candidate09a551f32e20eb7436b614b811b1600614028961. Diff fingerprintsha256:4ec5acc9a2643017ffe2fa62f71c8bf375e69386e2bf0e0091e02dc9f1dc06dc. Offline: Current branch55/55, integrated cargo baseline75/75 and metadata candidate78/78 full tests passed; diff check clean. Development seeds notes-clock-18, notes-clock-19. Untouched decision seed reserved before any new score: thanhdat-notes93-metadata-decision-5a. Selection: Positive pooled development delta, all candidate weeks>=93%, zero undelivered/refusals/critical misses, then positive untouched decision seed. If gain<1%, prefer higher worst service; tied buffer keeps cargo baseline. Do not reuse viewed decision seed as fresh evidence.. Decision: Pending matched development weeks; baseline cache can be reused only after explicit worker identity/server validation.
+
+| Phase | Seed | Side | Snapshot | World | Margin EUR | Won | EUR/order | On time | Undelivered | Refusals | Output |
+| --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+
+Controller: null. Next: Ready for level5 pairs; source frozen, no new world created. Output root C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes93. At most one own world is run serially; shared slots checked before creation. Only own recorded worlds can be resumed after the old controller stops. Every finished pair is pushed before continuation.
+
+Dependencies: retained cargo parser, exact integrated planner2213766, competitive1600 floor/reserve, minLead180, capacity0.28, strictNotes and existing market/offer algorithms. Effects on common orders, margin/order and planned-drive-hour proxy are reported separately; the proxy excludes approach/waiting. Level8 final-readiness needs the Dispatcher owner's separate paired practice verification. No ranking/test-final/live-final/merge/force-push, no secret or raw logs/reveal publication.
