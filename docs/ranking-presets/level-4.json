@@ -1,6 +1,6 @@
 {
-  "quoteMultiplier": 1.35,
-  "feeMultiplier": 1.08,
+  "quoteMultiplier": 1.05,
+  "feeMultiplier": 0.95,
   "marginReserve": 0.13,
   "minMarginCents": 1600,
   "capacityFraction": 0.28,

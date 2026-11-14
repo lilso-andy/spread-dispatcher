@@ -29,5 +29,5 @@ test("fixed-price fee estimates do not ratchet upward from the dispatcher's own 
     assert.equal(d.feeMultiplier("a"), 1.05)
   }
   const competitive = setup(8); competitive.observedBookings.set("a", Array(10).fill(1.85))
-  assert.equal(competitive.feeMultiplier("a"), 1.9)
+  assert.equal(competitive.feeMultiplier("a"), defaults.feeMultiplier + 0.08)
 })

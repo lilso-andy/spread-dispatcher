@@ -1,7 +1,7 @@
 {
   "quoteMultiplier": 1.4,
   "feeMultiplier": 1.02,
-  "emergencyMultiplier": 2.4,
+  "emergencyMultiplier": 2.15,
   "marginReserve": 0.15,
   "minMarginCents": 2000,
   "capacityFraction": 0.28,

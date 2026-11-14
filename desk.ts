@@ -232,7 +232,7 @@ export class Desk {
     if (this.level >= 4 && this.level <= 6 && this.config.feeMultiplier < 1.05) return this.config.feeMultiplier
     const samples = [...(this.observedBookings.get(place) ?? [])].sort((a, b) => a - b)
     const learned = samples.length >= 5 ? samples[Math.floor(samples.length * 0.7)]! * 1.03 : 0
-    return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(1.9, learned))
+    return Math.max(this.level <= 6 ? 1.05 : this.config.feeMultiplier, Math.min(this.level >= 7 ? this.config.feeMultiplier + 0.08 : 1.9, learned))
   }
 
   quote(request: PriceRequest): Action | null {
@@ -319,7 +319,8 @@ export class Desk {
         const feeCents = Math.max(this.currentFee(gig), Math.round(base * Math.max(multiplier, this.feeMultiplier(order.legs[first.leg]!.pickup.placeId))))
         if (feeCents > this.currentFee(gig)) actions.push({ type: "reprice", gigId: gig.id, schedule: [{ at: this.now, feeCents }] })
       }
-      if (this.config.offers && this.level >= 3 && (urgency <= 300 || this.now - gig.postedAt >= 90)) actions.push(...this.offersFor(gig, order))
+      const offerDue = this.level >= 8 ? (first.window?.from ?? order.legs[first.leg]!.pickup.window.from) <= this.now + 180 : urgency <= 300 || this.now - gig.postedAt >= 90
+      if (this.config.offers && this.level >= 3 && offerDue) actions.push(...this.offersFor(gig, order))
     }
     return actions
   }
