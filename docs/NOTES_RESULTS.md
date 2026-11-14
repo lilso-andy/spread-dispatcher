@@ -2061,7 +2061,7 @@ User requests at least15 server practice weeks; plan16 new weeks (8 paired compa
 
 Safety reference: conditional route guard6ae5f07 completed third paired seed final8-risk-route-holdout-v1, baseline and candidate6330.10EUR/99.40%, worlds w5f590093e8765bc4ccb8 and wcfbad43b2100d3154424. Three-seed pooled reference20865.83EUR vs guarded20682.28EUR (-0.88%), worst guarded95.18%. Accepted as explicitly documented safety fallback, NOT a margin gain.
 
-Latest team source 9918fffcb26bab444d6ba88bf182531c307bf634; actual frozen runtime ccc42f7c820fc51e7b9a87563d3907b223f53ce1 adds verified route guard,92 full tests pass. Branch work/notes-thanhdatLUT. Controller 25436 running; next Push pair reserve12 batch02-l8-b-v1 before next world. Local checkpoint work/level8-batch02-results/checkpoint.json. Full raw outputs remain local. Baseline config is the previously validated emergency2.0 profile; candidate source is recorded per world.
+Latest team source 9918fffcb26bab444d6ba88bf182531c307bf634; actual frozen runtime ccc42f7c820fc51e7b9a87563d3907b223f53ce1 adds verified route guard,92 full tests pass. Branch work/notes-thanhdatLUT. Controller 25436 stopped; next 16 weeks complete; compare all trials and verify best eligible candidate on unused holdout. Local checkpoint work/level8-batch02-results/checkpoint.json. Full raw outputs remain local. Baseline config is the previously validated emergency2.0 profile; candidate source is recorded per world.
 
 Hypothesisoffer_home: Algorithm: rank direct-offer candidates by approach plus full mapped return-home time instead of25% return time, level8 only. Prior study2 had6266 expired/942 declined/18 accepted offers. If5 extra profitable deliveries net26EUR each, opportunity130EUR/week, sensitivity only. Actual earned margin, ontime and accepted offers decide; no hidden driver preferences assumed.93 tests pass.; candidate source c1941adca925fadf1b0633f1096658ea2655f4b7; overrides {}; reserved holdout batch02-offer-home-proof-v1.
 
@@ -2129,3 +2129,12 @@ Trialnotes_thursday development decision: REJECT; deltaEUR0.00, minimum candidat
 Trialemergency18 development decision: NEEDS FRESH HOLDOUT; deltaEUR228.94, minimum candidate ontime94.444%.
 
 Trialreserve12 development decision: REJECT; deltaEUR-809.38, minimum candidate ontime92.265%.
+
+## Level8 batch02 independent confirmation
+
+Completed16 new development weeks, all16 final scores independently verified against server and ledger reconciled. Offer-home algorithm rejected (-220.80EUR pooled); Thursday note correction tied both development seeds (no economic improvement demonstrated); emergency1.8 development gain228.94EUR, worst94.44%; reserve12% rejected (-809.38EUR and92.265% on one week). Every losing/failing result retained above.
+
+Confirm emergency1.8 versus selected2.0 on untouched batch02-emergency18-proof-v1, then known difficult study2 (not a holdout). Development2seeds +228.94EUR and min94.44%. Same ccc42f7 source92 tests. Require positive fresh-seed margin delta, pooled gain and EVERY candidate week>=93%, including study2; otherwise retain2.0. Fixed parameters, no tuning on proof results.
+Controller 12248 running; next Run owned w39542d84669bd79e9fd0. Full checkpoint work/level8-batch02-proof/checkpoint.json. Same source ccc42f7c820fc51e7b9a87563d3907b223f53ce1 on both sides, no algorithm/fee combination from losing trials. Fresh proof is distinct from known study2 stress check. No ranking/final/merge.
+
+baseline: level8 seed batch02-emergency18-proof-v1, world w39542d84669bd79e9fd0, source ccc42f7c820fc51e7b9a87563d3907b223f53ce1, config {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}, output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\level8-batch02-proof\level8\batch02-emergency18-proof-v1\baseline, pending final week.
