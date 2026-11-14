@@ -897,3 +897,223 @@ Evidence limits: two development seeds per level, no positive candidate and no f
 Final checkpoint: branch work/notes-thanhdatLUT; output root C:\Users\thanh\Documents\Codex\2026-11-14\t\work\bounded-l456; all world IDs, immutable commits, full config and per-world output folders are in the tables above. Next action: stop; review PR https://github.com/lilso-andy/spread-dispatcher/pull/5. Existing planner interface proposal remains for the planner owner. No ranking, test-final, live-final, merge or force-push occurred.
 
 Checkpoint owner: this Codex desktop host; active controller: {"pid":23228,"round":3,"startedAt":"2026-11-14T03:45:36.092Z","state":"stopped","command":"work/bounded-worker.mjs 3","endedAt":"2026-11-14T03:49:32.700Z"}. Next action: STOPPED after three rounds; final checkpoint publication only, no automatic practice continuation. Only ordinary practice; no ranking/test-final/live-final, no merge/force-push, no teammate branch edits. Source changes trigger a new baseline before any next round. Planner interface changes remain a proposal for its owner. Displayed percentages are rounded; eligibility gates use exact final scores.
+
+
+## Margin-first notes session — service floor94%
+
+Status: in progress. New user instruction reopens practice optimization after the completed three-round session. Each candidate week must now reach94%, not90%. Scope remains notes.ts, test/notes.test.ts and this report. Only ordinary practice.
+
+### Cause analysis before choosing the next experiment
+
+Six completed baseline worlds from the previous session; seq-deduplicated ledger reconciles exactly to final scores. Twelve paired-world ledger summaries are retained below. No declined request list price is booked as a loss. All ledger entries have orderId, so order attribution is exact and requires no shared-fee allocation. Cancelled orders can still incur driver fees; these remain in the ledger and route tables even though score.wonOrders excludes cancellation.
+
+| Level | Seed | Side | World | Revenue EUR | Driver fees EUR | Refund EUR | Release fees EUR | Failed visit EUR | Waiting/fines/undelivered EUR | Margin EUR |
+| ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 4 | thanhdat-bounded4-a | baseline | w6a80763cd35dfe04d53d | 3898.00 | -3161.92 | 0.00 | 0.00 | 0.00 | 0.00 | 736.08 |
+| 4 | thanhdat-bounded4-a | candidate | w1ddebfffa5d6ff7f63f4 | 3898.00 | -3161.92 | 0.00 | 0.00 | 0.00 | 0.00 | 736.08 |
+| 4 | thanhdat-bounded4-b | baseline | wd3c6c0feea4fc838a7a1 | 5170.00 | -4053.64 | 0.00 | 0.00 | 0.00 | 0.00 | 1116.36 |
+| 4 | thanhdat-bounded4-b | candidate | w4515874e8fd9346270b7 | 5170.00 | -4053.64 | 0.00 | 0.00 | 0.00 | 0.00 | 1116.36 |
+| 5 | notes-clock-18 | baseline | wef7babd6f572d10ac2c4 | 2904.00 | -2276.39 | -20.00 | 0.00 | 0.00 | 0.00 | 607.61 |
+| 5 | notes-clock-18 | candidate | w79c84a6e02372e8d63cd | 2903.00 | -2276.39 | -20.00 | 0.00 | 0.00 | 0.00 | 606.61 |
+| 5 | notes-clock-19 | baseline | wffdb01adf047b3fd6edc | 3483.00 | -2957.45 | 0.00 | 0.00 | 0.00 | 0.00 | 525.55 |
+| 5 | notes-clock-19 | candidate | wef8d5fea220a49f144d8 | 3483.00 | -2957.45 | 0.00 | 0.00 | 0.00 | 0.00 | 525.55 |
+| 6 | thanhdat-bounded6-a | baseline | w1d6d368508de7451742b | 1906.00 | -1482.96 | -8.90 | 0.00 | 0.00 | 0.00 | 414.14 |
+| 6 | thanhdat-bounded6-a | candidate | wd8d33545960f9f950bb9 | 1906.00 | -1482.96 | -8.90 | 0.00 | 0.00 | 0.00 | 414.14 |
+| 6 | thanhdat-bounded6-b | baseline | wddc4bf155217f7c105c9 | 2356.00 | -1760.55 | 0.00 | 0.00 | 0.00 | 0.00 | 595.45 |
+| 6 | thanhdat-bounded6-b | candidate | w56030b608863964b7096 | 2356.00 | -1760.55 | 0.00 | 0.00 | 0.00 | 0.00 | 595.45 |
+
+Baseline totals across6 weeks: revenue19717.00 EUR, driver fees-15692.91 EUR, refunds-28.90 EUR; release/failed-visit/waiting/fine/undelivered lines all0. Driver fees are necessary costs, not automatically avoidable losses. Six negative-margin order histories total-257.87 EUR; both refunded orders have no note. No missed critical parser fact was confirmed in the checked won orders. Therefore neither refund nor the full driver-fee spend is claimed as a parser opportunity.
+
+Declines by first refusal gate (mutually exclusive): {"combined capacity/time/margin":269,"parser uncertainty":979,"service recovery pause":498,"summer-tyre weather exposure":5}. Parser-family diagnostics overlap: {"other unresolved prose":687,"contact/reference text":216,"viim. abbreviation":44,"recurring hours":45,"word half-hour":4,"correction":5,"dotted FI weekday":1,"kello clock marker":2}. Generic capacity/time/margin reasons cannot be separated further without new diagnostics from the dispatcher owner. No false precision is added.
+
+Chosen in-scope hypothesis: accept exactly four complete carried-wheel statements (renkaat kyydissä; renkaat takakontissa, menee mukana; spare wheels in the boot; second set of wheels in the back). Never mask neighboring clauses or fitted-tyre requirements. On completed level5 seeds this unlocks16/25 requests; level6 seeds18/23. Cargo-marker clause observations108 across4 weeks. The prior deadline patch unlocked11 notes but won0 extra orders (-1 EUR); weekday patch unlocked2 but won0 (tie), so they are lower priority.
+
+Opportunity is a scenario, NOT measured lost margin: observed margin per quoted request is0.8896/0.7683 EUR at level5 and1.3403/0.8375 at level6. Assuming every unlocked request passes capacity/route/fee gates and has the same win/cost mix as existing quoted requests gives14.23/19.21 EUR per level5 week,24.12/19.26 at level6 (19.21 EUR/week pooled mean). The evidenced lower bound is0; adverse selection, delivery costs, competition and interactions can make the actual effect negative. These assumptions are specifically tested by paired end-week scores, revenue, fees, new winners and margin/order, not by request list prices.
+
+Dispatcher/Pricing handoff: service-recovery pause refused37 requests on level5 clock-18 and461 on level6 bounded6-a, after unnoted lateness. Relaxing it is outside Notes scope and must preserve94% at the whole-week gate; its volume is not monetized as a proven loss. Contact/reference text affects216 refusals but the previous broader contact candidate lost250.16 EUR, so frequency alone is insufficient reason to retry it.
+
+### Won-order margin by route and pickup slack
+
+Route is the public directed place-ID sequence. Amounts include cancellation-related spend; count is order_won events, including later cancellations. Lead is public lastPickupAt minus win time; pickup slack uses first actual pickup against the original public cutoff. Rescue interventions count successful fee-increasing reprices and repeat posts of an already posted order-leg; scheduled bookings paid above opening fee are counted separately, not as repeated interventions. Planned driving hours come from the winning quote route, exclude approach/waiting/charging and are a proxy, not measured driver labor.
+
+| Group | Orders/cancelled | Margin EUR | Driver fees EUR | Refund EUR | Planned drive h | EUR/planned h | Rescue interventions | Paid above opening |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| L4 pickup slack not picked up | 1/1 | -47.76 | -47.76 | 0.00 | 1.23 | -38.72 | 0 | 0 |
+| L5 win lead 181–360 min | 2/1 | 1.67 | -93.33 | 0.00 | 2.95 | 0.57 | 0 | 0 |
+| L6 rescues 2 | 1/0 | 6.92 | -24.08 | 0.00 | 0.48 | 14.32 | 2 | 1 |
+| L4 win lead 181–360 min | 1/0 | 18.25 | -15.75 | 0.00 | 0.48 | 37.76 | 0 | 0 |
+| L6 rescues 1 | 1/0 | 28.67 | -107.33 | 0.00 | 4.32 | 6.64 | 1 | 0 |
+| L5 rescues 1 | 3/0 | 54.65 | -249.35 | 0.00 | 9.18 | 5.95 | 3 | 0 |
+| L6 win lead 181–360 min | 3/0 | 65.70 | -216.30 | 0.00 | 7.05 | 9.32 | 0 | 0 |
+| L4 rescues 1 | 1/0 | 66.17 | -103.83 | 0.00 | 5.82 | 11.38 | 1 | 1 |
+| L5 pickup slack 181–360 min | 13/2 | 130.94 | -1099.06 | 0.00 | 39.38 | 3.32 | 0 | 0 |
+| L6 pickup slack 0–180 min | 9/0 | 182.34 | -511.76 | -8.90 | 18.00 | 10.13 | 2 | 1 |
+| L5 pickup slack 0–180 min | 12/0 | 229.99 | -1064.01 | -20.00 | 35.42 | 6.49 | 0 | 0 |
+| L6 pickup slack 181–360 min | 11/0 | 292.34 | -875.66 | 0.00 | 31.82 | 9.19 | 0 | 0 |
+| L4 pickup slack 0–180 min | 11/0 | 338.53 | -911.47 | 0.00 | 37.92 | 8.93 | 1 | 1 |
+| L4 pickup slack 181–360 min | 15/0 | 415.47 | -1957.53 | 0.00 | 73.87 | 5.62 | 0 | 0 |
+| L6 pickup slack >360 min | 27/0 | 534.91 | -1856.09 | 0.00 | 63.55 | 8.42 | 1 | 0 |
+| L5 pickup slack >360 min | 35/0 | 772.23 | -3070.77 | 0.00 | 111.67 | 6.92 | 3 | 0 |
+| L6 win lead >360 min | 44/0 | 943.89 | -3027.21 | -8.90 | 106.32 | 8.88 | 3 | 1 |
+| L6 rescues 0 | 45/0 | 974.00 | -3112.10 | -8.90 | 108.57 | 8.97 | 0 | 0 |
+| L5 rescues 0 | 57/2 | 1078.51 | -4984.49 | -20.00 | 177.28 | 6.08 | 0 | 0 |
+| L5 win lead >360 min | 58/1 | 1131.49 | -5140.51 | -20.00 | 183.52 | 6.17 | 3 | 0 |
+| L4 pickup slack >360 min | 49/0 | 1146.20 | -4298.80 | 0.00 | 159.50 | 7.19 | 0 | 0 |
+| L4 rescues 0 | 75/1 | 1786.27 | -7111.73 | 0.00 | 266.70 | 6.70 | 0 | 0 |
+| L4 win lead >360 min | 75/1 | 1834.19 | -7199.81 | 0.00 | 272.03 | 6.74 | 1 | 1 |
+
+All baseline route aggregates (not raw logs/reveal):
+
+| Group | Orders/cancelled | Margin EUR | Driver fees EUR | Refund EUR | Planned drive h | EUR/planned h | Rescue interventions | Paid above opening |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| L5 vantaa→kuopio | 3/1 | -73.23 | -355.23 | 0.00 | 12.15 | -6.03 | 0 | 0 |
+| L5 espoo→lempaala | 1/0 | -32.78 | -92.78 | -20.00 | 1.70 | -19.28 | 0 | 0 |
+| L6 hyvinkaa→lempaala | 1/0 | -28.18 | -87.18 | 0.00 | 1.10 | -25.62 | 0 | 0 |
+| L5 helsinki→espoo | 1/1 | -18.76 | -18.76 | 0.00 | 0.53 | -35.18 | 0 | 0 |
+| L4 espoo→lahti | 3/1 | -14.51 | -141.51 | 0.00 | 3.70 | -3.92 | 0 | 0 |
+| L5 hyvinkaa→kuopio | 1/0 | -3.14 | -124.14 | 0.00 | 3.82 | -0.82 | 0 | 0 |
+| L5 jyvaskyla→lahti | 1/0 | 16.12 | -59.88 | 0.00 | 1.98 | 8.13 | 0 | 0 |
+| L4 kuopio→joensuu | 1/0 | 16.13 | -48.87 | 0.00 | 1.77 | 9.13 | 0 | 0 |
+| L6 hyvinkaa→espoo | 1/0 | 16.14 | -31.86 | 0.00 | 0.77 | 21.05 | 0 | 0 |
+| L4 helsinki→tampere | 1/0 | 16.15 | -64.85 | 0.00 | 1.77 | 9.14 | 0 | 0 |
+| L6 vantaa→hameenlinna | 1/0 | 16.16 | -48.84 | 0.00 | 1.00 | 16.16 | 0 | 0 |
+| L6 espoo→vantaa | 1/0 | 16.20 | -18.80 | 0.00 | 0.42 | 38.88 | 0 | 0 |
+| L6 espoo→lappeenranta | 1/0 | 16.25 | -80.75 | 0.00 | 2.60 | 6.25 | 0 | 0 |
+| L6 lahti→tampere | 1/0 | 16.26 | -56.74 | 0.00 | 1.72 | 9.47 | 0 | 0 |
+| L5 turku→raisio | 1/0 | 16.27 | -12.73 | 0.00 | 0.13 | 122.02 | 0 | 0 |
+| L4 tampere→rauma | 1/0 | 16.30 | -60.70 | 0.00 | 1.75 | 9.31 | 0 | 0 |
+| L6 espoo→helsinki | 1/0 | 16.32 | -16.68 | 0.00 | 0.53 | 30.60 | 0 | 0 |
+| L5 vantaa→lahti | 1/0 | 16.35 | -38.65 | 0.00 | 1.05 | 15.57 | 0 | 0 |
+| L5 hyvinkaa→lahti | 1/0 | 16.36 | -34.64 | 0.00 | 0.83 | 19.63 | 0 | 0 |
+| L4 tampere→helsinki | 1/0 | 16.45 | -59.55 | 0.00 | 1.77 | 9.31 | 0 | 0 |
+| L5 vantaa→tampere | 1/0 | 16.47 | -58.53 | 0.00 | 1.77 | 9.32 | 0 | 0 |
+| L5 vaasa→ylivieska | 1/0 | 16.52 | -61.48 | 0.00 | 2.43 | 6.79 | 0 | 0 |
+| L5 jyvaskyla→vantaa | 1/0 | 16.53 | -88.47 | 0.00 | 2.88 | 5.73 | 0 | 0 |
+| L5 vantaa→salo | 1/0 | 16.54 | -46.46 | 0.00 | 1.18 | 13.98 | 0 | 0 |
+| L4 vantaa→espoo | 1/0 | 16.56 | -18.44 | 0.00 | 0.42 | 39.74 | 0 | 0 |
+| L6 hyvinkaa→hameenlinna | 1/0 | 16.60 | -33.40 | 0.00 | 0.58 | 28.46 | 0 | 0 |
+| L5 vantaa→raisio | 1/0 | 16.67 | -55.33 | 0.00 | 1.70 | 9.81 | 0 | 0 |
+| L5 turku→pori | 1/0 | 16.68 | -54.32 | 0.00 | 1.73 | 9.62 | 0 | 0 |
+| L5 hyvinkaa→lempaala | 1/0 | 16.70 | -43.30 | 0.00 | 1.10 | 15.18 | 1 | 0 |
+| L5 turku→hameenlinna | 1/0 | 16.71 | -54.29 | 0.00 | 1.83 | 9.11 | 0 | 0 |
+| L5 tampere→vantaa | 1/0 | 16.77 | -54.23 | 0.00 | 1.77 | 9.49 | 0 | 0 |
+| L6 espoo→lahti | 1/0 | 16.79 | -43.21 | 0.00 | 1.23 | 13.61 | 0 | 0 |
+| L5 hyvinkaa→kotka | 1/0 | 16.84 | -57.16 | 0.00 | 1.62 | 10.42 | 0 | 0 |
+| L6 hyvinkaa→pori | 1/0 | 16.85 | -85.15 | 0.00 | 2.52 | 6.70 | 0 | 0 |
+| L5 kouvola→salo | 1/0 | 16.88 | -81.12 | 0.00 | 2.75 | 6.14 | 0 | 0 |
+| L6 vantaa→hyvinkaa | 1/0 | 16.93 | -35.07 | 0.00 | 0.58 | 29.02 | 0 | 0 |
+| L4 vantaa→pori | 1/0 | 16.99 | -69.01 | 0.00 | 2.80 | 6.07 | 0 | 0 |
+| L6 lahti→lahti | 1/0 | 16.99 | -17.01 | 0.00 | 0.42 | 40.78 | 0 | 0 |
+| L4 hyvinkaa→tampere | 1/0 | 17.03 | -44.97 | 0.00 | 1.27 | 13.44 | 0 | 0 |
+| L5 hyvinkaa→vaasa | 1/0 | 17.03 | -110.97 | 0.00 | 4.05 | 4.20 | 0 | 0 |
+| L4 vantaa→raisio | 1/0 | 17.08 | -53.92 | 0.00 | 1.70 | 10.05 | 0 | 0 |
+| L6 vantaa→jyvaskyla | 1/0 | 17.84 | -88.16 | 0.00 | 2.88 | 6.19 | 0 | 0 |
+| L6 vantaa→kuopio | 1/0 | 17.98 | -118.02 | 0.00 | 4.05 | 4.44 | 0 | 0 |
+| L4 vantaa→helsinki | 1/0 | 18.25 | -15.75 | 0.00 | 0.48 | 37.76 | 0 | 0 |
+| L5 lahti→ylivieska | 1/0 | 18.54 | -122.46 | 0.00 | 4.72 | 3.93 | 0 | 0 |
+| L4 jyvaskyla→oulu | 1/0 | 19.30 | -100.70 | 0.00 | 3.78 | 5.10 | 0 | 0 |
+| L4 espoo→kuopio | 1/0 | 19.57 | -127.43 | 0.00 | 4.32 | 4.53 | 0 | 0 |
+| L5 kuopio→mikkeli | 1/0 | 19.74 | -58.26 | 0.00 | 1.77 | 11.17 | 0 | 0 |
+| L6 lahti→lappeenranta | 1/0 | 19.80 | -52.20 | 0.00 | 1.77 | 11.21 | 0 | 0 |
+| L6 vantaa→lappeenranta | 1/0 | 19.84 | -71.16 | 0.00 | 2.40 | 8.27 | 0 | 0 |
+| L6 helsinki→pori | 1/0 | 19.94 | -76.06 | 0.00 | 2.88 | 6.92 | 0 | 0 |
+| L6 espoo→joensuu | 1/0 | 20.42 | -126.58 | 0.00 | 4.78 | 4.27 | 0 | 0 |
+| L5 espoo→mikkeli | 1/0 | 20.43 | -74.57 | 0.00 | 2.42 | 8.45 | 0 | 0 |
+| L5 hameenlinna→vantaa | 1/0 | 20.53 | -36.47 | 0.00 | 1.00 | 20.53 | 0 | 0 |
+| L4 espoo→vaasa | 1/0 | 20.58 | -131.42 | 0.00 | 4.67 | 4.41 | 0 | 0 |
+| L5 helsinki→turku | 1/0 | 20.86 | -60.14 | 0.00 | 1.88 | 11.08 | 0 | 0 |
+| L4 jyvaskyla→hameenlinna | 1/0 | 20.89 | -60.11 | 0.00 | 2.12 | 9.87 | 0 | 0 |
+| L5 kotka→jyvaskyla | 1/0 | 21.28 | -75.72 | 0.00 | 2.83 | 7.51 | 0 | 0 |
+| L4 espoo→tampere | 1/0 | 21.37 | -65.63 | 0.00 | 2.03 | 10.51 | 0 | 0 |
+| L4 vantaa→seinajoki | 1/0 | 21.44 | -108.56 | 0.00 | 3.83 | 5.59 | 0 | 0 |
+| L5 tampere→oulu | 1/0 | 21.46 | -142.54 | 0.00 | 5.67 | 3.79 | 1 | 0 |
+| L4 ylivieska→tampere | 1/0 | 21.80 | -112.20 | 0.00 | 4.27 | 5.11 | 0 | 0 |
+| L4 espoo→seinajoki | 1/0 | 22.12 | -97.88 | 0.00 | 4.13 | 5.35 | 0 | 0 |
+| L6 porvoo→tampere | 1/0 | 22.26 | -64.74 | 0.00 | 2.17 | 10.27 | 0 | 0 |
+| L5 rauma→vantaa | 1/0 | 22.29 | -83.71 | 0.00 | 2.70 | 8.26 | 0 | 0 |
+| L5 pori→mikkeli | 1/0 | 22.60 | -100.40 | 0.00 | 3.93 | 5.75 | 0 | 0 |
+| L4 vantaa→lappeenranta | 1/0 | 23.71 | -67.29 | 0.00 | 2.40 | 9.88 | 0 | 0 |
+| L5 vantaa→mikkeli | 1/0 | 23.98 | -76.02 | 0.00 | 2.35 | 10.20 | 0 | 0 |
+| L5 helsinki→rauma | 1/0 | 24.32 | -80.68 | 0.00 | 2.93 | 8.29 | 0 | 0 |
+| L4 vantaa→savonlinna | 1/0 | 25.73 | -95.27 | 0.00 | 3.75 | 6.86 | 0 | 0 |
+| L4 espoo→kajaani | 1/0 | 26.11 | -168.89 | 0.00 | 6.42 | 4.07 | 0 | 0 |
+| L6 hyvinkaa→ylivieska | 1/0 | 26.60 | -139.40 | 0.00 | 5.47 | 4.87 | 0 | 0 |
+| L4 kuopio→vaasa | 1/0 | 26.83 | -107.17 | 0.00 | 4.15 | 6.47 | 0 | 0 |
+| L5 joensuu→rovaniemi | 1/0 | 27.97 | -182.03 | 0.00 | 6.42 | 4.36 | 0 | 0 |
+| L6 espoo→kuopio | 1/0 | 28.67 | -107.33 | 0.00 | 4.32 | 6.64 | 1 | 0 |
+| L4 lahti→kuopio | 1/0 | 29.04 | -88.96 | 0.00 | 3.17 | 9.17 | 0 | 0 |
+| L6 vantaa→mikkeli | 1/0 | 29.39 | -70.61 | 0.00 | 2.35 | 12.51 | 0 | 0 |
+| L5 pori→lappeenranta | 1/0 | 31.20 | -115.80 | 0.00 | 4.67 | 6.69 | 0 | 0 |
+| L4 espoo→helsinki | 2/0 | 31.58 | -41.42 | 0.00 | 1.07 | 29.61 | 0 | 0 |
+| L5 hyvinkaa→ylivieska | 1/0 | 32.54 | -131.46 | 0.00 | 5.47 | 5.95 | 0 | 0 |
+| L4 turku→kemi | 1/0 | 32.77 | -199.23 | 0.00 | 8.08 | 4.05 | 0 | 0 |
+| L5 oulu→kokkola | 2/0 | 33.44 | -133.56 | 0.00 | 4.83 | 6.92 | 1 | 0 |
+| L5 vantaa→pori | 2/0 | 33.50 | -155.50 | 0.00 | 5.60 | 5.98 | 0 | 0 |
+| L6 hyvinkaa→tampere | 2/0 | 33.79 | -96.21 | 0.00 | 2.53 | 13.34 | 0 | 0 |
+| L5 hameenlinna→joensuu | 1/0 | 34.08 | -96.92 | 0.00 | 4.48 | 7.60 | 0 | 0 |
+| L4 vantaa→lahti | 2/0 | 34.35 | -84.65 | 0.00 | 2.10 | 16.36 | 0 | 0 |
+| L5 vantaa→kemi | 1/0 | 34.35 | -224.65 | 0.00 | 8.05 | 4.27 | 0 | 0 |
+| L5 hyvinkaa→pori | 1/0 | 34.56 | -62.44 | 0.00 | 2.52 | 13.73 | 0 | 0 |
+| L5 espoo→kuopio | 1/0 | 34.81 | -105.19 | 0.00 | 4.32 | 8.06 | 0 | 0 |
+| L4 vantaa→mikkeli | 2/0 | 35.71 | -160.29 | 0.00 | 4.70 | 7.60 | 0 | 0 |
+| L4 espoo→mikkeli | 2/0 | 37.45 | -166.55 | 0.00 | 4.83 | 7.75 | 0 | 0 |
+| L4 lempaala→kemi | 1/0 | 37.76 | -177.24 | 0.00 | 6.93 | 5.45 | 0 | 0 |
+| L4 vantaa→vaasa | 2/0 | 39.05 | -254.95 | 0.00 | 8.93 | 4.37 | 0 | 0 |
+| L4 vantaa→joensuu | 1/0 | 39.45 | -117.55 | 0.00 | 4.80 | 8.22 | 0 | 0 |
+| L5 vantaa→oulu | 1/0 | 40.80 | -149.20 | 0.00 | 6.62 | 6.17 | 0 | 0 |
+| L6 hyvinkaa→kokkola | 1/0 | 41.20 | -112.80 | 0.00 | 4.95 | 8.32 | 0 | 0 |
+| L5 vantaa→lappeenranta | 2/0 | 43.01 | -145.99 | 0.00 | 4.80 | 8.96 | 0 | 0 |
+| L5 vantaa→savonlinna | 1/0 | 43.20 | -85.80 | 0.00 | 3.75 | 11.52 | 0 | 0 |
+| L4 espoo→lahti + lahti→espoo | 1/0 | 43.98 | -50.02 | 0.00 | 2.88 | 15.25 | 0 | 0 |
+| L4 hyvinkaa→vaasa | 2/0 | 44.01 | -220.99 | 0.00 | 8.10 | 5.43 | 0 | 0 |
+| L6 vantaa→oulu | 1/0 | 46.06 | -144.94 | 0.00 | 6.62 | 6.96 | 0 | 0 |
+| L4 helsinki→mikkeli | 2/0 | 48.00 | -144.00 | 0.00 | 4.33 | 11.08 | 0 | 0 |
+| L6 hyvinkaa→lahti | 3/0 | 48.32 | -119.68 | 0.00 | 2.50 | 19.33 | 0 | 0 |
+| L4 helsinki→kemi | 1/0 | 49.25 | -177.75 | 0.00 | 7.65 | 6.44 | 0 | 0 |
+| L4 espoo→vantaa | 3/0 | 50.14 | -54.86 | 0.00 | 1.25 | 40.11 | 0 | 0 |
+| L4 lahti→pori | 2/0 | 50.38 | -153.62 | 0.00 | 5.90 | 8.54 | 0 | 0 |
+| L6 hyvinkaa→vaasa | 2/0 | 50.42 | -232.58 | 0.00 | 8.10 | 6.22 | 0 | 0 |
+| L5 vantaa→kajaani | 1/0 | 50.44 | -138.56 | 0.00 | 6.07 | 8.31 | 0 | 0 |
+| L5 hyvinkaa→tampere | 3/0 | 51.34 | -147.66 | 0.00 | 3.80 | 13.51 | 0 | 0 |
+| L4 kouvola→oulu | 1/0 | 51.47 | -137.53 | 0.00 | 6.28 | 8.19 | 0 | 0 |
+| L4 espoo→jyvaskyla | 2/0 | 52.22 | -150.78 | 0.00 | 6.23 | 8.38 | 0 | 0 |
+| L4 helsinki→vaasa | 2/0 | 52.63 | -241.37 | 0.00 | 9.43 | 5.58 | 0 | 0 |
+| L4 tampere→lappeenranta + lappeenranta→tampere | 1/0 | 57.60 | -109.40 | 0.00 | 7.32 | 7.87 | 0 | 0 |
+| L4 hyvinkaa→joensuu | 2/0 | 62.14 | -234.86 | 0.00 | 8.97 | 6.93 | 0 | 0 |
+| L4 hyvinkaa→jyvaskyla + jyvaskyla→hyvinkaa | 1/0 | 66.17 | -103.83 | 0.00 | 5.82 | 11.38 | 1 | 1 |
+| L4 tampere→lempaala | 4/0 | 66.21 | -67.79 | 0.00 | 1.27 | 52.27 | 0 | 0 |
+| L6 hyvinkaa→kuopio | 2/0 | 66.73 | -193.27 | 0.00 | 7.63 | 8.74 | 0 | 0 |
+| L6 jyvaskyla→seinajoki | 4/0 | 68.71 | -263.39 | -8.90 | 10.20 | 6.74 | 0 | 0 |
+| L5 porvoo→oulu | 2/0 | 70.03 | -330.97 | 0.00 | 13.00 | 5.39 | 0 | 0 |
+| L5 vantaa→ylivieska | 2/0 | 70.09 | -281.91 | 0.00 | 11.33 | 6.18 | 0 | 0 |
+| L4 hyvinkaa→ylivieska | 3/0 | 84.64 | -403.36 | 0.00 | 16.40 | 5.16 | 0 | 0 |
+| L6 vantaa→helsinki | 6/0 | 91.50 | -117.50 | 0.00 | 2.90 | 31.55 | 2 | 1 |
+| L5 vantaa→jyvaskyla | 4/0 | 94.24 | -332.76 | 0.00 | 11.53 | 8.17 | 0 | 0 |
+| L6 vantaa→kokkola | 4/0 | 186.81 | -494.19 | 0.00 | 21.40 | 8.73 | 0 | 0 |
+| L4 vantaa→oulu | 11/0 | 350.56 | -1854.44 | 0.00 | 72.78 | 4.82 | 0 | 0 |
+
+### New controlled experiments
+
+Full configuration, unchanged between each pair:
+
+```json
+{
+  "quoteMultiplier": 1.35,
+  "feeMultiplier": 1.08,
+  "emergencyMultiplier": 2.4,
+  "marginReserve": 0.13,
+  "minMarginCents": 1600,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "offers": true
+}
+```
+
+Round1, level5: Repeated complete carried-wheel phrases block16/25 otherwise understood requests; measured quoted cohort supports a scenario14?19 EUR/week, evidenced lower bound0. Four anchored cargo statements only; preserve every adjacent bound/equipment condition.. Registration 2026-11-14T04:03:44.308Z; behavior announced before editing in chat, untouched decision seed reserved before any new practice score. Core2213766b83900ad7aa289437d37dd055a938dbc4; baseline2213766b83900ad7aa289437d37dd055a938dbc4; candidate4d61a9ed80f67348097c8930086825b1f56f20a4; diffsha256:12cc35471cdc772b5febd3abc09771dbe5f302548ddd6515f9da9cc7d915474e. Offline: Baseline73/73 and candidate75/75 full tests passed; diff check passed. Development seeds notes-clock-18, notes-clock-19; reserved decision seed thanhdat-notes94-cargo-decision-5a must never be reused as fresh holdout after viewing. Selection: positive paired total and every candidate week>=94%, zero refused actions and critical misses; then positive fresh-decision delta. Under1% benefit, higher worst service wins; tie keeps baseline. Pending.
+
+| Phase | Seed | Side | World | Margin EUR | Won | EUR/order | On time | Undelivered | Refusals | Output |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+
+Controller null. Next: Preregistered cargo cohort trial and untouched decision seed; publish before creating worlds. Integration dependencies: competitive1600 fee/margin floor, minLead180, capacity0.28, strictNotes=true, existing pickup-window/quote/offer algorithms and exact core commits above. No claim transfers to a different planner/config or level8 without Dispatcher paired integration validation at>=94%. No ranking/test-final/live-final/merge/force-push.
