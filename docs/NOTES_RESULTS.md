@@ -1727,7 +1727,7 @@ Scope: notes.ts/parser tests/report plus explicitly approved desk.ts and test/ma
 
 User explicitly authorized ranking levels4–6 in this chat. Limited to one additional run per level, expected run2/5 in season6. No seeds, reveal, fork, final, merge or other levels. Source frozen at ab4f5b139176de9c12687a7b73685d8d19403af3 (C:\Users\thanh\Documents\Codex\2026-11-14\t\work\ranking-456-latest); main differs: main is 9dccfdb6238abe56e61938ecb48fd64b371651b2. All 87 offline tests passed. Team integration presets are used without experimental floor900/fee086. Earlier practice controller stopped at a completed pair; its remaining experiment is deferred.
 
-Checkpoint: Push completed level6 checkpoint before next world. Controller: running. Local manifest: work/ranking-456/manifest.json. Raw journals remain local.
+Checkpoint: All three requested additional ranking weeks completed; no further ranking/final authorized by this batch. Controller: stopped. Local manifest: work/ranking-456/manifest.json. Raw journals remain local.
 
 | Level | Status | World | Margin EUR | Won | On time | Undelivered | Refusals |
 |---:|---|---|---:|---:|---:|---:|---:|
@@ -1742,3 +1742,5 @@ Level 5: source ab4f5b139176de9c12687a7b73685d8d19403af3; season6 expected run2;
 Level 6: source ab4f5b139176de9c12687a7b73685d8d19403af3; season6 expected run2; full config `{"quoteMultiplier":1.05,"feeMultiplier":0.95,"emergencyMultiplier":2.4,"marginReserve":0.13,"minMarginCents":1600,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\ranking-456\level-6; world w6edcaf9d8becb966d95a; next publish final week, then proceed to next requested level.
 
 These are ranking observations, not paired causal uplift evidence. Retain every completed result, including any week below93%. Two of five weeks per level cannot establish a final top-six position.
+
+Independent final verification: all three owned worlds ended, practice ranking season6/run2; score endpoint matches saved results and public board run2 margin. Each level now has2/5 completed weeks. All three pass93%; zero undelivered orders and zero refused actions. Controller25191 exited0 after BATCH_COMPLETE. No more worlds will be created by this batch.
