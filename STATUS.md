@@ -1,5 +1,9 @@
 # Shared status
 
+## Level 7 batch 04 completed
+
+18 more verified practice weeks. Reject the flexible public windows (source 42c4d8e) against frozen integration 4e573a3. Margin fell EUR211.31 across eight pairs despite 297 fewer expiry events. Level 7 emergency fee 2.15 gained EUR289.89 against the previous 2.4 on two additional paired seeds, with identical service per pair. Both fees failed l7-b04-a at 83.91%; the window candidate reached 88.37%. All three failed weeks remain in the results. No incomplete deliveries or refusals in the batch. The selected fee improves observed margin but the dispatcher still fails the delivery minimum on this seed. See docs/LEVEL7_BATCH04.md and docs/LEVEL7_BATCH04_RESULTS.json for all 18 worlds. The latest teammate revision a6643c2, including a separate level 8 preset, was integrated locally at ffcc040 (92/92 tests). The published level 7 preset is unchanged from 9918fff. All batch 02, 03 and 04 controllers finished. Ranking remains parked.
+
 ## Level 7 batch 03 selected emergency fee 2.15
 
 18 completed ordinary practice worlds. The selected level 7 preset changes emergencyMultiplier from 2.4 to 2.15 only. Against four fresh paired control runs it gained EUR281.59, then gained EUR58.41 on the unused proof (EUR6770.45 to EUR6828.86), both arms 201 orders and 97.51% on time. Candidate minimum 91.52%, fully delivered, zero action refusals. Spread-1 lost EUR121.90. The next-day quote premium failed study-2 with 89.09%; the uniform quote increase lost EUR4114.66 pooled. All 18 scores and exact inputs appear in docs/LEVEL7_BATCH03_RESULTS.json. Levels other than 7 keep their last selected presets. Experimental teammate level 8 code 8543c3f was present in the benchmark integration aeaa6de, guarded by level equality; selection at level 8 stays with the teammate. Current main is 9dccfdb. The earlier level 7 handoff below is historical.
