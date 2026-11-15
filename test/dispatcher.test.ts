@@ -132,7 +132,7 @@ test("level 8 advance public opening discount preserves the rescue price", () =>
   d.requests.set(q.id, q)
   const o = asOrder(q, q.options[1]!)
   const post = d.makePost(o,[0])!
-  assert.equal(post.schedule[0]!.feeCents, 9936)
+  assert.equal(post.schedule[0]!.feeCents, 8640)
   assert.equal(post.schedule[1]!.feeCents, 18500)
   d.level = 7
   assert.equal(d.makePost(o,[0])!.schedule[0]!.feeCents, 10800)

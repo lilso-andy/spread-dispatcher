@@ -20,10 +20,21 @@
     "l8-30k-dev-d"
   ],
   "holdout": "l8-30k-proof-c",
-  "decision": "Unselected. Test 0.80 advance opening discount against current0.92, same config. Hypothesis: lower driver fees on advance public single-car jobs; retain rescue schedule and all safety gates. Prior team0.92 gainedEUR4375.25 across5paired weeks. Another5% of EUR20k driver spend isEUR1k sensitivity only. Reject lower total margin, anyweek<91%, extra undelivered or refusals.",
+  "decision": "Select advance080 after3matched seeds: pooled +EUR676.99, positive each seed; fresh proof +EUR394.44 at100% on time both; worst candidate97.5155%, zero undelivered/refusals. Full93 offline tests. Still far belowEUR30000/week.",
   "rankingCheck": {
     "season": 11,
     "played": 5,
     "remaining": 0
-  }
+  },
+  "nextHypothesis": {
+    "id": "quote125",
+    "change": {
+      "quoteMultiplier": 1.25
+    },
+    "source": "Selected advance080 source; compare each quote125 world to exact same-seed advance080 result, changing only quoteMultiplier. Amendment before creation.",
+    "why": "On current baseline only129/655 and163/706 quoted requests won; 1.4 price factor may constrain profitable volume. Fee/cost floor still applies. Earlier q1.25 failed on old source; rerun explicitly tests interaction with new long-route guard, advance discounts and emergency2.0.",
+    "opportunity": "100 additional wins at EUR20 net would addEUR2000/week, assumed not predicted. Reduced revenue on existing wins and shortage can reverse this.",
+    "reject": "Any week below91%, pooled margin nonpositive versus exact same-source baseline, additional undelivered/refusals. Need untouched proof d if positive."
+  },
+  "reservedQuoteProof": "l8-30k-proof-d"
 }
