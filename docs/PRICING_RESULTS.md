@@ -835,12 +835,12 @@ Frozen team integration 0b5a2e97a6c617eadbe710d2faf63a99bfc06661. Main is not th
 |Seed|Variant|World|Margin EUR|Won|On time|Undelivered share|Refusals|
 |---|---|---|---:|---:|---:|---:|---:|
 |l8-20k-dev-a|baseline|wa4b90b4fe2d24fddec59|7183.43|207|99.034%|0|0|
-|l8-20k-dev-a|notes-capacity045|wceb2d96af4f740da3a50|RUNNING|||||
+|l8-20k-dev-a|notes-capacity045|wceb2d96af4f740da3a50|8988.88|266|98.496%|0|0|
 |l8-20k-dev-a|notes-permissive|w6620d08926e47394555c|9148.16|264|98.106%|0|0|
 |l8-20k-dev-b|baseline|w44112bcf4ded7cb36bde|11931.65|325|96.923%|0|0|
-|l8-20k-dev-b|notes-capacity045|wdf6a9ece16286dd79567|RUNNING|||||
+|l8-20k-dev-b|notes-capacity045|wdf6a9ece16286dd79567|15304.72|420|96.905%|0|0|
 |l8-20k-dev-b|notes-permissive|w18ab92dd2ce504993d7b|14926.20|386|97.409%|0|0|
 |l8-20k-proof-a|baseline|wce55913d943039e47934|5392.97|149|98.658%|0|0|
 |l8-20k-proof-a|notes-permissive|wd32ff9bd637ab7b24429|6703.91|179|100.000%|0|0|
 
-Decision: Select notes-permissive as an explicit level8 practice profile: development +EUR4959.28; independent proof +EUR1310.94, proof100% on time; worst selected97.409%. Target EUR20000/week not met. Capacity trial pending.
+Decision: Old-source notes-permissive improved three pairs, but new team evidence on integrated source failed dispatch8-proof02 at88.30% and lost EUR2123.75. Do NOT promote permissive profile to new integrated/ranking default. Capacity .45 old-source pooled +EUR219.24, one seed -EUR159.28; no independent proof; unselected. Establish latest-source baseline before further experiments.

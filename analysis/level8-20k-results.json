@@ -15,7 +15,7 @@
       "trainingEconomy": false
     },
     "level": 8,
-    "targetWeeklyCents": 2000000,
+    "targetWeeklyCents": 3000000,
     "minimumOnTime": 0.91,
     "minimumCompletedNewWorlds": 15,
     "developmentSeeds": [
@@ -50,7 +50,7 @@
         "holdout": "l8-20k-proof-b"
       }
     ],
-    "decision": "Select notes-permissive as an explicit level8 practice profile: development +EUR4959.28; independent proof +EUR1310.94, proof100% on time; worst selected97.409%. Target EUR20000/week not met. Capacity trial pending."
+    "decision": "Old-source notes-permissive improved three pairs, but new team evidence on integrated source failed dispatch8-proof02 at88.30% and lost EUR2123.75. Do NOT promote permissive profile to new integrated/ranking default. Capacity .45 old-source pooled +EUR219.24, one seed -EUR159.28; no independent proof; unselected. Establish latest-source baseline before further experiments."
   },
   "results": [
     {
@@ -197,7 +197,52 @@
       "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-20k/results/l8-20k-dev-a/notes-capacity045",
       "pid": 24892,
       "createdAt": "2026-11-14T22:17:11.669Z",
-      "next": "Complete this owned world; never replace on interruption"
+      "next": "Analyze ledger and paired final score",
+      "score": {
+        "marginCents": 898888,
+        "revenueCents": 3089600,
+        "marginShare": 0.29093992749870534,
+        "wonOrders": 266,
+        "onTimeShare": 0.9849624060150376,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "endedAt": "2026-11-14T22:18:23.824Z",
+      "ledgerCents": {
+        "revenue": 3089600,
+        "driver_fee": -2145007,
+        "release_fee": -22397,
+        "failed_visit": -7553,
+        "waiting": -6000,
+        "late_refund": -9755
+      },
+      "decisionDeclines": {
+        "insufficient safe capacity, time or margin": 106,
+        "summer tyres: weather exposure": 10
+      },
+      "quotedRequests": 915,
+      "eventCounts": {
+        "forecast": 2,
+        "price_request": 1031,
+        "order_lost": 760,
+        "order_won": 271,
+        "gig_viewed": 5097,
+        "gig_booked": 294,
+        "gig_started": 268,
+        "offer_answered": 2570,
+        "picked_up": 270,
+        "gig_expired": 77,
+        "delivered": 270,
+        "ledger": 547,
+        "gig_dropped": 21,
+        "order_cancelled": 5,
+        "driver_late": 1,
+        "visit_failed": 2,
+        "order_changed": 12,
+        "release": 3,
+        "deadline_close": 7
+      }
     },
     {
       "branch": "work/pricing-baotran1604",
@@ -413,7 +458,52 @@
       "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-20k/results/l8-20k-dev-b/notes-capacity045",
       "pid": 24892,
       "createdAt": "2026-11-14T22:17:11.828Z",
-      "next": "Complete this owned world; never replace on interruption"
+      "next": "Analyze ledger and paired final score",
+      "score": {
+        "marginCents": 1530472,
+        "revenueCents": 5723000,
+        "marginShare": 0.2674247772147475,
+        "wonOrders": 420,
+        "onTimeShare": 0.969047619047619,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "endedAt": "2026-11-14T22:18:50.580Z",
+      "ledgerCents": {
+        "revenue": 5723000,
+        "driver_fee": -4109695,
+        "waiting": -3000,
+        "late_refund": -74470,
+        "failed_visit": -5363
+      },
+      "decisionDeclines": {
+        "insufficient safe capacity, time or margin": 256,
+        "summer tyres: weather exposure": 14
+      },
+      "quotedRequests": 769,
+      "eventCounts": {
+        "forecast": 1,
+        "price_request": 1039,
+        "order_won": 421,
+        "gig_viewed": 9047,
+        "gig_booked": 481,
+        "order_lost": 618,
+        "offer_answered": 6504,
+        "gig_started": 422,
+        "picked_up": 429,
+        "deadline_close": 51,
+        "gig_dropped": 57,
+        "delivered": 428,
+        "ledger": 857,
+        "gig_expired": 172,
+        "order_changed": 11,
+        "release": 5,
+        "no_show": 2,
+        "driver_late": 1,
+        "visit_failed": 1,
+        "order_cancelled": 1
+      }
     },
     {
       "branch": "work/pricing-baotran1604",
