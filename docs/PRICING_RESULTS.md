@@ -854,7 +854,9 @@ Frozen team integration d4031ca9c69706126b08ebd610012dce378e98a9. Main is not th
 |---|---|---|---:|---:|---:|---:|---:|
 |l8-30k-dev-c|advance080|w3aeb74caa40e92b4ecd0|4701.64|126|99.206%|0|0|
 |l8-30k-dev-c|baseline|w754c8321c35a6b69d248|4638.51|129|100.000%|0|0|
-|l8-30k-dev-d|advance080|w76622353259aea6dd2b5|RUNNING|||||
-|l8-30k-dev-d|baseline|wccbf235ecaa44012ca37|RUNNING|||||
+|l8-30k-dev-d|advance080|w76622353259aea6dd2b5|6166.29|161|97.516%|0|0|
+|l8-30k-dev-d|baseline|wccbf235ecaa44012ca37|5946.87|163|96.933%|0|0|
+|l8-30k-proof-c|advance080|w99a57cf8447d8aa9d315|RUNNING|||||
+|l8-30k-proof-c|baseline|w74b240344b1f5d80ca8c|RUNNING|||||
 
-Decision: Unselected. Test 0.80 advance opening discount against current0.92, same config. Hypothesis: lower driver fees on advance public single-car jobs; retain rescue schedule and all safety gates. Prior team0.92 gainedEUR4375.25 across5paired weeks. Another5% of EUR20k driver spend isEUR1k sensitivity only. Reject lower total margin, anyweek<91%, extra undelivered or refusals.
+Decision: advance080 development pooled +EUR282.55, both seeds positive; candidate minimum97.5155% (baseline96.9325%). Pending untouched proof l8-30k-proof-c. No promotion yet.
