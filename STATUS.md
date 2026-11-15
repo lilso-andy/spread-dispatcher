@@ -1,5 +1,11 @@
 # Shared status
 
+## Season 10 level 8 complete; practice batch02 active
+
+All5 ranking weeks ended and independently verified: total EUR34996.27, all qualified, zero undelivered/refusals. Full run scores are in docs/RANKING_S10_LEVEL8.json. No more season10 level8 attempts remain. The fifth week had45 wins and93.33% on time; service recovery declines began at minute2068 after early refunds. This is a candidate explanation for its low margin, requiring practice testing before changes.
+
+Practice batch02 controller runs runs/level8-batch02/matrix.mjs. Check state.json ownership PID and existing worlds before any resume. Base d9f8018 incorporates both teammate branches; candidate286b508 is the selective medium public quote adjustment. Four profiles include original, medium quote discount, emergency1.8, and permissive notes, with same4 fixed seeds for16 development weeks then fresh proof. Base93tests, medium94tests passed. Freeze presets per profile; no changes to the running source. User updates once per completed >=15-week batch. Target EUR30000 per completed week, minimum90%, including fresh proof remains unmet.
+
 ## Level 8 target EUR30,000 and validated advance opening fee
 
 User now prioritizes ranking when available, then batches of >=15 completed practice weeks at level 8. Target EUR30,000 per week with >=90% on time in each verified week including fresh proof. Level8 dispatch batch01 completed18 ordinary practice worlds. Selected a3fdbcb plus emergency2.0 config: for a single public car ready at least720 minutes later, opening fee is92% of the usual level8 fee; keep scheduled rescue. Four development seeds gained EUR3759.63 and unused dispatch8-proof01 gained EUR615.62 (8183.73 to8799.35), service95.24% to96.40%. Worst selected week93.36%. All18 qualified, fully delivered, zero refusals. Study2 service fell94.38% to93.36%; preserve this tradeoff. See docs/LEVEL8_DISPATCH_BATCH01_RESULTS.json.
