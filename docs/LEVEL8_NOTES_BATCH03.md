@@ -16,9 +16,13 @@ Config baseline {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier
 
 Config chain85 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\study-2\chain85
 
-|study-2|emergency18|wdb462f225173028cf321|d4031ca9c69706126b08ebd610012dce378e98a9|running|||||
+|study-2|emergency18|wdb462f225173028cf321|d4031ca9c69706126b08ebd610012dce378e98a9|7867.11|247|94.332%|0|0|
 
 Config emergency18 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":1.8,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\study-2\emergency18
 
+|study-2|quote135|w2aee702c390a26cdc77c|d4031ca9c69706126b08ebd610012dce378e98a9|7508.59|274|94.526%|0|0|
 
-Checkpoint state running; next finish owned wdb462f225173028cf321
+Config quote135 {"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\study-2\quote135
+
+
+Checkpoint state running; next Push completed matched group study-2
