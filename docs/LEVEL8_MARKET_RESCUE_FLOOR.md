@@ -3,7 +3,7 @@
 {
   "pid": 36216,
   "branch": "work/notes-thanhdatLUT",
-  "state": "running",
+  "state": "completed",
   "source": "cb1cdc72d723e4b2db4fa083fe42365da58e18cc",
   "candidateSource": "29c66d4cbbaa2ea4bb76a671f11f5098837153ef",
   "config": {
@@ -19,7 +19,7 @@
     "trainingEconomy": false,
     "offers": true
   },
-  "decision": "pending",
+  "decision": "reject",
   "holdout": "short-market-rescue-floor-proof-v1",
   "hypothesis": "Last preregistered combination before final preparation freeze: short-public intraday-loss discount gained6706.06EUR/4paired seeds but knownB92.126% disqualifies. Standalone long-route rescue floor1.85 reference raised knownB to93.333% with-215.38EUR. Combine exactly those policies, no cap/fee/quote parameter tuning; cannot add their gains. Expected opportunity scenario retaining some EUR6706 acquisition gain while paying floor cost on long jobs; unknown interaction, no profit guarantee. Validate B first, then daily-a/h, everycandidate>=93% and positive total, then new untouched proof strictly positive. Existing proof from prior policy is NOT reused. Baseline exactcb1/config/level/seed/ended score verified, cached known controls not counted as new worlds. Candidate99tests vs baseline93. If any service failure, reject early; no further tuning in this branch.",
   "runs": [
@@ -377,7 +377,151 @@
         "elapsedSeconds": 70.388,
         "actionRefusals": 0
       }
+    },
+    {
+      "side": "baseline",
+      "seed": "short-market-rescue-floor-proof-v1",
+      "level": 8,
+      "source": "cb1cdc72d723e4b2db4fa083fe42365da58e18cc",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\short-market-rescue-floor-proof-v1\\baseline",
+      "creationUncertain": false,
+      "worldId": "wa97267eb093f92b5be7f",
+      "result": {
+        "worldId": "wa97267eb093f92b5be7f",
+        "score": {
+          "marginCents": 141940,
+          "revenueCents": 527900,
+          "marginShare": 0.26887668118961927,
+          "wonOrders": 44,
+          "onTimeShare": 0.9318181818181818,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "short-market-rescue-floor-proof-v1",
+          "worldId": "wa97267eb093f92b5be7f",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\short-market-rescue-floor-proof-v1\\baseline",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 36.669,
+        "actionRefusals": 0
+      }
+    },
+    {
+      "side": "candidate",
+      "seed": "short-market-rescue-floor-proof-v1",
+      "level": 8,
+      "source": "29c66d4cbbaa2ea4bb76a671f11f5098837153ef",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\short-market-rescue-floor-proof-v1\\candidate",
+      "creationUncertain": false,
+      "worldId": "wbcc44134357cc4f945a0",
+      "result": {
+        "worldId": "wbcc44134357cc4f945a0",
+        "score": {
+          "marginCents": 100030,
+          "revenueCents": 391700,
+          "marginShare": 0.2553740107224917,
+          "wonOrders": 43,
+          "onTimeShare": 0.9069767441860465,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "short-market-rescue-floor-proof-v1",
+          "worldId": "wbcc44134357cc4f945a0",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\short-market-rescue-floor-proof-v1\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 32.453,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "Push pair dispatch8-daily-h"
+  "next": "Final audit and publish selected code only on keep, then freeze tuning",
+  "pairs": [
+    {
+      "seed": "notes4-rescue-proof-b-v1",
+      "delta": 145957,
+      "onTime": 0.9503105590062112,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    },
+    {
+      "seed": "dispatch8-daily-a",
+      "delta": 232853,
+      "onTime": 0.9586206896551724,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    },
+    {
+      "seed": "dispatch8-daily-h",
+      "delta": 109972,
+      "onTime": 0.9765258215962441,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    },
+    {
+      "seed": "short-market-rescue-floor-proof-v1",
+      "delta": -41910,
+      "onTime": 0.9069767441860465,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    }
+  ]
 }
