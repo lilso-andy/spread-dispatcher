@@ -1,3 +1,7 @@
+# Final decision: REJECT after preregistered stressB
+
+Primary three-pair gain+882.28EUR was provisional. StressB added200.41EUR but90.9091% on time, failing93%. Do not deploy. Total four-pair+1082.69EUR does not override failed service. See LEVEL8_LATEST_CHECKPOINT.md and LEVEL8_SHORTCAP25_STRESS.md.
+
 # Short-job economy and capacity trial
 
 Final intermediate occupancy test in this tuning branch: same peer short-public1.25/advance0.80 code, cap0.25 only. cap0.24 met93% on2dev seeds but pooled-412.94EUR; cap0.26 gained193.21EUR on first seed but92.3913%, so rejected early. Test0.25 before viewing any new proof; no further cap grid in this branch. Two EXACT cached ced25 baseline/config/level8/seed/end-score matches verified. Require both candidate weeks>=93% and pooled positive, then positive untouched shortcap25-proof-v1, plus known stressB93% before promotion. Estimated EUR100-600/week is an uncertain opportunity, not interpolation guarantee; all failures retained.
