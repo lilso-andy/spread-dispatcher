@@ -1,3 +1,51 @@
+# Latest level8 checkpoint:44 owned completed server weeks
+
+**No new policy promoted. Target EUR30000 per week remains unmet.** Baseline fallback quote1.4/emergency2.0 is still configs/notes-level8-service-fallback.json, production d4031ca-equivalent; it is NOT certified93%-safe on every week.
+
+This continuation added11 new practice worlds, while reusing exact ced25 baselines only after source/config/level8/seed and ended-score verification. All44 owned worlds ended;39 practice+5ranking overall. No active controllers.
+
+## New policy decisions
+
+- Peer short-public quote1.25/advance0.80 plus cap0.24: first development pair+1075.60EUR at93.75%, second-1488.54EUR at94.24%; pooled-412.94EUR, reject, no new holdout run.
+- Same peer code with cap0.26: first pair+193.21EUR but92.3913%, reject immediately; remaining seeds and new proof NOT run.
+- Final cap0.25: first pair+1078.41EUR at93.4307%; study2-947.19EUR at94.1176%; untouched shortcap25-proof-v1+751.06EUR with100% candidate/baseline on time. Primary provisional keep was overridden by preregistered known stressB: +200.41EUR but90.9091% candidate service (baseline92.126%). Four-pair total+1082.69EUR does NOT override the93% failure. Reject, no code/config promotion.
+
+Four-pair results cents `[{"seed":"l8-30k-short-proof-e","delta":107841,"onTime":0.9343065693430657},{"seed":"study-2","delta":-94719,"onTime":0.9411764705882353},{"seed":"shortcap25-proof-v1","delta":75106,"onTime":1},{"seed":"notes4-rescue-proof-b-v1","delta":20041,"onTime":0.9090909090909091}]`; totalEUR1082.69, worst90.9091%. Code candidate68b526b3a2decdc05eaaad02c18963225437a711 versus frozen baselineced25ae8bbbaba4c11b3a29ccb2d75d08996bf90. All runtime/config details below. Candidate95/baseline93 offline tests passed. Fetched team integrationcb1cdc7 updates reports and adds existing config files but changes no production TypeScript or selected ranking preset relative tod4031ca; actual executed commits above.
+
+|Stage|Seed|Side|World|Commit|Margin EUR|Won|On time|Undelivered|Refusals|
+|---|---|---|---|---|---:|---:|---:|---:|---:|
+|work/shortcap24-validation|l8-30k-short-proof-e|baseline|w641794ab1b04de9894df|ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90|7906.23|228|94.737%|0.0043859649122807015|0|
+|work/shortcap24-validation|l8-30k-short-proof-e|candidate|w2dc5e1582ada10e9390d|04e640e0f01641c0e854ada1cda320ac011962ef|8981.83|272|93.750%|0|0|
+|work/shortcap24-validation|study-2|baseline|w9b6d0ff0bbe82d96be43|ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90|7460.32|241|93.361%|0|0|
+|work/shortcap24-validation|study-2|candidate|w4d17525c6df637ec849b|04e640e0f01641c0e854ada1cda320ac011962ef|5971.78|191|94.241%|0|0|
+|work/shortcap26-validation|l8-30k-short-proof-e|candidate|w6f6bdc72d81c6a076f43|4936bcf501c0f46f581712db658ae33762b17b3c|8099.44|276|92.391%|0|0|
+|work/shortcap25-validation|l8-30k-short-proof-e|candidate|w442404b21358c1773684|68b526b3a2decdc05eaaad02c18963225437a711|8984.64|274|93.431%|0|0|
+|work/shortcap25-validation|study-2|candidate|wddba4ffdaab0282ae6d8|68b526b3a2decdc05eaaad02c18963225437a711|6513.13|204|94.118%|0|0|
+|work/shortcap25-validation|shortcap25-proof-v1|baseline|wdd00179cf3c2c0a60090|ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90|4800.02|111|100.000%|0|0|
+|work/shortcap25-validation|shortcap25-proof-v1|candidate|wf8a1b004b79d767aeaa9|68b526b3a2decdc05eaaad02c18963225437a711|5551.08|127|100.000%|0|0|
+|work/shortcap25-stress|notes4-rescue-proof-b-v1|baseline|w60b8484fbc4da08a53be|ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90|3954.40|127|92.126%|0|0|
+|work/shortcap25-stress|notes4-rescue-proof-b-v1|candidate|wa866bc0d05cb53eb5e73|68b526b3a2decdc05eaaad02c18963225437a711|4154.81|132|90.909%|0|0|
+
+All11 new ended server scores/config/seed identities and deduplicated ledgers independently checked; previous33 were already audited. Baseline cache references are explicitly recorded in local checkpoints; reused baselines are not counted as new worlds.
+
+- w641794ab1b04de9894df: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2796800,"driver_fee":-1930715,"late_refund":-42310,"release_fee":-8152,"waiting":-3000,"undelivered_penalty":-22000}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\l8-30k-short-proof-e\baseline`.
+- w2dc5e1582ada10e9390d: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.24,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":3387600,"driver_fee":-2383447,"release_fee":-5320,"late_refund":-100650}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\l8-30k-short-proof-e\candidate`.
+- w9b6d0ff0bbe82d96be43: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2925900,"driver_fee":-2048405,"release_fee":-15093,"late_refund":-113870,"failed_visit":-2500}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\study-2\baseline`.
+- w4d17525c6df637ec849b: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.24,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2193400,"driver_fee":-1517206,"release_fee":-13886,"late_refund":-60130,"failed_visit":-5000}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\study-2\candidate`.
+- w6f6bdc72d81c6a076f43: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.26,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":3452000,"driver_fee":-2485961,"release_fee":-5320,"late_refund":-150775}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap26-validation\l8-30k-short-proof-e\candidate`.
+- w442404b21358c1773684: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.25,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":3432400,"driver_fee":-2409683,"release_fee":-7603,"late_refund":-116650}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap25-validation\l8-30k-short-proof-e\candidate`.
+- wddba4ffdaab0282ae6d8: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.25,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2309300,"driver_fee":-1576868,"release_fee":-16514,"late_refund":-62105,"failed_visit":-2500}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap25-validation\study-2\candidate`.
+- wdd00179cf3c2c0a60090: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":1525200,"driver_fee":-1045198}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap25-validation\shortcap25-proof-v1\baseline`.
+- wf8a1b004b79d767aeaa9: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.25,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":1522200,"driver_fee":-967092}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap25-validation\shortcap25-proof-v1\candidate`.
+- w60b8484fbc4da08a53be: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":1624800,"driver_fee":-1174760,"late_refund":-54600}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap25-stress\baseline`.
+- wa866bc0d05cb53eb5e73: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.25,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":1543100,"driver_fee":-1074744,"late_refund":-49875,"waiting":-3000}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap25-stress\candidate`.
+
+Local checkpoints: work/shortcap24-validation/checkpoint.json; work/shortcap26-validation/checkpoint.json; work/shortcap25-validation/checkpoint.json; work/shortcap25-stress/checkpoint.json. Do NOT resume/recreate any of these ended worlds. Prototype sources remain local; no new unqualified code pushed. User root notes.ts/test/notes.test.ts pending changes preserved/excluded. No ranking in this continuation (five season12 runs in prior dataset), no final/test-final, no PR merge/force push or teammate branch edits. No raw logs/reveals/env/key committed.
+
+Prior33-world audit follows as historical context; current decision above supersedes provisional/historical recommendations.
+
+---
+
 # Latest level8 checkpoint:33 completed server weeks
 
 **No new algorithm/config qualified for promotion. EUR30000 PER WEEK remains unmet.** Keep quote1.4/emergency2.0 baseline fallback only, configs/notes-level8-service-fallback.json; this is NOT certified to achieve93% on every week. Production source remains d4031ca-equivalent.
