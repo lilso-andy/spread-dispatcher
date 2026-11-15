@@ -3,7 +3,7 @@
 {
   "pid": 36312,
   "branch": "work/notes-thanhdatLUT",
-  "state": "running",
+  "state": "completed",
   "source": "cb1cdc72d723e4b2db4fa083fe42365da58e18cc",
   "candidateSource": "18a249785f5c328e7ba8dd5fcdcb4dec4a7b1fc2",
   "config": {
@@ -19,7 +19,7 @@
     "trainingEconomy": false,
     "offers": true
   },
-  "decision": "pending",
+  "decision": "keep",
   "holdout": "short-market-proof-v1",
   "hypothesis": "Latest group18d broad discount gains but daily-a91.78% fails93%. Compare accepted pre-discount fallback cb1 with a candidate integrating18d broad-loss signal ONLY on single-car public nonpremium routes<=120min. Other jobs retain original fallback prices, all posted fees unchanged. Reactive service guard failed90.77%, so no reactive gate combined. Visible ended snapshots show full daily policy adds10different wins (6shortpublic/4other) and loses3 versus oldcontrol on daily-a; not same-order causal attribution. Opportunity scenario EUR300-1500/week assumes recovering some adverse medium/private exposure while retaining some daily-h uplift3837.96; not a guarantee. Primary known seeds daily-a/h, BOTH completed regardless a failure for complete attribution; promote only if everycandidate>=93%, pooled positive, then new untouched proof positive and known stressB also passes before deployment. Controls from team metadata require exact cb1/config/level/seed, snapshotReads1, ended backend score and complete server ledger verification. Latest18d is a reference, not accepted control, because its91.78% week violates user93%.",
   "runs": [
@@ -260,9 +260,146 @@
         "elapsedSeconds": 56.239,
         "actionRefusals": 0
       }
+    },
+    {
+      "side": "baseline",
+      "seed": "short-market-proof-v1",
+      "level": 8,
+      "source": "cb1cdc72d723e4b2db4fa083fe42365da58e18cc",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\short-market-proof-v1\\baseline",
+      "creationUncertain": false,
+      "worldId": "w33f17b23dc6c8875e0af",
+      "result": {
+        "worldId": "w33f17b23dc6c8875e0af",
+        "score": {
+          "marginCents": 1169142,
+          "revenueCents": 3370800,
+          "marginShare": 0.34684407262370953,
+          "wonOrders": 257,
+          "onTimeShare": 0.9883268482490273,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "short-market-proof-v1",
+          "worldId": "w33f17b23dc6c8875e0af",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\short-market-proof-v1\\baseline",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 64.375,
+        "actionRefusals": 0
+      }
+    },
+    {
+      "side": "candidate",
+      "seed": "short-market-proof-v1",
+      "level": 8,
+      "source": "18a249785f5c328e7ba8dd5fcdcb4dec4a7b1fc2",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\short-market-proof-v1\\candidate",
+      "creationUncertain": false,
+      "worldId": "wc8c2686dfeb7792780db",
+      "result": {
+        "worldId": "wc8c2686dfeb7792780db",
+        "score": {
+          "marginCents": 1220666,
+          "revenueCents": 3407900,
+          "marginShare": 0.3581871533789137,
+          "wonOrders": 262,
+          "onTimeShare": 1,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "short-market-proof-v1",
+          "worldId": "wc8c2686dfeb7792780db",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\short-market-proof-v1\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 58.259,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "Push pair dispatch8-daily-h"
+  "next": "Audit, then known stressB before any promotion if primary keep",
+  "pairs": [
+    {
+      "seed": "dispatch8-daily-a",
+      "delta": 341683,
+      "onTime": 0.9570552147239264,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    },
+    {
+      "seed": "dispatch8-daily-h",
+      "delta": 278199,
+      "onTime": 0.9912663755458515,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    },
+    {
+      "seed": "short-market-proof-v1",
+      "delta": 51524,
+      "onTime": 1,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    }
+  ]
 }
 
 Baseline93/candidate97 tests passed. No ranking/final, no raw logs/reveal/key committed.
