@@ -57,10 +57,102 @@
       },
       "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\baseline",
       "creationUncertain": false,
-      "worldId": "w641794ab1b04de9894df"
+      "worldId": "w641794ab1b04de9894df",
+      "result": {
+        "worldId": "w641794ab1b04de9894df",
+        "score": {
+          "marginCents": 790623,
+          "revenueCents": 2796800,
+          "marginShare": 0.28268842963386726,
+          "wonOrders": 228,
+          "onTimeShare": 0.9473684210526315,
+          "undeliveredShare": 0.0043859649122807015,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "l8-30k-short-proof-e",
+          "worldId": "w641794ab1b04de9894df",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\baseline",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 66.54,
+        "actionRefusals": 0
+      }
+    },
+    {
+      "seed": "l8-30k-short-proof-e",
+      "level": 8,
+      "side": "candidate",
+      "source": "04e640e0f01641c0e854ada1cda320ac011962ef",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.24,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\candidate",
+      "creationUncertain": false,
+      "worldId": "w2dc5e1582ada10e9390d",
+      "result": {
+        "worldId": "w2dc5e1582ada10e9390d",
+        "score": {
+          "marginCents": 898183,
+          "revenueCents": 3387600,
+          "marginShare": 0.2651384460975322,
+          "wonOrders": 272,
+          "onTimeShare": 0.9375,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.24,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "l8-30k-short-proof-e",
+          "worldId": "w2dc5e1582ada10e9390d",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 89.621,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "finish owned w641794ab1b04de9894df"
+  "next": "Push pair l8-30k-short-proof-e"
 }
 
 Baseline93/candidate95 tests pass. Never ranking/final here.
