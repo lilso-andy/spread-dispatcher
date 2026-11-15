@@ -12,7 +12,7 @@ Four seeds, baseline reused only for exact same code/config/level/seed. Sixteen 
 |emergency18|646.21|94.332%|
 |quote135|1917.43|94.526%|
 
-Selected for independent proof: quote135. Proof state running; decision **pending**; delta pending. Target EUR30000 in one week remains unmet. No claim of top10 readiness.
+Selected for independent proof: quote135. Proof state completed; decision **keep**; delta 424.76 EUR. Target EUR30000 in one week remains unmet. No claim of top10 readiness.
 
 |Seed|Profile|World|Commit|Margin EUR|Won|On time|Undelivered|Refusals|
 |---|---|---|---|---:|---:|---:|---:|---:|
@@ -33,7 +33,7 @@ Selected for independent proof: quote135. Proof state running; decision **pendin
 |notes3-chain-dev-b-v1|emergency18|wc38ec8f48e68ec9b60e4|d4031ca9c69706126b08ebd610012dce378e98a9|6979.00|198|95.455%|0|0|
 |notes3-chain-dev-b-v1|quote135|w5f4ce3d9784c98b5eed6|d4031ca9c69706126b08ebd610012dce378e98a9|8010.87|224|96.875%|0|0|
 |notes3-chain-proof-unused-v1|proof-baseline|w2c4cf1f167eba8147411|d4031ca9c69706126b08ebd610012dce378e98a9|8107.56|218|94.954%|0|0|
-|notes3-chain-proof-unused-v1|proof-candidate|wa20a14337da3224b0759|d4031ca9c69706126b08ebd610012dce378e98a9|running|||||
+|notes3-chain-proof-unused-v1|proof-candidate|wa20a14337da3224b0759|d4031ca9c69706126b08ebd610012dce378e98a9|8532.32|235|95.745%|0|0|
 
 ## Complete configurations and local recovery checkpoints
 
@@ -77,6 +77,7 @@ Every completed score independently re-read from server and reconciled to dedupl
 - wc38ec8f48e68ec9b60e4: `{"release_fee":-2536,"revenue":2822200,"driver_fee":-2002639,"late_refund":-119125}`
 - w5f4ce3d9784c98b5eed6: `{"release_fee":-2536,"revenue":3077800,"driver_fee":-2205427,"late_refund":-65750,"waiting":-3000}`
 - w2c4cf1f167eba8147411: `{"revenue":2842100,"driver_fee":-1940294,"release_fee":-4174,"late_refund":-80200,"failed_visit":-6676}`
+- wa20a14337da3224b0759: `{"revenue":3037600,"driver_fee":-2113418,"late_refund":-70950}`
 
 ## Mechanism and limitations
 
