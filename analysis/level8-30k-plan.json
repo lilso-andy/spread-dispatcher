@@ -60,5 +60,12 @@
     "seed": "study-2",
     "reason": "Known old-source quote1.25 loss/service stress; mandatory same-source pair before promotion even if fresh proof passes. Not a holdout. Require both candidate>=91% and no extra undelivered/refusals; pooled margin gain including stress."
   },
-  "quoteDecision": "Reject global quote1.25: unseen proof lostEUR276.62 despite57 additional wins; on-time95.161%. Keep selected quote1.4. Known stress pair not started because candidate already rejected."
+  "quoteDecision": "Reject global quote1.25: unseen proof lostEUR276.62 despite57 additional wins; on-time95.161%. Keep selected quote1.4. Known stress pair not started because candidate already rejected.",
+  "shortQuoteHypothesis": {
+    "source": "f91970e equivalent runtime + short public quote cap1.25",
+    "reason": "Global reduction failed proof; short-route net contribution increased EUR497.08 andEUR455.87 on dev c/d while long/medium gains were inconsistent. Test only nonpremium single-car public jobs <=120 road minutes, preserve cost floor, capacity and all other quotes. These group deltas include changed win composition, not guaranteed causal standalone uplift.",
+    "reject": "Nonpositive paired total, any candidateweek<91%, extra undelivered/refusals or failed untouchedproof. Known study2 stress before any promotion.",
+    "holdout": "l8-30k-short-proof-e",
+    "stress": "study-2"
+  }
 }
