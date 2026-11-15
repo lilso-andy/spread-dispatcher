@@ -1,5 +1,11 @@
 # Shared status
 
+## Season11 finished; bounded service recovery practice active
+
+Season11 level8 finished all5 ranking runs, EUR38947.72 total, every week qualified and fully delivered, zero refusals. Frozen runtime d9f8018 and emergency2.0, strict notes, advance opening0.92. Reports docs/RANKING_S11_LEVEL8.md/json. The weekly EUR30000 target is still unmet.
+
+Practice batch03 now owns controller runs/level8-batch03/matrix.mjs under terminal60109. Read state.json for PID and exact world ownership. Baseline3de9af7 passed93 tests. Bounded recovery aa3f84e passed98. Eight identical seed pairs give16 new completed weeks, then untouched dispatch8-recovery-proof only if eligible. See runs/level8-batch03/plan.md for the preregistered hypothesis. For level8 only, permit one short public non-premium quote after all outstanding work clears if the completed-order budget allows one further late job within90%; local8drivers, slack360min, drive<=120min. All other route/capacity/note and quoted reservations remain. Do not promote before full end-week validation. Avoid second controllers on the existing worlds. Ranking seasons10 and11 have used all five level8 attempts. Two unfinished level7 batch05 worlds and three old season7 ranking worlds remain parked.
+
 ## Level 8 batch02 rejected after fresh proof
 
 18 completed weeks and all final scores independently audited. Permissive notes gained EUR3986.74 across4 development seeds but lost EUR2123.75 on unused dispatch8-proof02 and delivered only88.30% on time. REJECT. Medium quote adjustment lost EUR980.98 pooled. Emergency1.8 gained EUR352.84 development but was not selected for the preregistered single-candidate proof. Keep d9f8018 runtime, strictNotes=true, fee1.08/emergency2.0 and advance opening factor0.92. Two spread1 candidate runs reconnected and rebuilt; retain their diagnostics in the report. All orders delivered and no refused actions in all18 weeks. Complete inputs and outcomes in docs/LEVEL8_DISPATCH_BATCH02_RESULTS.json.
