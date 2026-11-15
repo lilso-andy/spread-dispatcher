@@ -164,7 +164,121 @@
         "elapsedSeconds": 46.22,
         "actionRefusals": 0
       }
+    },
+    {
+      "side": "baseline",
+      "seed": "notes4-rescue-proof-c-v1",
+      "level": 8,
+      "source": "db510d229e21aa5441ba896ab39eaff5c055310a",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\rescue-two-proofs\\notes4-rescue-proof-c-v1\\baseline",
+      "creationUncertain": false,
+      "worldId": "w62409859b5f2af06e2fa",
+      "result": {
+        "worldId": "w62409859b5f2af06e2fa",
+        "score": {
+          "marginCents": 1289516,
+          "revenueCents": 4371800,
+          "marginShare": 0.2949622581087881,
+          "wonOrders": 299,
+          "onTimeShare": 0.959866220735786,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "notes4-rescue-proof-c-v1",
+          "worldId": "w62409859b5f2af06e2fa",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\rescue-two-proofs\\notes4-rescue-proof-c-v1\\baseline",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 102.138,
+        "actionRefusals": 0
+      }
+    },
+    {
+      "side": "candidate",
+      "seed": "notes4-rescue-proof-c-v1",
+      "level": 8,
+      "source": "db510d229e21aa5441ba896ab39eaff5c055310a",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 1.8,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\rescue-two-proofs\\notes4-rescue-proof-c-v1\\candidate",
+      "creationUncertain": false,
+      "worldId": "w08e5088208f1f4353146",
+      "result": {
+        "worldId": "w08e5088208f1f4353146",
+        "score": {
+          "marginCents": 1213428,
+          "revenueCents": 4392400,
+          "marginShare": 0.2762562608141335,
+          "wonOrders": 299,
+          "onTimeShare": 0.939799331103679,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 1.8,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "notes4-rescue-proof-c-v1",
+          "worldId": "w08e5088208f1f4353146",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\rescue-two-proofs\\notes4-rescue-proof-c-v1\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 112.74,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "Push pair notes4-rescue-proof-b-v1"
+  "next": "Push pair notes4-rescue-proof-c-v1"
 }
