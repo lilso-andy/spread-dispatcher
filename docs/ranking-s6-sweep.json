@@ -1,0 +1,438 @@
+{
+  "season": 6,
+  "team": "team-co-tai",
+  "verifiedAt": "2026-11-14T14:50:12.355Z",
+  "sweepSource": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+  "levels": [
+    {
+      "level": 1,
+      "rank": null,
+      "played": 3,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "w3174e78d789eec375fd4",
+          "score": {
+            "marginCents": 991577,
+            "revenueCents": 4915400,
+            "marginShare": 0.20172864873662366,
+            "wonOrders": 767,
+            "onTimeShare": 0.984354628422425,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "w2205668702bae5b35f73",
+          "score": {
+            "marginCents": 797197,
+            "revenueCents": 4576200,
+            "marginShare": 0.1742050172632315,
+            "wonOrders": 722,
+            "onTimeShare": 0.9722991689750693,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 3,
+          "worldId": "w115d39caed2033251de4",
+          "score": {
+            "marginCents": 888290,
+            "revenueCents": 4838500,
+            "marginShare": 0.18358788880851504,
+            "wonOrders": 760,
+            "onTimeShare": 0.9789473684210527,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.6,
+            "feeMultiplier": 0.86,
+            "emergencyMultiplier": 1.65,
+            "marginReserve": 0.02,
+            "minMarginCents": 200,
+            "capacityFraction": 0.5,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": true,
+            "offers": true
+          },
+          "actionRefusals": 0
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "rank": null,
+      "played": 3,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "w4814e11999baf852ab53",
+          "score": {
+            "marginCents": 906372,
+            "revenueCents": 4846500,
+            "marginShare": 0.18701578458681523,
+            "wonOrders": 770,
+            "onTimeShare": 0.9792207792207792,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "w1b32517bc917b03c0611",
+          "score": {
+            "marginCents": 873676,
+            "revenueCents": 5016200,
+            "marginShare": 0.17417088632829633,
+            "wonOrders": 749,
+            "onTimeShare": 0.9719626168224299,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 3,
+          "worldId": "wabcb6ddd45b156979536",
+          "score": {
+            "marginCents": 840618,
+            "revenueCents": 4845400,
+            "marginShare": 0.1734878441408346,
+            "wonOrders": 767,
+            "onTimeShare": 0.9882659713168188,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.6,
+            "feeMultiplier": 0.86,
+            "emergencyMultiplier": 1.65,
+            "marginReserve": 0.02,
+            "minMarginCents": 200,
+            "capacityFraction": 0.5,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": true,
+            "offers": true
+          },
+          "actionRefusals": 0
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "rank": null,
+      "played": 3,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "wa9909fa6c0db7cc2a6dd",
+          "score": {
+            "marginCents": 311177,
+            "revenueCents": 1835500,
+            "marginShare": 0.16953255243802778,
+            "wonOrders": 271,
+            "onTimeShare": 0.9372693726937269,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "w673578375f6df5881ec8",
+          "score": {
+            "marginCents": 807984,
+            "revenueCents": 4534800,
+            "marginShare": 0.17817412013760253,
+            "wonOrders": 725,
+            "onTimeShare": 0.976551724137931,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 3,
+          "worldId": "wadb4ac4593e2e0274f57",
+          "score": {
+            "marginCents": 898492,
+            "revenueCents": 5009700,
+            "marginShare": 0.17935046010739167,
+            "wonOrders": 765,
+            "onTimeShare": 0.9712418300653595,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.6,
+            "feeMultiplier": 0.86,
+            "emergencyMultiplier": 1.65,
+            "marginReserve": 0.02,
+            "minMarginCents": 200,
+            "capacityFraction": 0.5,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": true,
+            "offers": true
+          },
+          "actionRefusals": 0
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "rank": null,
+      "played": 2,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "wac32d11db9339ac39cdd",
+          "score": {
+            "marginCents": 230793,
+            "revenueCents": 1235000,
+            "marginShare": 0.18687692307692308,
+            "wonOrders": 85,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "w845f4eb79dc38f00ce0d",
+          "score": {
+            "marginCents": 468350,
+            "revenueCents": 2517100,
+            "marginShare": 0.18606729967025545,
+            "wonOrders": 185,
+            "onTimeShare": 0.9945945945945946,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "rank": null,
+      "played": 2,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "w459ef7f4709060efad12",
+          "score": {
+            "marginCents": 142327,
+            "revenueCents": 772600,
+            "marginShare": 0.1842182241780999,
+            "wonOrders": 64,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "wbfba98afd3b4f682a471",
+          "score": {
+            "marginCents": 48898,
+            "revenueCents": 244800,
+            "marginShare": 0.1997467320261438,
+            "wonOrders": 23,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "rank": null,
+      "played": 3,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "we4df81484ba0cb962c7c",
+          "score": {
+            "marginCents": 206001,
+            "revenueCents": 1341300,
+            "marginShare": 0.15358309103108925,
+            "wonOrders": 116,
+            "onTimeShare": 1,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "w6edcaf9d8becb966d95a",
+          "score": {
+            "marginCents": 164869,
+            "revenueCents": 1141000,
+            "marginShare": 0.1444951796669588,
+            "wonOrders": 96,
+            "onTimeShare": 0.9895833333333334,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 3,
+          "worldId": "we1d7a7acd320fc0931ac",
+          "score": {
+            "marginCents": 272185,
+            "revenueCents": 1700700,
+            "marginShare": 0.16004292350208738,
+            "wonOrders": 164,
+            "onTimeShare": 0.9878048780487805,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.05,
+            "feeMultiplier": 0.95,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.13,
+            "minMarginCents": 900,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 0
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "rank": null,
+      "played": 2,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "w63d5f03b3a6efc2de2a4",
+          "score": {
+            "marginCents": 625871,
+            "revenueCents": 2949400,
+            "marginShare": 0.21220282091272802,
+            "wonOrders": 223,
+            "onTimeShare": 0.9417040358744395,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "wa425381d47773f3f5d09",
+          "score": {
+            "marginCents": 814244,
+            "revenueCents": 3375300,
+            "marginShare": 0.241236038278079,
+            "wonOrders": 270,
+            "onTimeShare": 0.9777777777777777,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.02,
+            "emergencyMultiplier": 2.4,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 5
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "rank": null,
+      "played": 2,
+      "qualified": false,
+      "officialMarginCents": null,
+      "officialOnTimeShare": null,
+      "runs": [
+        {
+          "run": 1,
+          "worldId": "w3b595f7951efb916b8f3",
+          "score": {
+            "marginCents": 882372,
+            "revenueCents": 3508300,
+            "marginShare": 0.25150984807456606,
+            "wonOrders": 233,
+            "onTimeShare": 0.9742489270386266,
+            "undeliveredShare": 0,
+            "ranked": true
+          }
+        },
+        {
+          "run": 2,
+          "worldId": "w18e3ba533ccf76e09438",
+          "score": {
+            "marginCents": 1004625,
+            "revenueCents": 3949500,
+            "marginShare": 0.25436764147360424,
+            "wonOrders": 276,
+            "onTimeShare": 0.9528985507246377,
+            "undeliveredShare": 0,
+            "ranked": true
+          },
+          "source": "9e4748567cc7454c4e7f0c289df4a55f7fe55f34",
+          "config": {
+            "quoteMultiplier": 1.4,
+            "feeMultiplier": 1.08,
+            "emergencyMultiplier": 2.2,
+            "marginReserve": 0.15,
+            "minMarginCents": 2000,
+            "capacityFraction": 0.28,
+            "maxApproachMinutes": 100,
+            "minLeadMinutes": 180,
+            "strictNotes": true,
+            "trainingEconomy": false,
+            "offers": true
+          },
+          "actionRefusals": 0
+        }
+      ]
+    }
+  ]
+}

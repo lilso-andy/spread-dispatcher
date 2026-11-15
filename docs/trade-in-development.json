@@ -1,0 +1,375 @@
+{
+  "level": 8,
+  "config": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.2,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "seeds": [
+    "dispatch-holdout-a",
+    "dispatch-holdout-b",
+    "holdout-3",
+    "spread-1",
+    "study-2"
+  ],
+  "baseline": {
+    "rankedRuns": 5,
+    "failedSeeds": [],
+    "totalMarginCents": 1794712,
+    "worstOnTimeShare": 0.9363057324840764,
+    "weightedOnTimeShare": 0.9735294117647059,
+    "wonOrders": 680,
+    "undeliveredOrders": 1,
+    "offers": 16631,
+    "reprices": 385,
+    "refusedActions": 0,
+    "offlineMaxActionLagSeconds": 0.20000000000004547,
+    "offlineLateQuotes": 0
+  },
+  "candidate": {
+    "rankedRuns": 5,
+    "failedSeeds": [],
+    "totalMarginCents": 1848955,
+    "worstOnTimeShare": 0.9530201342281879,
+    "weightedOnTimeShare": 0.9806259314456036,
+    "wonOrders": 671,
+    "undeliveredOrders": 0,
+    "offers": 13965,
+    "reprices": 119,
+    "refusedActions": 0,
+    "offlineMaxActionLagSeconds": 1.7499999999972715,
+    "offlineLateQuotes": 0
+  },
+  "pairs": [
+    {
+      "seed": "dispatch-holdout-a",
+      "baseline": {
+        "worldId": "w0ca9d0a5d00ca3ce87ad",
+        "score": {
+          "marginCents": 363606,
+          "revenueCents": 1559400,
+          "marginShare": 0.23317045017314353,
+          "wonOrders": 114,
+          "onTimeShare": 0.9912280701754386,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1039,
+          "post": 136,
+          "reprice": 15,
+          "offer": 960,
+          "withdraw": 1
+        },
+        "offerAnswers": {
+          "expired": 788,
+          "declined": 172
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 57.597
+      },
+      "candidate": {
+        "worldId": "w504e695350317ef076b7",
+        "score": {
+          "marginCents": 367127,
+          "revenueCents": 1554800,
+          "marginShare": 0.23612490352456908,
+          "wonOrders": 113,
+          "onTimeShare": 1,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1039,
+          "post": 132,
+          "reprice": 7,
+          "offer": 991,
+          "withdraw": 1
+        },
+        "offerAnswers": {
+          "expired": 826,
+          "declined": 164,
+          "accepted": 1
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 62.594
+      },
+      "marginDeltaCents": 3521,
+      "onTimeDelta": 0.00877192982456143
+    },
+    {
+      "seed": "dispatch-holdout-b",
+      "baseline": {
+        "worldId": "w3753a0ff548ad1073b92",
+        "score": {
+          "marginCents": 566393,
+          "revenueCents": 2500100,
+          "marginShare": 0.22654813807447702,
+          "wonOrders": 177,
+          "onTimeShare": 0.9943502824858758,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1038,
+          "post": 207,
+          "offer": 4481,
+          "reprice": 7
+        },
+        "offerAnswers": {
+          "expired": 3769,
+          "declined": 712
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 80.49
+      },
+      "candidate": {
+        "worldId": "w504e6da2a3945ca2fd96",
+        "score": {
+          "marginCents": 566393,
+          "revenueCents": 2500100,
+          "marginShare": 0.22654813807447702,
+          "wonOrders": 177,
+          "onTimeShare": 0.9943502824858758,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1038,
+          "post": 207,
+          "offer": 4481,
+          "reprice": 7
+        },
+        "offerAnswers": {
+          "expired": 3769,
+          "declined": 712
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 89.71
+      },
+      "marginDeltaCents": 0,
+      "onTimeDelta": 0
+    },
+    {
+      "seed": "holdout-3",
+      "baseline": {
+        "worldId": "w6e8782f7d7151db25075",
+        "score": {
+          "marginCents": 290003,
+          "revenueCents": 1396300,
+          "marginShare": 0.20769390532120605,
+          "wonOrders": 85,
+          "onTimeShare": 0.9882352941176471,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1036,
+          "post": 100,
+          "offer": 1720,
+          "reprice": 12
+        },
+        "offerAnswers": {
+          "expired": 1478,
+          "declined": 241,
+          "accepted": 1
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 77.093
+      },
+      "candidate": {
+        "worldId": "wed277a13f99cc9db5834",
+        "score": {
+          "marginCents": 287183,
+          "revenueCents": 1396300,
+          "marginShare": 0.20567428203108215,
+          "wonOrders": 85,
+          "onTimeShare": 0.9882352941176471,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1036,
+          "post": 99,
+          "offer": 1728,
+          "reprice": 10
+        },
+        "offerAnswers": {
+          "expired": 1497,
+          "declined": 230,
+          "accepted": 1
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 67.313
+      },
+      "marginDeltaCents": -2820,
+      "onTimeDelta": 0
+    },
+    {
+      "seed": "spread-1",
+      "baseline": {
+        "worldId": "wa57f91041a7424756293",
+        "score": {
+          "marginCents": 318867,
+          "revenueCents": 1557000,
+          "marginShare": 0.20479576107899808,
+          "wonOrders": 147,
+          "onTimeShare": 0.9659863945578231,
+          "undeliveredShare": 0.006802721088435374,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1037,
+          "post": 175,
+          "offer": 2310,
+          "reprice": 216,
+          "withdraw": 3
+        },
+        "offerAnswers": {
+          "expired": 1967,
+          "declined": 342,
+          "accepted": 1
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0.20000000000004547,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 82.63
+      },
+      "candidate": {
+        "worldId": "we51c2126916cedbec342",
+        "score": {
+          "marginCents": 366157,
+          "revenueCents": 1574100,
+          "marginShare": 0.2326135569531796,
+          "wonOrders": 147,
+          "onTimeShare": 0.9727891156462585,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1037,
+          "post": 166,
+          "offer": 1196,
+          "reprice": 15,
+          "withdraw": 2
+        },
+        "offerAnswers": {
+          "expired": 1012,
+          "declined": 183,
+          "accepted": 1
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0.20000000000004547,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 69.986
+      },
+      "marginDeltaCents": 47290,
+      "onTimeDelta": 0.006802721088435382
+    },
+    {
+      "seed": "study-2",
+      "baseline": {
+        "worldId": "w955232a2e330da8ccd82",
+        "score": {
+          "marginCents": 255843,
+          "revenueCents": 2275600,
+          "marginShare": 0.11242880998417999,
+          "wonOrders": 157,
+          "onTimeShare": 0.9363057324840764,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1040,
+          "post": 209,
+          "offer": 7160,
+          "reprice": 135
+        },
+        "offerAnswers": {
+          "expired": 6242,
+          "declined": 913,
+          "accepted": 5
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 124.528
+      },
+      "candidate": {
+        "worldId": "w8ff23279403df47ad4af",
+        "score": {
+          "marginCents": 262095,
+          "revenueCents": 2086700,
+          "marginShare": 0.12560262615613169,
+          "wonOrders": 149,
+          "onTimeShare": 0.9530201342281879,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1040,
+          "post": 192,
+          "offer": 5569,
+          "reprice": 80,
+          "withdraw": 1
+        },
+        "offerAnswers": {
+          "expired": 4888,
+          "declined": 676,
+          "accepted": 5
+        },
+        "rateReplay": {
+          "maxLagSeconds": 1.7499999999972715,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 100.789
+      },
+      "marginDeltaCents": 6252,
+      "onTimeDelta": 0.01671440174411143
+    }
+  ],
+  "source": {
+    "baseline": "5f33186967c13fc4d86564c2877490ef3a8e26ce",
+    "candidate": "19ba3764e0e660a967c9050ed199143a985a8e1b"
+  },
+  "phase": "Five previously used development seeds; new holdouts recorded separately",
+  "offlineReplayNote": "Action-token replay excludes network/read latency and behavior changes. It is not live-final validation."
+}
