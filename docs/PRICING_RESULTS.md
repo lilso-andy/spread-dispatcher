@@ -768,3 +768,79 @@ Dispatcher `2213766`, 73/73 test offline cho hai bản thử. Bản vá opt-in `
 | Phí 0,80 | 3 | full-check-b | `wf1c3a078b911a3895d8f` | 489518 | 498 | 92.37% | 0.00% | 0 |
 
 Giữ phí 0,86. Phí 0,80 thua tổng margin trên hai seed chung ở cả level 2 và 3. Phí giảm chọn lọc ở level 1 đạt ngưỡng mới 91% nhưng cũng thua tổng margin. Mục tiêu €70.000 qua năm tuần chưa đạt. Không dùng ranking.
+
+## 80K target: preregistered service-budget experiment (2026-11-14)
+
+User explicitly approved desk.ts and relevant test changes for an 8% recovery pause, restricted to opted-in training levels 1–3. Source baseline `ab4f5b139176de9c12687a7b73685d8d19403af3` differs from main `9dccfdb`; candidate is exactly that source plus `analysis/training-service-budget.patch`. The personal branch fast-forwarded to the confirmed integration, preserving all teammate changes. Baseline 87/87 offline tests, candidate 89/89 (boundary and level isolation tests included).
+
+Hypothesis: 4.5% historical completed-order lateness stops profitable quoting too early relative to the user's >=90% weekly constraint. Change only this pause to 8%; opening fee .86, rescue, capacity and lead time unchanged. Historical full-check-b level2 ledger: revenue €42,468, driver fees €35,179.08, refunds €1,197.90, release €57.35. 246 requests rejected by recovery pause; replay on the same states found only 7 admissions from doubling capacity, 9 from lead180→90, 10 from lowering reserve. Actual baseline-state decision replay matched all recorded decisions. These are opportunity counts, not foregone margin: future driver availability and net contribution remain unknown. At the historical €10.04/order average, 246 requests correspond to an illustrative €2,470/week ONLY if all become equally profitable noncancelled orders without harming other work. No such gain is assumed in selection.
+
+Three rounds, level1→2→3, two paired development seeds `full-check-a`, `full-check-b`; pre-reserved holdout `pricing80-service-holdout-m` only after positive aggregate development margin and every candidate final week >=90%. Reject on failed weekly threshold or nonpositive holdout difference. Full configs, world IDs, source hashes, output paths and next actions in `analysis/pricing80k-checkpoint.json`. At most two own controllers; slots checked before creation. Raw journals/reveal remain local. No ranking until >=€80,000 observed over five full practice weeks per level, each >=90%; five-times a development average alone is not that evidence. Any ranking remains unseen-world risk. Report all negative outcomes. No final.
+
+### Service-budget completed pairs
+
+Full config/source/output/ledger in the checkpoint JSON. Completed-week scores only; comparisons are paired by level and seed.
+
+| Level | Seed | Version | World | Margin EUR | Won | On time | Undelivered | Refusals |
+|---:|---|---|---|---:|---:|---:|---:|---:|
+| 1 | full-check-a | baseline | `webfa6cdb7737ccf51094` | 8038.74 | 761 | 96.85% | 0.00% | 0 |
+| 1 | full-check-a | candidate | `wf8413d54aafa97a678f7` | 8038.74 | 761 | 96.85% | 0.00% | 0 |
+| 1 | full-check-b | baseline | `w8e1c3628d374835ef743` | 4907.84 | 601 | 93.51% | 0.00% | 0 |
+| 1 | full-check-b | candidate | `waaf11745d7c6b42ae561` | 5589.12 | 781 | 92.70% | 0.13% | 0 |
+| 1 | pricing80-service-holdout-m | baseline | `w42d2adf0e9c7d8aca7ed` | 8138.28 | 723 | 97.23% | 0.00% | 0 |
+| 1 | pricing80-service-holdout-m | candidate | `w5efd684221a3bb36a2d5` | 8138.28 | 723 | 97.23% | 0.00% | 0 |
+| 2 | full-check-a | baseline | `w2ed8f8c06ed4cb4732eb` | 8971.74 | 761 | 97.37% | 0.00% | 0 |
+| 2 | full-check-a | candidate | `wfde5d0db07ce216325a0` | 8971.74 | 761 | 97.37% | 0.00% | 0 |
+| 2 | full-check-b | baseline | `w439394a9477c494fa077` | 6033.67 | 601 | 94.68% | 0.00% | 0 |
+| 2 | full-check-b | candidate | `wc8a4d2fd05b1e87ddf94` | 8124.18 | 782 | 95.01% | 0.00% | 0 |
+| 2 | pricing80-service-holdout-m | baseline | `wa3c1316a73629ee82e83` | 8890.93 | 724 | 97.51% | 0.00% | 0 |
+| 2 | pricing80-service-holdout-m | candidate | `w0851f7cef7dc45b85cce` | 8890.93 | 724 | 97.51% | 0.00% | 0 |
+
+Level 1: 3 complete pairs, baseline €21,084.86, candidate €21,766.14, delta €+681.28; candidate minimum on-time 92.70%. Selection pending development/holdout gate.
+
+Level 2: 3 complete pairs, baseline €23,896.34, candidate €25,986.85, delta €+2,090.51; candidate minimum on-time 95.01%. Selection pending development/holdout gate.
+
+## Target80 continuation, Astra
+
+Frozen integration 1b3c2beed33fc9ff3fc720e20248a9b9d04c2bd2. Baseline passed 91 offline tests. Latest user requests practice only until each level1–3 achieves EUR80,000 across five weeks, with weekly on-time minimum interpreted as91%. Source and full configs are recorded in local work/target80/results checkpoints, including original world IDs. Existing controllers were monitored through completion.
+
+Level1 target80-dev-a baseline world w8c630c06c43d78e8ff7f ended at 497246 cents, 745 won,92.885906% on time,0 undelivered,0 refusals. Fee082 world w0c2d80b4c2b926b93f52 ended at502703 cents,748 won,92.379679% on time,0 undelivered,0 refusals. Delta +5457 cents (+1.10%). One seed only, candidate not selected. Full config is quoteMultiplier1.6,feeMultiplier0.86 baseline/0.82 candidate,emergencyMultiplier1.65,marginReserve0.02,minMarginCents200,capacityFraction0.5,maxApproachMinutes100,minLeadMinutes180,strictNotes true,trainingEconomy true,offers true.
+
+Ledger baseline cents revenue5172100,driver_fee-4488669,late_refund-180675,release_fee-5510. Candidate revenue5190000,driver_fee-4505316,late_refund-177350,release_fee-4631. Both reconcile. Baseline had52 driver-fee lines above1.3 times attributed reference fee, totaling732305 cents. Next grounded hypothesis after rotating levels is a lower emergencyMultiplier, with all other settings fixed. Reject any weekly service below91% or nonpositive paired margin. No target reached and no ranking authorized in this continuation.
+
+### Target80 current completed weeks
+
+Full source, configuration, world and recovery paths are in analysis/target80-results.json. All money is game euros.
+
+| Level | Seed | Policy | World | Margin EUR | Won | On time | Undelivered | Refusals |
+|---:|---|---|---|---:|---:|---:|---:|---:|
+| 1 | target80-dev-a | baseline | w8c630c06c43d78e8ff7f | 4972.46 | 745 | 92.8859% | 0.0000% | 0 |
+| 1 | target80-dev-a | fee082 | w0c2d80b4c2b926b93f52 | 5027.03 | 748 | 92.3797% | 0.0000% | 0 |
+| 1 | target80-dev-b | baseline | w9b35a4f3152777312a85 | 9309.54 | 759 | 98.0237% | 0.0000% | 0 |
+| 1 | target80-dev-b | fee082 | w2950d77b937471c6e937 | 9932.41 | 778 | 97.1722% | 0.0000% | 0 |
+| 2 | target80-dev-a | baseline | wed20f8e6fa125ca70470 | 6139.45 | 744 | 94.6237% | 0.0000% | 0 |
+| 2 | target80-dev-a | fee082 | w5bb9d97c164d60e18595 | 6374.91 | 753 | 93.3599% | 0.0000% | 0 |
+| 2 | target80-dev-b | baseline | w10f3ea72cc7b107b1374 | 9850.16 | 758 | 98.1530% | 0.0000% | 0 |
+| 2 | target80-dev-b | fee082 | we68cae7df9442ebe1339 | 10579.39 | 780 | 97.5641% | 0.0000% | 0 |
+| 3 | target80-dev-a | baseline | wb27b1e82d83e41462cef | 6701.25 | 744 | 95.2957% | 0.0000% | 0 |
+| 3 | target80-dev-a | fee082 | w0f06eb85e8d71588d019 | 6984.89 | 754 | 93.7666% | 0.0000% | 0 |
+
+Selection pending paired development and fresh holdout. Qualification requires five reserved completed weeks per level totaling more than EUR80,000, with each week at least91% on time.
+
+
+## Level 8 EUR20,000 practice batch (2026-11-15)
+
+Frozen team integration 0b5a2e97a6c617eadbe710d2faf63a99bfc06661. Main is not the executed source. Practice only; minimum service 91%; at least15 new completed worlds requested. Full source/config/world/output/ledger in analysis/level8-20k-results.json. Baseline suite91/91. Never resume before verifying old controller stopped.
+
+|Seed|Variant|World|Margin EUR|Won|On time|Undelivered share|Refusals|
+|---|---|---|---:|---:|---:|---:|---:|
+|l8-20k-dev-a|baseline|wa4b90b4fe2d24fddec59|7183.43|207|99.034%|0|0|
+|l8-20k-dev-a|notes-capacity045|wceb2d96af4f740da3a50|RUNNING|||||
+|l8-20k-dev-a|notes-permissive|w6620d08926e47394555c|9148.16|264|98.106%|0|0|
+|l8-20k-dev-b|baseline|w44112bcf4ded7cb36bde|11931.65|325|96.923%|0|0|
+|l8-20k-dev-b|notes-capacity045|wdf6a9ece16286dd79567|RUNNING|||||
+|l8-20k-dev-b|notes-permissive|w18ab92dd2ce504993d7b|14926.20|386|97.409%|0|0|
+|l8-20k-proof-a|baseline|wce55913d943039e47934|5392.97|149|98.658%|0|0|
+|l8-20k-proof-a|notes-permissive|wd32ff9bd637ab7b24429|6703.91|179|100.000%|0|0|
+
+Decision: Select notes-permissive as an explicit level8 practice profile: development +EUR4959.28; independent proof +EUR1310.94, proof100% on time; worst selected97.409%. Target EUR20000/week not met. Capacity trial pending.
