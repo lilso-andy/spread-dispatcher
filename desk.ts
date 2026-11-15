@@ -261,6 +261,7 @@ export class Desk {
       // Additional, faster options need extra booking slack. Keep the original
       // slowest feasible offer, but do not sell a rush alternative near cutoff.
       if (reservation && route.latestStart < this.now + 2 * this.config.minLeadMinutes) continue
+      if (this.level === 8 && completed.length >= 10 && lateCount / completed.length > 0.02 && route.driveMinutes > 300) continue
       if (!this.capacity(order, route)) continue
       const place = request.legs[0]!.pickup.placeId
       const local = this.localDrivers(order, route).length
@@ -341,7 +342,10 @@ export class Desk {
     const base = this.baseFee(order, legs.length)
     const urgent = order.lastPickupAt - this.now <= 240
     const multiple = Math.max(this.feeMultiplier(order.legs[legs[0]!]!.pickup.placeId), urgent ? (this.level <= 3 && this.config.trainingEconomy ? 1.25 : 1.85) : 0)
-    const feeCents = Math.max(1, Math.round(base * multiple))
+    const leg = order.legs[legs[0]!]!
+    const advancePublicJob = this.level === 8 && order.legs.length === 1 && !urgent
+      && !leg.pickup.privateAddress && !leg.delivery.privateAddress && leg.pickup.window.from >= this.now + 720
+    const feeCents = Math.max(1, Math.round(base * multiple * (advancePublicJob ? 0.92 : 1)))
     const schedule = [{ at: this.now, feeCents }]
     // A single planned rescue raise, well before last pickup, avoids hourly fee conditioning.
     const rescueAt = order.lastPickupAt - 210
