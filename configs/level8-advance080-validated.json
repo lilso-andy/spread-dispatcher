@@ -1,0 +1,13 @@
+{
+  "quoteMultiplier": 1.4,
+  "feeMultiplier": 1.08,
+  "emergencyMultiplier": 2,
+  "marginReserve": 0.15,
+  "minMarginCents": 2000,
+  "capacityFraction": 0.28,
+  "maxApproachMinutes": 100,
+  "minLeadMinutes": 180,
+  "strictNotes": true,
+  "trainingEconomy": false,
+  "offers": true
+}

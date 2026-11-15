@@ -1,0 +1,11 @@
+# Level 8 pricing handoff — 2026-11-15
+
+Personal branch: work/pricing-baotran1604. PR https://github.com/lilso-andy/spread-dispatcher/pull/1. Latest user target EUR30,000 per completed week, minimum91% on-time; ranking now explicitly authorized if available, no final authorization. Season11 was5/5 complete at inspection, so this batch only created ordinary practice worlds. Never start or take over teammate worlds.
+
+Selected algorithm commit f91970e: latest team integration d4031ca plus advance-public opening discount0.80 instead of0.92. Only nonurgent single-car public jobs ready at least720 minutes later; quote floors, rescue schedule, capacity and other levels unchanged. Use configs/level8-advance080-validated.json explicitly. 93/93 offline tests. Three same-seed pairs gained EUR676.99, each positive; fresh proof gained EUR394.44; worst candidate97.5155%, zero undelivered/refusals. This does NOT establish EUR30,000/week.
+
+The earlier strictNotes=false profile improved three old-source pairs but FAILED teammate integrated proof at88.30% and -EUR2123.75. Do not use it as the current default. Old-source capacity0.45 improved pooled margin onlyEUR219.24, lost one seed, and was not selected. All old outcomes remain in analysis/level8-20k-results.json.
+
+Current trials and full configurations, source hashes/diffs, world IDs, machine output directories and controller PIDs are in analysis/level8-30k-results.json. Local driver script: /Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-30k/run.mjs. Source archives level8-v2-src and level8-v2-080 are frozen; exact desk SHA256 is in every checkpoint. Raw logs/reveals and credentials stay local. Do not interpret replay or same-seed repeats as independent evidence.
+
+Before resume, verify old controller stopped on this machine. If running, monitor it. If stopped and a recorded world is unfinished, use the recorded source, full config, world ID and original output journal; do not create a replacement. If world ended, read final score and complete the comparison. At most two owned active worlds, check team slots before creation. After each finished pair commit/push results, then fetch; if new runtime changes, rebaseline before a new experiment.
