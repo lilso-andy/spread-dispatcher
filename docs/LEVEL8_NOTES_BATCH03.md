@@ -32,7 +32,8 @@ Selected for independent proof: quote135. Proof state running; decision **pendin
 |notes3-chain-dev-b-v1|chain85|w1b2b633a4c83dda0f744|6bf843d7f8dfb4aca7f7eb4b5040a2e60e29a2db|8029.32|198|97.475%|0|0|
 |notes3-chain-dev-b-v1|emergency18|wc38ec8f48e68ec9b60e4|d4031ca9c69706126b08ebd610012dce378e98a9|6979.00|198|95.455%|0|0|
 |notes3-chain-dev-b-v1|quote135|w5f4ce3d9784c98b5eed6|d4031ca9c69706126b08ebd610012dce378e98a9|8010.87|224|96.875%|0|0|
-|notes3-chain-proof-unused-v1|proof-baseline|w2c4cf1f167eba8147411|d4031ca9c69706126b08ebd610012dce378e98a9|running|||||
+|notes3-chain-proof-unused-v1|proof-baseline|w2c4cf1f167eba8147411|d4031ca9c69706126b08ebd610012dce378e98a9|8107.56|218|94.954%|0|0|
+|notes3-chain-proof-unused-v1|proof-candidate|wa20a14337da3224b0759|d4031ca9c69706126b08ebd610012dce378e98a9|running|||||
 
 ## Complete configurations and local recovery checkpoints
 
@@ -53,6 +54,7 @@ Selected for independent proof: quote135. Proof state running; decision **pendin
 - wc38ec8f48e68ec9b60e4: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":1.8,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; local output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-b-v1\emergency18`.
 - w5f4ce3d9784c98b5eed6: config `{"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; local output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-b-v1\quote135`.
 - w2c4cf1f167eba8147411: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; local output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\proof\baseline`.
+- wa20a14337da3224b0759: config `{"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; local output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\proof\candidate`.
 
 ## Reconciled ledger in cents
 
@@ -74,6 +76,7 @@ Every completed score independently re-read from server and reconciled to dedupl
 - w1b2b633a4c83dda0f744: `{"release_fee":-2536,"revenue":2822900,"driver_fee":-1954182,"late_refund":-63250}`
 - wc38ec8f48e68ec9b60e4: `{"release_fee":-2536,"revenue":2822200,"driver_fee":-2002639,"late_refund":-119125}`
 - w5f4ce3d9784c98b5eed6: `{"release_fee":-2536,"revenue":3077800,"driver_fee":-2205427,"late_refund":-65750,"waiting":-3000}`
+- w2c4cf1f167eba8147411: `{"revenue":2842100,"driver_fee":-1940294,"release_fee":-4174,"late_refund":-80200,"failed_visit":-6676}`
 
 ## Mechanism and limitations
 
