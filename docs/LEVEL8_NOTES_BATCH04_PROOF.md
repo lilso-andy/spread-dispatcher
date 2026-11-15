@@ -3,7 +3,7 @@
 {
   "pid": 21268,
   "branch": "work/notes-thanhdatLUT",
-  "state": "running",
+  "state": "completed",
   "seed": "notes4-selected-proof-v1",
   "selected": {
     "profile": "emergency18",
@@ -67,7 +67,7 @@
       "offers": true
     }
   },
-  "decision": "pending",
+  "decision": "reject",
   "runs": [
     {
       "side": "baseline",
@@ -89,10 +89,103 @@
       },
       "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\notes-batch04-proof\\baseline",
       "creationUncertain": false,
-      "worldId": "w9b676c1cd33ac1997a04"
+      "worldId": "w9b676c1cd33ac1997a04",
+      "result": {
+        "worldId": "w9b676c1cd33ac1997a04",
+        "score": {
+          "marginCents": 828892,
+          "revenueCents": 2681600,
+          "marginShare": 0.3091035202863962,
+          "wonOrders": 192,
+          "onTimeShare": 0.9895833333333334,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "notes4-selected-proof-v1",
+          "worldId": "w9b676c1cd33ac1997a04",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\notes-batch04-proof\\baseline",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 54.716,
+        "actionRefusals": 0
+      }
+    },
+    {
+      "side": "candidate",
+      "seed": "notes4-selected-proof-v1",
+      "level": 8,
+      "source": "db510d229e21aa5441ba896ab39eaff5c055310a",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 1.8,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\notes-batch04-proof\\candidate",
+      "creationUncertain": false,
+      "worldId": "wf4387f0aea96aec1ce2e",
+      "result": {
+        "worldId": "wf4387f0aea96aec1ce2e",
+        "score": {
+          "marginCents": 828892,
+          "revenueCents": 2681600,
+          "marginShare": 0.3091035202863962,
+          "wonOrders": 192,
+          "onTimeShare": 0.9895833333333334,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 1.8,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "notes4-selected-proof-v1",
+          "worldId": "wf4387f0aea96aec1ce2e",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\notes-batch04-proof\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 53.113,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "finish owned w9b676c1cd33ac1997a04"
+  "next": "Publish verified configuration/source only if keep; otherwise baseline",
+  "delta": 0
 }
 
 Decision requires positive fresh margin, >=93% candidate service, no extra undelivered/refusals; otherwise retain baseline. No ranking/final.
