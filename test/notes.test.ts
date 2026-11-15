@@ -4,6 +4,17 @@ import { readNote, DAY } from "../notes.ts"
 
 const parse = (text: string, arrived = 480) => readNote({ text, language: "en" }, arrived)
 
+test('Finnish bare Thursday before a clock preserves the actual readiness day', () => {
+  const f = readNote({ text: 'Moi, auto valmis vasta to klo 10.', language: 'fi' }, 2402)
+  assert.equal(f.uncertain, false)
+  assert.equal(f.pickupFrom, 3 * DAY + 600)
+})
+
+test('English to is not a Finnish weekday', () => {
+  const f = readNote({ text: 'Delivery to destination by 15:00', language: 'en' }, 480)
+  assert.equal(f.deliveryTo, 900)
+})
+
 // Expected semantics follow RULES.md; unsupported associations must decline.
 for (const text of [
   "Manual; pickup after lunch",

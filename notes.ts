@@ -47,6 +47,9 @@ export function readNote(note: Note | null, arrived: number): NoteFacts {
   const facts: NoteFacts = { manual: false, plates: false, summerTyres: false, uncertain: false, reasons: [] }
   if (!note?.text.trim()) return facts
   let text = note.text.normalize("NFKC").toLowerCase()
+  // Finnish Thursday abbreviation in an explicit clock phrase; English 'to'
+  // must remain a preposition. Confirmed by completed practice readiness truth.
+  if (note.language === "fi") text = text.replace(/\bto\.?\s+(?=klo\b)/g, "torstai ")
   // Observed in completed practice: the doubled t still names the destination.
   text = text.replace(/\bdestinattion\b/g, "destination")
   text = text.replace(/(?<![\p{L}\p{N}_])peirll[äa](?![\p{L}\p{N}_])/gu, "perillä")

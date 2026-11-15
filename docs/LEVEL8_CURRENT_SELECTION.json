@@ -1,5 +1,5 @@
 {
-  "status": "baseline fallback only; final reserve175 refinement rejected; tuning frozen",
+  "status": "Parser correctness patch uploaded for review; no new margin-qualified policy selected",
   "promote": false,
   "config": {
     "quoteMultiplier": 1.4,
@@ -92,13 +92,19 @@
     ],
     "unusedFreshProof": "short-market-floor175-proof-v1"
   },
-  "finalAuthorizationScope": "This chat only; separate team owner has authorized their sole operator per STATUS",
+  "finalAuthorizationScope": "Controller stopped per user and team STATUS91fb4ff; separate explicit command required to restart",
   "teamFinalDeclared": {
-    "statusCommit": "db14518",
+    "statusCommit": "91fb4ff",
     "controller": 21952,
-    "runtime": "dbca0ec",
-    "state": "waiting per repo record; not independently verified",
-    "doNotStartDuplicate": true,
-    "doNotModifyFrozenRuntime": true
+    "watchdog": 21848,
+    "state": "stopped per repo record and user confirmation",
+    "restartRequiresSeparateCommand": true
+  },
+  "currentCodeRequiresPracticeValidation": true,
+  "parserReview": {
+    "doc": "docs/NOTES_PARSER_REVIEW.md",
+    "testsPassed": 95,
+    "marginGainEstablished": false,
+    "finalSelected": false
   }
 }
