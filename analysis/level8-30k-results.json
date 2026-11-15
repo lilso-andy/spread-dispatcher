@@ -81,7 +81,8 @@
     "selectedRuntime": "f91970e + short public quote cap1.25; exact desk SHA256 61772c48a6b4f6ac6c960444dd4d67e97bfc920c92049deeb0d7564c87540163",
     "shortQuoteDecision": "SELECT; all four individual deltas positive and all service gates passed.",
     "completedNewPracticeWorldsThisContinuation": 24,
-    "ownActiveWorlds": 0
+    "ownActiveWorlds": 0,
+    "compositionCheck": "Before final handoff, run original d4031ca selected team baseline on short-proof-e and study2, with identical full config. Compare fixed selected composed candidate to original team policy on all4seeds. Existing dev c/d original baselines reusable by exactsource/config/seed identity. Retain any standalone advance080 regressions; do not label pooled35.18% as gain versus original team source."
   },
   "results": [
     {
@@ -1938,6 +1939,35 @@
       }
     },
     {
+      "name": "baseline",
+      "seed": "l8-30k-short-proof-e",
+      "sourcePath": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-v2-src",
+      "source": "d4031ca9c69706126b08ebd610012dce378e98a9",
+      "deskSha256": "22abfe23b267712caca0ea7bdfa12086bdf87f851b07cde80fbbb47a78d627dc",
+      "change": {},
+      "branch": "work/pricing-baotran1604",
+      "level": 8,
+      "variant": "baseline",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w261c455c98b1ab634d47",
+      "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-30k/results/l8-30k-short-proof-e/baseline",
+      "pid": 27679,
+      "createdAt": "2026-11-15T03:10:15.234Z",
+      "next": "Complete existing owned world using this source/config/journal"
+    },
+    {
       "name": "advance080",
       "seed": "study-2",
       "sourcePath": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-v2-080",
@@ -2193,6 +2223,35 @@
         "release": 1,
         "visit_failed": 2
       }
+    },
+    {
+      "name": "baseline",
+      "seed": "study-2",
+      "sourcePath": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-v2-src",
+      "source": "d4031ca9c69706126b08ebd610012dce378e98a9",
+      "deskSha256": "22abfe23b267712caca0ea7bdfa12086bdf87f851b07cde80fbbb47a78d627dc",
+      "change": {},
+      "branch": "work/pricing-baotran1604",
+      "level": 8,
+      "variant": "baseline",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wabdeeb2a053783870c3e",
+      "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-30k/results/study-2/baseline",
+      "pid": 27679,
+      "createdAt": "2026-11-15T03:10:15.359Z",
+      "next": "Complete existing owned world using this source/config/journal"
     }
   ]
 }

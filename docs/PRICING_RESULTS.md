@@ -866,7 +866,9 @@ Frozen team integration d4031ca9c69706126b08ebd610012dce378e98a9. Main is not th
 |l8-30k-proof-d|advance080-quote125|w7d0c7c4ac2c8cf6aceea|6321.65|248|95.161%|0|0|
 |l8-30k-short-proof-e|advance080|wec9c1976330c8959956a|5200.29|150|96.000%|0|0|
 |l8-30k-short-proof-e|advance080-short125|w3eaf028c9f30d5347b35|8840.47|278|92.806%|0|0|
+|l8-30k-short-proof-e|baseline|w261c455c98b1ab634d47|RUNNING|||||
 |study-2|advance080|we4962706fd718bbeb7bd|5443.11|176|93.750%|0|0|
 |study-2|advance080-short125|we58cb0e28206c49c3b26|7766.23|237|95.781%|0|0|
+|study-2|baseline|wabdeeb2a053783870c3e|RUNNING|||||
 
 Decision: SELECT advance080-short125 after four matched seeds. Same config as selected baseline; code changes only short nonpremium single-public-car <=120min quote factor cap1.25 before dealer/day adjustment and trust. Development +EUR1603.76; untouched proof +EUR3640.18; known study2 stress +EUR2323.12. Total baselineEUR21511.33 -> candidateEUR29078.39 (+EUR7567.06,35.18%). Minimum candidate92.8058%, zero undelivered/refusals.95 offline tests. EUR30000 per week NOT achieved; these are four-week totals, NOT weekly results.

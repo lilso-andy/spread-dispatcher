@@ -80,5 +80,6 @@
   "selectedRuntime": "f91970e + short public quote cap1.25; exact desk SHA256 61772c48a6b4f6ac6c960444dd4d67e97bfc920c92049deeb0d7564c87540163",
   "shortQuoteDecision": "SELECT; all four individual deltas positive and all service gates passed.",
   "completedNewPracticeWorldsThisContinuation": 24,
-  "ownActiveWorlds": 0
+  "ownActiveWorlds": 0,
+  "compositionCheck": "Before final handoff, run original d4031ca selected team baseline on short-proof-e and study2, with identical full config. Compare fixed selected composed candidate to original team policy on all4seeds. Existing dev c/d original baselines reusable by exactsource/config/seed identity. Retain any standalone advance080 regressions; do not label pooled35.18% as gain versus original team source."
 }
