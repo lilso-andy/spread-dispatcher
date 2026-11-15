@@ -68,9 +68,9 @@ Config chain85 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier"
 
 Config emergency18 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":1.8,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-b-v1\emergency18
 
-|notes3-chain-dev-b-v1|quote135|w5f4ce3d9784c98b5eed6|d4031ca9c69706126b08ebd610012dce378e98a9|running|||||
+|notes3-chain-dev-b-v1|quote135|w5f4ce3d9784c98b5eed6|d4031ca9c69706126b08ebd610012dce378e98a9|8010.87|224|96.875%|0|0|
 
 Config quote135 {"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-b-v1\quote135
 
 
-Checkpoint state running; next finish owned w5f4ce3d9784c98b5eed6
+Checkpoint state running; next Push completed matched group notes3-chain-dev-b-v1
