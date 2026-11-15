@@ -40,5 +40,21 @@ Config emergency18 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultipl
 
 Config quote135 {"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\spread-1\quote135
 
+|notes3-chain-dev-a-v1|baseline|wde69f9dcf1f14a8a8c64|d4031ca9c69706126b08ebd610012dce378e98a9|3233.49|86|98.837%|0|0|
 
-Checkpoint state running; next Push completed matched group spread-1
+Config baseline {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-a-v1\baseline
+
+|notes3-chain-dev-a-v1|chain85|w0728ae16f94344df8e87|6bf843d7f8dfb4aca7f7eb4b5040a2e60e29a2db|3233.49|86|98.837%|0|0|
+
+Config chain85 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-a-v1\chain85
+
+|notes3-chain-dev-a-v1|emergency18|wdcab314d90850174533d|d4031ca9c69706126b08ebd610012dce378e98a9|3239.65|86|98.837%|0|0|
+
+Config emergency18 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":1.8,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-a-v1\emergency18
+
+|notes3-chain-dev-a-v1|quote135|w216eabd05dc169b2e3db|d4031ca9c69706126b08ebd610012dce378e98a9|4006.58|108|98.148%|0|0|
+
+Config quote135 {"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\notes3-chain-dev-a-v1\quote135
+
+
+Checkpoint state running; next Push completed matched group notes3-chain-dev-a-v1
