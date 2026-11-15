@@ -1,0 +1,8 @@
+{
+  "status": "fallback pending new controlled experiment",
+  "source": "9a73d27 (production equivalent d4031ca)",
+  "recommendedConfig": "configs/notes-level8-service-fallback.json",
+  "doNotPromote": "configs/notes-level8-quote135-validated.json",
+  "reason": "Quote1.35 failed new release8-new-c-v1 at91.45299% on time, fresh three-seed paired margin -1700.54EUR; prior five-seed evidence insufficient for robustness.",
+  "finalAuthorized": false
+}
