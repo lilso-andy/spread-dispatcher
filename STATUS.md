@@ -1,5 +1,9 @@
 # Shared status
 
+## Level8 batch03 complete, no recovery gain
+
+16 completed ordinary practice weeks audited on server. Baseline and bounded-recovery candidate tie on each of8 matched seeds, total EUR62549.48 each, worst92.04%. No undelivered/refusals and no failed90% week. Candidate aa3f84e is not selected. Complete results in docs/LEVEL8_DISPATCH_BATCH03_RESULTS.json. All season10/11 and batch01/02/03 controllers have finished. Selected runtime remains the advance public opening policy with fee1.08/emergency2.0, strictNotes=true. Target EUR30000 per week remains unmet. The previous permissive-note fresh proof failure88.30% remains recorded in batch02.
+
 ## Season11 finished; bounded service recovery practice active
 
 Season11 level8 finished all5 ranking runs, EUR38947.72 total, every week qualified and fully delivered, zero refusals. Frozen runtime d9f8018 and emergency2.0, strict notes, advance opening0.92. Reports docs/RANKING_S11_LEVEL8.md/json. The weekly EUR30000 target is still unmet.
