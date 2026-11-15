@@ -844,3 +844,15 @@ Frozen team integration 0b5a2e97a6c617eadbe710d2faf63a99bfc06661. Main is not th
 |l8-20k-proof-a|notes-permissive|wd32ff9bd637ab7b24429|6703.91|179|100.000%|0|0|
 
 Decision: Old-source notes-permissive improved three pairs, but new team evidence on integrated source failed dispatch8-proof02 at88.30% and lost EUR2123.75. Do NOT promote permissive profile to new integrated/ranking default. Capacity .45 old-source pooled +EUR219.24, one seed -EUR159.28; no independent proof; unselected. Establish latest-source baseline before further experiments.
+
+
+## Level 8 EUR30,000 practice continuation (2026-11-15)
+
+Frozen team integration d4031ca9c69706126b08ebd610012dce378e98a9. Main is not the executed source. Ranking authorized if available; season11 already5/5 at inspection. Current experiments are practice; minimum service 91%; at least15 new completed worlds requested. Full source/config/world/output/ledger in analysis/level8-30k-results.json. Baseline/candidate suite93/93. Never resume before verifying old controller stopped.
+
+|Seed|Variant|World|Margin EUR|Won|On time|Undelivered share|Refusals|
+|---|---|---|---:|---:|---:|---:|---:|
+|l8-30k-dev-c|advance080|w3aeb74caa40e92b4ecd0|RUNNING|||||
+|l8-30k-dev-c|baseline|w754c8321c35a6b69d248|RUNNING|||||
+
+Decision: Unselected. Test 0.80 advance opening discount against current0.92, same config. Hypothesis: lower driver fees on advance public single-car jobs; retain rescue schedule and all safety gates. Prior team0.92 gainedEUR4375.25 across5paired weeks. Another5% of EUR20k driver spend isEUR1k sensitivity only. Reject lower total margin, anyweek<91%, extra undelivered or refusals.

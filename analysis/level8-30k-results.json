@@ -1,0 +1,91 @@
+{
+  "plan": {
+    "source": "d4031ca9c69706126b08ebd610012dce378e98a9",
+    "baseConfig": {
+      "quoteMultiplier": 1.4,
+      "feeMultiplier": 1.08,
+      "emergencyMultiplier": 2,
+      "marginReserve": 0.15,
+      "minMarginCents": 2000,
+      "capacityFraction": 0.28,
+      "maxApproachMinutes": 100,
+      "minLeadMinutes": 180,
+      "strictNotes": true,
+      "trainingEconomy": false,
+      "offers": true
+    },
+    "targetWeeklyCents": 3000000,
+    "minimumOnTime": 0.91,
+    "developmentSeeds": [
+      "l8-30k-dev-c",
+      "l8-30k-dev-d"
+    ],
+    "holdout": "l8-30k-proof-c",
+    "decision": "Unselected. Test 0.80 advance opening discount against current0.92, same config. Hypothesis: lower driver fees on advance public single-car jobs; retain rescue schedule and all safety gates. Prior team0.92 gainedEUR4375.25 across5paired weeks. Another5% of EUR20k driver spend isEUR1k sensitivity only. Reject lower total margin, anyweek<91%, extra undelivered or refusals.",
+    "rankingCheck": {
+      "season": 11,
+      "played": 5,
+      "remaining": 0
+    }
+  },
+  "results": [
+    {
+      "name": "advance080",
+      "seed": "l8-30k-dev-c",
+      "sourcePath": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-v2-080",
+      "source": "d4031ca9c69706126b08ebd610012dce378e98a9 + advancePublicJob discount0.80 + regression expectation8640",
+      "deskSha256": "72d79d2bfd2275ef155671b066793c57ea39221873406566ef7314569e6f1ff3",
+      "change": {},
+      "branch": "work/pricing-baotran1604",
+      "level": 8,
+      "variant": "advance080",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w3aeb74caa40e92b4ecd0",
+      "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-30k/results/l8-30k-dev-c/advance080",
+      "pid": 26793,
+      "createdAt": "2026-11-15T02:55:07.500Z",
+      "next": "Complete existing owned world using this source/config/journal"
+    },
+    {
+      "name": "baseline",
+      "seed": "l8-30k-dev-c",
+      "sourcePath": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-v2-src",
+      "source": "d4031ca9c69706126b08ebd610012dce378e98a9",
+      "deskSha256": "22abfe23b267712caca0ea7bdfa12086bdf87f851b07cde80fbbb47a78d627dc",
+      "change": {},
+      "branch": "work/pricing-baotran1604",
+      "level": 8,
+      "variant": "baseline",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w754c8321c35a6b69d248",
+      "output": "/Users/davetran/Documents/Codex/2026-11-14/cl/work/level8-30k/results/l8-30k-dev-c/baseline",
+      "pid": 26793,
+      "createdAt": "2026-11-15T02:55:07.367Z",
+      "next": "Complete existing owned world using this source/config/journal"
+    }
+  ]
+}
