@@ -1,5 +1,11 @@
 # Shared status
 
+## Final preparation 2026-11-15
+
+Owner stopped optimization and authorized the real final on this machine. No optimizer process is active. Selected runtime is batch06 intraday loss discount integrated at dbca0ec, full level8 ranking preset. Nine candidate practice weeks, minimum91.7808% on time and zero action refusals. Eight development pairs gained EUR2720.85 and unused proof gained EUR145.92.95 offline tests pass. Team notes ca3ca92 documents were incorporated without changing production. Its baseline fallback recommendation is that branch's historical selection; the integration selects independently verified batch06 under the owner's margin-first, above90% rule. Main remains older. No EUR30000 weekly achievement.
+
+Final output/checkpoint runs/final-2026-11-15 on this machine. Await sole-operator confirmation before opening a final stream. API returned old test ff582300a369ea8c7c27c with snapshot.now=endsAt14280 at07:45 Helsinki. The dispatcher --final waits until an unfinished final snapshot appears. No final controller has started yet.
+
 ## Level 8 batch 06 checkpoint
 
 18 new completed and server-audited practice weeks. Selected broad-intraday-loss-discount at 9c6137afd4b2f3c1ee42022e363d5917774feb9a using docs/ranking-presets/level-8.json. Matched control cb1cdc72d723e4b2db4fa083fe42365da58e18cc. Selected weekly range EUR2299.45 to EUR12786.95, worst on-time 91.78%. Target EUR30000/week remains unmet.
