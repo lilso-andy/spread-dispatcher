@@ -1,5 +1,9 @@
 # Shared status
 
+## Final waiting stopped at owner request, 08:19 Helsinki
+
+Controller21952 and watchdog21848 were verified and stopped. Sole-operator reservation is released. No final stream is active from this machine. Owner will issue a new command near09:00 before final starts; do not automatically restart final. Local checkpoint records stopped state. Resume practice tuning level8 with margin first and every candidate week above90%, positive untouched proof before selecting production. Team branch updates remain welcome. Earlier final-waiting sections are historical.
+
 ## Final preparation 2026-11-15
 
 Owner stopped optimization and authorized the real final on this machine. No optimizer process is active. Selected runtime is batch06 intraday loss discount integrated at dbca0ec, full level8 ranking preset. Nine candidate practice weeks, minimum91.7808% on time and zero action refusals. Eight development pairs gained EUR2720.85 and unused proof gained EUR145.92.95 offline tests pass. Team notes ca3ca92 documents were incorporated without changing production. Its baseline fallback recommendation is that branch's historical selection; the integration selects independently verified batch06 under the owner's margin-first, above90% rule. Main remains older. No EUR30000 weekly achievement.
