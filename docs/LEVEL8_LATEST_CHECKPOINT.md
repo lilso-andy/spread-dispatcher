@@ -1,3 +1,30 @@
+# Latest level8 checkpoint:33 completed server weeks
+
+**No new algorithm/config qualified for promotion. EUR30000 PER WEEK remains unmet.** Keep quote1.4/emergency2.0 baseline fallback only, configs/notes-level8-service-fallback.json; this is NOT certified to achieve93% on every week. Production source remains d4031ca-equivalent.
+
+Latest trial: long routes over300min quoted with a floor covering1.85*referenceFee plus reserve/absolute contribution. Posted gig fees and short prices unchanged. Baseline93/candidate95 offline tests passed. Decision **reject**; both development weeks lose money, pooledEUR-953.61. Holdout long-floor-proof-v1 was NOT used; no favorable seed selection. Prototype sourcedb2d4dbe18476828072535c6e090689ea71d698d stays local, NOT production.
+
+|Seed|Side|World|Source|Margin EUR|Won|On time|Undelivered|Refusals|
+|---|---|---|---|---:|---:|---:|---:|---:|
+|notes4-rescue-proof-b-v1|baseline|w24651a0d23689d7e428b|9758e3ab27df8b8e78b61349ae5182bfa67b8709|3954.40|127|92.126%|0|0|
+|notes4-rescue-proof-b-v1|candidate|wd0d76ad83aee21eca037|db2d4dbe18476828072535c6e090689ea71d698d|3739.02|120|93.333%|0|0|
+|release8-new-c-v1|baseline|w2c8a9e9479f821cec63e|9758e3ab27df8b8e78b61349ae5182bfa67b8709|10597.10|251|94.422%|0|0|
+|release8-new-c-v1|candidate|wce7dfaaae260b5798a80|db2d4dbe18476828072535c6e090689ea71d698d|9858.87|224|94.196%|0|0|
+
+- w24651a0d23689d7e428b: full config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":1624800,"driver_fee":-1174760,"late_refund":-54600}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\long-floor-validation\notes4-rescue-proof-b-v1\baseline`.
+
+- wd0d76ad83aee21eca037: full config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":1303300,"driver_fee":-891972,"late_refund":-33475,"release_fee":-3951}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\long-floor-validation\notes4-rescue-proof-b-v1\candidate`.
+
+- w2c8a9e9479f821cec63e: full config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":3667100,"driver_fee":-2521780,"late_refund":-82610,"waiting":-3000}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\long-floor-validation\release8-new-c-v1\baseline`.
+
+- wce7dfaaae260b5798a80: full config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2980700,"driver_fee":-1922638,"late_refund":-69175,"waiting":-3000}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\long-floor-validation\release8-new-c-v1\candidate`.
+
+All33 owned worlds ended; no active controllers. Total28 ordinary practice +5 ranking. Four new world-ended scores/seed identities and ledgers independently checked; previous29 remain in the audited historical dataset below. All losses retained. Final/test-final never started; no extra ranking after five authorized season12 weeks. No PR merge, force push or teammate branch mutation. Original root pending parser changes preserved. No raw logs/reveals/env/key committed.
+
+Local latest checkpoint work/long-floor-validation/checkpoint.json; previous checkpoint paths and score ledger details below. Before continuation, fetch origin and compare production source; all33 worlds already ended, do not resume or recreate them. Selection metadata docs/LEVEL8_CURRENT_SELECTION.json is authoritative over historical recommendations.
+
+---
+
 # Level8 latest checkpoint: 29 new completed worlds
 
 No new policy qualified for promotion. Keep configs/notes-level8-service-fallback.json as baseline fallback ONLY, not a certified >=93% final policy. Source db510d2, production equivalent to team d4031ca. Full config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`.
