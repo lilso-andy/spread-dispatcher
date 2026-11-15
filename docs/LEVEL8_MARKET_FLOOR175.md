@@ -101,8 +101,43 @@
       },
       "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market175-validation\\short-market-rescue-floor-proof-v1\\candidate",
       "creationUncertain": false,
-      "worldId": "wf8d6d8860e3ef8cffdf5"
+      "worldId": "wf8d6d8860e3ef8cffdf5",
+      "result": {
+        "worldId": "wf8d6d8860e3ef8cffdf5",
+        "score": {
+          "marginCents": 100030,
+          "revenueCents": 391700,
+          "marginShare": 0.2553740107224917,
+          "wonOrders": 43,
+          "onTimeShare": 0.9069767441860465,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "short-market-rescue-floor-proof-v1",
+          "worldId": "wf8d6d8860e3ef8cffdf5",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market175-validation\\short-market-rescue-floor-proof-v1\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 33.886,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "finish owned wf8d6d8860e3ef8cffdf5"
+  "next": "Push pair short-market-rescue-floor-proof-v1"
 }
