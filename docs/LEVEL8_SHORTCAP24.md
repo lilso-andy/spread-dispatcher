@@ -1,0 +1,66 @@
+# Pending quote driver-hour reservation
+
+{
+  "pid": 14652,
+  "branch": "work/notes-thanhdatLUT",
+  "state": "running",
+  "source": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
+  "candidateSource": "04e640e0f01641c0e854ada1cda320ac011962ef",
+  "config": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "trainingEconomy": false,
+    "offers": true
+  },
+  "candidateConfig": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.24,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "trainingEconomy": false,
+    "offers": true
+  },
+  "selection": "fallback2.0",
+  "hypothesis": "Combine peer f99057a short-public quote1.25 and advance opening0.80 with capacityFraction0.24 instead0.28; baseline remains common quote1.4/opening0.92/capacity0.28. Peer combination gained3126.46EUR/12.05% across4matched seeds but worst92.806% failed our93% gate. 14.3% lower capacity occupancy may preserve that profit while improving service; opportunity scenario EUR300-900/week based on prior average+781EUR, NOT proven additive. Start with prior failing seed l8-30k-short-proof-e, then study2; require each candidate>=93%, positive pooled margin, then positive untouched shortcap24-proof-v1. No tuning after viewing proof. Reject early on service failure. This tests the merged policy, not isolated component attribution.",
+  "holdout": "shortcap24-proof-v1",
+  "decision": "pending",
+  "runs": [
+    {
+      "seed": "l8-30k-short-proof-e",
+      "level": 8,
+      "side": "baseline",
+      "source": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\baseline",
+      "creationUncertain": false,
+      "worldId": "w641794ab1b04de9894df"
+    }
+  ],
+  "next": "finish owned w641794ab1b04de9894df"
+}
+
+Baseline93/candidate95 tests pass. Never ranking/final here.
