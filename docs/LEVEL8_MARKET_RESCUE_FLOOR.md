@@ -257,7 +257,127 @@
         "elapsedSeconds": 44.336,
         "actionRefusals": 0
       }
+    },
+    {
+      "side": "baseline",
+      "level": 8,
+      "seed": "dispatch8-daily-h",
+      "source": "cb1cdc72d723e4b2db4fa083fe42365da58e18cc",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wf4694269692911655e47",
+      "cachedExternal": true,
+      "originalControllerOutput": null,
+      "cacheArchive": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\cached-dispatch8-daily-h.public-events.json",
+      "metadataSource": "18d2225 docs/LEVEL8_DISPATCH_BATCH06_RESULTS.json",
+      "ledger": {
+        "revenue": 2360100,
+        "driver_fee": -1563517,
+        "release_fee": -7589,
+        "late_refund": -26110,
+        "waiting": -3000
+      },
+      "result": {
+        "worldId": "wf4694269692911655e47",
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "score": {
+          "marginCents": 759884,
+          "revenueCents": 2360100,
+          "marginShare": 0.3219711029193678,
+          "wonOrders": 177,
+          "onTimeShare": 0.9548022598870056,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "dispatch8-daily-h",
+          "worldId": "wf4694269692911655e47"
+        },
+        "actionRefusals": 0
+      },
+      "cached": true
+    },
+    {
+      "side": "candidate",
+      "seed": "dispatch8-daily-h",
+      "level": 8,
+      "source": "29c66d4cbbaa2ea4bb76a671f11f5098837153ef",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\dispatch8-daily-h\\candidate",
+      "creationUncertain": false,
+      "worldId": "w5c538c72d1e1b1badc56",
+      "result": {
+        "worldId": "w5c538c72d1e1b1badc56",
+        "score": {
+          "marginCents": 869856,
+          "revenueCents": 2624000,
+          "marginShare": 0.3315,
+          "wonOrders": 213,
+          "onTimeShare": 0.9765258215962441,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "dispatch8-daily-h",
+          "worldId": "w5c538c72d1e1b1badc56",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\dispatch8-daily-h\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 70.388,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "Push pair dispatch8-daily-a"
+  "next": "Push pair dispatch8-daily-h"
 }
