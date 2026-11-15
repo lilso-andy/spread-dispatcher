@@ -20,7 +20,7 @@
     "l8-30k-dev-d"
   ],
   "holdout": "l8-30k-proof-c",
-  "decision": "Select advance080 after3matched seeds: pooled +EUR676.99, positive each seed; fresh proof +EUR394.44 at100% on time both; worst candidate97.5155%, zero undelivered/refusals. Full93 offline tests. Still far belowEUR30000/week.",
+  "decision": "SELECT advance080-short125 after four matched seeds. Same config as selected baseline; code changes only short nonpremium single-public-car <=120min quote factor cap1.25 before dealer/day adjustment and trust. Development +EUR1603.76; untouched proof +EUR3640.18; known study2 stress +EUR2323.12. Total baselineEUR21511.33 -> candidateEUR29078.39 (+EUR7567.06,35.18%). Minimum candidate92.8058%, zero undelivered/refusals.95 offline tests. EUR30000 per week NOT achieved; these are four-week totals, NOT weekly results.",
   "rankingCheck": {
     "season": 11,
     "played": 5,
@@ -37,7 +37,6 @@
     "reject": "Any week below91%, pooled margin nonpositive versus exact same-source baseline, additional undelivered/refusals. Need untouched proof d if positive."
   },
   "reservedQuoteProof": "l8-30k-proof-d",
-  "selectedCommit": "f91970e",
   "selectedConfig": {
     "quoteMultiplier": 1.4,
     "feeMultiplier": 1.08,
@@ -77,5 +76,9 @@
     "deltaCents": 364018,
     "candidateOnTime": 0.9280575539568345,
     "decision": "Positive unseen proof, >=91%; must finish preregistered known study2 stress before promotion."
-  }
+  },
+  "selectedRuntime": "f91970e + short public quote cap1.25; exact desk SHA256 61772c48a6b4f6ac6c960444dd4d67e97bfc920c92049deeb0d7564c87540163",
+  "shortQuoteDecision": "SELECT; all four individual deltas positive and all service gates passed.",
+  "completedNewPracticeWorldsThisContinuation": 24,
+  "ownActiveWorlds": 0
 }

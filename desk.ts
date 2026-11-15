@@ -272,11 +272,14 @@ export class Desk {
       // promise to the dealer that cannot cover its likely recovery cost.
       const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity, fixedPrice && route.driveMinutes > 300 ? (this.config.trainingEconomy ? 1.20 : 1.85) : 0)
       const base = this.level <= 3 ? 1.20 : this.level <= 6 ? Math.min(1.20, this.config.quoteMultiplier) : this.config.quoteMultiplier
+      const shortPublic = this.level === 8 && order.legs.length === 1 && route.driveMinutes <= 120
+        && !order.legs[0]!.car.premium && !order.legs[0]!.pickup.privateAddress && !order.legs[0]!.delivery.privateAddress
+      const quoteBase = shortPublic ? Math.min(base, 1.25) : base
       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
       const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + (fixedPrice ? Math.min(500, this.config.minMarginCents) : this.config.minMarginCents))
       if (this.level <= 3 && minimum > option.listPriceCents) continue
-      const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (base + adjustment) * (1 + trust)) / 100) * 100
+      const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (quoteBase + adjustment) * (1 + trust)) / 100) * 100
       // Do not devote capacity to a near-impossible bid. Explicitly declining is free.
       if (price > option.listPriceCents * (this.level >= 7 ? 2.25 : 1.70)) continue
       prices[option.kind] = price

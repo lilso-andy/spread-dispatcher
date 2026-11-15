@@ -22,7 +22,7 @@ test('level8 restricts long routes only when completed deliveries show service s
  const history=(d:Desk)=>{for(let i=0;i<30;i++)d.orders.set(`done${i}`,{...request(),id:`done${i}`,status:'delivered',deadline:100,deliveredAt:[i===0?101:99],lastPickupAt:80,option:'next_day',priceCents:20000} as any)};
  assert.ok(bid(build(8,true))<10000000);
  const stressed=build(8,true);history(stressed);assert.ok(bid(stressed)>=10000000);
- const short=build(8,false);history(short);assert.equal(bid(short),27000);
+ const short=build(8,false);history(short);assert.equal(bid(short),25000);
  const other=build(7,true);history(other);assert.ok(bid(other)<10000000);
 });
 
@@ -34,7 +34,7 @@ test("selected legacy market configuration preserves its old floor and learned f
 })
 test("explicit lower list-price factor changes only market-level opt-in quotes", () => {
   for (const level of [4, 5, 6]) { assert.equal(bid(desk(level)), 21000); assert.equal(bid(desk(level, false)), 24000) }
-  assert.equal(bid(desk(8, false)), 27000)
+  assert.equal(bid(desk(8, false)), 25000)
 })
 test("training floors remain unchanged and shortage feedback is capped", () => {
   assert.equal(desk(3).feeMultiplier("a"), 1.05)
@@ -51,4 +51,19 @@ test("economics opt-in cannot bypass an expired private slot or no capacity", ()
 })
 test("a refused economics quote releases its capacity reservation", () => {
   const d = desk(), a = d.quote(request())!; d.results([a], [{ ok: false, error: "rejected" }]); assert.equal(d.decisions.has("r"), false)
+})
+
+
+test("short public price applies only to eligible level8 routes", () => {
+  const build = (minutes:number, level=8) => { const m={...map,roads:map.roads.map(r=>({...r,minutes:r.from===r.to?0:minutes}))}; const d=new Desk({...legacy,quoteMultiplier:1.4},level,m,roster);d.now=480;return d }
+  assert.equal(bid(build(120)),25000)
+  assert.equal(bid(build(121)),28000)
+  assert.equal(bid(build(90,7)),28000)
+  const premium=request();premium.legs[0]!.car.premium=true;assert.equal(bid(build(90),premium),28000)
+  const privateCar=request();privateCar.legs[0]!.pickup.privateAddress=true;assert.equal(bid(build(90),privateCar),28000)
+})
+test("short public discount preserves contribution floor and capacity rejection", () => {
+  const q=request();q.referenceFeeCents=24000
+  const d=desk(8,false);assert.ok(bid(d,q)>=Math.ceil(24000*1.08/(1-legacy.marginReserve)))
+  const empty=desk(8,false);empty.roster=[];assert.ok(bid(empty)>=10000000)
 })
