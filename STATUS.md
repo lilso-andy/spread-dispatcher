@@ -1,5 +1,14 @@
 # Shared status
 
+## Level 8 batch 07 checkpoint
+
+16 new completed and server-audited practice weeks. Selected baseline at 18d22250d97f15d5415c5aff4d807b1cfd63acbf using docs/ranking-presets/level-8.json. Matched control 18d22250d97f15d5415c5aff4d807b1cfd63acbf. Selected weekly range EUR3423.55 to EUR11623.93, worst on-time 92.86%. Target EUR30000/week remains unmet.
+
+Pooled development differences in EUR: view -1912.60. No eligible development candidate for proof.
+
+Below 90% this batch: none. Prior batch02 permissive proof 88.30% retained. Full inputs, world IDs, ledgers, refusals and restart counts in docs/LEVEL8_DISPATCH_BATCH07_RESULTS.json. All batch 07 controllers have finished dispatching. Runtime changes require a new paired baseline. See earlier checkpoint for parked level7 and season7 worlds. Main remains independent of the integration PR.
+
+
 ## Final waiting stopped at owner request, 08:19 Helsinki
 
 Controller21952 and watchdog21848 were verified and stopped. Sole-operator reservation is released. No final stream is active from this machine. Owner will issue a new command near09:00 before final starts; do not automatically restart final. Local checkpoint records stopped state. Resume practice tuning level8 with margin first and every candidate week above90%, positive untouched proof before selecting production. Team branch updates remain welcome. Earlier final-waiting sections are historical.
