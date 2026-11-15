@@ -1,5 +1,5 @@
 {
-  "status": "no new candidate meets all93% gates; fallback only",
+  "status": "baseline fallback only; final reserve175 refinement rejected; tuning frozen",
   "promote": false,
   "config": {
     "quoteMultiplier": 1.4,
@@ -68,14 +68,28 @@
     "extraUndelivered": false,
     "extraRefusals": false
   },
-  "controlledCompletedWorlds": 57,
+  "controlledCompletedWorlds": 58,
   "externalCachedControls": 2,
-  "evaluatedDistinctWorlds": 59,
+  "evaluatedDistinctWorlds": 60,
   "ownedUnfinishedWorlds": 0,
   "finalAuthorized": false,
   "tests": {
     "baseline": 93,
     "combined": 99
   },
-  "limits": "Ordinary practice evidence, not final-clock/new-policy ranking validation; no guarantee on unseen weeks. Original baseline and previous policies have sub93% failures. Target EUR30000/week unmet."
+  "limits": "Ordinary practice evidence, not final-clock/new-policy ranking validation; no guarantee on unseen weeks. Original baseline and previous policies have sub93% failures. Target EUR30000/week unmet.",
+  "lastTrial": {
+    "source": "d3406540603e2b996f1472a06b1e3c9736423426",
+    "decision": "reject",
+    "pairs": [
+      {
+        "seed": "short-market-rescue-floor-proof-v1",
+        "delta": -41910,
+        "onTime": 0.9069767441860465,
+        "extraUndelivered": false,
+        "extraRefusals": false
+      }
+    ],
+    "unusedFreshProof": "short-market-floor175-proof-v1"
+  }
 }

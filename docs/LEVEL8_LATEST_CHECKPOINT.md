@@ -1,3 +1,19 @@
+# Final budget checkpoint: 58 controlled completed worlds
+
+**No new policy qualified under every-week93% plus positive fresh proof. EUR30000/week remains unmet.** Baseline fallback configs/notes-level8-service-fallback.json (quote1.4/emergency2.0) remains unchanged and is NOT certified93%-safe on all weeks. No final/test-final started.
+
+User reported18% quota remaining. Final refinement was bounded at4new worlds but stopped after1: short-public intraday discount + long-cost estimate1.75 instead1.85. Known adverse prior-proof seed still EUR1000.30,43won,90.6977% on time, all delivered,0refusals; rejected. Baseline sourcecb1, EUR1419.40,44won,93.1818%. Other development seed and unused fresh proof short-market-floor175-proof-v1 were NOT run. No further parameter tuning in this branch.
+
+- wf8d6d8860e3ef8cffdf5: sourced3406540603e2b996f1472a06b1e3c9736423426; level8 seedshort-market-rescue-floor-proof-v1; config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; score `{"marginCents":100030,"revenueCents":391700,"marginShare":0.2553740107224917,"wonOrders":43,"onTimeShare":0.9069767441860465,"undeliveredShare":0,"ranked":true}`; ledger cents `{"revenue":391700,"driver_fee":-270995,"late_refund":-10675,"fine":-10000}`; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\market175-validation\short-market-rescue-floor-proof-v1\candidate`.
+
+All58 created/controlled worlds ended, plus2 external cached controls: 60 distinct evaluated worlds. Cached controls are never counted as new runs. No active controllers. Complete provenance in local work/market175-validation/all-final-audit.json; last checkpoint work/market175-validation/checkpoint.json. New score/seed and ledger independently reconciled; previous audit remains valid for already-ended worlds. Candidate99 offline tests passed but performance gate failed. No source prototype promoted, no force push, PR merge, teammate branch edits or committed raw logs/reveal/env/key. Pending root notes.ts/test/notes.test.ts preserved/excluded.
+
+Read current selection docs/LEVEL8_CURRENT_SELECTION.json before continuing. All listed worlds ended: do NOT resume or recreate them. Fetch latest team source, check exact commit/config and any controller ownership before a new experiment. The latest group unrestricted daily policy was selected under their>90% criterion and has a91.78% week; it is not automatically accepted under this users93% gate. Final requires a separate explicit user command and exactly one designated operator.
+
+The predecessor combined policy produced substantial development gains but failed its untouched proof; full audited evidence follows. Never add isolated policy gains or present multi-week totals as one week.
+
+---
+
 # Level8 latest release checkpoint
 
 Decision **RETAIN fallback; combined candidate rejected**. Exact benchmark baseline cb1cdc72d723e4b2db4fa083fe42365da58e18cc; candidate 29c66d4cbbaa2ea4bb76a671f11f5098837153ef. Full config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`.
