@@ -24,5 +24,17 @@ Config emergency18 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultipl
 
 Config quote135 {"quoteMultiplier":1.35,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\study-2\quote135
 
+|spread-1|baseline|w93f4701bb9f1dffa938b|d4031ca9c69706126b08ebd610012dce378e98a9|8969.17|265|98.113%|0|0|
 
-Checkpoint state running; next Push completed matched group study-2
+Config baseline {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\spread-1\baseline
+
+|spread-1|chain85|w86d1c96112c0461b237f|6bf843d7f8dfb4aca7f7eb4b5040a2e60e29a2db|9081.47|265|98.113%|0|0|
+
+Config chain85 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\spread-1\chain85
+
+|spread-1|emergency18|w6190fef4dbbe5d9860f2|d4031ca9c69706126b08ebd610012dce378e98a9|running|||||
+
+Config emergency18 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":1.8,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\spread-1\emergency18
+
+
+Checkpoint state running; next finish owned w6190fef4dbbe5d9860f2
