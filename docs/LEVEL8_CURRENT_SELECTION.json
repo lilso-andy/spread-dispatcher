@@ -1,8 +1,19 @@
 {
-  "status": "fallback pending new controlled experiment",
-  "source": "9a73d27 (production equivalent d4031ca)",
+  "status": "selected safety fallback after failed release validation",
   "recommendedConfig": "configs/notes-level8-service-fallback.json",
-  "doNotPromote": "configs/notes-level8-quote135-validated.json",
-  "reason": "Quote1.35 failed new release8-new-c-v1 at91.45299% on time, fresh three-seed paired margin -1700.54EUR; prior five-seed evidence insufficient for robustness.",
+  "productionSource": "d4031ca9c69706126b08ebd610012dce378e98a9; personal integration495ab6b production equivalent",
+  "quoteMultiplier": 1.4,
+  "rejectedPolicies": [
+    {
+      "config": "configs/notes-level8-quote135-validated.json",
+      "reason": "Historical filename only; new fresh week91.453%, three-pair margin-1700.54EUR"
+    },
+    {
+      "source": "5d33231 short-public quote1.25 only",
+      "reason": "New stress seed92.2509%, margin-1204.60EUR"
+    }
+  ],
+  "testsPassed": 93,
+  "ownedUnfinishedWorlds": 0,
   "finalAuthorized": false
 }
