@@ -4,5 +4,6 @@
 
 Hypotheses [{"name":"emergency18","change":"2.0 to1.8 terminal rescue multiplier; price1.4 unchanged","estimatedEURperWeek":[100,400],"basis":"Prior four-seed same advance0.92 development +646.21EUR, min94.33%, no independent proof yet"},{"name":"advance88","change":"advance public opening discount0.92 to0.88; rescue schedule unchanged","estimatedEURperWeek":[200,500],"basis":"Observed driver fees EUR15k-30k/week. Scenario:30%-60% exposed advance fees; 4.35% relative reduction before acceptance/late effects. This is assumed exposure, not measured savings"},{"name":"offer110","change":"level8 direct offers110% of current gig fee only while fee<1.5x reference; public fee and quotas unchanged","estimatedEURperWeek":[100,800],"basis":"Earlier study2 observed942declined vs18accepted offers; scenario5-15 earlier bookings save netEUR20-50 each. Hidden willingness and counterfactual bookings unknown; do not count lost requests as margin"}]
 
-State running; next start.
+State running; next finish owned wd200fa6147476fc00495.
 
+- {"seed":"study-2","level":8,"profile":"baseline","source":"db510d229e21aa5441ba896ab39eaff5c055310a","config":{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true},"output":"C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\notes-batch04\\study-2\\baseline","creationUncertain":false,"worldId":"wd200fa6147476fc00495"}
