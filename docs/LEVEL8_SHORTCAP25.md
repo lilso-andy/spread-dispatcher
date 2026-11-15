@@ -1,0 +1,124 @@
+# Pending quote driver-hour reservation
+
+{
+  "pid": 26544,
+  "branch": "work/notes-thanhdatLUT",
+  "state": "running",
+  "source": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
+  "candidateSource": "68b526b3a2decdc05eaaad02c18963225437a711",
+  "config": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "trainingEconomy": false,
+    "offers": true
+  },
+  "candidateConfig": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.25,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "trainingEconomy": false,
+    "offers": true
+  },
+  "selection": "fallback2.0",
+  "hypothesis": "Final intermediate occupancy test in this tuning branch: same peer short-public1.25/advance0.80 code, cap0.25 only. cap0.24 met93% on2dev seeds but pooled-412.94EUR; cap0.26 gained193.21EUR on first seed but92.3913%, so rejected early. Test0.25 before viewing any new proof; no further cap grid in this branch. Two EXACT cached ced25 baseline/config/level8/seed/end-score matches verified. Require both candidate weeks>=93% and pooled positive, then positive untouched shortcap25-proof-v1, plus known stressB93% before promotion. Estimated EUR100-600/week is an uncertain opportunity, not interpolation guarantee; all failures retained.",
+  "holdout": "shortcap25-proof-v1",
+  "decision": "pending",
+  "runs": [
+    {
+      "seed": "l8-30k-short-proof-e",
+      "level": 8,
+      "side": "baseline",
+      "source": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\baseline",
+      "creationUncertain": false,
+      "worldId": "w641794ab1b04de9894df",
+      "result": {
+        "worldId": "w641794ab1b04de9894df",
+        "score": {
+          "marginCents": 790623,
+          "revenueCents": 2796800,
+          "marginShare": 0.28268842963386726,
+          "wonOrders": 228,
+          "onTimeShare": 0.9473684210526315,
+          "undeliveredShare": 0.0043859649122807015,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "l8-30k-short-proof-e",
+          "worldId": "w641794ab1b04de9894df",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\baseline",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 66.54,
+        "actionRefusals": 0
+      },
+      "cached": true
+    },
+    {
+      "seed": "l8-30k-short-proof-e",
+      "level": 8,
+      "side": "candidate",
+      "source": "68b526b3a2decdc05eaaad02c18963225437a711",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.25,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap25-validation\\l8-30k-short-proof-e\\candidate",
+      "creationUncertain": false,
+      "worldId": "w442404b21358c1773684"
+    }
+  ],
+  "next": "finish owned w442404b21358c1773684"
+}
+
+Baseline93/candidate95 tests pass. Never ranking/final here.
