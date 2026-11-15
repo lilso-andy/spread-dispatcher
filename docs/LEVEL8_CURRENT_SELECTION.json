@@ -91,5 +91,14 @@
       }
     ],
     "unusedFreshProof": "short-market-floor175-proof-v1"
+  },
+  "finalAuthorizationScope": "This chat only; separate team owner has authorized their sole operator per STATUS",
+  "teamFinalDeclared": {
+    "statusCommit": "db14518",
+    "controller": 21952,
+    "runtime": "dbca0ec",
+    "state": "waiting per repo record; not independently verified",
+    "doNotStartDuplicate": true,
+    "doNotModifyFrozenRuntime": true
   }
 }
