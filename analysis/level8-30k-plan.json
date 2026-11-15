@@ -72,5 +72,10 @@
     "deltaCents": 160376,
     "minimumOnTime": 0.9748427672955975,
     "decision": "Positive on both development seeds; require new proof and known study2 stress before promotion."
+  },
+  "shortQuoteProof": {
+    "deltaCents": 364018,
+    "candidateOnTime": 0.9280575539568345,
+    "decision": "Positive unseen proof, >=91%; must finish preregistered known study2 stress before promotion."
   }
 }
