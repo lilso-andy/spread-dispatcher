@@ -115,10 +115,45 @@
       },
       "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap26-validation\\l8-30k-short-proof-e\\candidate",
       "creationUncertain": false,
-      "worldId": "w6f6bdc72d81c6a076f43"
+      "worldId": "w6f6bdc72d81c6a076f43",
+      "result": {
+        "worldId": "w6f6bdc72d81c6a076f43",
+        "score": {
+          "marginCents": 809944,
+          "revenueCents": 3452000,
+          "marginShare": 0.234630359212051,
+          "wonOrders": 276,
+          "onTimeShare": 0.9239130434782609,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.26,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "l8-30k-short-proof-e",
+          "worldId": "w6f6bdc72d81c6a076f43",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap26-validation\\l8-30k-short-proof-e\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 94.345,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "finish owned w6f6bdc72d81c6a076f43"
+  "next": "Push pair l8-30k-short-proof-e"
 }
 
 Baseline93/candidate95 tests pass. Never ranking/final here.
