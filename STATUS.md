@@ -4,7 +4,7 @@
 
 Owner stopped optimization and authorized the real final on this machine. No optimizer process is active. Selected runtime is batch06 intraday loss discount integrated at dbca0ec, full level8 ranking preset. Nine candidate practice weeks, minimum91.7808% on time and zero action refusals. Eight development pairs gained EUR2720.85 and unused proof gained EUR145.92.95 offline tests pass. Team notes ca3ca92 documents were incorporated without changing production. Its baseline fallback recommendation is that branch's historical selection; the integration selects independently verified batch06 under the owner's margin-first, above90% rule. Main remains older. No EUR30000 weekly achievement.
 
-Final output/checkpoint runs/final-2026-11-15 on this machine. Await sole-operator confirmation before opening a final stream. API returned old test ff582300a369ea8c7c27c with snapshot.now=endsAt14280 at07:45 Helsinki. The dispatcher --final waits until an unfinished final snapshot appears. No final controller has started yet.
+Final output/checkpoint runs/final-2026-11-15 on this machine. Owner confirmed this machine as the sole final operator. Controller21952 started at07:46 Helsinki using --final, explicit level8 preset and runs/final-2026-11-15; waiting for a new unfinished server final. Read local checkpoint and inspect process before any takeover. API returned old test ff582300a369ea8c7c27c with snapshot.now=endsAt14280 at07:45 Helsinki. The dispatcher --final waits until an unfinished final snapshot appears. The final controller is waiting; no live final actions have been sent at this checkpoint.
 
 ## Level 8 batch 06 checkpoint
 
