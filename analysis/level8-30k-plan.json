@@ -55,5 +55,10 @@
     "deltaCents": 153504,
     "candidateMinimumOnTime": 0.9681818181818181,
     "decision": "Both dev seeds positive and eligible; run untouched proof-d before selecting."
-  }
+  },
+  "quoteStress": {
+    "seed": "study-2",
+    "reason": "Known old-source quote1.25 loss/service stress; mandatory same-source pair before promotion even if fresh proof passes. Not a holdout. Require both candidate>=91% and no extra undelivered/refusals; pooled margin gain including stress."
+  },
+  "quoteDecision": "Reject global quote1.25: unseen proof lostEUR276.62 despite57 additional wins; on-time95.161%. Keep selected quote1.4. Known stress pair not started because candidate already rejected."
 }
