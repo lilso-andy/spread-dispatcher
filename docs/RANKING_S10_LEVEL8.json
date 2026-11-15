@@ -1,0 +1,167 @@
+{
+  "season": 10,
+  "source": "a3fdbcb4415c460bb775fe74bf258f6bc0c063aa",
+  "config": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "trainingEconomy": false,
+    "offers": true
+  },
+  "runs": [
+    {
+      "status": "ended",
+      "source": "a3fdbcb4415c460bb775fe74bf258f6bc0c063aa",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w3a066d03e6cab227a6d5",
+      "boardRun": 1,
+      "score": {
+        "marginCents": 674374,
+        "revenueCents": 2032000,
+        "marginShare": 0.331876968503937,
+        "wonOrders": 166,
+        "onTimeShare": 0.9759036144578314,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0
+    },
+    {
+      "status": "ended",
+      "source": "a3fdbcb4415c460bb775fe74bf258f6bc0c063aa",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wcf2db959b6063d20df7e",
+      "boardRun": 2,
+      "score": {
+        "marginCents": 877186,
+        "revenueCents": 2592700,
+        "marginShare": 0.3383291549350098,
+        "wonOrders": 199,
+        "onTimeShare": 0.9949748743718593,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0
+    },
+    {
+      "status": "ended",
+      "source": "a3fdbcb4415c460bb775fe74bf258f6bc0c063aa",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w38e914e9a8b38f9c54eb",
+      "boardRun": 3,
+      "score": {
+        "marginCents": 635146,
+        "revenueCents": 2120600,
+        "marginShare": 0.2995124021503348,
+        "wonOrders": 180,
+        "onTimeShare": 0.9722222222222222,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0
+    },
+    {
+      "status": "ended",
+      "source": "a3fdbcb4415c460bb775fe74bf258f6bc0c063aa",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w420f8c032cca8519fd22",
+      "boardRun": 4,
+      "score": {
+        "marginCents": 1178839,
+        "revenueCents": 3543800,
+        "marginShare": 0.33264828714938766,
+        "wonOrders": 281,
+        "onTimeShare": 0.9750889679715302,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0
+    },
+    {
+      "status": "ended",
+      "source": "a3fdbcb4415c460bb775fe74bf258f6bc0c063aa",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w337868c20ffacd3e68e1",
+      "boardRun": 5,
+      "score": {
+        "marginCents": 134082,
+        "revenueCents": 507500,
+        "marginShare": 0.2642009852216749,
+        "wonOrders": 45,
+        "onTimeShare": 0.9333333333333333,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0
+    }
+  ],
+  "totalMarginCents": 3499627,
+  "allQualified": true,
+  "verifiedAt": "2026-11-15T00:57:01.649Z"
+}

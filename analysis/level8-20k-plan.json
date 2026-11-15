@@ -1,0 +1,53 @@
+{
+  "source": "0b5a2e97a6c617eadbe710d2faf63a99bfc06661",
+  "baseConfig": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2.2,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true,
+    "trainingEconomy": false
+  },
+  "level": 8,
+  "targetWeeklyCents": 2000000,
+  "minimumOnTime": 0.91,
+  "minimumCompletedNewWorlds": 15,
+  "developmentSeeds": [
+    "l8-20k-dev-a",
+    "l8-20k-dev-b"
+  ],
+  "reservedHoldouts": [
+    "l8-20k-proof-a",
+    "l8-20k-proof-b"
+  ],
+  "mode": "practice only",
+  "hypotheses": [
+    {
+      "id": "notes-permissive",
+      "change": {
+        "strictNotes": false
+      },
+      "reason": "Many baseline request declines caused by parser uncertainty; test economic effect of known parsed constraints without uncertainty veto. Actual deliveries, failed visits and refunds determine suitability.",
+      "opportunity": "100 additional won orders at observed 35-37 EUR/order would be 3500-3700 EUR/week; assumption only, not lost profit.",
+      "reject": "Any development or proof week below91%, nonpositive paired gain, extra undelivered or action refusals",
+      "holdout": "l8-20k-proof-a"
+    },
+    {
+      "id": "notes-capacity045",
+      "parent": "notes-permissive",
+      "change": {
+        "strictNotes": false,
+        "capacityFraction": 0.45
+      },
+      "reason": "Baseline exact-decision replay: capacity .45 makes19 and100 declined requests feasible on dev a/b (not causal margin). Additional wins may increase total profit but create same-day congestion.",
+      "reject": "Any week <91% on time, additional undelivered/refusals, or pooled loss versus parent",
+      "holdout": "l8-20k-proof-b"
+    }
+  ],
+  "decision": "Select notes-permissive as an explicit level8 practice profile: development +EUR4959.28; independent proof +EUR1310.94, proof100% on time; worst selected97.409%. Target EUR20000/week not met. Capacity trial pending."
+}

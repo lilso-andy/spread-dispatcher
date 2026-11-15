@@ -1,0 +1,947 @@
+{
+  "level": 8,
+  "mode": "practice",
+  "seeds": [
+    "study-2",
+    "batch15-dev-b-v1",
+    "spread-1",
+    "dispatch8-b02-a"
+  ],
+  "holdout": "dispatch8-proof02",
+  "config": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.08,
+    "emergencyMultiplier": 2,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.28,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "trainingEconomy": false,
+    "offers": true
+  },
+  "profiles": [
+    {
+      "id": "base",
+      "variant": "baseline",
+      "offlineTests": 93,
+      "parameters": {},
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496"
+    },
+    {
+      "id": "mid",
+      "variant": "medium-public-lane-quote",
+      "offlineTests": 94,
+      "parameters": {
+        "discount": 0.07,
+        "minDrive": 100,
+        "maxDrive": 300,
+        "minLocalDrivers": 15,
+        "minSlack": 300,
+        "singlePublicNonPremium": true
+      },
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "source": "286b508d94dfe9119022fbe4510ea3a5fcb762f4"
+    },
+    {
+      "id": "rescue",
+      "variant": "emergency1.8",
+      "offlineTests": 93,
+      "parameters": {},
+      "overrides": {
+        "emergencyMultiplier": 1.8
+      },
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 1.8,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496"
+    },
+    {
+      "id": "permissive",
+      "variant": "notes-permissive",
+      "offlineTests": 93,
+      "parameters": {},
+      "overrides": {
+        "strictNotes": false
+      },
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496"
+    }
+  ],
+  "completedWeeks": 18,
+  "development": {
+    "baselineTotal": 3432154,
+    "baselineWorst": 0.9336099585062241,
+    "decisions": [
+      {
+        "profileId": "mid",
+        "source": "286b508d94dfe9119022fbe4510ea3a5fcb762f4",
+        "totalMarginCents": 3334056,
+        "deltaCents": -98098,
+        "worstOnTime": 0.9241706161137441,
+        "safety": true,
+        "nearTie": true,
+        "eligible": false
+      },
+      {
+        "profileId": "rescue",
+        "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+        "totalMarginCents": 3467438,
+        "deltaCents": 35284,
+        "worstOnTime": 0.9433198380566802,
+        "safety": true,
+        "nearTie": false,
+        "eligible": true
+      },
+      {
+        "profileId": "permissive",
+        "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+        "totalMarginCents": 3830828,
+        "deltaCents": 398674,
+        "worstOnTime": 0.9288888888888889,
+        "safety": true,
+        "nearTie": false,
+        "eligible": true
+      }
+    ]
+  },
+  "proof": {
+    "candidate": "permissive",
+    "baselineWorldId": "w9f721c09b64ddc55258c",
+    "candidateWorldId": "w37914641c69f5e30614b",
+    "deltaCents": -212375,
+    "passes": false
+  },
+  "selected": "base",
+  "failedThreshold": [
+    "w37914641c69f5e30614b"
+  ],
+  "runs": [
+    {
+      "id": "dev-base-study-2",
+      "level": 8,
+      "seed": "study-2",
+      "variant": "baseline",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w2ab0d41b3196cd17e6f3",
+      "score": {
+        "marginCents": 746032,
+        "revenueCents": 2925900,
+        "marginShare": 0.25497522129942923,
+        "wonOrders": 241,
+        "onTimeShare": 0.9336099585062241,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2925900,
+        "driver_fee": -2048405,
+        "release_fee": -15093,
+        "late_refund": -113870,
+        "failed_visit": -2500
+      },
+      "expiredGigs": 114,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T00:58:52.425Z"
+    },
+    {
+      "id": "dev-mid-study-2",
+      "level": 8,
+      "seed": "study-2",
+      "variant": "medium-public-lane-quote",
+      "source": "286b508d94dfe9119022fbe4510ea3a5fcb762f4",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "we024f8a2e327cff6b3ed",
+      "score": {
+        "marginCents": 562195,
+        "revenueCents": 2560400,
+        "marginShare": 0.21957311357600376,
+        "wonOrders": 211,
+        "onTimeShare": 0.9241706161137441,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2560400,
+        "driver_fee": -1858798,
+        "release_fee": -20432,
+        "late_refund": -116475,
+        "failed_visit": -2500
+      },
+      "expiredGigs": 93,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T00:58:50.806Z"
+    },
+    {
+      "id": "dev-rescue-study-2",
+      "level": 8,
+      "seed": "study-2",
+      "variant": "emergency1.8",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 1.8,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w90f618f80437bb6c75eb",
+      "score": {
+        "marginCents": 786711,
+        "revenueCents": 2982300,
+        "marginShare": 0.2637933809475908,
+        "wonOrders": 247,
+        "onTimeShare": 0.9433198380566802,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2982300,
+        "driver_fee": -2062266,
+        "release_fee": -12498,
+        "late_refund": -115825,
+        "failed_visit": -5000
+      },
+      "expiredGigs": 118,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:01:10.248Z"
+    },
+    {
+      "id": "dev-permissive-study-2",
+      "level": 8,
+      "seed": "study-2",
+      "variant": "notes-permissive",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w42ad11b0833b7adc797b",
+      "score": {
+        "marginCents": 668601,
+        "revenueCents": 2835800,
+        "marginShare": 0.23577156357994217,
+        "wonOrders": 225,
+        "onTimeShare": 0.9288888888888889,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2835800,
+        "driver_fee": -2023479,
+        "release_fee": -18504,
+        "failed_visit": -3391,
+        "late_refund": -121825
+      },
+      "expiredGigs": 125,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:01:07.713Z"
+    },
+    {
+      "id": "dev-base-batch15-dev-b-v1",
+      "level": 8,
+      "seed": "batch15-dev-b-v1",
+      "variant": "baseline",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w2e18cef625aa4a7007ca",
+      "score": {
+        "marginCents": 887155,
+        "revenueCents": 2720000,
+        "marginShare": 0.3261599264705882,
+        "wonOrders": 195,
+        "onTimeShare": 0.9794871794871794,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2720000,
+        "driver_fee": -1816103,
+        "late_refund": -14450,
+        "release_fee": -2292
+      },
+      "expiredGigs": 31,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:02:40.279Z"
+    },
+    {
+      "id": "dev-mid-batch15-dev-b-v1",
+      "level": 8,
+      "seed": "batch15-dev-b-v1",
+      "variant": "medium-public-lane-quote",
+      "source": "286b508d94dfe9119022fbe4510ea3a5fcb762f4",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w98cd066a4323c5fcf260",
+      "score": {
+        "marginCents": 950612,
+        "revenueCents": 2901600,
+        "marginShare": 0.3276164874551971,
+        "wonOrders": 210,
+        "onTimeShare": 0.9904761904761905,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2901600,
+        "driver_fee": -1938723,
+        "late_refund": -6425,
+        "release_fee": -5840
+      },
+      "expiredGigs": 47,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:02:41.336Z"
+    },
+    {
+      "id": "dev-rescue-batch15-dev-b-v1",
+      "level": 8,
+      "seed": "batch15-dev-b-v1",
+      "variant": "emergency1.8",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 1.8,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w49969921adb5a010ac90",
+      "score": {
+        "marginCents": 887155,
+        "revenueCents": 2720000,
+        "marginShare": 0.3261599264705882,
+        "wonOrders": 195,
+        "onTimeShare": 0.9794871794871794,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2720000,
+        "driver_fee": -1816103,
+        "late_refund": -14450,
+        "release_fee": -2292
+      },
+      "expiredGigs": 31,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:04:21.225Z"
+    },
+    {
+      "id": "dev-permissive-batch15-dev-b-v1",
+      "level": 8,
+      "seed": "batch15-dev-b-v1",
+      "variant": "notes-permissive",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w99c98058f3157a066a79",
+      "score": {
+        "marginCents": 1085508,
+        "revenueCents": 3396300,
+        "marginShare": 0.3196148750110414,
+        "wonOrders": 251,
+        "onTimeShare": 0.9840637450199203,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 3396300,
+        "driver_fee": -2281861,
+        "late_refund": -19735,
+        "failed_visit": -4024,
+        "release_fee": -5172
+      },
+      "expiredGigs": 47,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:04:38.142Z"
+    },
+    {
+      "id": "dev-base-spread-1",
+      "level": 8,
+      "seed": "spread-1",
+      "variant": "baseline",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wb58e4e47375a9e2b83f9",
+      "score": {
+        "marginCents": 896917,
+        "revenueCents": 2528700,
+        "marginShare": 0.3546949025190809,
+        "wonOrders": 265,
+        "onTimeShare": 0.9811320754716981,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2528700,
+        "driver_fee": -1612491,
+        "late_refund": -16850,
+        "release_fee": -2442
+      },
+      "expiredGigs": 61,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:06:44.127Z"
+    },
+    {
+      "id": "dev-mid-spread-1",
+      "level": 8,
+      "seed": "spread-1",
+      "variant": "medium-public-lane-quote",
+      "source": "286b508d94dfe9119022fbe4510ea3a5fcb762f4",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wf6274458824d57fdb38f",
+      "score": {
+        "marginCents": 891801,
+        "revenueCents": 2623000,
+        "marginShare": 0.3399927563858178,
+        "wonOrders": 274,
+        "onTimeShare": 0.9781021897810219,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2623000,
+        "driver_fee": -1714032,
+        "late_refund": -14725,
+        "release_fee": -2442
+      },
+      "expiredGigs": 70,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:06:30.172Z"
+    },
+    {
+      "id": "dev-rescue-spread-1",
+      "level": 8,
+      "seed": "spread-1",
+      "variant": "emergency1.8",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 1.8,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wd724e7c812df82bea129",
+      "score": {
+        "marginCents": 891522,
+        "revenueCents": 2465700,
+        "marginShare": 0.36156953400657016,
+        "wonOrders": 259,
+        "onTimeShare": 0.9845559845559846,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2465700,
+        "driver_fee": -1566028,
+        "late_refund": -8150
+      },
+      "expiredGigs": 60,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 2,
+      "completedAt": "2026-11-15T01:20:38.002Z"
+    },
+    {
+      "id": "dev-permissive-spread-1",
+      "level": 8,
+      "seed": "spread-1",
+      "variant": "notes-permissive",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w140655b65edaa40606f2",
+      "score": {
+        "marginCents": 1013586,
+        "revenueCents": 3074400,
+        "marginShare": 0.3296857923497268,
+        "wonOrders": 314,
+        "onTimeShare": 0.9681528662420382,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 3074400,
+        "driver_fee": -1997088,
+        "failed_visit": -2701,
+        "late_refund": -52570,
+        "release_fee": -8455
+      },
+      "expiredGigs": 89,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 2,
+      "completedAt": "2026-11-15T01:20:36.210Z"
+    },
+    {
+      "id": "dev-base-dispatch8-b02-a",
+      "level": 8,
+      "seed": "dispatch8-b02-a",
+      "variant": "baseline",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "we6a9e16b14e8ac43796d",
+      "score": {
+        "marginCents": 902050,
+        "revenueCents": 2756300,
+        "marginShare": 0.3272684395747923,
+        "wonOrders": 200,
+        "onTimeShare": 0.995,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2756300,
+        "driver_fee": -1846325,
+        "late_refund": -7925
+      },
+      "expiredGigs": 25,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:21:48.141Z"
+    },
+    {
+      "id": "dev-mid-dispatch8-b02-a",
+      "level": 8,
+      "seed": "dispatch8-b02-a",
+      "variant": "medium-public-lane-quote",
+      "source": "286b508d94dfe9119022fbe4510ea3a5fcb762f4",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wce2bedeb82d9c0c24921",
+      "score": {
+        "marginCents": 929448,
+        "revenueCents": 2902800,
+        "marginShare": 0.32019016122364613,
+        "wonOrders": 215,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2902800,
+        "driver_fee": -1969250,
+        "release_fee": -4102
+      },
+      "expiredGigs": 23,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:21:47.307Z"
+    },
+    {
+      "id": "dev-rescue-dispatch8-b02-a",
+      "level": 8,
+      "seed": "dispatch8-b02-a",
+      "variant": "emergency1.8",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 1.8,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w420c016819e1d27eb93a",
+      "score": {
+        "marginCents": 902050,
+        "revenueCents": 2756300,
+        "marginShare": 0.3272684395747923,
+        "wonOrders": 200,
+        "onTimeShare": 0.995,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 2756300,
+        "driver_fee": -1846325,
+        "late_refund": -7925
+      },
+      "expiredGigs": 25,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:23:24.489Z"
+    },
+    {
+      "id": "dev-permissive-dispatch8-b02-a",
+      "level": 8,
+      "seed": "dispatch8-b02-a",
+      "variant": "notes-permissive",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w74a55d42330c5c641854",
+      "score": {
+        "marginCents": 1063133,
+        "revenueCents": 3434700,
+        "marginShare": 0.3095271785017614,
+        "wonOrders": 256,
+        "onTimeShare": 0.9765625,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "revenue": 3434700,
+        "driver_fee": -2321851,
+        "release_fee": -22217,
+        "failed_visit": -5779,
+        "late_refund": -21720
+      },
+      "expiredGigs": 42,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:26:04.653Z"
+    },
+    {
+      "id": "proof-base-dispatch8-proof02",
+      "level": 8,
+      "seed": "dispatch8-proof02",
+      "variant": "baseline",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w9f721c09b64ddc55258c",
+      "score": {
+        "marginCents": 652815,
+        "revenueCents": 2187200,
+        "marginShare": 0.29847064740307244,
+        "wonOrders": 183,
+        "onTimeShare": 0.9562841530054644,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "driver_fee": -1489760,
+        "revenue": 2187200,
+        "late_refund": -44625
+      },
+      "expiredGigs": 60,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:27:26.797Z"
+    },
+    {
+      "id": "proof-permissive-dispatch8-proof02",
+      "level": 8,
+      "seed": "dispatch8-proof02",
+      "variant": "notes-permissive",
+      "source": "d9f8018c92059ed47045261081bd32ed104dd496",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": false,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "w37914641c69f5e30614b",
+      "score": {
+        "marginCents": 440440,
+        "revenueCents": 2207100,
+        "marginShare": 0.1995559784332382,
+        "wonOrders": 171,
+        "onTimeShare": 0.8830409356725146,
+        "undeliveredShare": 0,
+        "ranked": false
+      },
+      "actionRefusals": 0,
+      "undeliveredOrders": 0,
+      "ledgerCents": {
+        "driver_fee": -1642031,
+        "revenue": 2207100,
+        "waiting": -6000,
+        "release_fee": -348,
+        "late_refund": -113900,
+        "failed_visit": -4381
+      },
+      "expiredGigs": 101,
+      "attempts": 1,
+      "resumed": false,
+      "snapshotReads": 1,
+      "completedAt": "2026-11-15T01:27:28.312Z"
+    }
+  ]
+}

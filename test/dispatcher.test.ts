@@ -123,3 +123,20 @@ test("invalid configuration fails before creating a world",()=>{
   assert.throws(()=>validateConfig({strictNotes:"true"}))
   assert.throws(()=>validateConfig({typo:1}))
 })
+
+test("level 8 advance public opening discount preserves the rescue price", () => {
+  const d = new Desk({...defaults, feeMultiplier: 1.08}, 8, map, roster)
+  d.now = 480
+  const q = request()
+  q.legs[0]!.pickup.window.from = DAY + 480
+  d.requests.set(q.id, q)
+  const o = asOrder(q, q.options[1]!)
+  const post = d.makePost(o,[0])!
+  assert.equal(post.schedule[0]!.feeCents, 9936)
+  assert.equal(post.schedule[1]!.feeCents, 18500)
+  d.level = 7
+  assert.equal(d.makePost(o,[0])!.schedule[0]!.feeCents, 10800)
+  d.level = 8
+  o.legs[0]!.delivery.privateAddress = true
+  assert.equal(d.makePost(o,[0])!.schedule[0]!.feeCents, 10800)
+})
