@@ -1,7 +1,7 @@
 {
-  "status": "baseline fallback only; all new short-job capacity candidates rejected",
-  "recommendedConfig": "configs/notes-level8-service-fallback.json",
-  "baselineConfig": {
+  "status": "no new candidate meets all93% gates; fallback only",
+  "promote": false,
+  "config": {
     "quoteMultiplier": 1.4,
     "feeMultiplier": 1.08,
     "emergencyMultiplier": 2,
@@ -14,108 +14,68 @@
     "trainingEconomy": false,
     "offers": true
   },
-  "eligibleValidatedCandidate": false,
-  "reason": "Cap25 primary three-pair +882.28EUR was overridden by preregistered stressB90.9091%; four-pair+1082.69EUR cannot override failed93%. No new policy promoted. Baseline fallback itself has known sub93% weeks, not certified for final.",
-  "source": "db510d2 (production equivalent d4031ca)",
-  "rescueDeltas": [
-    {
-      "seed": "study-2",
-      "delta": 40679,
-      "onTime": 0.9433198380566802
-    },
-    {
-      "seed": "release8-new-c-v1",
-      "delta": 20273,
-      "onTime": 0.948
-    },
-    {
-      "seed": "notes4-dev-a-v1",
-      "delta": 7385,
-      "onTime": 0.9689655172413794
-    },
-    {
-      "seed": "notes4-dev-b-v1",
-      "delta": 751,
-      "onTime": 0.9896907216494846
-    },
-    {
-      "seed": "notes4-selected-proof-v1",
-      "delta": 0,
-      "onTime": 0.9895833333333334
-    },
+  "requiredBenchmarkSource": "cb1cdc72d723e4b2db4fa083fe42365da58e18cc",
+  "configPath": "configs/notes-level8-service-fallback.json",
+  "policy": "pre-discount fallback1.4/emergency2.0; not globally certified93%",
+  "pairs": [
     {
       "seed": "notes4-rescue-proof-b-v1",
-      "delta": 13190,
-      "onTime": 0.9212598425196851,
+      "baseline": "w517c4dc1521dfe864458",
+      "candidate": "w86d1390138473fa394d9",
+      "delta": 145957,
+      "onTime": 0.9503105590062112,
       "extraUndelivered": false,
       "extraRefusals": false
     },
     {
-      "seed": "notes4-rescue-proof-c-v1",
-      "delta": -76088,
-      "onTime": 0.939799331103679,
+      "seed": "dispatch8-daily-a",
+      "baseline": "wf4beeb02fc155dcd9ed7",
+      "candidate": "w32ef67d0d192882968ed",
+      "delta": 232853,
+      "onTime": 0.9586206896551724,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    },
+    {
+      "seed": "dispatch8-daily-h",
+      "baseline": "wf4694269692911655e47",
+      "candidate": "w5c538c72d1e1b1badc56",
+      "delta": 109972,
+      "onTime": 0.9765258215962441,
+      "extraUndelivered": false,
+      "extraRefusals": false
+    },
+    {
+      "seed": "short-market-rescue-floor-proof-v1",
+      "baseline": "wa97267eb093f92b5be7f",
+      "candidate": "wbcc44134357cc4f945a0",
+      "delta": -41910,
+      "onTime": 0.9069767441860465,
       "extraUndelivered": false,
       "extraRefusals": false
     }
   ],
-  "rescuePooledDelta": 6190,
-  "rescueWorst": 0.9212598425196851,
-  "rankingTotal": 3636836,
-  "rankingWorst": 0.9044117647058824,
+  "totalDelta": 446872,
+  "baselineSum": 1561493,
+  "candidateSum": 2008365,
+  "worstCandidate": 0.9069767441860465,
+  "freshProof": {
+    "seed": "short-market-rescue-floor-proof-v1",
+    "baseline": "wa97267eb093f92b5be7f",
+    "candidate": "wbcc44134357cc4f945a0",
+    "delta": -41910,
+    "onTime": 0.9069767441860465,
+    "extraUndelivered": false,
+    "extraRefusals": false
+  },
+  "controlledCompletedWorlds": 57,
+  "externalCachedControls": 2,
+  "evaluatedDistinctWorlds": 59,
   "ownedUnfinishedWorlds": 0,
   "finalAuthorized": false,
-  "latestWorldCount": 44,
-  "ordinaryPracticeCount": 39,
-  "rankingCount": 5,
-  "lastExperiment": {
-    "policy": "long-route quote floor referenceFee1.85 before margin reserve",
-    "source": "db2d4dbe18476828072535c6e090689ea71d698d",
-    "decision": "reject",
-    "pairs": [
-      {
-        "seed": "notes4-rescue-proof-b-v1",
-        "delta": -21538,
-        "onTime": 0.9333333333333333
-      },
-      {
-        "seed": "release8-new-c-v1",
-        "delta": -73823,
-        "onTime": 0.9419642857142857
-      }
-    ],
-    "totalDelta": -95361,
-    "unusedHoldout": "long-floor-proof-v1"
+  "tests": {
+    "baseline": 93,
+    "combined": 99
   },
-  "latestExperiment": {
-    "policy": "peer short-public1.25/advance0.80 with capacity0.25",
-    "candidateSource": "68b526b3a2decdc05eaaad02c18963225437a711",
-    "baselineSource": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
-    "primaryDecision": "keep",
-    "stressDecision": "reject",
-    "pairs": [
-      {
-        "seed": "l8-30k-short-proof-e",
-        "delta": 107841,
-        "onTime": 0.9343065693430657
-      },
-      {
-        "seed": "study-2",
-        "delta": -94719,
-        "onTime": 0.9411764705882353
-      },
-      {
-        "seed": "shortcap25-proof-v1",
-        "delta": 75106,
-        "onTime": 1
-      },
-      {
-        "seed": "notes4-rescue-proof-b-v1",
-        "delta": 20041,
-        "onTime": 0.9090909090909091
-      }
-    ],
-    "totalDelta": 108269,
-    "worstCandidate": 0.9090909090909091,
-    "promoted": false
-  }
+  "limits": "Ordinary practice evidence, not final-clock/new-policy ranking validation; no guarantee on unseen weeks. Original baseline and previous policies have sub93% failures. Target EUR30000/week unmet."
 }
