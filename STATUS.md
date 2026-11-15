@@ -1,5 +1,16 @@
 # Shared status
 
+## Level 8 batch 05 checkpoint
+
+18 new completed and server-audited practice weeks. Selected baseline at d4031ca9c69706126b08ebd610012dce378e98a9 using docs/ranking-presets/level-8.json. Matched control d4031ca9c69706126b08ebd610012dce378e98a9. Selected weekly range EUR3370.61 to EUR10783.83, worst on-time 92.25%. Target EUR30000/week remains unmet.
+
+Pooled development differences in EUR: notes -1601.99, pricing 1972.15, both 2315.02. Fresh proof both -378.07 EUR, rejected.
+
+Below 90% this batch: dev-notes-dispatch8-sync5-c 89.47% (wb2d1ac0887086996ac03). Prior batch02 permissive proof 88.30% retained. Full inputs, world IDs, ledgers, refusals and restart counts in docs/LEVEL8_DISPATCH_BATCH05_RESULTS.json. All batch 05 controllers have finished dispatching. Runtime changes require a new paired baseline. See earlier checkpoint for parked level7 and season7 worlds. Main remains independent of the integration PR.
+
+Team sync: tested pricing 5ee83ce and notes config from 276e982. New notes handoff dd45c6e supersedes the 1.35 recommendation and matches baseline production. Season 12 level 8 was already completed by the notes operator, EUR36368.36 across five official runs.
+
+
 ## Level8 durable checkpoint after 70 practice weeks and 10 ranking runs
 
 Current objective is EUR30000 per completed week with >=90% on time in each verified week including fresh proof. UNMET. Selected dispatcher remains the public advance opening discount introduced in a3fdbcb, now integrated with both teammate branches. Full selected config is quoteMultiplier1.4, feeMultiplier1.08, emergencyMultiplier2.0, marginReserve0.15, minMarginCents2000, capacityFraction0.28, maxApproachMinutes100, minLeadMinutes180, strictNotes=true, trainingEconomy=false, offers=true. Run explicitly with docs/ranking-presets/level-8.json. For level8 only, one public car ready >=720 minutes ahead gets an opening fee factor0.92, with the existing rescue schedule; route-risk guard remains. Current main is9dccfdb; it differs from the tested integration.
