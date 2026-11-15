@@ -39,6 +39,8 @@ export class Desk {
   trust = new Map<string, number>()
   quotedOutcome = new Set<string>()
   market = new Map<string, number>()
+  recentBids: { dealer: string; won: boolean }[] = []
+  bidDay = -1
   cooldown = new Map<string, number>()
   lastReprice = new Map<string, number>()
   observedBookings = new Map<string, number[]>()
@@ -180,7 +182,14 @@ export class Desk {
     const r = this.requests.get(id)
     const d = this.decisions.get(id)
     if (!r || !d?.accepted) return // declined quotes are censored observations
-    const key = `${Math.floor(r.arrivedAt / DAY)}:${r.dealerId}`
+    const day = Math.floor(r.arrivedAt / DAY)
+    if (this.level === 8 && day >= this.bidDay) {
+      if (day !== this.bidDay) this.recentBids = []
+      this.bidDay = day
+      this.recentBids.push({ dealer: r.dealerId, won })
+      if (this.recentBids.length > 24) this.recentBids.shift()
+    }
+    const key = `${day}:${r.dealerId}`
     this.market.set(key, Math.max(-0.12, Math.min(0.16, (this.market.get(key) ?? 0) + (won ? 0.025 : -0.008))))
     this.decisions.delete(id)
   }
@@ -188,6 +197,13 @@ export class Desk {
   covered(orderId: string, leg: number): boolean {
     if (this.picked.has(legKey(orderId, leg))) return true
     return [...this.gigs.values()].some((g) => live(g) && !this.failed.has(`${g.id}:${legKey(orderId, leg)}`) && g.stops.some((s) => s.orderId === orderId && s.leg === leg))
+  }
+
+  marketDiscount(): number {
+    if (this.bidDay !== Math.floor(this.now / DAY) || this.recentBids.length < 24) return 0
+    const wins = this.recentBids.filter(bid => bid.won).length
+    const dealers = new Set(this.recentBids.map(bid => bid.dealer))
+    return wins <= 4 && dealers.size >= 3 ? 0.12 : 0
   }
 
   busyDriver(id: string): boolean { return [...this.gigs.values()].some((g) => ["booked", "working"].includes(g.status) && g.driverId === id) }
@@ -272,7 +288,7 @@ export class Desk {
       // promise to the dealer that cannot cover its likely recovery cost.
       const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity, fixedPrice && route.driveMinutes > 300 ? (this.config.trainingEconomy ? 1.20 : 1.85) : 0)
       const base = this.level <= 3 ? 1.20 : this.level <= 6 ? Math.min(1.20, this.config.quoteMultiplier) : this.config.quoteMultiplier
-      const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
+      const adjustment = (this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0) - this.marketDiscount()
       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
       const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + (fixedPrice ? Math.min(500, this.config.minMarginCents) : this.config.minMarginCents))
       if (this.level <= 3 && minimum > option.listPriceCents) continue

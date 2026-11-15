@@ -52,3 +52,43 @@ test("economics opt-in cannot bypass an expired private slot or no capacity", ()
 test("a refused economics quote releases its capacity reservation", () => {
   const d = desk(), a = d.quote(request())!; d.results([a], [{ ok: false, error: "rejected" }]); assert.equal(d.decisions.has("r"), false)
 })
+
+test("level 8 cuts a feasible quote after broad same-day losses and restores it on recovery", () => {
+  const d = desk(8, false)
+  const originalPrice = bid(d, { ...request(), id: "before" })
+  function settle(i: number, dealer: string, won: boolean) {
+    const requestId = "market-" + i
+    bid(d, { ...request(), id: requestId, dealerId: dealer })
+    d.learnQuote(requestId, won)
+    d.learnQuote(requestId, won)
+  }
+  for (let i = 0; i < 23; i++) settle(i, "sample", false)
+  assert.equal(d.marketDiscount(), 0)
+  settle(23, "second", false)
+  assert.equal(d.marketDiscount(), 0)
+  settle(24, "third", false)
+  assert.equal(bid(d), originalPrice - 2400)
+  for (let i = 25; i < 30; i++) settle(i, "sample", true)
+  assert.equal(d.marketDiscount(), 0)
+  assert.equal(bid(d, { ...request(), id: "after" }), originalPrice)
+})
+
+test("the broad loss signal ignores refusals and expires at midnight", () => {
+  for (const level of [7, 8]) {
+    const d = desk(level, false)
+    for (let i = 0; i < 24; i++) {
+      const q = { ...request(), id: "sample-" + i, dealerId: "dealer-" + i % 3 }
+      if (i === 0) q.legs[0]!.pickup.window.to = 1
+      if (i === 0) q.legs[0]!.pickup.privateAddress = true
+      bid(d, q)
+      d.learnQuote(q.id, false)
+    }
+    assert.equal(d.marketDiscount(), 0)
+    const extra = { ...request(), id: "extra" }
+    bid(d, extra)
+    d.learnQuote(extra.id, false)
+    assert.equal(d.marketDiscount(), level === 8 ? 0.12 : 0)
+    d.now += 1440
+    assert.equal(d.marketDiscount(), 0)
+  }
+})

@@ -1,5 +1,14 @@
 # Shared status
 
+## Level 8 batch 06 checkpoint
+
+18 new completed and server-audited practice weeks. Selected broad-intraday-loss-discount at 9c6137afd4b2f3c1ee42022e363d5917774feb9a using docs/ranking-presets/level-8.json. Matched control cb1cdc72d723e4b2db4fa083fe42365da58e18cc. Selected weekly range EUR2299.45 to EUR12786.95, worst on-time 91.78%. Target EUR30000/week remains unmet.
+
+Pooled development differences in EUR: daily 2720.85. Fresh proof daily 145.92 EUR, passed.
+
+Below 90% this batch: none. Prior batch02 permissive proof 88.30% retained. Full inputs, world IDs, ledgers, refusals and restart counts in docs/LEVEL8_DISPATCH_BATCH06_RESULTS.json. All batch 06 controllers have finished dispatching. Runtime changes require a new paired baseline. See earlier checkpoint for parked level7 and season7 worlds. Main remains independent of the integration PR.
+
+
 ## Level 8 batch 05 checkpoint
 
 18 new completed and server-audited practice weeks. Selected baseline at d4031ca9c69706126b08ebd610012dce378e98a9 using docs/ranking-presets/level-8.json. Matched control d4031ca9c69706126b08ebd610012dce378e98a9. Selected weekly range EUR3370.61 to EUR10783.83, worst on-time 92.25%. Target EUR30000/week remains unmet.
