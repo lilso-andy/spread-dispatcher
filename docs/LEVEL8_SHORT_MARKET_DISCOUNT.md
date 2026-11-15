@@ -105,10 +105,45 @@
       },
       "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\dispatch8-daily-a\\candidate",
       "creationUncertain": false,
-      "worldId": "w26ce762a32fe98e8e920"
+      "worldId": "w26ce762a32fe98e8e920",
+      "result": {
+        "worldId": "w26ce762a32fe98e8e920",
+        "score": {
+          "marginCents": 605912,
+          "revenueCents": 1999400,
+          "marginShare": 0.30304691407422224,
+          "wonOrders": 163,
+          "onTimeShare": 0.9570552147239264,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "dispatch8-daily-a",
+          "worldId": "w26ce762a32fe98e8e920",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\dispatch8-daily-a\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 52.234,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "finish owned w26ce762a32fe98e8e920"
+  "next": "Push pair dispatch8-daily-a"
 }
 
 Baseline93/candidate97 tests passed. No ranking/final, no raw logs/reveal/key committed.
