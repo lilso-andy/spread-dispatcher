@@ -1,5 +1,5 @@
 {
-  "status": "baseline fallback ONLY; no new candidate passes all93% gates",
+  "status": "baseline fallback only; all new short-job capacity candidates rejected",
   "recommendedConfig": "configs/notes-level8-service-fallback.json",
   "baselineConfig": {
     "quoteMultiplier": 1.4,
@@ -15,7 +15,7 @@
     "offers": true
   },
   "eligibleValidatedCandidate": false,
-  "reason": "Emergency1.8 added proofs include a92.12598% candidate week. Keep baseline by preregistered rejection rule; baseline itself also failed93% on that week. Ranking12 baseline week1 was90.44118%. No final safety guarantee.",
+  "reason": "Cap25 primary three-pair +882.28EUR was overridden by preregistered stressB90.9091%; four-pair+1082.69EUR cannot override failed93%. No new policy promoted. Baseline fallback itself has known sub93% weeks, not certified for final.",
   "source": "db510d2 (production equivalent d4031ca)",
   "rescueDeltas": [
     {
@@ -64,8 +64,8 @@
   "rankingWorst": 0.9044117647058824,
   "ownedUnfinishedWorlds": 0,
   "finalAuthorized": false,
-  "latestWorldCount": 33,
-  "ordinaryPracticeCount": 28,
+  "latestWorldCount": 44,
+  "ordinaryPracticeCount": 39,
   "rankingCount": 5,
   "lastExperiment": {
     "policy": "long-route quote floor referenceFee1.85 before margin reserve",
@@ -85,5 +85,37 @@
     ],
     "totalDelta": -95361,
     "unusedHoldout": "long-floor-proof-v1"
+  },
+  "latestExperiment": {
+    "policy": "peer short-public1.25/advance0.80 with capacity0.25",
+    "candidateSource": "68b526b3a2decdc05eaaad02c18963225437a711",
+    "baselineSource": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
+    "primaryDecision": "keep",
+    "stressDecision": "reject",
+    "pairs": [
+      {
+        "seed": "l8-30k-short-proof-e",
+        "delta": 107841,
+        "onTime": 0.9343065693430657
+      },
+      {
+        "seed": "study-2",
+        "delta": -94719,
+        "onTime": 0.9411764705882353
+      },
+      {
+        "seed": "shortcap25-proof-v1",
+        "delta": 75106,
+        "onTime": 1
+      },
+      {
+        "seed": "notes4-rescue-proof-b-v1",
+        "delta": 20041,
+        "onTime": 0.9090909090909091
+      }
+    ],
+    "totalDelta": 108269,
+    "worstCandidate": 0.9090909090909091,
+    "promoted": false
   }
 }

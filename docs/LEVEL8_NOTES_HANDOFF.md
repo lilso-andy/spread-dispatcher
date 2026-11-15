@@ -1,3 +1,3 @@
 # Latest checkpoint
 
-See [33-week checkpoint](LEVEL8_LATEST_CHECKPOINT.md). All33 owned worlds ended. Current baseline fallback is quote1.4/emergency2.0; no new policy met repeated margin gains and every-week93%. This fallback itself is NOT certified93%-safe. Historical quote135/emergency18 recommendations are superseded. No final/test-final launched.
+See [44-world checkpoint](LEVEL8_LATEST_CHECKPOINT.md). All44 owned worlds ended. No new candidate passed all93% gates. The cap25 candidate passed primary three pairs (+882.28EUR) but failed the preregistered additional stress week90.9091%, so do not deploy it. Baseline fallback remains quote1.4/emergency2.0 and is NOT certified93%-safe on every week. No final/test-final started.

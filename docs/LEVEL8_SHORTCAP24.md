@@ -1,158 +1,21 @@
-# Pending quote driver-hour reservation
+# Short-job economy and capacity trial
 
-{
-  "pid": 14652,
-  "branch": "work/notes-thanhdatLUT",
-  "state": "running",
-  "source": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
-  "candidateSource": "04e640e0f01641c0e854ada1cda320ac011962ef",
-  "config": {
-    "quoteMultiplier": 1.4,
-    "feeMultiplier": 1.08,
-    "emergencyMultiplier": 2,
-    "marginReserve": 0.15,
-    "minMarginCents": 2000,
-    "capacityFraction": 0.28,
-    "maxApproachMinutes": 100,
-    "minLeadMinutes": 180,
-    "strictNotes": true,
-    "trainingEconomy": false,
-    "offers": true
-  },
-  "candidateConfig": {
-    "quoteMultiplier": 1.4,
-    "feeMultiplier": 1.08,
-    "emergencyMultiplier": 2,
-    "marginReserve": 0.15,
-    "minMarginCents": 2000,
-    "capacityFraction": 0.24,
-    "maxApproachMinutes": 100,
-    "minLeadMinutes": 180,
-    "strictNotes": true,
-    "trainingEconomy": false,
-    "offers": true
-  },
-  "selection": "fallback2.0",
-  "hypothesis": "Combine peer f99057a short-public quote1.25 and advance opening0.80 with capacityFraction0.24 instead0.28; baseline remains common quote1.4/opening0.92/capacity0.28. Peer combination gained3126.46EUR/12.05% across4matched seeds but worst92.806% failed our93% gate. 14.3% lower capacity occupancy may preserve that profit while improving service; opportunity scenario EUR300-900/week based on prior average+781EUR, NOT proven additive. Start with prior failing seed l8-30k-short-proof-e, then study2; require each candidate>=93%, positive pooled margin, then positive untouched shortcap24-proof-v1. No tuning after viewing proof. Reject early on service failure. This tests the merged policy, not isolated component attribution.",
-  "holdout": "shortcap24-proof-v1",
-  "decision": "pending",
-  "runs": [
-    {
-      "seed": "l8-30k-short-proof-e",
-      "level": 8,
-      "side": "baseline",
-      "source": "ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90",
-      "config": {
-        "quoteMultiplier": 1.4,
-        "feeMultiplier": 1.08,
-        "emergencyMultiplier": 2,
-        "marginReserve": 0.15,
-        "minMarginCents": 2000,
-        "capacityFraction": 0.28,
-        "maxApproachMinutes": 100,
-        "minLeadMinutes": 180,
-        "strictNotes": true,
-        "trainingEconomy": false,
-        "offers": true
-      },
-      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\baseline",
-      "creationUncertain": false,
-      "worldId": "w641794ab1b04de9894df",
-      "result": {
-        "worldId": "w641794ab1b04de9894df",
-        "score": {
-          "marginCents": 790623,
-          "revenueCents": 2796800,
-          "marginShare": 0.28268842963386726,
-          "wonOrders": 228,
-          "onTimeShare": 0.9473684210526315,
-          "undeliveredShare": 0.0043859649122807015,
-          "ranked": true
-        },
-        "config": {
-          "quoteMultiplier": 1.4,
-          "feeMultiplier": 1.08,
-          "emergencyMultiplier": 2,
-          "marginReserve": 0.15,
-          "minMarginCents": 2000,
-          "capacityFraction": 0.28,
-          "maxApproachMinutes": 100,
-          "minLeadMinutes": 180,
-          "strictNotes": true,
-          "trainingEconomy": false,
-          "offers": true
-        },
-        "options": {
-          "level": 8,
-          "seed": "l8-30k-short-proof-e",
-          "worldId": "w641794ab1b04de9894df",
-          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\baseline",
-          "quiet": true,
-          "reveal": true
-        },
-        "elapsedSeconds": 66.54,
-        "actionRefusals": 0
-      }
-    },
-    {
-      "seed": "l8-30k-short-proof-e",
-      "level": 8,
-      "side": "candidate",
-      "source": "04e640e0f01641c0e854ada1cda320ac011962ef",
-      "config": {
-        "quoteMultiplier": 1.4,
-        "feeMultiplier": 1.08,
-        "emergencyMultiplier": 2,
-        "marginReserve": 0.15,
-        "minMarginCents": 2000,
-        "capacityFraction": 0.24,
-        "maxApproachMinutes": 100,
-        "minLeadMinutes": 180,
-        "strictNotes": true,
-        "trainingEconomy": false,
-        "offers": true
-      },
-      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\candidate",
-      "creationUncertain": false,
-      "worldId": "w2dc5e1582ada10e9390d",
-      "result": {
-        "worldId": "w2dc5e1582ada10e9390d",
-        "score": {
-          "marginCents": 898183,
-          "revenueCents": 3387600,
-          "marginShare": 0.2651384460975322,
-          "wonOrders": 272,
-          "onTimeShare": 0.9375,
-          "undeliveredShare": 0,
-          "ranked": true
-        },
-        "config": {
-          "quoteMultiplier": 1.4,
-          "feeMultiplier": 1.08,
-          "emergencyMultiplier": 2,
-          "marginReserve": 0.15,
-          "minMarginCents": 2000,
-          "capacityFraction": 0.24,
-          "maxApproachMinutes": 100,
-          "minLeadMinutes": 180,
-          "strictNotes": true,
-          "trainingEconomy": false,
-          "offers": true
-        },
-        "options": {
-          "level": 8,
-          "seed": "l8-30k-short-proof-e",
-          "worldId": "w2dc5e1582ada10e9390d",
-          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\shortcap24-validation\\l8-30k-short-proof-e\\candidate",
-          "quiet": true,
-          "reveal": true
-        },
-        "elapsedSeconds": 89.621,
-        "actionRefusals": 0
-      }
-    }
-  ],
-  "next": "Push pair l8-30k-short-proof-e"
-}
+Combine peer f99057a short-public quote1.25 and advance opening0.80 with capacityFraction0.24 instead0.28; baseline remains common quote1.4/opening0.92/capacity0.28. Peer combination gained3126.46EUR/12.05% across4matched seeds but worst92.806% failed our93% gate. 14.3% lower capacity occupancy may preserve that profit while improving service; opportunity scenario EUR300-900/week based on prior average+781EUR, NOT proven additive. Start with prior failing seed l8-30k-short-proof-e, then study2; require each candidate>=93%, positive pooled margin, then positive untouched shortcap24-proof-v1. No tuning after viewing proof. Reject early on service failure. This tests the merged policy, not isolated component attribution.
 
-Baseline93/candidate95 tests pass. Never ranking/final here.
+Frozen baseline ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90; candidate 04e640e0f01641c0e854ada1cda320ac011962ef; branch work/notes-thanhdatLUT; decision **reject**. Pooled delta EUR-412.94. Source/seed/config and ended server scores rechecked; all ledgers reconciled. Candidate95/baseline93 tests passed.
+
+|Seed|Side|World|Commit|Margin EUR|Won|On time|Undelivered|Refusals|Cached|
+|---|---|---|---|---:|---:|---:|---:|---:|---|
+|l8-30k-short-proof-e|baseline|w641794ab1b04de9894df|ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90|7906.23|228|94.737%|0.0043859649122807015|0|false|
+|l8-30k-short-proof-e|candidate|w2dc5e1582ada10e9390d|04e640e0f01641c0e854ada1cda320ac011962ef|8981.83|272|93.750%|0|0|false|
+|study-2|baseline|w9b6d0ff0bbe82d96be43|ced25ae8bbbaba4c11b3a29ccb2d75d08996bf90|7460.32|241|93.361%|0|0|false|
+|study-2|candidate|w4d17525c6df637ec849b|04e640e0f01641c0e854ada1cda320ac011962ef|5971.78|191|94.241%|0|0|false|
+
+Pairs cents `[{"seed":"l8-30k-short-proof-e","delta":107560,"onTime":0.9375,"extraUndelivered":false,"extraRefusals":false},{"seed":"study-2","delta":-148854,"onTime":0.9424083769633508,"extraUndelivered":false,"extraRefusals":false}]`. Every cached baseline requires exact executed ced25 source/config/level8/seed and server end score; no result reused merely by production-equivalent code. Fetched integration cb1cdc7 changes reports/config files only, no production TypeScript or selected ranking config difference from d4031ca. Exact executed commits above, not cb1cdc7.
+
+- w641794ab1b04de9894df: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2796800,"driver_fee":-1930715,"late_refund":-42310,"release_fee":-8152,"waiting":-3000,"undelivered_penalty":-22000}`; net EUR/order 34.68; driver fee EUR/order 84.68; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\l8-30k-short-proof-e\baseline`.
+- w2dc5e1582ada10e9390d: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.24,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":3387600,"driver_fee":-2383447,"release_fee":-5320,"late_refund":-100650}`; net EUR/order 33.02; driver fee EUR/order 87.63; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\l8-30k-short-proof-e\candidate`.
+- w9b6d0ff0bbe82d96be43: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2925900,"driver_fee":-2048405,"release_fee":-15093,"late_refund":-113870,"failed_visit":-2500}`; net EUR/order 30.96; driver fee EUR/order 85.00; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\study-2\baseline`.
+- w4d17525c6df637ec849b: config `{"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.24,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}`; ledger cents `{"revenue":2193400,"driver_fee":-1517206,"release_fee":-13886,"late_refund":-60130,"failed_visit":-5000}`; net EUR/order 31.27; driver fee EUR/order 79.43; output `C:\Users\thanh\Documents\Codex\2026-11-14\t\work\shortcap24-validation\study-2\candidate`.
+
+These are merged-policy comparisons, not isolated causal attribution to fee/quote/capacity. Any primary keep remains provisional until the additional preregistered stressB passes93% and positive combined pooled margin. Reserved proof shortcap24-proof-v1 is untouched unless world rows explicitly show it. No ranking/final, no raw logs/reveal/key committed. EUR30000/week unmet.
