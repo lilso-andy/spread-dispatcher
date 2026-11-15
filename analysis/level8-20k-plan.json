@@ -14,7 +14,7 @@
     "trainingEconomy": false
   },
   "level": 8,
-  "targetWeeklyCents": 2000000,
+  "targetWeeklyCents": 3000000,
   "minimumOnTime": 0.91,
   "minimumCompletedNewWorlds": 15,
   "developmentSeeds": [
@@ -49,5 +49,5 @@
       "holdout": "l8-20k-proof-b"
     }
   ],
-  "decision": "Select notes-permissive as an explicit level8 practice profile: development +EUR4959.28; independent proof +EUR1310.94, proof100% on time; worst selected97.409%. Target EUR20000/week not met. Capacity trial pending."
+  "decision": "Old-source notes-permissive improved three pairs, but new team evidence on integrated source failed dispatch8-proof02 at88.30% and lost EUR2123.75. Do NOT promote permissive profile to new integrated/ranking default. Capacity .45 old-source pooled +EUR219.24, one seed -EUR159.28; no independent proof; unselected. Establish latest-source baseline before further experiments."
 }
