@@ -1,0 +1,9 @@
+{
+  "levelOneEconomy": true,
+  "feeMultiplier": 0.86,
+  "emergencyMultiplier": 1.65,
+  "marginReserve": 0.02,
+  "minMarginCents": 200,
+  "capacityFraction": 0.50,
+  "minLeadMinutes": 180
+}

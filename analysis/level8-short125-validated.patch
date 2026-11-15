@@ -1,0 +1,57 @@
+--- a/desk.ts
++++ b/desk.ts
+@@ -272,11 +272,14 @@
+       // promise to the dealer that cannot cover its likely recovery cost.
+       const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity, fixedPrice && route.driveMinutes > 300 ? (this.config.trainingEconomy ? 1.20 : 1.85) : 0)
+       const base = this.level <= 3 ? 1.20 : this.level <= 6 ? Math.min(1.20, this.config.quoteMultiplier) : this.config.quoteMultiplier
++      const shortPublic = this.level === 8 && order.legs.length === 1 && route.driveMinutes <= 120
++        && !order.legs[0]!.car.premium && !order.legs[0]!.pickup.privateAddress && !order.legs[0]!.delivery.privateAddress
++      const quoteBase = shortPublic ? Math.min(base, 1.25) : base
+       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
+       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0
+       const minimum = Math.max(fee / (1 - this.config.marginReserve), fee + (fixedPrice ? Math.min(500, this.config.minMarginCents) : this.config.minMarginCents))
+       if (this.level <= 3 && minimum > option.listPriceCents) continue
+-      const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (base + adjustment) * (1 + trust)) / 100) * 100
++      const price = this.level <= 3 ? option.listPriceCents : Math.ceil(Math.max(minimum, option.listPriceCents * (quoteBase + adjustment) * (1 + trust)) / 100) * 100
+       // Do not devote capacity to a near-impossible bid. Explicitly declining is free.
+       if (price > option.listPriceCents * (this.level >= 7 ? 2.25 : 1.70)) continue
+       prices[option.kind] = price
+--- a/test/market-economics.test.ts
++++ b/test/market-economics.test.ts
+@@ -22,7 +22,7 @@
+  const history=(d:Desk)=>{for(let i=0;i<30;i++)d.orders.set(`done${i}`,{...request(),id:`done${i}`,status:'delivered',deadline:100,deliveredAt:[i===0?101:99],lastPickupAt:80,option:'next_day',priceCents:20000} as any)};
+  assert.ok(bid(build(8,true))<10000000);
+  const stressed=build(8,true);history(stressed);assert.ok(bid(stressed)>=10000000);
+- const short=build(8,false);history(short);assert.equal(bid(short),27000);
++ const short=build(8,false);history(short);assert.equal(bid(short),25000);
+  const other=build(7,true);history(other);assert.ok(bid(other)<10000000);
+ });
+ 
+@@ -34,7 +34,7 @@
+ })
+ test("explicit lower list-price factor changes only market-level opt-in quotes", () => {
+   for (const level of [4, 5, 6]) { assert.equal(bid(desk(level)), 21000); assert.equal(bid(desk(level, false)), 24000) }
+-  assert.equal(bid(desk(8, false)), 27000)
++  assert.equal(bid(desk(8, false)), 25000)
+ })
+ test("training floors remain unchanged and shortage feedback is capped", () => {
+   assert.equal(desk(3).feeMultiplier("a"), 1.05)
+@@ -52,3 +52,18 @@
+ test("a refused economics quote releases its capacity reservation", () => {
+   const d = desk(), a = d.quote(request())!; d.results([a], [{ ok: false, error: "rejected" }]); assert.equal(d.decisions.has("r"), false)
+ })
++
++
++test("short public price applies only to eligible level8 routes", () => {
++  const build = (minutes:number, level=8) => { const m={...map,roads:map.roads.map(r=>({...r,minutes:r.from===r.to?0:minutes}))}; const d=new Desk({...legacy,quoteMultiplier:1.4},level,m,roster);d.now=480;return d }
++  assert.equal(bid(build(120)),25000)
++  assert.equal(bid(build(121)),28000)
++  assert.equal(bid(build(90,7)),28000)
++  const premium=request();premium.legs[0]!.car.premium=true;assert.equal(bid(build(90),premium),28000)
++  const privateCar=request();privateCar.legs[0]!.pickup.privateAddress=true;assert.equal(bid(build(90),privateCar),28000)
++})
++test("short public discount preserves contribution floor and capacity rejection", () => {
++  const q=request();q.referenceFeeCents=24000
++  const d=desk(8,false);assert.ok(bid(d,q)>=Math.ceil(24000*1.08/(1-legacy.marginReserve)))
++  const empty=desk(8,false);empty.roster=[];assert.ok(bid(empty)>=10000000)
++})

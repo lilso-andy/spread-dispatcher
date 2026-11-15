@@ -1,0 +1,180 @@
+{
+  "level": 8,
+  "config": {
+    "quoteMultiplier": 1.4,
+    "feeMultiplier": 1.2,
+    "emergencyMultiplier": 2.4,
+    "marginReserve": 0.15,
+    "minMarginCents": 2000,
+    "capacityFraction": 0.2,
+    "maxApproachMinutes": 100,
+    "minLeadMinutes": 180,
+    "strictNotes": true,
+    "offers": true
+  },
+  "seeds": [
+    "quote-unseen-01",
+    "quote-unseen-02"
+  ],
+  "baseline": {
+    "rankedRuns": 2,
+    "failedSeeds": [],
+    "totalMarginCents": 850344,
+    "worstOnTimeShare": 0.9803921568627451,
+    "weightedOnTimeShare": 0.9845559845559846,
+    "wonOrders": 259,
+    "undeliveredOrders": 0,
+    "offers": 901,
+    "reprices": 51,
+    "refusedActions": 0,
+    "offlineMaxActionLagSeconds": 0,
+    "offlineLateQuotes": 0
+  },
+  "candidate": {
+    "rankedRuns": 2,
+    "failedSeeds": [],
+    "totalMarginCents": 1129796,
+    "worstOnTimeShare": 0.9840425531914894,
+    "weightedOnTimeShare": 0.9911764705882353,
+    "wonOrders": 340,
+    "undeliveredOrders": 0,
+    "offers": 725,
+    "reprices": 11,
+    "refusedActions": 0,
+    "offlineMaxActionLagSeconds": 0,
+    "offlineLateQuotes": 0
+  },
+  "pairs": [
+    {
+      "seed": "quote-unseen-01",
+      "baseline": {
+        "worldId": "wbb1568205416087b9a08",
+        "score": {
+          "marginCents": 537396,
+          "revenueCents": 2263000,
+          "marginShare": 0.2374706142288997,
+          "wonOrders": 153,
+          "onTimeShare": 0.9803921568627451,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1033,
+          "post": 169,
+          "offer": 758,
+          "reprice": 45
+        },
+        "offerAnswers": {
+          "expired": 642,
+          "declined": 115,
+          "accepted": 1
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 70.679
+      },
+      "candidate": {
+        "worldId": "w976837a5701852f1b081",
+        "score": {
+          "marginCents": 642451,
+          "revenueCents": 2561700,
+          "marginShare": 0.25079088105554903,
+          "wonOrders": 188,
+          "onTimeShare": 0.9840425531914894,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1033,
+          "post": 206,
+          "offer": 445,
+          "withdraw": 1,
+          "reprice": 11
+        },
+        "offerAnswers": {
+          "expired": 381,
+          "declined": 63,
+          "accepted": 1
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 72.658
+      },
+      "marginDeltaCents": 105055,
+      "onTimeDelta": 0.0036503963287443097
+    },
+    {
+      "seed": "quote-unseen-02",
+      "baseline": {
+        "worldId": "w4124c8d68f00ccd02160",
+        "score": {
+          "marginCents": 312948,
+          "revenueCents": 1425700,
+          "marginShare": 0.2195048046573613,
+          "wonOrders": 106,
+          "onTimeShare": 0.9905660377358491,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1040,
+          "post": 115,
+          "offer": 143,
+          "reprice": 6
+        },
+        "offerAnswers": {
+          "declined": 29,
+          "expired": 114
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 47.041
+      },
+      "candidate": {
+        "worldId": "wf52e60b00e7982ec811e",
+        "score": {
+          "marginCents": 487345,
+          "revenueCents": 1849200,
+          "marginShare": 0.26354369457062515,
+          "wonOrders": 152,
+          "onTimeShare": 1,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "actions": {
+          "quote": 1040,
+          "post": 165,
+          "offer": 280
+        },
+        "offerAnswers": {
+          "declined": 43,
+          "expired": 234,
+          "accepted": 3
+        },
+        "rateReplay": {
+          "maxLagSeconds": 0,
+          "lateQuotes": 0
+        },
+        "actionRefusals": 0,
+        "elapsedSeconds": 63.204
+      },
+      "marginDeltaCents": 174397,
+      "onTimeDelta": 0.009433962264150941
+    }
+  ],
+  "source": {
+    "baseline": "5f33186967c13fc4d86564c2877490ef3a8e26ce",
+    "candidate": "8430f689ea41ff4a6777439d97fccdd00b7d41d6"
+  },
+  "phase": "two new seeds; production source frozen before first-variant holdout results were inspected",
+  "offlineReplayNote": "Excludes network/read latency and behavior changes; not a live-final validation."
+}
