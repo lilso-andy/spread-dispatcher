@@ -1,5 +1,11 @@
 # Shared status
 
+## Level 8 target EUR30,000 and validated advance opening fee
+
+User now prioritizes ranking when available, then batches of >=15 completed practice weeks at level 8. Target EUR30,000 per week with >=90% on time in each verified week including fresh proof. Level8 dispatch batch01 completed18 ordinary practice worlds. Selected a3fdbcb plus emergency2.0 config: for a single public car ready at least720 minutes later, opening fee is92% of the usual level8 fee; keep scheduled rescue. Four development seeds gained EUR3759.63 and unused dispatch8-proof01 gained EUR615.62 (8183.73 to8799.35), service95.24% to96.40%. Worst selected week93.36%. All18 qualified, fully delivered, zero refusals. Study2 service fell94.38% to93.36%; preserve this tradeoff. See docs/LEVEL8_DISPATCH_BATCH01_RESULTS.json.
+
+Ranking season10 level8 run1 is owned by runs/rank10-level8/play.mjs, terminal36044. Read state.json for PID and world identity before takeover. Frozen source a3fdbcb and exact selected configuration. It runs sequentially up to the current season's five level8 runs only. Level7 batch05 PID26096 was stopped and its two worlds remain parked (w07a1860f6282ab59175d, wb7fb82b3b5f547ba0c5e). Never run a second controller on a world.
+
 ## Level 7 batch 04 completed
 
 18 more verified practice weeks. Reject the flexible public windows (source 42c4d8e) against frozen integration 4e573a3. Margin fell EUR211.31 across eight pairs despite 297 fewer expiry events. Level 7 emergency fee 2.15 gained EUR289.89 against the previous 2.4 on two additional paired seeds, with identical service per pair. Both fees failed l7-b04-a at 83.91%; the window candidate reached 88.37%. All three failed weeks remain in the results. No incomplete deliveries or refusals in the batch. The selected fee improves observed margin but the dispatcher still fails the delivery minimum on this seed. See docs/LEVEL7_BATCH04.md and docs/LEVEL7_BATCH04_RESULTS.json for all 18 worlds. The latest teammate revision a6643c2, including a separate level 8 preset, was integrated locally at ffcc040 (92/92 tests). The published level 7 preset is unchanged from 9918fff. All batch 02, 03 and 04 controllers finished. Ranking remains parked.
