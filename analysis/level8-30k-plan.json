@@ -50,5 +50,10 @@
     "strictNotes": true,
     "trainingEconomy": false,
     "offers": true
+  },
+  "quoteDevelopment": {
+    "deltaCents": 153504,
+    "candidateMinimumOnTime": 0.9681818181818181,
+    "decision": "Both dev seeds positive and eligible; run untouched proof-d before selecting."
   }
 }

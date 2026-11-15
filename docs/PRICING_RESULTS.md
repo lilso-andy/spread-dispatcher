@@ -860,5 +860,7 @@ Frozen team integration d4031ca9c69706126b08ebd610012dce378e98a9. Main is not th
 |l8-30k-dev-d|baseline|wccbf235ecaa44012ca37|5946.87|163|96.933%|0|0|
 |l8-30k-proof-c|advance080|w99a57cf8447d8aa9d315|4767.00|100|100.000%|0|0|
 |l8-30k-proof-c|baseline|w74b240344b1f5d80ca8c|4372.56|101|100.000%|0|0|
+|l8-30k-proof-d|advance080|w9a900cef69d8ffe2defe|RUNNING|||||
+|l8-30k-proof-d|advance080-quote125|w7d0c7c4ac2c8cf6aceea|RUNNING|||||
 
 Decision: Select advance080 after3matched seeds: pooled +EUR676.99, positive each seed; fresh proof +EUR394.44 at100% on time both; worst candidate97.5155%, zero undelivered/refusals. Full93 offline tests. Still far belowEUR30000/week.
