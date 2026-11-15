@@ -149,9 +149,73 @@
         "undeliveredShare": 0,
         "ranked": true
       }
+    },
+    {
+      "number": 3,
+      "source": "db510d229e21aa5441ba896ab39eaff5c055310a",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\ranking12-level8\\run3",
+      "creationUncertain": false,
+      "worldId": "wc1a168eef098e8992fb3",
+      "result": {
+        "worldId": "wc1a168eef098e8992fb3",
+        "score": {
+          "marginCents": 778085,
+          "revenueCents": 2351000,
+          "marginShare": 0.33095916631220756,
+          "wonOrders": 202,
+          "onTimeShare": 0.995049504950495,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "worldId": "wc1a168eef098e8992fb3",
+          "board": true,
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\ranking12-level8\\run3",
+          "quiet": true,
+          "reveal": false
+        },
+        "elapsedSeconds": 45.597,
+        "actionRefusals": 0
+      },
+      "serverScore": {
+        "marginCents": 778085,
+        "revenueCents": 2351000,
+        "marginShare": 0.33095916631220756,
+        "wonOrders": 202,
+        "onTimeShare": 0.995049504950495,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
     }
   ],
-  "next": "Push completed ranking12-2"
+  "next": "Push completed ranking12-3"
 }
 
 No ranking reveal/fork/deletion or final. Final scores only.
