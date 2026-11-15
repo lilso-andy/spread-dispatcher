@@ -141,9 +141,128 @@
         "elapsedSeconds": 52.234,
         "actionRefusals": 0
       }
+    },
+    {
+      "side": "baseline",
+      "level": 8,
+      "seed": "dispatch8-daily-h",
+      "source": "cb1cdc72d723e4b2db4fa083fe42365da58e18cc",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "worldId": "wf4694269692911655e47",
+      "cachedExternal": true,
+      "originalControllerOutput": null,
+      "cacheArchive": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\cached-dispatch8-daily-h.public-events.json",
+      "metadataSource": "18d2225 docs/LEVEL8_DISPATCH_BATCH06_RESULTS.json",
+      "ledger": {
+        "revenue": 2360100,
+        "driver_fee": -1563517,
+        "release_fee": -7589,
+        "late_refund": -26110,
+        "waiting": -3000
+      },
+      "result": {
+        "worldId": "wf4694269692911655e47",
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "score": {
+          "marginCents": 759884,
+          "revenueCents": 2360100,
+          "marginShare": 0.3219711029193678,
+          "wonOrders": 177,
+          "onTimeShare": 0.9548022598870056,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "dispatch8-daily-h",
+          "worldId": "wf4694269692911655e47"
+        },
+        "actionRefusals": 0
+      }
+    },
+    {
+      "side": "candidate",
+      "seed": "dispatch8-daily-h",
+      "level": 8,
+      "source": "18a249785f5c328e7ba8dd5fcdcb4dec4a7b1fc2",
+      "config": {
+        "quoteMultiplier": 1.4,
+        "feeMultiplier": 1.08,
+        "emergencyMultiplier": 2,
+        "marginReserve": 0.15,
+        "minMarginCents": 2000,
+        "capacityFraction": 0.28,
+        "maxApproachMinutes": 100,
+        "minLeadMinutes": 180,
+        "strictNotes": true,
+        "trainingEconomy": false,
+        "offers": true
+      },
+      "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\dispatch8-daily-h\\candidate",
+      "creationUncertain": false,
+      "worldId": "w2e865d0606616a8d00f9",
+      "result": {
+        "worldId": "w2e865d0606616a8d00f9",
+        "score": {
+          "marginCents": 1038083,
+          "revenueCents": 3129200,
+          "marginShare": 0.33174070049853,
+          "wonOrders": 229,
+          "onTimeShare": 0.9912663755458515,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "dispatch8-daily-h",
+          "worldId": "w2e865d0606616a8d00f9",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\short-market-validation\\dispatch8-daily-h\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 56.239,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "Push pair dispatch8-daily-a"
+  "next": "Push pair dispatch8-daily-h"
 }
 
 Baseline93/candidate97 tests passed. No ranking/final, no raw logs/reveal/key committed.
