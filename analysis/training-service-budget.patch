@@ -1,0 +1,11 @@
+--- a/desk.ts
++++ b/desk.ts
+@@ -249,7 +249,7 @@
+     if (facts.summerTyres) return refuse("summer tyres: weather exposure")
+     const completed = [...this.orders.values()].filter((o) => o.status === "delivered")
+     const lateCount = completed.filter((o) => o.deliveredAt.some((at, i) => at !== null && at > Math.min(o.deadline, this.facts(o.id).deliveryTo ?? Infinity, o.legs[i]!.delivery.privateAddress ? o.legs[i]!.delivery.window.to + 30 : Infinity))).length
+-    if (completed.length >= 10 && lateCount / completed.length > 0.045) return refuse("service recovery: pause new exposure")
++    if (completed.length >= 10 && lateCount / completed.length > (this.level <= 3 && this.config.trainingEconomy ? 0.08 : 0.045)) return refuse("service recovery: pause new exposure")
+     // Give explicit private appointments their actual deadline, not just the option's 20:00.
+     const options = this.level <= 3 ? request.options.slice(0,1) : [...request.options].sort((a, b) => b.deadline - a.deadline)
+     const prices: Extract<Action, { type: "quote" }>["prices"] = {}

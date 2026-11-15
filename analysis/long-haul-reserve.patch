@@ -1,0 +1,15 @@
+--- a/desk.ts
++++ b/desk.ts
+@@ -266,7 +266,11 @@
+       // Long one-way work needed rescue fees above the fixed dealer price in
+       // the training baseline. Price that exposure into acceptance, not a
+       // promise to the dealer that cannot cover its likely recovery cost.
+-      const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity, fixedPrice && route.driveMinutes > 300 ? 1.85 : 0)
++      const destination = order.legs.at(-1)!.delivery.placeId
++      const longHaulReserve = this.level >= 7 && route.driveMinutes >= 360 &&
++        this.roster.filter(driver => eligible(driver, route.experienced, route.manual) &&
++          this.network.road(driver.homePlaceId, destination).minutes <= 45).length < 12 ? 0.35 : 0
++      const fee = request.referenceFeeCents * Math.max(this.feeMultiplier(place) + scarcity + longHaulReserve, fixedPrice && route.driveMinutes > 300 ? 1.85 : 0)
+       const base = this.level <= 6 ? 1.20 : this.config.quoteMultiplier
+       const adjustment = this.market.get(`${Math.floor(this.now / DAY)}:${request.dealerId}`) ?? 0
+       const trust = this.level >= 8 ? (this.trust.get(request.dealerId) ?? 0) / 100 : 0

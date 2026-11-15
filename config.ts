@@ -8,6 +8,7 @@ export type Config = {
   maxApproachMinutes: number
   minLeadMinutes: number
   strictNotes: boolean
+  trainingEconomy: boolean
   offers: boolean
 }
 
@@ -22,6 +23,7 @@ export const defaults: Config = {
   maxApproachMinutes: 100,
   minLeadMinutes: 210,
   strictNotes: true,
+  trainingEconomy: false,
   offers: true,
 }
 
