@@ -67,5 +67,10 @@
     "reject": "Nonpositive paired total, any candidateweek<91%, extra undelivered/refusals or failed untouchedproof. Known study2 stress before any promotion.",
     "holdout": "l8-30k-short-proof-e",
     "stress": "study-2"
+  },
+  "shortQuoteDevelopment": {
+    "deltaCents": 160376,
+    "minimumOnTime": 0.9748427672955975,
+    "decision": "Positive on both development seeds; require new proof and known study2 stress before promotion."
   }
 }
