@@ -1,5 +1,11 @@
 # Shared status
 
+## Level 8 batch02 rejected after fresh proof
+
+18 completed weeks and all final scores independently audited. Permissive notes gained EUR3986.74 across4 development seeds but lost EUR2123.75 on unused dispatch8-proof02 and delivered only88.30% on time. REJECT. Medium quote adjustment lost EUR980.98 pooled. Emergency1.8 gained EUR352.84 development but was not selected for the preregistered single-candidate proof. Keep d9f8018 runtime, strictNotes=true, fee1.08/emergency2.0 and advance opening factor0.92. Two spread1 candidate runs reconnected and rebuilt; retain their diagnostics in the report. All orders delivered and no refused actions in all18 weeks. Complete inputs and outcomes in docs/LEVEL8_DISPATCH_BATCH02_RESULTS.json.
+
+Ranking season11 controller runs/rank11-level8/play.mjs, terminal34665, exact frozen d9f8018 source and unchanged baseline config. Read its state PID and world before takeover. Ranking season10 already ended five qualified weeks. Target EUR30000/week unmet. Next proposed algorithm allows one short public recovery job after all outstanding work ends, with a completed-order budget for one further late job, to test the prolonged service pause that restricted season10 run5 to45 wins. Preserve the harder route and service constraints.
+
 ## Season 10 level 8 complete; practice batch02 active
 
 All5 ranking weeks ended and independently verified: total EUR34996.27, all qualified, zero undelivered/refusals. Full run scores are in docs/RANKING_S10_LEVEL8.json. No more season10 level8 attempts remain. The fifth week had45 wins and93.33% on time; service recovery declines began at minute2068 after early refunds. This is a candidate explanation for its low margin, requiring practice testing before changes.
