@@ -1,5 +1,14 @@
 # Shared status
 
+## Level 8 batch 08 checkpoint
+
+16 new completed and server-audited practice weeks. Selected baseline at 784e005373b19119ca070a10a7c210b7070188ed using docs/ranking-presets/level-8.json. Matched control 784e005373b19119ca070a10a7c210b7070188ed. Selected weekly range EUR4659.37 to EUR9932.88, worst on-time 96.11%. Target EUR30000/week remains unmet.
+
+Pooled development differences in EUR: parser -5.00. No eligible development candidate for proof.
+
+Below 90% this batch: none. Prior batch02 permissive proof 88.30% retained. Full inputs, world IDs, ledgers, refusals and restart counts in docs/LEVEL8_DISPATCH_BATCH08_RESULTS.json. All batch 08 controllers have finished dispatching. Runtime changes require a new paired baseline. See earlier checkpoint for parked level7 and season7 worlds. Main remains independent of the integration PR.
+
+
 ## Level 8 batch 07 checkpoint
 
 16 new completed and server-audited practice weeks. Selected baseline at 18d22250d97f15d5415c5aff4d807b1cfd63acbf using docs/ranking-presets/level-8.json. Matched control 18d22250d97f15d5415c5aff4d807b1cfd63acbf. Selected weekly range EUR3423.55 to EUR11623.93, worst on-time 92.86%. Target EUR30000/week remains unmet.
