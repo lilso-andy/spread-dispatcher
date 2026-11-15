@@ -101,8 +101,43 @@
       },
       "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\notes4-rescue-proof-b-v1\\candidate",
       "creationUncertain": false,
-      "worldId": "w86d1390138473fa394d9"
+      "worldId": "w86d1390138473fa394d9",
+      "result": {
+        "worldId": "w86d1390138473fa394d9",
+        "score": {
+          "marginCents": 541397,
+          "revenueCents": 1761800,
+          "marginShare": 0.3072976501305483,
+          "wonOrders": 161,
+          "onTimeShare": 0.9503105590062112,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "seed": "notes4-rescue-proof-b-v1",
+          "worldId": "w86d1390138473fa394d9",
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\market-floor-validation\\notes4-rescue-proof-b-v1\\candidate",
+          "quiet": true,
+          "reveal": true
+        },
+        "elapsedSeconds": 46.192,
+        "actionRefusals": 0
+      }
     }
   ],
-  "next": "finish owned w86d1390138473fa394d9"
+  "next": "Push pair notes4-rescue-proof-b-v1"
 }
