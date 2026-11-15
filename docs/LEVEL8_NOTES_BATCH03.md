@@ -12,9 +12,13 @@ Full baseline config: {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMult
 
 Config baseline {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\study-2\baseline
 
-|study-2|chain85|w8be6dcab0d8b6ef700b9|6bf843d7f8dfb4aca7f7eb4b5040a2e60e29a2db|running|||||
+|study-2|chain85|w8be6dcab0d8b6ef700b9|6bf843d7f8dfb4aca7f7eb4b5040a2e60e29a2db|7500.02|242|94.215%|0|0|
 
 Config chain85 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":2,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\study-2\chain85
 
+|study-2|emergency18|wdb462f225173028cf321|d4031ca9c69706126b08ebd610012dce378e98a9|running|||||
 
-Checkpoint state running; next finish owned w8be6dcab0d8b6ef700b9
+Config emergency18 {"quoteMultiplier":1.4,"feeMultiplier":1.08,"emergencyMultiplier":1.8,"marginReserve":0.15,"minMarginCents":2000,"capacityFraction":0.28,"maxApproachMinutes":100,"minLeadMinutes":180,"strictNotes":true,"trainingEconomy":false,"offers":true}; output C:\Users\thanh\Documents\Codex\2026-11-14\t\work\notes-batch03\study-2\emergency18
+
+
+Checkpoint state running; next finish owned wdb462f225173028cf321
