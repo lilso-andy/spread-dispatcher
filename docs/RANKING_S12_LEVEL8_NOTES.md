@@ -40,10 +40,54 @@
       },
       "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\ranking12-level8\\run1",
       "creationUncertain": false,
-      "worldId": "w40560ae839540a76ba84"
+      "worldId": "w40560ae839540a76ba84",
+      "result": {
+        "worldId": "w40560ae839540a76ba84",
+        "score": {
+          "marginCents": 188493,
+          "revenueCents": 1951200,
+          "marginShare": 0.09660362853628536,
+          "wonOrders": 136,
+          "onTimeShare": 0.9044117647058824,
+          "undeliveredShare": 0,
+          "ranked": true
+        },
+        "config": {
+          "quoteMultiplier": 1.4,
+          "feeMultiplier": 1.08,
+          "emergencyMultiplier": 2,
+          "marginReserve": 0.15,
+          "minMarginCents": 2000,
+          "capacityFraction": 0.28,
+          "maxApproachMinutes": 100,
+          "minLeadMinutes": 180,
+          "strictNotes": true,
+          "trainingEconomy": false,
+          "offers": true
+        },
+        "options": {
+          "level": 8,
+          "worldId": "w40560ae839540a76ba84",
+          "board": true,
+          "output": "C:\\Users\\thanh\\Documents\\Codex\\2026-11-14\\t\\work\\ranking12-level8\\run1",
+          "quiet": true,
+          "reveal": false
+        },
+        "elapsedSeconds": 53.811,
+        "actionRefusals": 0
+      },
+      "serverScore": {
+        "marginCents": 188493,
+        "revenueCents": 1951200,
+        "marginShare": 0.09660362853628536,
+        "wonOrders": 136,
+        "onTimeShare": 0.9044117647058824,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
     }
   ],
-  "next": "finish owned w40560ae839540a76ba84"
+  "next": "Push completed ranking12-1"
 }
 
 No ranking reveal/fork/deletion or final. Final scores only.
